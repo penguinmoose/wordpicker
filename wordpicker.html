@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+   <style>
+     .button1 {
+     width: 250px;
+     height: 50px;
+     background-color: #4CAF50;
+     border: none;
+     color: white;
+     padding: 16px 32px;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+     font-size: 16px;
+     margin: 4px 2px;
+     cursor: pointer;
+     background-color: white;
+     color: black;
+     border: 2px solid #4CAF50;
+     }
+
+    .button1:hover {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+/*************************************************************************************/
+
+   textarea {
+     width: 350px;
+     height: 65px;
+     padding: 12px 20px;
+     box-sizing: border-box;
+     border: 2px solid #ccc;
+     border-radius: 4px;
+     background-color: #f8f8f8;
+     font-size: 16px;
+     resize: none;
+   }
+   div {
+     font-family: arial;
+     background: rgba(0, 128, 0, 0.1);
+     width: 230px;
+     height: 105px;
+     border-style: solid;
+     padding: 20px;
+   }
+   </style>
+   </head>
+
+   <body>
+     <title>word or sentence picker</title>
+     <div> any lowercase letter = letter<br>
+      capital C = any consonants<br>
+      capital V = any vowel<br>
+      , = or<br>
+      - = any number of letters</div><br>
+     <form class="input">
+       <textarea type="text" id="req" name="req" placeholder="type requirements for words or sentences here..."></textarea><br>
+
+       <button onclick="startWords();return false;" class="button1">find words</button>
+       <button onclick="startSentences();return false;" class="button1">find sentences</button>
+    </form>
+    <iframe height=400 width=800 frameborder=0 name = "resultpage" style =""></></iframe><!--create iframe-->
+   </body>
+
+   <script>
+    function changeUrl(site) {
+        document.getElementsByName('resultpage')[0].src = site;
+    }
+
+    function startWords() {
+      var req = (document.getElementById("req").value);
+      if (req !== null) {
+        var query = '';
+        var parts = req.split(",");
+        for (var j = 0; j < parts.length; j++) {
+          part = parts[j].trim();
+          query = query + '^';
+          for (var i = 0; i < part.length; i++) {
+            var c = req.charAt(i);
+            switch (c) {
+              case 'C':
+                query = query + '[b-df-hj-np-tv-xz]';
+                break;
+              case 'V':
+                query = query + '[aeiou]';
+                break;
+              case '-':
+                query = query + '[a-z]*';
+                break;
+              default:
+                query = query + c
+            }
+          }
+          query = query + '$|';
+        }
+        query = query.substring(0, query.length-1);
+
+        var url = "https://visca.com/regexdict/?str=" + query + "&search=Search";
+        console.log(url);
+        changeUrl("loading.html");
+        setTimeout(function(){changeUrl(url);}, 500);
+      } else {
+         alert("please type something in the input field.");
+      }
+    }
+
+
+
+    function startSentences() {
+      var req = (document.getElementById("req").value);
+      if (req !== null) {
+        var url = "https://sentence.yourdictionary.com/" + req;
+        console.log(url);
+        changeUrl("loading.html");
+        setTimeout(function(){changeUrl(url);}, 500);
+        changeUrl(url);
+      } else {
+         alert("please type something in the input field.");
+      }
+    }
+
+   console.log("test");
+
+   function test() {
+     console.log("pressed");
+   }
+
+   </script>
+</html>
