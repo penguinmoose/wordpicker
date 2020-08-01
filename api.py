@@ -2,8 +2,6 @@ import flask
 from flask import request, jsonify
 from flask_cors import CORS
 import re
-from lxml import html
-import requests
 
 app = flask.Flask(__name__)
 cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
@@ -54,20 +52,5 @@ def api_words_pattern():
     result = list(filter(lambda s: prog.match(s), word_list))
 
     return jsonify(result)
-
-@app.route('/api/sentences', methods=['GET'])
-def api_sentences_pattern():
-    if 'pattern' not in request.args:
-        return "pattern missing", 400
-
-    pattern = request.args['pattern']
-    page = requests.get('https://sentence.yourdictionary.com/' + pattern)
-    tree = html.fromstring(page.content)
-    # <div data-v-5f319790="" class="sentence component">
-    sentences = tree.xpath('//div[@class="sentence component"]/p/text()')
-
-    print(page.text)
-
-    return jsonify(sentences)
 
 app.run()
