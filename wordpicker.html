@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html>
    <head>
+     <meta name="description" content="Tool for finding words and sentences based on a spelling pattern">
+     <meta name="keywords" content="word finder, sentence finder, words, sentences">
    <style>
      .button1 {
      width: 250px;
@@ -38,7 +40,7 @@
      font-size: 16px;
      resize: none;
    }
-   div {
+   .info {
      font-family: arial;
      background: rgba(0, 128, 0, 0.1);
      width: 230px;
@@ -46,12 +48,16 @@
      border-style: solid;
      padding: 20px;
    }
+
+   div {
+     font-family: sans-serif;
+   }
    </style>
    </head>
 
    <body>
      <title>word or sentence picker</title>
-     <div> any lowercase letter = letter<br>
+     <div class="info"> any lowercase letter = letter<br>
       capital C = any consonants<br>
       capital V = any vowel<br>
       , = or<br>
@@ -62,6 +68,8 @@
        <button onclick="startWords();return false;" class="button1">find words</button>
        <button onclick="startSentences();return false;" class="button1">find sentences</button>
     </form>
+    <div id="matched_words"></div>
+
     <iframe height=400 width=800 frameborder=0 name = "resultpage" style =""></></iframe><!--create iframe-->
    </body>
 
@@ -73,35 +81,26 @@
     function startWords() {
       var req = (document.getElementById("req").value);
       if (req !== null) {
-        var query = '';
-        var parts = req.split(",");
-        for (var j = 0; j < parts.length; j++) {
-          part = parts[j].trim();
-          query = query + '^';
-          for (var i = 0; i < part.length; i++) {
-            var c = req.charAt(i);
-            switch (c) {
-              case 'C':
-                query = query + '[b-df-hj-np-tv-xz]';
-                break;
-              case 'V':
-                query = query + '[aeiou]';
-                break;
-              case '-':
-                query = query + '[a-z]*';
-                break;
-              default:
-                query = query + c
+        var url = "http://127.0.0.1:5000/api/words?pattern=" + req;
+        fetch(url)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        function appendData(data) {
+          console.log(data);
+            var mainContainer = document.getElementById("matched_words");
+            for (var i = 0; i < data.length; i++) {
+                var div = document.createElement("div");
+                div.innerHTML = data[i];
+                mainContainer.appendChild(div);
             }
-          }
-          query = query + '$|';
         }
-        query = query.substring(0, query.length-1);
-
-        var url = "https://visca.com/regexdict/?str=" + query + "&search=Search";
-        console.log(url);
-        changeUrl("loading.html");
-        setTimeout(function(){changeUrl(url);}, 500);
       } else {
          alert("please type something in the input field.");
       }
