@@ -32,20 +32,20 @@ def api_words_pattern():
     word_list = load_word_list()
     input = request.args['pattern']
     results = []
-    for pattern in input.split(','):
+    for pattern in input.split(','): # build reglex string
         query = ''
         group = 0
         for c in pattern.strip():
             if c=='C':
-                query = query + '([b-df-hj-np-tv-xz])'
+                query = query + '([b-df-hj-np-tv-xz])' # add ([b-df-hj-np-tv-xz]) to query if detected capital C
                 group += 1
             elif c=='V':
-                query = query + '([aeiou])';
+                query = query + '([aeiou])' # add ([aeiou]) to query if detected capital V
                 group += 1
             elif c=='-':
-                query = query + '[a-z]*';
+                query = query + '[a-z]*'; # add [a-z]* to query if detected dash
             elif c>='2' and c<='9':
-                query = query + '\\' + str(group) + '{' + str(int(c)-1) + '}'
+                query = query + '\\' + str(group) + '{' + str(int(c)-1) + '}' # stuff to do if there is a number
             else:
                 query = query + c
 
@@ -54,7 +54,8 @@ def api_words_pattern():
         result = list(filter(lambda s: prog.match(s), word_list))
         results.extend(result)
 
-    return jsonify(results)
+    return jsonify(results) # return json format
+
 
 @app.route('/api/sentences', methods=['GET'])
 def api_sentences_pattern():
@@ -64,10 +65,9 @@ def api_sentences_pattern():
     pattern = request.args['pattern']
     page = requests.get('https://sentence.yourdictionary.com/' + pattern) # get results from yourdictionary
     tree = html.fromstring(page.content)
-    # <div data-v-5f319790="" class="sentence component">
+
     sentences = tree.xpath('//div[@class="sentence component"]/p')
     sentences = [e.text_content() for e in sentences]
-    #print(page.text)
 
     return jsonify(sentences)
 

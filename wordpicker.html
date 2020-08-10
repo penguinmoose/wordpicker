@@ -55,7 +55,7 @@
         <tr>
           <td>-</td>
           <td>=</td>
-          <td>any number of consonants</td>
+          <td>any number of letter</td>
         </tr>
 
         <tr>
@@ -66,20 +66,47 @@
       </table>
     </div>
 
+
     <button type="button" class="collapsible">examples</button>
+
     <div class="content">
-      <div class="small-heading">any lowercase letter:</div>
-      <div>b = only finds word(s) that's b and just b</div>
+      <div class="small-heading">new: any letter, in this case r</div>
+      <div>only finds word(s) that's r and just r</div>
       <div>output:</div>
-      <div>b</div><br>
-      <div class="small-heading">capital V</div>
-      <div>finds word(s) that's a vowel and just a vowel</div>
+      <div>r</div>
+      <hr>
+      <div class="small-heading">new: capital V</div>
+      <div>finds word(s) that's a vowel</div>
       <div>output:</div>
       <div>a<br>e<br>i<br>o<br>u</div>
-      <div class="small-heading">capital C</div>
+      <hr>
+      <div class="small-heading">new: capital C</div>
+      <div>finds word(s) that's just a consonant</div>
+      <div>output:</div>
+      <div>b<br>c<br>d<br>f<br>g<br>...</div>
+      <hr>
+      <div class="small-heading">CVC</div>
+      <div>finds word(s) that follow the CVC spelling pattern</div>
+      <div>output:</div>
+      <div>for<br>not<br>new<br>was<br>can<br>...</div>
+      <hr>
+      <div class="small-heading">new: - (dash)</div>
+      <div>a dash is usually put in the start or end of an query, indicating<br>that whatever is past the query can be any number of letters.</div>
+      <hr>
+      <div class="small-heaidng">-CVC-</div>
+      <div>finds word(s) that <b>contain</b> the spelling pattern CVC</div>
+      <div>results:</div>
+      <div>for<br>that<br>this<br>with<br>not<br>...</div>
+      <hr>
+      <div class="small-heading">new: number</div>
+      <div>the character before it gets doubled the number of times, but the<br>consecutive characters can be any of the meaning of it, and it is the same</div>
+      <hr>
+      <div class="small-heading">CVC2VC</div>
+      <div>finds word(s) that have CVCCVC, but the doubble C is the same</div>
+      <div>results:</div>
+      <div>better<br>seller<br>common<br>called<br>follow<br>letter<br>...</div>
+    </div><br>
 
-    </div>
-    <br>
 
     <form class="input">
       <textarea type="text" id="req" name="req" placeholder="type requirements for words or sentences here..."></textarea><br>
@@ -103,11 +130,26 @@
       <button onclick="startSentences();return false;" class="button1">find sentences</button>
     </form>
     <div id="matched_sentences"></div>
-  </div>  </div>
+  </div>
+  </div>
 </body>
 
 <script>
+  var plain_results;
+
   console.log("welcome to word picker");
+
+  function copyToClipboard() {
+
+    var copyText = document.getElementById("myInput");
+
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+    document.execCommand("copy");
+
+    alert("results coppied!");
+  }
 
   function go(to) {
     document.getElementById('0').style.display = "none";
@@ -175,29 +217,29 @@
     if (req !== null) {
       var url = "http://127.0.0.1:5000/api/sentences?pattern=" + req;
       fetch(url)
-          .then(function (response) {
-              return response.json();
-          })
-          .then(function (data) {
-              appendData(data);
-          })
-          .catch(function (err) {
-              console.log('error: ' + err);
-          });
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          appendData(data);
+        })
+        .catch(function(err) {
+          console.log('error: ' + err);
+        });
+
       function appendData(data) {
-          var mainContainer = document.getElementById("matched_sentences");
-          mainContainer.innerHTML = "";
-          for (var i = 0; i < data.length; i++) {
-              var div = document.createElement("div");
-              div.innerHTML = data[i];
-              mainContainer.appendChild(div);
-          }
+        var mainContainer = document.getElementById("matched_sentences");
+        mainContainer.innerHTML = "";
+        for (var i = 0; i < data.length; i++) {
+          var div = document.createElement("div");
+          div.innerHTML = data[i];
+          mainContainer.appendChild(div);
+        }
       }
     } else {
-       alert("please type something in the input field.");
+      alert("please type something in the input field.");
     }
   }
-
 </script>
 
 </html>
