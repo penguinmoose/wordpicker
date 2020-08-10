@@ -1,133 +1,203 @@
 <!DOCTYPE HTML>
 <html>
-   <head>
-     <meta charset="utf-8">
-     <meta name="description" content="Tool for finding words and sentences based on a spelling pattern">
-     <meta name="keywords" content="word finder, sentence finder, words, sentences">
 
-     <style>
-       .button1 {
-       width: 250px;
-       height: 50px;
-       background-color: #4CAF50;
-       border: none;
-       color: white;
-       padding: 16px 32px;
-       text-align: center;
-       text-decoration: none;
-       display: inline-block;
-       font-size: 16px;
-       margin: 4px 2px;
-       cursor: pointer;
-       background-color: white;
-       color: black;
-       border: 2px solid #4CAF50;
-       }
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Tool for finding words and sentences based on a spelling pattern">
+  <meta name="keywords" content="word finder, sentence finder, words, sentences">
+  <link rel="stylesheet" href="wordpicker.css">
+</head>
 
-      .button1:hover {
-        background-color: #4CAF50;
-        color: white;
-      }
+<body onload="go(0)">
+  <title>word picker</title>
+  <div id="heading">word picker</div>
+  <div>note: results on this word picker also contains letters that match the requested filter.</div>
+  <hr>
 
-      /*************************************************************************************/
+  <ul>
+    <li class="fancytab" onclick="go(0)">Words</li>
+    <li class="fancytab" onclick="go(1)">Sentences</li>
+  </ul><br>
 
-      textarea {
-       width: 350px;
-       height: 65px;
-       padding: 12px 20px;
-       box-sizing: border-box;
-       border: 2px solid #ccc;
-       border-radius: 4px;
-       background-color: #f8f8f8;
-       font-size: 16px;
-       resize: none;
-     }
-     .info {
-       font-family: arial;
-       background: rgba(0, 128, 0, 0.1);
-       width: 230px;
-       height: 105px;
-       border-style: solid;
-       padding: 20px;
-     }
+  <!--<div class="nav">
+       <a class="on" href="#">Words</a>
+       <a href="sentence.html">Sentences</a>
+     </div>-->
 
-     div {
-       font-family: sans-serif;
-     }
-     </style>
-   </head>
+  <div id="0">
+    <button type="button" class="collapsible">instuctions</button>
+    <div class="content">
+      <table>
+        <tr>
+          <td>any lowercase letter</td>
+          <td>=</td>
+          <td>letter</td>
+        </tr>
 
-   <body>
-     <title>word picker</title>
-     <div class="info"> any lowercase letter = letter<br>
-      capital C = any consonants<br>
-      capital V = any vowel<br>
-      , = or<br>
-      - = any number of letters</div><br>
-     <form class="input">
-       <textarea type="text" id="req" name="req" placeholder="type requirements for words or sentences here..."></textarea><br>
+        <tr>
+          <td>capical C</td>
+          <td>=</td>
+          <td>any consonants</td>
+        </tr>
 
-       <button onclick="startWords();return false;" class="button1">find words</button>
-       <button onclick="startSentences();return false;" class="button1">find sentences</button>
+        <tr>
+          <td>capital V</td>
+          <td>=</td>
+          <td>any vowel</td>
+        </tr>
+
+        <tr>
+          <td>,</td>
+          <td>=</td>
+          <td>or</td>
+        </tr>
+
+        <tr>
+          <td>-</td>
+          <td>=</td>
+          <td>any number of consonants</td>
+        </tr>
+
+        <tr>
+          <td>[any character with meaning][any number]</td>
+          <td>=</td>
+          <td>the character before it gets doubled the number of times, but the consecutive characters can be any of the meaning of it, and it is the same</td>
+        <tr>
+      </table>
+    </div>
+
+    <button type="button" class="collapsible">examples</button>
+    <div class="content">
+      <div class="small-heading">any lowercase letter:</div>
+      <div>b = only finds word(s) that's b and just b</div>
+      <div>output:</div>
+      <div>b</div><br>
+      <div class="small-heading">capital V</div>
+      <div>finds word(s) that's a vowel and just a vowel</div>
+      <div>output:</div>
+      <div>a<br>e<br>i<br>o<br>u</div>
+      <div class="small-heading">capital C</div>
+
+    </div>
+    <br>
+
+    <form class="input">
+      <textarea type="text" id="req" name="req" placeholder="type requirements for words or sentences here..."></textarea><br>
+
+      <button onclick="startWords();return false;" class="button1">find words</button>
     </form>
     <div id="matched_words"></div>
+  </div>
 
-    <iframe height=400 width=800 frameborder=0 name = "resultpage" style =""></></iframe><!--create iframe-->
-   </body>
 
-   <script>
-    function changeUrl(site) {
-        document.getElementsByName('resultpage')[0].src = site;
-    }
+  <div id="1">
+    <button type="button" class="collapsible">instuctions</button>
+    <div class="content">
+      <div>Type any word to find example sentences.</div>
+    </div>
+    <br>
 
-    function startWords() {
-      var req = (document.getElementById("req").value);
-      if (req !== null) {
-        var url = "http://127.0.0.1:5000/api/words?pattern=" + req;
-        fetch(url)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (data) {
-                appendData(data);
-            })
-            .catch(function (err) {
-                console.log('error: ' + err);
-            });
-        function appendData(data) {
-          console.log(data);
-            var mainContainer = document.getElementById("matched_words");
-            for (var i = 0; i < data.length; i++) {
-                var div = document.createElement("div");
-                div.innerHTML = data[i];
-                mainContainer.appendChild(div);
-            }
+    <form class="input">
+      <textarea type="text" id="reqsentence" name="reqsentence" placeholder="type requirements for sentences here..."></textarea><br>
+
+      <button onclick="startSentences();return false;" class="button1">find sentences</button>
+    </form>
+    <div id="matched_sentences"></div>
+  </div>  </div>
+</body>
+
+<script>
+  console.log("welcome to word picker");
+
+  function go(to) {
+    document.getElementById('0').style.display = "none";
+    document.getElementById('1').style.display = "none";
+    document.getElementById(to).style.display = "block";
+
+    var tabs = document.getElementsByClassName("fancytab");
+    tabs[0].classList.remove('active');
+    tabs[1].classList.remove('active');
+    tabs[to].classList.add('active');
+  }
+
+  var coll = document.getElementsByClassName("collapsible");
+
+  for (var i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+
+
+  function changeUrl(site) {
+    document.getElementsByName('resultpage')[0].src = site;
+  }
+
+
+  function startWords() {
+    var req = (document.getElementById("req").value);
+    if (req !== null) {
+      var url = "http://127.0.0.1:5000/api/words?pattern=" + req;
+      fetch(url)
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(data) {
+          appendData(data);
+        })
+        .catch(function(err) {
+          console.log('error: ' + err);
+        });
+
+      function appendData(data) {
+        var mainContainer = document.getElementById("matched_words");
+        mainContainer.innerHTML = "";
+        for (var i = 0; i < data.length; i++) {
+          var div = document.createElement("div");
+          div.innerHTML = data[i];
+          mainContainer.appendChild(div);
         }
-      } else {
-         alert("please type something in the input field.");
       }
+    } else {
+      alert("please type something in the input field.");
     }
+  }
 
 
-
-    function startSentences() {
-      var req = (document.getElementById("req").value);
-      if (req !== null) {
-        var url = "https://sentence.yourdictionary.com/" + req;
-        console.log(url);
-        changeUrl("loading.html");
-        setTimeout(function(){changeUrl(url);}, 500);
-        changeUrl(url);
-      } else {
-         alert("please type something in the input field.");
+  function startSentences() {
+    var req = (document.getElementById("reqsentence").value);
+    if (req !== null) {
+      var url = "http://127.0.0.1:5000/api/sentences?pattern=" + req;
+      fetch(url)
+          .then(function (response) {
+              return response.json();
+          })
+          .then(function (data) {
+              appendData(data);
+          })
+          .catch(function (err) {
+              console.log('error: ' + err);
+          });
+      function appendData(data) {
+          var mainContainer = document.getElementById("matched_sentences");
+          mainContainer.innerHTML = "";
+          for (var i = 0; i < data.length; i++) {
+              var div = document.createElement("div");
+              div.innerHTML = data[i];
+              mainContainer.appendChild(div);
+          }
       }
+    } else {
+       alert("please type something in the input field.");
     }
+  }
 
-   console.log("test");
+</script>
 
-   function test() {
-     console.log("pressed");
-   }
-
-   </script>
 </html>

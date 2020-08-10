@@ -1,0 +1,206 @@
+/*tabs*/
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    padding-left: 20px;
+    z-index: 5;
+}
+
+ul li {
+    color: grey;
+    background: #fefefe;
+    padding: 14px 24px 10px;
+    margin: 0px -6px 5px 10px;
+    width: 49%;
+    position: relative;
+    float: left;
+    text-align: center;
+    z-index: 1;
+}
+ul li::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; left: 0;
+    width: 70%;
+    height: 100%;
+    border-style: solid;
+    border-color: #eee;
+    border-width: 2px 0 2px 2px;
+    border-radius: 8px 0 0 0;
+    -webkit-transform: skewX(-20deg);
+       -moz-transform: skewX(-20deg);
+         -o-transform: skewX(-20deg);
+            transform: skewX(-20deg);
+    background-color: inherit;
+    z-index: -1;
+}
+ul li::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0; right: 0;
+    width: 70%;
+    height: 100%;
+    border-style: solid;
+    border-color: #eee;
+    border-width: 2px 2px 2px 0;
+    border-radius: 0 8px 0 0;
+    -webkit-transform: skewX(20deg);
+       -moz-transform: skewX(20deg);
+         -o-transform: skewX(20deg);
+            transform: skewX(20deg);
+    background-color: inherit;
+    z-index: -1;
+}
+ul li.active {
+    color: orange;
+    z-index: 10;
+}
+ul li.active::before,
+ul li.active::after {
+    background-color: #fff;
+    border-bottom-color: #fff;
+}
+ul li:not([class='active']):hover::before,
+ul li:not([class='active']):hover::after {
+    background-color: #efefef;
+}
+
+/*******************************************************
+
+/*buttons*/
+.tab {
+    cursor: pointer;
+    font-size: 10px;
+    padding: 5px;
+    /*border: 1px solid gray;*/
+    width: calc(25% - 5px);
+    height: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: lightgray;
+    color: black;
+}
+
+
+ .button1 {
+ width: 250px;
+ height: 50px;
+ background-color: #4CAF50;
+ border: none;
+ color: white;
+ padding: 16px 32px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+ margin: 4px 2px;
+ cursor: pointer;
+ background-color: white;
+ color: black;
+ border: 2px solid #4CAF50;
+ }
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/**************************other******************************************************/
+
+body {
+  line-height: 1.6;
+  font-family: sans-serif;
+}
+
+textarea {
+ width: 350px;
+ height: 65px;
+ padding: 12px 20px;
+ box-sizing: border-box;
+ border: 2px solid #ccc;
+ border-radius: 4px;
+ background-color: #f8f8f8;
+ font-size: 16px;
+ resize: none;
+}
+
+.small-heading {
+ font-family: sans-serif;
+ font-size: 18px;
+}
+
+#heading {
+ font-family: sans-serif;
+ font-size: 30px;
+ background-color: rgb(220, 220, 220);
+ padding: 15px;
+}
+
+table, th, td {
+ border: 1px solid black;
+ border-collapse: collapse;
+}
+
+th, td {
+ padding: 5px;
+}
+
+
+/**************************navigation bar***************************/
+* {
+ box-sizing: border-box;
+}
+
+
+.nav {
+ overflow: hidden;
+ background-color: #333;
+}
+
+/* Style the nav links */
+.nav a {
+ width: 50%;
+ float: left;
+ display: block;
+ color: #f2f2f2;
+ text-align: center;
+ padding: 14px 16px;
+ text-decoration: none;
+}
+
+/* Change color on hover */
+/*.nav a:hover {
+ background-color: #ddd;
+ color: black;
+}*/
+
+.nav a.on {
+  background-color: #ddd;
+  color: black;
+}
+/******************************collapsible**************************************/
+
+.collapsible {
+  background-color: #858585;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
