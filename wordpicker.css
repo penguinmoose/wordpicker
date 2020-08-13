@@ -15,7 +15,7 @@ ul li {
     background: #fefefe;
     padding: 14px 24px 10px;
     margin: 0px -6px 5px 10px;
-    width: 49%;
+    width: 40%;
     position: relative;
     float: left;
     text-align: center;
@@ -50,43 +50,34 @@ ul li::after {
     border-color: #eee;
     border-width: 2px 2px 2px 0;
     border-radius: 0 8px 0 0;
+
     -webkit-transform: skewX(20deg);
        -moz-transform: skewX(20deg);
          -o-transform: skewX(20deg);
             transform: skewX(20deg);
+
     background-color: inherit;
     z-index: -1;
 }
+
 ul li.active {
     color: orange;
     z-index: 10;
 }
+
 ul li.active::before,
 ul li.active::after {
     background-color: #fff;
     border-bottom-color: #fff;
 }
+
 ul li:not([class='active']):hover::before,
 ul li:not([class='active']):hover::after {
     background-color: #efefef;
 }
 
-/*******************************************************
 
 /*buttons*/
-.tab {
-    cursor: pointer;
-    font-size: 10px;
-    padding: 5px;
-    /*border: 1px solid gray;*/
-    width: calc(25% - 5px);
-    height: 30px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    background-color: lightgray;
-    color: black;
-}
-
 
  .button1 {
  width: 250px;
@@ -111,7 +102,29 @@ ul li:not([class='active']):hover::after {
   color: white;
 }
 
-/**************************other******************************************************/
+.copyButton {
+width: 100%;
+background-color: #5E7EFF;
+border: none;
+color: white;
+padding: 16px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+margin: 4px 2px;
+cursor: pointer;
+background-color: white;
+color: black;
+}
+
+.copyButton:hover {
+ background-color: #164AD9;
+ color: white;
+}
+
+
+/*other*/
 
 body {
   line-height: 1.6;
