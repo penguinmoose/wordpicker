@@ -1,3 +1,5 @@
+var host = "http://wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com/api/words?pattern=";
+
 console.log("welcome to word picker");
 
 
@@ -51,7 +53,7 @@ function changeUrl(site) {
 function startWords() {
   var req = (document.getElementById("req").value);
   if (req !== null) {
-    var url = "http://wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com/api/words?pattern=" + req;
+    var url = host + req;
     fetch(url)
       .then(function(response) {
         return response.json();
@@ -82,7 +84,7 @@ function startWords() {
 function startSentences() {
   var req = (document.getElementById("reqsentence").value);
   if (req !== null) {
-    var url = "http://127.0.0.1:5000/api/sentences?pattern=" + req;
+    var url = host + req;
     fetch(url)
       .then(function(response) {
         return response.json();

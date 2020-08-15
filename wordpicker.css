@@ -102,27 +102,34 @@ ul li:not([class='active']):hover::after {
   color: white;
 }
 
-.copyButton {
-width: 100%;
-background-color: #5E7EFF;
-border: none;
-color: white;
-padding: 16px 32px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 16px;
-margin: 4px 2px;
-cursor: pointer;
-background-color: white;
-color: black;
+.copy-button {
+  border-width: 0px;
+  background-color: transparent;
 }
 
-.copyButton:hover {
- background-color: #164AD9;
- color: white;
+.copy-button span {
+  min-width: 34.48px;
+  max-width: 0;
+  -webkit-transition: max-width 1s;
+  transition: max-width 1s;
+  display: inline-block;
+  vertical-align: top;
+  white-space: nowrap;
+  overflow: hidden;
+
+  position: center;
+  text-align: center;
+  border-radius: 25px;
+  background: rgb(71, 182, 255);
+  padding: 10px;
+  width: 400px;
+  height: 40px;
+  float: left;
 }
 
+.copy-button:hover span {
+  max-width: 10rem;
+}
 
 /*other*/
 
