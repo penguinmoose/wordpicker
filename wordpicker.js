@@ -51,6 +51,10 @@ function changeUrl(site) {
 
 
 function startWords() {
+  if (navigator.onLine === false) {
+    alert("You're offline. Check your internet connection, then refresh to try again.");
+  }
+
   var req = (document.getElementById("req").value);
   if (req !== null) {
     var url = host + req;
