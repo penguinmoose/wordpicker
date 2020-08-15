@@ -51,10 +51,6 @@ function changeUrl(site) {
 
 
 function startWords() {
-  if (navigator.onLine === false) {
-    alert("You're offline. Check your internet connection, then refresh to try again.");
-  }
-
   var req = (document.getElementById("req").value);
   if (req !== null) {
     var url = host + req;
@@ -66,7 +62,7 @@ function startWords() {
         appendData(data);
       })
       .catch(function(err) {
-        alert("there was a error. + err");
+        alert("there was a error. This may mean you are offline." + err);
         console.log('error: ' + err);
       });
 
