@@ -113,7 +113,7 @@
       <button onclick="startWords();return false;" class="button1">find words</button>
     </form><br>
 
-    <button class="copy-button">
+    <button onclick="CopyToClipboard('matched_words')" id="word-copy-button" class="copy-button">
       <span><img src="copy-to-clipboard.png" height="20" width="20"> Copy result </span>
     </button>
 
@@ -136,8 +136,8 @@
     </form><br>
 
 
-    <button class="copy-button">
-      <span><img src="copy-to-clipboard.png" height="20" width="20"> Copy result to clipboard </span>
+    <button onclick="CopyToClipboard('matched_sentences')" id="sentence-copy-button" class="copy-button">
+      <span><img src="copy-to-clipboard.png" height="20" width="20" style="margin-right: 4px;"> &nbsp; Copy result </span>
     </button>
 
     <div id="matched_sentences"></div>

@@ -1,4 +1,4 @@
-var host = "http://wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com/api/words?pattern=";
+var host = "wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 
 console.log("welcome to word picker");
 
@@ -51,9 +51,11 @@ function changeUrl(site) {
 
 
 function startWords() {
+  document.getElementById("word-copy-button").style.display = "block";
+
   var req = (document.getElementById("req").value);
   if (req !== null) {
-    var url = host + req;
+    var url = "http://" + host + "/api/words?pattern=" + req;
     fetch(url)
       .then(function(response) {
         return response.json();
@@ -82,9 +84,11 @@ function startWords() {
 
 
 function startSentences() {
+  document.getElementById("sentence-copy-button").style.display = "block";
+
   var req = (document.getElementById("reqsentence").value);
   if (req !== null) {
-    var url = host + req;
+    var url = "http://" + host + "/api/sentences?pattern=" + req;
     fetch(url)
       .then(function(response) {
         return response.json();
@@ -93,7 +97,7 @@ function startSentences() {
         appendData(data);
       })
       .catch(function(err) {
-        alert("There was a error. This may mean you are offline." + err);
+        alert("There was a error. This may mean you are offline. error:" + err);
         console.log('error: ' + err);
       });
 

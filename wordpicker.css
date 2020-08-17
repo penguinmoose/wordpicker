@@ -104,12 +104,13 @@ ul li:not([class='active']):hover::after {
 }
 
 .copy-button {
+  display: none;
   border-width: 0px;
   background-color: transparent;
 }
 
 .copy-button span {
-  min-width: 34.48px;
+  min-width: 38px;
   max-width: 0;
   -webkit-transition: max-width 1s;
   transition: max-width 1s;
