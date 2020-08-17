@@ -93,6 +93,7 @@ function startSentences() {
         appendData(data);
       })
       .catch(function(err) {
+        alert("There was a error. This may mean you are offline." + err);
         console.log('error: ' + err);
       });
 

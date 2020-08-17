@@ -1,4 +1,5 @@
 /*tabs*/
+
 ul {
     list-style: none;
     margin: 0;
@@ -39,6 +40,7 @@ ul li::before {
     background-color: inherit;
     z-index: -1;
 }
+
 ul li::after {
     content: '';
     display: block;
@@ -75,7 +77,6 @@ ul li:not([class='active']):hover::before,
 ul li:not([class='active']):hover::after {
     background-color: #efefef;
 }
-
 
 /*buttons*/
 
@@ -193,12 +194,6 @@ th, td {
  padding: 14px 16px;
  text-decoration: none;
 }
-
-/* Change color on hover */
-/*.nav a:hover {
- background-color: #ddd;
- color: black;
-}*/
 
 .nav a.on {
   background-color: #ddd;
