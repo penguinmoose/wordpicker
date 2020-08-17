@@ -64,7 +64,7 @@ function startWords() {
         appendData(data);
       })
       .catch(function(err) {
-        alert("there was a error. This may mean you are offline." + err);
+        alert("there was a error. This may mean you are offline. It may also happen because your content, ad, or script blocking software is interfering. error: " + err);
         console.log('error: ' + err);
       });
 
@@ -97,7 +97,7 @@ function startSentences() {
         appendData(data);
       })
       .catch(function(err) {
-        alert("There was a error. This may mean you are offline. error:" + err);
+        alert("There was a error. This may mean you are offline. It may also happen because your content, ad, or script blocking software is interfering. error: " + err);
         console.log('error: ' + err);
       });
 
