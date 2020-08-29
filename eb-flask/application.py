@@ -5,26 +5,26 @@ import re
 from lxml import html
 import requests
 
-app = flask.Flask(__name__)
-cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
-app.config["DEBUG"] = True
+application = flask.Flask(__name__)
+cors = CORS(application, resources={r"/api/*": {"origins": "*"}})
+application.config["DEBUG"] = True
 
 def load_word_list():
     with open("10000words.txt") as f:
         word_list = f.read().splitlines()
     return word_list
 
-@app.route('/', methods=['GET'])
+@application.route('/', methods=['GET'])
 def home():
     return "<h1>Word sentence API</h1> <p>API for finding words or sentences with matching criteria.</p>"
 
-@app.route('/api/words/all', methods=['GET'])
+@application.route('/api/words/all', methods=['GET'])
 def api_words_all():
     word_list = load_word_list()
     return jsonify(word_list)
 
 
-@app.route('/api/words', methods=['GET'])
+@application.route('/api/words', methods=['GET'])
 def api_words_pattern():
     if 'pattern' not in request.args:
         return "pattern missing", 400
@@ -57,7 +57,7 @@ def api_words_pattern():
     return jsonify(results) # return json format
 
 
-@app.route('/api/sentences', methods=['GET'])
+@application.route('/api/sentences', methods=['GET'])
 def api_sentences_pattern():
     if 'pattern' not in request.args:
         return "pattern missing", 400
@@ -71,4 +71,5 @@ def api_sentences_pattern():
 
     return jsonify(sentences)
 
-app.run()
+if __name__ == "__main__":
+    application.run(debug=True, use_reloader=False)
