@@ -4,42 +4,30 @@ console.log("welcome to word picker");
 
 
 function CopyToClipboard(containerid) {
-    var range = document.createRange();
-    range.selectNode(document.getElementById(containerid));
-    window.getSelection().removeAllRanges(); // clear current selection
-    window.getSelection().addRange(range); // to select text
-    document.execCommand("copy");
-    window.getSelection().removeAllRanges();// to deselect
+  var range = document.createRange();
+  range.selectNode(document.getElementById(containerid));
+  window.getSelection().removeAllRanges(); // clear current selection
+  window.getSelection().addRange(range); // to select text
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges(); // to deselect
 }
 
-
-function go(to) {
-  document.getElementById('0').style.display = "none";
-  document.getElementById('1').style.display = "none";
-  document.getElementById(to).style.display = "block";
-
-  var tabs = document.getElementsByClassName("fancytab");
-  tabs[0].classList.remove('active');
-  tabs[1].classList.remove('active');
-  tabs[to].classList.add('active');
-}
-
-////////
+////////////////////////////////////////////
 
 function init() {
   var coll = document.getElementsByClassName("collapsible");
   var i;
 
   for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
-    });
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
   }
 }
 

@@ -3,153 +3,154 @@
 <script src="wordpicker.js">
 </script>
 
+
 <head>
   <meta charset="utf-8">
   <meta name="description" content="Tool for finding words and sentences based on a spelling pattern">
   <meta name="keywords" content="word finder, sentence finder, words, sentences">
+
   <link rel="stylesheet" href="wordpicker.css">
+  <link rel="stylesheet" href="tabs.css"> <!-- for the tabs-->
 </head>
+
 
 <body onload="init(); go(0);">
   <title>word picker</title>
+
   <div id="heading">word picker</div>
   <div>note: results on this word picker also contains letters that match the requested filter.</div>
   <hr>
 
-  <ul>
-    <li class="fancytab" onclick="go(0)">Words</li>
-    <li class="fancytab" onclick="go(1)">Sentences</li>
-  </ul><br>
+  <div class="wrapper">
+    <div class="tabs">
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+        <label for="tab-1" class="tab-label">word picker</label>
+        <div class="tab-content">
 
-  <!------------------------------------------------------------------>
+          <form class="input">
+            <textarea type="text" id="req" name="req" placeholder="type requirements for words here..."></textarea><br>
 
-  <div id="0">
-    <button type="button" class="collapsible">instuctions</button>
-    <div class="content">
-      <table>
-        <tr>
-          <td>any lowercase letter</td>
-          <td>=</td>
-          <td>letter</td>
-        </tr>
+            <button onclick="startWords();return false;" class="button1">find words</button>
+          </form><br>
 
-        <tr>
-          <td>capical C</td>
-          <td>=</td>
-          <td>any consonants</td>
-        </tr>
+          <button onclick="CopyToClipboard('matched_words')" id="word-copy-button" class="copy-button">
+            <span>
+              <img src="copy-to-clipboard.png" height="20" width="20" style="margin-right: 4px;">
+              Copy result
+            </span>
+          </button>
 
-        <tr>
-          <td>capital V</td>
-          <td>=</td>
-          <td>any vowel</td>
-        </tr>
 
-        <tr>
-          <td>,</td>
-          <td>=</td>
-          <td>or</td>
-        </tr>
+          <div id="matched_words"></div>
+        </div>
+      </div>
 
-        <tr>
-          <td>-</td>
-          <td>=</td>
-          <td>any number of letter</td>
-        </tr>
+      <!-------------------------------------------------------->
 
-        <tr>
-          <td>[any character with meaning][any number]</td>
-          <td>=</td>
-          <td>the character before it gets doubled the number of times, but the consecutive characters can be any of the meaning of it, and it is the same</td>
-        <tr>
-      </table>
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+        <label for="tab-2" class="tab-label">instructions for word picker</label>
+        <div class="tab-content">
+
+            <table>
+              <tr>
+                <td>any lowercase letter</td>
+                <td>=</td>
+                <td>letter</td>
+              </tr>
+
+              <tr>
+                <td>capical C</td>
+                <td>=</td>
+                <td>any consonants</td>
+              </tr>
+
+              <tr>
+                <td>capital V</td>
+                <td>=</td>
+                <td>any vowel</td>
+              </tr>
+
+              <tr>
+                <td>,</td>
+                <td>=</td>
+                <td>or</td>
+              </tr>
+
+              <tr>
+                <td>-</td>
+                <td>=</td>
+                <td>any number of letter</td>
+              </tr>
+
+              <tr>
+                <td>[any character with meaning][any number]</td>
+                <td>=</td>
+                <td>the character before it gets doubled the number of times, but the consecutive characters can be any of the meaning of it, and it is the same</td>
+              <tr>
+            </table>
+
+        </div>
+      </div>
+
+      <!--------------------------------------------------------->
+
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+        <label for="tab-3" class="tab-label">examples for word picker</label>
+        <div class="tab-content">
+          <div> Sorry, examples for word picker are not ready yet. </div>
+        </div>
+      </div>
+
+      <!----------------------------------------------------------------------->
+
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
+        <label for="tab-4" class="tab-label">sentence picker</label>
+        <div class="tab-content">
+
+          <button type="button" class="collapsible">instuctions</button>
+          <div class="content">
+            <div>Type any word to find example sentences.</div>
+          </div>
+          <br>
+
+          <form class="input">
+            <textarea type="text" id="reqsentence" name="reqsentence" placeholder="type requirements for sentences here..."></textarea><br>
+
+            <button onclick="startSentences();return false;" class="button1">find sentences</button>
+          </form><br>
+
+
+          <button onclick="CopyToClipboard('matched_sentences')" id="sentence-copy-button" class="copy-button">
+            <span>
+              <img src="copy-to-clipboard.png" height="20" width="20" style="margin-right: 4px;">
+              Copy result
+            </span>
+          </button>
+
+          <div id="matched_sentences"></div>
+
+        </div>
+      </div>
+
+      <!----------------------------------------------------------------->
+
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-5" class="tab-switch">
+        <label for="tab-5" class="tab-label">instructions for sentence picker</label>
+        <div class="tab-content">
+
+          <div> type any word to find example sentences. </div>
+
+        </div>
+      </div>
     </div>
-
-
-    <button type="button" class="collapsible">examples</button>
-
-    <div class="content">
-      <div class="small-heading">new: any letter, in this case r</div>
-      <div>only finds word(s) that's r and just r</div>
-      <div>output:</div>
-      <div>r</div>
-      <hr>
-      <div class="small-heading">new: capital V</div>
-      <div>finds word(s) that's a vowel</div>
-      <div>output:</div>
-      <div>a<br>e<br>i<br>o<br>u</div>
-      <hr>
-      <div class="small-heading">new: capital C</div>
-      <div>finds word(s) that's just a consonant</div>
-      <div>output:</div>
-      <div>b<br>c<br>d<br>f<br>g<br>...</div>
-      <hr>
-      <div class="small-heading">CVC</div>
-      <div>finds word(s) that follow the CVC spelling pattern</div>
-      <div>output:</div>
-      <div>for<br>not<br>new<br>was<br>can<br>...</div>
-      <hr>
-      <div class="small-heading">new: - (dash)</div>
-      <div>a dash is usually put in the start or end of an query, indicating<br>that whatever is past the query can be any number of letters.</div>
-      <hr>
-      <div class="small-heaidng">-CVC-</div>
-      <div>finds word(s) that <b>contain</b> the spelling pattern CVC</div>
-      <div>results:</div>
-      <div>for<br>that<br>this<br>with<br>not<br>...</div>
-      <hr>
-      <div class="small-heading">new: number</div>
-      <div>the character before it gets doubled the number of times, but the<br>consecutive characters can be any of the meaning of it, and it is the same</div>
-      <hr>
-      <div class="small-heading">CVC2VC</div>
-      <div>finds word(s) that have CVCCVC, but the doubble C is the same</div>
-      <div>results:</div>
-      <div>better<br>seller<br>common<br>called<br>follow<br>letter<br>...</div>
-    </div><br>
-
-
-    <form class="input">
-      <textarea type="text" id="req" name="req" placeholder="type requirements for words or sentences here..."></textarea><br>
-
-      <button onclick="startWords();return false;" class="button1">find words</button>
-    </form><br>
-
-    <button onclick="CopyToClipboard('matched_words')" id="word-copy-button" class="copy-button">
-      <span>
-        <img src="copy-to-clipboard.png" height="20" width="20" style="margin-right: 4px;">
-        Copy result 
-      </span>
-    </button>
-
-    <div id="matched_words"></div>
-  </div>
-
-  <!------------------------------------------------------------------->
-
-  <div id="1">
-    <button type="button" class="collapsible">instuctions</button>
-    <div class="content">
-      <div>Type any word to find example sentences.</div>
-    </div>
-    <br>
-
-    <form class="input">
-      <textarea type="text" id="reqsentence" name="reqsentence" placeholder="type requirements for sentences here..."></textarea><br>
-
-      <button onclick="startSentences();return false;" class="button1">find sentences</button>
-    </form><br>
-
-
-    <button onclick="CopyToClipboard('matched_sentences')" id="sentence-copy-button" class="copy-button">
-      <span>
-        <img src="copy-to-clipboard.png" height="20" width="20" style="margin-right: 4px;">
-        Copy result
-      </span>
-    </button>
-
-    <div id="matched_sentences"></div>
-
   </div>
   </div>
+  <!-- outside of tab box -->
   </div>
 </body>
 
