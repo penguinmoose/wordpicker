@@ -2,7 +2,6 @@ var host = "wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 
 console.log("welcome to word picker");
 
-
 function CopyToClipboard(containerid) {
   var range = document.createRange();
   range.selectNode(document.getElementById(containerid));
@@ -14,34 +13,17 @@ function CopyToClipboard(containerid) {
 
 ////////////////////////////////////////////
 
-function init() {
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
-
-  for (i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-      this.classList.toggle("active");
-      var content = this.nextElementSibling;
-      if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
-    });
-  }
-}
-
-////////
-
 function changeUrl(site) {
   document.getElementsByName('resultpage')[0].src = site;
 }
 
+////////////////////////////////////////////////////////
 
 function startWords() {
-  document.getElementById("word-copy-button").style.display = "block";
+  document.getElementById("header") = "loading results..."
 
   var req = (document.getElementById("req").value);
+
   if (req !== null) {
     var url = "http://" + host + "/api/words?pattern=" + req;
     fetch(url)
@@ -52,9 +34,11 @@ function startWords() {
         appendData(data);
       })
       .catch(function(err) {
-        alert("there was a error. This may mean you are offline. It may also happen because your content, ad, or script blocking software is interfering. error: " + err);
+        alert("There was a error: " + err);
         console.log('error: ' + err);
       });
+
+    document.getElementById("word-copy-button").style.display = "block";
 
     function appendData(data) {
       var mainContainer = document.getElementById("matched_words");
@@ -63,6 +47,8 @@ function startWords() {
         var div = document.createElement("div");
         div.innerHTML = data[i];
         mainContainer.appendChild(div);
+
+        document.getElementById("header") = "word picker";
       }
     }
   } else {
@@ -70,6 +56,7 @@ function startWords() {
   }
 }
 
+//////////////////////////////////////////////////
 
 function startSentences() {
   document.getElementById("sentence-copy-button").style.display = "block";

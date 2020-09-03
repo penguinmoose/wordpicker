@@ -54,7 +54,7 @@
   max-width: 10rem;
 }
 
-/*other*/
+/* other */
 
 body {
   line-height: 1.618em;
@@ -68,7 +68,7 @@ textarea {
  padding: 12px 20px;
  box-sizing: border-box;
  border: 2px solid #ccc;
- border-radius: 4px;
+ border-radius: 20px;
  background-color: #f8f8f8;
  font-size: 16px;
  resize: none;
