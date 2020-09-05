@@ -81,8 +81,8 @@ function startWords() {
       }
     }
 
-    setCookie("matched_w", document.getElementById("matched_words"), 50);
-    setCookie("input_w", document.getElementById("req"), 50);
+    // setCookie("matched_w", document.getElementById("matched_words"), 50);
+    setCookie("input_w", document.getElementById("req").value, 50);
   } else {
     alert("please type something in the input field.");
   }
@@ -118,8 +118,8 @@ function startSentences() {
       }
     }
 
-    setCookie("matched_s", document.getElementById("matched_sentences"), 50);
-    setCookie("input_s", document.getElementById("reqsentence"), 50);
+    // setCookie("matched_s", document.getElementById("matched_sentences"), 50);
+    setCookie("input_s", document.getElementById("reqsentence").value, 50);
   } else {
     alert("please type something in the input field.");
   }
