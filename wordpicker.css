@@ -1,25 +1,24 @@
-
 /*buttons*/
+.startbutton {
+  width: 250px;
+  height: 50px;
+  border-radius: 15px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid #4CAF50;
+}
 
- .button1 {
-   width: 250px;
-   height: 50px;
-   background-color: #4CAF50;
-   border: none;
-   color: white;
-   padding: 16px 32px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-size: 16px;
-   margin: 4px 2px;
-   cursor: pointer;
-   background-color: white;
-   color: black;
-   border: 2px solid #4CAF50;
- }
-
-.button1:hover {
+.startbutton:hover {
   background-color: #4CAF50;
   color: white;
 }
@@ -39,7 +38,6 @@
   vertical-align: top;
   white-space: nowrap;
   overflow: hidden;
-
   position: center;
   text-align: center;
   border-radius: 25px;
@@ -55,75 +53,79 @@
 }
 
 /* other */
-
 body {
+  background: url(background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  opacity: 0.8;
+
   line-height: 1.618em;
   font-family: sans-serif;
   background-color: rgb(130, 130, 130);
 }
 
 textarea {
- width: 350px;
- height: 65px;
- padding: 12px 20px;
- box-sizing: border-box;
- border: 2px solid #ccc;
- border-radius: 20px;
- background-color: #f8f8f8;
- font-size: 16px;
- resize: none;
+  width: 350px;
+  height: 65px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
 }
 
 .small-heading {
- font-family: sans-serif;
- font-size: 18px;
+  font-family: sans-serif;
+  font-size: 18px;
 }
 
 #heading {
- font-family: sans-serif;
- font-size: 30px;
- background-color: rgb(220, 220, 220);
- padding: 15px;
+  font-family: sans-serif;
+  font-size: 30px;
+  background-color: rgb(220, 220, 220);
+  padding: 15px;
 }
 
 table, th, td {
- border: 1px solid black;
- border-collapse: collapse;
+  border: 1px solid black;
+  border-collapse: collapse;
 }
 
 th, td {
- padding: 5px;
+  padding: 5px;
 }
-
 
 /**************************navigation bar***************************/
 * {
- box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-
 .nav {
- overflow: hidden;
- background-color: #333;
+  overflow: hidden;
+  background-color: #333;
 }
 
 /* Style the nav links */
 .nav a {
- width: 50%;
- float: left;
- display: block;
- color: #f2f2f2;
- text-align: center;
- padding: 14px 16px;
- text-decoration: none;
+  width: 50%;
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
 .nav a.on {
   background-color: #ddd;
   color: black;
 }
-/******************************collapsible**************************************/
 
+/******************************collapsible**************************************/
 .collapsible {
   background-color: #858585;
   color: white;
