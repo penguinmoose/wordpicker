@@ -3,6 +3,17 @@ var host = "wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 console.log("welcome to word picker");
 
 
+function openNav() {
+  document.getElementById("sidebar").style.width = "250px";
+  document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+  document.getElementById("sidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft = "0";
+}
+
+
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -27,10 +38,8 @@ function getCookie(cname) {
 
 function loadPrevData() {
   if (matched_words != "" || matched_sentences != "") {
-    document.getElementById("reqsentence").innerHTML = getCookie("input_s");
+    document.getElementById("reqsentence").value = getCookie("input_s");
     document.getElementById("req").value = getCookie("input_w");
-    document.getElementById("matched_words").value = getCookie("matched_w");
-    document.getElementById("matched_sentences").value = getCookie("matched_s");
   }
 }
 
@@ -44,7 +53,6 @@ function CopyToClipboard(containerid) {
   window.getSelection().removeAllRanges(); // to deselect
 }
 
-////////////////////////////////////////////
 
 function changeUrl(site) {
   document.getElementsByName('resultpage')[0].src = site;
@@ -81,7 +89,6 @@ function startWords() {
       }
     }
 
-    // setCookie("matched_w", document.getElementById("matched_words"), 50);
     setCookie("input_w", document.getElementById("req").value, 50);
   } else {
     alert("please type something in the input field.");
@@ -118,7 +125,6 @@ function startSentences() {
       }
     }
 
-    // setCookie("matched_s", document.getElementById("matched_sentences"), 50);
     setCookie("input_s", document.getElementById("reqsentence").value, 50);
   } else {
     alert("please type something in the input field.");

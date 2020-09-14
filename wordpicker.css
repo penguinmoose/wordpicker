@@ -1,4 +1,60 @@
-/*buttons*/
+/*sidebar*/
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar div {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  color: white;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {
+    padding-top: 15px;
+  }
+
+  .sidebar div {
+    font-size: 18px;
+  }
+}
+
 .startbutton {
   width: 250px;
   height: 50px;
@@ -60,7 +116,6 @@ body {
   -o-background-size: cover;
   background-size: cover;
   opacity: 0.8;
-
   line-height: 1.618em;
   font-family: sans-serif;
   background-color: rgb(130, 130, 130);
@@ -97,46 +152,6 @@ table, th, td {
 
 th, td {
   padding: 5px;
-}
-
-/**************************navigation bar***************************/
-* {
-  box-sizing: border-box;
-}
-
-.nav {
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Style the nav links */
-.nav a {
-  width: 50%;
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.nav a.on {
-  background-color: #ddd;
-  color: black;
-}
-
-/******************************collapsible**************************************/
-.collapsible {
-  background-color: #858585;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  margin-top: 0px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
 }
 
 .content {

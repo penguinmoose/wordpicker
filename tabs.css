@@ -23,6 +23,7 @@
 .tabs::after {
   clear: both;
 }
+
 .tab {
   float: left;
 }
@@ -64,7 +65,7 @@
   transition: all 0.35s;
 }
 
-.tab-switch:checked + .tab-label {
+.tab-switch:checked+.tab-label {
   background: #fff;
   color: #2c3e50;
   border-bottom: 0;
@@ -74,7 +75,7 @@
   top: -0.0625rem;
 }
 
-.tab-switch:checked + label + .tab-content {
+.tab-switch:checked+label+.tab-content {
   z-index: 2;
   opacity: 1;
   transition: all 0.35s;

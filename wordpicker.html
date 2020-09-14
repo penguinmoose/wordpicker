@@ -6,6 +6,7 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Tool for finding words and sentences based on a spelling pattern">
   <meta name="keywords" content="word finder, sentence finder, words, sentences">
 
@@ -22,39 +23,82 @@
 
   <!--content-->
 
-  <div class="wrapper">
-    <div class="tabs">
-      <div class="tab">
-        <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
-        <label for="tab-1" class="tab-label">word picker</label>
-        <div class="tab-content">
+  <div id="sidebar" class="sidebar">
+    <button href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</button>
+    <div>settings</div>
+    <div style="font-size: 12pt;">Settings are not avalible yet.</div>
+  </div>
 
-          <form class="input">
-            <textarea type="text" id="req" name="req" placeholder="type requirements for words here..."></textarea><br>
+  <!---------------------------------------------------->
 
-            <button onclick="startWords();return false;" class="startbutton">find words</button>
-          </form><br>
+  <div id="main">
+    <a href="http://www.johanneschan.com">
+      <img src="home.png" style="object-fit: cover;width: 45px;height: 45px;">
+    </a>
+    <img src="settings.png" style="height: 45px; width: 45px;"class="openbtn" onclick="openNav();">
+    <a href="http://www.johanneschan.com/wordpicker/wordpicker.html" target="_blank"><img src="new.png" style="height: 45px; width: 45px;"></a>
 
-          <button onclick="CopyToClipboard('matched_words')" id="word-copy-button" class="copy-button">
-            <span>
-              <img src="copy-to-clipboard.png" alt="?" height="20" width="20" style="margin-right: 4px;">
-              Copy result
-            </span>
-          </button>
+    <div class="wrapper">
+      <div class="tabs">
+        <div class="tab">
+          <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+          <label for="tab-1" class="tab-label">word picker</label>
+          <div class="tab-content">
+
+            <form class="input">
+              <textarea type="text" id="req" name="req" placeholder="type requirements for words here..."></textarea><br>
+
+              <button onclick="startWords();return false;" class="startbutton">find words</button>
+            </form><br>
+
+            <button onclick="CopyToClipboard('matched_words')" id="word-copy-button" class="copy-button">
+              <span>
+                <img src="copy-to-clipboard.png" alt="?" height="20" width="20" style="margin-right: 4px;">
+                Copy result
+              </span>
+            </button>
 
 
-          <div id="matched_words"></div>
+            <div id="matched_words"></div>
+          </div>
         </div>
-      </div>
 
-      <!-------------------------------------------------------->
+        <!----------------------------------------------------->
 
-      <div class="tab">
-        <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
-        <label for="tab-2" class="tab-label">instructions for word picker</label>
-        <div class="tab-content">
-          <div class="small-heading">Welcome to word picker!</div>
-          <div>You can find words that match a spelling pattern by typing text in the input field using the table provided below. For example, the spelling pattern consonant-vowel-consonant will become CVC. </div><br>
+        <div class="tab">
+          <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+          <label for="tab-2" class="tab-label">sentence picker</label>
+          <div class="tab-content">
+
+            <form class="input">
+              <textarea type="text" id="reqsentence" name="reqsentence" placeholder="type requirements for sentences here..."></textarea><br>
+
+              <button onclick="startSentences();return false;" class="startbutton">find sentences</button>
+            </form><br>
+
+
+            <button onclick="CopyToClipboard('matched_sentences')" id="sentence-copy-button" class="copy-button">
+              <span>
+                <img src="copy-to-clipboard.png" alt="?" height="20" width="20" style="margin-right: 4px;">
+                Copy result
+              </span>
+            </button>
+
+            <div id="matched_sentences"></div>
+
+          </div>
+        </div>
+
+        <!-------------------------------------------------------->
+
+        <div class="tab">
+          <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+          <label for="tab-3" class="tab-label">instructions</label>
+          <div class="tab-content">
+            <h3>instructions for word picker</h3>
+
+            <div class="small-heading">Welcome to word picker!</div>
+            <div>You can find words that match a spelling pattern by typing text in the input field using the table provided below. For example, the spelling pattern consonant-vowel-consonant will become CVC. </div><br>
 
             <table>
               <tr>
@@ -92,60 +136,29 @@
                 <td>=</td>
                 <td>the character before it gets doubled the number of times, but the consecutive characters can be any of the meaning of it, and it is the same</td>
               <tr>
-            </table>
+            </table><br>
 
+
+            <h3>instructions for sentence picker</h3>
+
+            <div>Welcome to sentence picker! Type any word to find examle sentences.</div>
+
+          </div>
         </div>
-      </div>
 
-      <!--------------------------------------------------------->
+        <!--------------------------------------------------------->
 
-      <div class="tab">
-        <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
-        <label for="tab-3" class="tab-label">examples for word picker</label>
-        <div class="tab-content">
-          <div> Sorry, examples for word picker are not ready yet. </div>
+        <div class="tab">
+          <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
+          <label for="tab-4" class="tab-label">examples</label>
+          <div class="tab-content">
+            <h3>examples for word picker</h3>
+            <div> Sorry, examples for word picker are not ready yet. </div>
+          </div>
         </div>
-      </div>
 
-      <!----------------------------------------------------------------------->
-
-      <div class="tab">
-        <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
-        <label for="tab-4" class="tab-label">sentence picker</label>
-        <div class="tab-content">
-
-          <form class="input">
-            <textarea type="text" id="reqsentence" name="reqsentence" placeholder="type requirements for sentences here..."></textarea><br>
-
-            <button onclick="startSentences();return false;" class="startbutton">find sentences</button>
-          </form><br>
-
-
-          <button onclick="CopyToClipboard('matched_sentences')" id="sentence-copy-button" class="copy-button">
-            <span>
-              <img src="copy-to-clipboard.png" alt="🖼" height="20" width="20" style="margin-right: 4px;">
-              Copy result
-            </span>
-          </button>
-
-          <div id="matched_sentences"></div>
-
-        </div>
-      </div>
-
-      <!----------------------------------------------------------------->
-
-      <div class="tab">
-        <input type="radio" name="css-tabs" id="tab-5" class="tab-switch">
-        <label for="tab-5" class="tab-label">instructions for sentence picker</label>
-        <div class="tab-content">
-
-          <div> type any word to find example sentences. </div>
-
-        </div>
       </div>
     </div>
-  </div>
   </div>
   <!-- outside of tab box -->
   </div>
