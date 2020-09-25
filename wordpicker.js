@@ -2,17 +2,25 @@ var host = "wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 
 console.log("welcome to word picker");
 
-
-function openNav() {
-  document.getElementById("sidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
+function openSidebar() {
+  document.getElementById("sidebar").style.width = "300px";
+  document.getElementById("main").style.marginLeft = "300px";
 }
 
-function closeNav() {
+function closeSidebar() {
   document.getElementById("sidebar").style.width = "0";
   document.getElementById("main").style.marginLeft = "0";
 }
 
+function init() {
+  if (window.location.protocol == "https:") {
+   window.location.protocol = "http:";
+   window.location.reload();
+  }
+
+  document.getElementById("resultcontainer-1").style.display = "none";
+  document.getElementById("resultcontainer-2").style.display = "none";
+}
 
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
@@ -61,7 +69,8 @@ function changeUrl(site) {
 ////////////////////////////////////////////////////////
 
 function startWords() {
-  document.getElementById("word-copy-button").style.display = "block";
+  document.getElementById("resultcontainer-1").style.display = "block";
+  document.getElementById("copybutton-1").style.display = "block";
 
   var req = (document.getElementById("req").value);
 
@@ -69,9 +78,11 @@ function startWords() {
     var url = "http://" + host + "/api/words?pattern=" + req;
     fetch(url)
       .then(function(response) {
+        console.log(response);
         return response.json();
       })
       .then(function(data) {
+        console.log(data);
         appendData(data);
       })
       .catch(function(err) {
@@ -98,16 +109,19 @@ function startWords() {
 //////////////////////////////////////////////////
 
 function startSentences() {
-  document.getElementById("sentence-copy-button").style.display = "block";
+  document.getElementById("resultcontainer-2").style.display = "block";
+  document.getElementById("copybutton-2").style.display = "block";
 
   var req = (document.getElementById("reqsentence").value);
   if (req !== null) {
     var url = "http://" + host + "/api/sentences?pattern=" + req;
     fetch(url)
       .then(function(response) {
+        console.log(response);
         return response.json();
       })
       .then(function(data) {
+        console.log(data);
         appendData(data);
       })
       .catch(function(err) {

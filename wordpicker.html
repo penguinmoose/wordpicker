@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <script src="wordpicker.js">
 </script>
 
@@ -7,16 +7,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tool for finding words and sentences based on a spelling pattern">
-  <meta name="keywords" content="word finder, sentence finder, words, sentences">
+  <meta name="description" content="Word Picker is a tool for finding words based on a spelling pattern. There is also a sentence picker, so you can also find sentences that contain a word. There are lots of results so you find just what you need.">
+  <meta name="keywords" content="word finder, sentence finder, word picker, sentence picker, words, sentences, spelling pattern, contains words">
 
-  <link rel="stylesheet" href="wordpicker.css">
   <link rel="stylesheet" href="tabs.css">
+  <link rel="stylesheet" href="sidebar.css">
+  <link rel="stylesheet" href="wordpicker.css">
 </head>
 
 
-<body onload="loadPrevData();">
-  <title>word picker</title>
+<body onload="init(); loadPrevData();">
+  <title>word picker - johanneschan</title>
 
   <div id="heading">word picker</div>
   <hr>
@@ -24,18 +25,18 @@
   <!--content-->
 
   <div id="sidebar" class="sidebar">
-    <button href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</button>
-    <div>settings</div>
-    <div style="font-size: 12pt;">Settings are not avalible yet.</div>
+    <button href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">×</button>
+    <div class="heading">settings</div>
+    <div style="font-size: 10pt;">No settings are avalible yet</div>
   </div>
 
-  <!---------------------------------------------------->
+  <!------>
 
   <div id="main">
     <a href="http://www.johanneschan.com">
-      <img src="home.png" style="object-fit: cover;width: 45px;height: 45px;">
+      <img src="home.png" style="object-fit: cover; width: 45px; height: 45px; border-radius: 6px;">
     </a>
-    <img src="settings.png" style="height: 45px; width: 45px;"class="openbtn" onclick="openNav();">
+    <img src="settings.png" style="height: 45px; width: 45px;" class="openbtn" onclick="openSidebar();">
     <a href="http://www.johanneschan.com/wordpicker/wordpicker.html" target="_blank"><img src="new.png" style="height: 45px; width: 45px;"></a>
 
     <div class="wrapper">
@@ -51,15 +52,13 @@
               <button onclick="startWords();return false;" class="startbutton">find words</button>
             </form><br>
 
-            <button onclick="CopyToClipboard('matched_words')" id="word-copy-button" class="copy-button">
-              <span>
-                <img src="copy-to-clipboard.png" alt="?" height="20" width="20" style="margin-right: 4px;">
-                Copy result
-              </span>
-            </button>
+            <div class="resultcontainer" id="copybutton-1" onclick="CopyToClipboard(matched_words)" style="display: none; padding: 15px; width: 255px;">
+              <div style="font-size: 15pt;">copy results to clipboard</div>
+            </div><br>
 
-
-            <div id="matched_words"></div>
+            <div class="resultcontainer" id="resultcontainer-1">
+              <div id="matched_words"></div>
+            </div>
           </div>
         </div>
 
@@ -76,16 +75,13 @@
               <button onclick="startSentences();return false;" class="startbutton">find sentences</button>
             </form><br>
 
+            <div class="resultcontainer" id="copybutton-2" onclick="CopyToClipboard(matched_sentences)" style="padding: 15px;">
+              <div style="font-size: 15pt;">copy results to clipboard</div>
+            </div>
 
-            <button onclick="CopyToClipboard('matched_sentences')" id="sentence-copy-button" class="copy-button">
-              <span>
-                <img src="copy-to-clipboard.png" alt="?" height="20" width="20" style="margin-right: 4px;">
-                Copy result
-              </span>
-            </button>
-
-            <div id="matched_sentences"></div>
-
+            <div class="resultcontainer" id=resultcontainer-2>
+              <div id="matched_sentences"></div>
+            </div>
           </div>
         </div>
 
