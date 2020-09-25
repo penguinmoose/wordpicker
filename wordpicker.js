@@ -15,7 +15,6 @@ function closeSidebar() {
 function init() {
   if (window.location.protocol == "https:") {
    window.location.protocol = "http:";
-   window.location.reload();
   }
 
   document.getElementById("resultcontainer-1").style.display = "none";
