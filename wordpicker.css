@@ -69,6 +69,7 @@ textarea {
 }
 
 .resultcontainer {
+  display: none;
   border-style: solid;
   border-color: #00be00;
   border-radius: 15px;
