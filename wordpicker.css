@@ -105,6 +105,7 @@ table, tr, td {
 .resultcontainer {
   width: 400px;
   -webkit-transform: translate(100%);
+  text-align: center;
   display: none;
   border-style: solid;
   border-color: #00be00;
