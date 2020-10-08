@@ -2,64 +2,14 @@ var host = "wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 
 console.log("welcome to word picker");
 
-function openSidebar() {
-  document.getElementById("sidebar").style.width = "300px";
-  document.getElementById("main").style.marginLeft = "300px";
-}
-
-function closeSidebar() {
-  document.getElementById("sidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-}
-
 function init() {
   if (window.location.protocol == "https:") {
-   window.location.protocol = "http:";
+    window.location.href = window.location.href.replace("https:", "http:");
   }
 
   document.getElementById("resultcontainer-1").style.display = "none";
   document.getElementById("resultcontainer-2").style.display = "none";
 }
-
-function setCookie(cname, cvalue, exdays) {
-  var d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  var expires = "expires=" + d.toUTCString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-  var name = cname + "=";
-  var ca = document.cookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-function loadPrevData() {
-  if (matched_words != "" || matched_sentences != "") {
-    document.getElementById("reqsentence").value = getCookie("input_s");
-    document.getElementById("req").value = getCookie("input_w");
-  }
-}
-
-
-function CopyToClipboard(containerid) {
-  var range = document.createRange();
-  range.selectNode(document.getElementById(containerid));
-  window.getSelection().removeAllRanges(); // clear current selection
-  window.getSelection().addRange(range); // to select text
-  document.execCommand("copy");
-  window.getSelection().removeAllRanges(); // to deselect
-}
-
 
 function changeUrl(site) {
   document.getElementsByName('resultpage')[0].src = site;
@@ -69,12 +19,12 @@ function changeUrl(site) {
 
 function startWords() {
   document.getElementById("resultcontainer-1").style.display = "block";
-  document.getElementById("copybutton-1").style.display = "block";
 
-  var req = (document.getElementById("req").value);
+  var pattern = (document.getElementById("pattern").value);
+  var phone = (document.getElementById("phone").value);
 
-  if (req !== null) {
-    var url = "http://" + host + "/api/words?pattern=" + req;
+  if (pattern !== null) {
+    var url = "http://" + host + "/api/words?pattern=" + pattern + "&phone=" + phone;
     fetch(url)
       .then(function(response) {
         console.log(response);
@@ -98,8 +48,6 @@ function startWords() {
         mainContainer.appendChild(div);
       }
     }
-
-    setCookie("input_w", document.getElementById("req").value, 50);
   } else {
     alert("please type something in the input field.");
   }
@@ -109,7 +57,6 @@ function startWords() {
 
 function startSentences() {
   document.getElementById("resultcontainer-2").style.display = "block";
-  document.getElementById("copybutton-2").style.display = "block";
 
   var req = (document.getElementById("reqsentence").value);
   if (req !== null) {
@@ -137,8 +84,6 @@ function startSentences() {
         mainContainer.appendChild(div);
       }
     }
-
-    setCookie("input_s", document.getElementById("reqsentence").value, 50);
   } else {
     alert("please type something in the input field.");
   }

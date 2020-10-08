@@ -7,153 +7,131 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Word Picker is a tool for finding words based on a spelling pattern. There is also a sentence picker, so you can also find sentences that contain a word. There are lots of results so you find just what you need.">
+  <meta name="description"
+    content="Word Picker is a tool for finding words based on a spelling patternor a sound. There is also a sentence picker, so you can also find sentences that contain a word. There are lots of results so you find just what you need.">
   <meta name="keywords" content="word finder, sentence finder, word picker, sentence picker, words, sentences, spelling pattern, contains words">
 
   <link rel="stylesheet" href="tabs.css">
-  <link rel="stylesheet" href="sidebar.css">
   <link rel="stylesheet" href="wordpicker.css">
 </head>
 
 
-<body onload="init(); loadPrevData();">
+<body onload="init();">
   <title>word picker - johanneschan</title>
 
-  <div id="heading">word picker</div>
+  <div id="heading">Word Picker</div>
   <hr>
 
-  <!--content-->
-
-  <div id="sidebar" class="sidebar">
-    <button href="javascript:void(0)" class="closebtn" onclick="closeSidebar()">×</button>
-    <div class="heading">settings</div>
-    <div style="font-size: 10pt;">No settings are avalible yet</div>
-  </div>
-
   <!------>
+  <div class="wrapper">
+    <div class="tabs">
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+        <label for="tab-1" class="tab-label">word picker</label>
+        <div class="tab-content">
 
-  <div id="main">
-    <a href="http://www.johanneschan.com">
-      <img src="home.png" style="object-fit: cover; width: 45px; height: 45px; border-radius: 6px;">
-    </a>
-    <img src="settings.png" style="height: 45px; width: 45px;" class="openbtn" onclick="openSidebar();">
-    <a href="http://www.johanneschan.com/wordpicker/wordpicker.html" target="_blank"><img src="new.png" style="height: 45px; width: 45px;"></a>
-
-    <div class="wrapper">
-      <div class="tabs">
-        <div class="tab">
-          <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
-          <label for="tab-1" class="tab-label">word picker</label>
-          <div class="tab-content">
+          <div class="inputcontainer">
+            <div class="inputheading">find words using spelling pattern
+              <div style="font-size: 10pt;">go to the instructions tab for how to use this</div>
+            </div>
+            <br>
 
             <form class="input">
-              <textarea type="text" id="req" name="req" placeholder="type requirements for words here..."></textarea><br>
+              <div>Type spelling pattern here...</div>
+              <input type="text" id="pattern" name="pattern" class="inputform" placeholder="CVC">
+              <div>Type sound here:</div>
+              <input type="text" id="phone" name="phone" class="inputform" placeholder="AA">
+            </form>
+            <hr>
+            <div>If you enter both the spelling pattern and the sound, Word Picker will find words that have the spelling pattern and the sound. If you only enter one of these, results for the one that you enter will be found.</div>
+            <hr>
+            <button type="button" class="button" onclick="startWords()">find words</button>
+          </div>
+          <br>
 
-              <button onclick="startWords();return false;" class="startbutton">find words</button>
-            </form><br>
-
-            <div class="resultcontainer" id="copybutton-1" onclick="CopyToClipboard(matched_words)" style="display: none; padding: 15px; width: 255px;">
-              <div style="font-size: 15pt;">copy results to clipboard</div>
-            </div><br>
-
-            <div class="resultcontainer" id="resultcontainer-1">
-              <div id="matched_words"></div>
-            </div>
+          <div class="resultcontainer" id="resultcontainer-1">
+            <div id="matched_words"></div>
           </div>
         </div>
-
-        <!----------------------------------------------------->
-
-        <div class="tab">
-          <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
-          <label for="tab-2" class="tab-label">sentence picker</label>
-          <div class="tab-content">
-
-            <form class="input">
-              <textarea type="text" id="reqsentence" name="reqsentence" placeholder="type requirements for sentences here..."></textarea><br>
-
-              <button onclick="startSentences();return false;" class="startbutton">find sentences</button>
-            </form><br>
-
-            <div class="resultcontainer" id="copybutton-2" onclick="CopyToClipboard(matched_sentences)" style="padding: 15px;">
-              <div style="font-size: 15pt;">copy results to clipboard</div>
-            </div><br>
-
-            <div class="resultcontainer" id=resultcontainer-2>
-              <div id="matched_sentences"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-------------------------------------------------------->
-
-        <div class="tab">
-          <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
-          <label for="tab-3" class="tab-label">instructions</label>
-          <div class="tab-content">
-            <h3>instructions for word picker</h3>
-
-            <div class="small-heading">Welcome to word picker!</div>
-            <div>You can find words that match a spelling pattern by typing text in the input field using the table provided below. For example, the spelling pattern consonant-vowel-consonant will become CVC. </div><br>
-
-            <table>
-              <tr>
-                <td>any lowercase letter</td>
-                <td>=</td>
-                <td>letter</td>
-              </tr>
-
-              <tr>
-                <td>capical C</td>
-                <td>=</td>
-                <td>any consonants</td>
-              </tr>
-
-              <tr>
-                <td>capital V</td>
-                <td>=</td>
-                <td>any vowel</td>
-              </tr>
-
-              <tr>
-                <td>,</td>
-                <td>=</td>
-                <td>or</td>
-              </tr>
-
-              <tr>
-                <td>-</td>
-                <td>=</td>
-                <td>any number of letter</td>
-              </tr>
-
-              <tr>
-                <td>[any character with meaning][any number]</td>
-                <td>=</td>
-                <td>the character before it gets doubled the number of times, but the consecutive characters can be any of the meaning of it, and it is the same</td>
-              <tr>
-            </table><br>
-
-
-            <h3>instructions for sentence picker</h3>
-
-            <div>Welcome to sentence picker! Type any word to find examle sentences.</div>
-
-          </div>
-        </div>
-
-        <!--------------------------------------------------------->
-
-        <div class="tab">
-          <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
-          <label for="tab-4" class="tab-label">examples</label>
-          <div class="tab-content">
-            <h3>examples for word picker</h3>
-            <div> Sorry, examples for word picker are not ready yet. </div>
-          </div>
-        </div>
-
       </div>
+
+      <!----------------------------------------------------->
+
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+        <label for="tab-2" class="tab-label">sentence picker</label>
+        <div class="tab-content">
+
+          <form class="input">
+            <textarea type="text" id="reqsentence" name="reqsentence" placeholder="type requirements for sentences here..."></textarea><br>
+
+            <button onclick="startSentences();return false;" class="button">find sentences</button>
+          </form><br>
+
+          <div class="resultcontainer" id=resultcontainer-2>
+            <div id="matched_sentences"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-------------------------------------------------------->
+
+      <div class="tab">
+        <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+        <label for="tab-3" class="tab-label">instructions</label>
+        <div class="tab-content">
+          <h3>instructions for word picker</h3>
+
+          <div class="small-heading">Welcome to word picker!</div>
+          <div>You can find words by sound or spelling pattern. To do it by sound, use the table below for what to type in the Type sound here: input field. <hr><img src="arprabet-1.png"><img src="arprabet-2.png">
+            <hr><br>If you want to find words using a spelling pattern, use this table. To find words that contain a spelling pattern and also contains a sound, enter both the sound and spelling pattern.</div><br>
+
+          <table>
+            <tr>
+              <td>any lowercase letter</td>
+              <td>=</td>
+              <td>letter</td>
+            </tr>
+
+            <tr>
+              <td>capical C</td>
+              <td>=</td>
+              <td>any consonants</td>
+            </tr>
+
+            <tr>
+              <td>capital V</td>
+              <td>=</td>
+              <td>any vowel</td>
+            </tr>
+
+            <tr>
+              <td>,</td>
+              <td>=</td>
+              <td>or</td>
+            </tr>
+
+            <tr>
+              <td>-</td>
+              <td>=</td>
+              <td>any number of letter</td>
+            </tr>
+
+            <tr>
+              <td>[any character with meaning][any number]</td>
+              <td>=</td>
+              <td>the character before it gets doubled the number of times, but the consecutive characters can be any of the meaning of it, and it is the same</td>
+            <tr>
+          </table><br>
+          <hr>
+
+          <h3>instructions for sentence picker</h3>
+
+          <div>Welcome to sentence picker! Type any word to find examle sentences.</div>
+
+        </div>
+      </div>
+
     </div>
   </div>
   <!-- outside of tab box -->
