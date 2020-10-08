@@ -4,15 +4,20 @@ from flask_cors import CORS
 import re
 from lxml import html
 import requests
+from string import digits
 
 application = flask.Flask(__name__)
 cors = CORS(application, resources={r"/api/*": {"origins": "*"}})
 application.config["DEBUG"] = True
 
 def load_word_list():
-    with open("10000words.txt") as f:
-        word_list = f.read().splitlines()
-    return word_list
+    dict = {}
+    with open("word_phoneme.txt", 'r') as f:
+        lines = f.readlines()
+        for line in lines:
+            [word, phone] = line.rstrip().split(":")
+            dict[word] = ' ' + phone + ' '
+    return dict
 
 @application.route('/', methods=['GET'])
 def home():
@@ -21,40 +26,64 @@ def home():
 @application.route('/api/words/all', methods=['GET'])
 def api_words_all():
     word_list = load_word_list()
-    return jsonify(word_list)
+    return jsonify(list(word_list.keys()))
 
+def word_match(word_pattern, phone_pattern):
+    word_list = load_word_list()
+    re_list = []
+    if word_pattern:
+        for pattern in word_pattern.split(','): # build reglex string
+            query = ''
+            group = 0
+            for c in pattern.strip():
+                if c=='C':
+                    query = query + '([b-df-hj-np-tv-xz])' # add ([b-df-hj-np-tv-xz]) to query if detected capital C
+                    group += 1
+                elif c=='V':
+                    query = query + '([aeiou])' # add ([aeiou]) to query if detected capital V
+                    group += 1
+                elif c=='-':
+                    query = query + '[a-z]*'; # add [a-z]* to query if detected dash
+                elif c>='2' and c<='9':
+                    query = query + '\\' + str(group) + '{' + str(int(c)-1) + '}' # stuff to do if there is a number
+                else:
+                    query = query + c
+
+            query = '^' + query + '$'
+            p = re.compile(query)
+            re_list.append(p)
+
+    if phone_pattern:
+        phone_pattern = " " + phone_pattern + " "
+    else:
+        phone_pattern = ""
+
+    results = []
+    for word, phoneme in word_list.items():
+        matched = True
+        for p in re_list:
+            if not p.match(word):
+                matched = False
+                break
+        if not matched:
+            continue
+
+        if phone_pattern not in phoneme:
+            continue
+
+        results.append(word)
+    return results
 
 @application.route('/api/words', methods=['GET'])
 def api_words_pattern():
-    if 'pattern' not in request.args:
-        return "pattern missing", 400
+    #if 'pattern' not in request.args:
+    #    return "pattern missing", 400
 
-    word_list = load_word_list()
-    input = request.args['pattern']
-    results = []
-    for pattern in input.split(','): # build reglex string
-        query = ''
-        group = 0
-        for c in pattern.strip():
-            if c=='C':
-                query = query + '([b-df-hj-np-tv-xz])' # add ([b-df-hj-np-tv-xz]) to query if detected capital C
-                group += 1
-            elif c=='V':
-                query = query + '([aeiou])' # add ([aeiou]) to query if detected capital V
-                group += 1
-            elif c=='-':
-                query = query + '[a-z]*'; # add [a-z]* to query if detected dash
-            elif c>='2' and c<='9':
-                query = query + '\\' + str(group) + '{' + str(int(c)-1) + '}' # stuff to do if there is a number
-            else:
-                query = query + c
+    matches = word_match(request.args.get('pattern'), request.args.get('phone'))
 
-        query = '^' + query + '$'
-        prog = re.compile(query)
-        result = list(filter(lambda s: prog.match(s), word_list))
-        results.extend(result)
+    matches = matches[:50] # max 50 results
 
-    return jsonify(results) # return json format
+    return jsonify(matches) # return json format
 
 
 @application.route('/api/sentences', methods=['GET'])
