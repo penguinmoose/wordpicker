@@ -81,7 +81,7 @@ def api_words_pattern():
 
     matches = word_match(request.args.get('pattern'), request.args.get('phone'))
 
-    matches = matches[:50] # max 50 results
+    matches = matches[:70] # max 70 results
 
     return jsonify(matches) # return json format
 
