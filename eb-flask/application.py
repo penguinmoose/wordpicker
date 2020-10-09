@@ -54,7 +54,7 @@ def word_match(word_pattern, phone_pattern):
             re_list.append(p)
 
     if phone_pattern:
-        phone_pattern = " " + phone_pattern + " "
+        phone_pattern = " " + phone_pattern.upper() + " "
     else:
         phone_pattern = ""
 
