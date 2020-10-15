@@ -19,121 +19,79 @@
 <body onload="init();">
   <title>word picker - johanneschan</title>
 
-  <div id="heading">Word Picker</div>
+  <div id="heading">Word Picker</div><br>
 
-  <!------>
-  <div class="wrapper">
-    <div class="tabs">
-      <div class="tab">
-        <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
-        <label for="tab-1" class="tab-label">word picker</label>
-        <div class="tab-content">
+  <!-------->
 
-          <div class="inputcontainer">
-            <div class="inputheading">find words using spelling pattern or sound
-              <div style="font-size: 10pt;">go to the instructions tab for how to use this</div>
-            </div>
-            <br>
-
-            <form class="input">
-              <div>Type spelling pattern here...</div>
-              <input type="text" id="pattern" name="pattern" class="inputform" placeholder="CVC">
-              <div>Type sound here:</div>
-              <input type="text" id="phone" name="phone" class="inputform" placeholder="AA">
-            </form>
-            <hr>
-            <div>If you enter both the spelling pattern and the sound, Word Picker will find words that have the spelling pattern and the sound. If you only enter one of these, results for the one that you enter will be found.</div>
-            <hr>
-            <button type="button" class="button" onclick="startWords()">find words</button>
-          </div>
-          <br>
-
-          <div class="resultcontainer" id="resultcontainer-1">
-            <div id="matched_words"></div>
-          </div>
-        </div>
-      </div>
-
-      <!----------------------------------------------------->
-
-      <div class="tab">
-        <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
-        <label for="tab-2" class="tab-label">sentence picker</label>
-        <div class="tab-content">
-
-          <form class="input">
-            <textarea type="text" id="reqsentence" name="reqsentence" placeholder="type requirements for sentences here..."></textarea><br>
-
-            <button onclick="startSentences();return false;" class="button">find sentences</button>
-          </form><br>
-
-          <div class="resultcontainer" id=resultcontainer-2>
-            <div id="matched_sentences"></div>
-          </div>
-        </div>
-      </div>
-
-      <!-------------------------------------------------------->
-
-      <div class="tab">
-        <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
-        <label for="tab-3" class="tab-label">instructions</label>
-        <div class="tab-content">
-          <h3>instructions for word picker</h3>
-
-          <div class="small-heading">Welcome to word picker!</div>
-          <div>You can find words by sound or spelling pattern. To do it by sound, use the table below for what to type in the Type sound here: input field. <hr><img src="arprabet-1.png"><br><img src="arprabet-2.png">
-            <hr><br>If you want to find words using a spelling pattern, use this table. To find words that contain a spelling pattern and also contains a sound, enter both the sound and spelling pattern.</div><br>
-
-          <table>
-            <tr>
-              <td>any lowercase letter</td>
-              <td>=</td>
-              <td>letter</td>
-            </tr>
-
-            <tr>
-              <td>capical C</td>
-              <td>=</td>
-              <td>any consonants</td>
-            </tr>
-
-            <tr>
-              <td>capital V</td>
-              <td>=</td>
-              <td>any vowel</td>
-            </tr>
-
-            <tr>
-              <td>,</td>
-              <td>=</td>
-              <td>or</td>
-            </tr>
-
-            <tr>
-              <td>-</td>
-              <td>=</td>
-              <td>any number of letter</td>
-            </tr>
-
-            <tr>
-              <td>[any character with meaning][any number]</td>
-              <td>=</td>
-              <td>the character before it gets doubled the number of times, but the consecutive characters can be any of the meaning of it, and it is the same</td>
-            <tr>
-          </table><br>
-          <hr>
-
-          <h3>instructions for sentence picker</h3>
-
-          <div>Welcome to sentence picker! Type any word to find examle sentences.</div>
-
-        </div>
-      </div>
-
-    </div>
+  <div class="sidenav">
+    <button type="button" name="button" onclick="changepage(1)" id="wd_button" class="sidebuttons">Word Picker</button><br>
+    <button type="button" name="button" onclick="changepage(2)" id="sn_button" class="sidebuttons">Sentence Picker</button><br>
+    <button type="button" name="button" onclick="changepage(3)" id="in_button" class="sidebuttons">instructions</button><br>
   </div>
-  <!-- outside of tab box -->
+
+
+  <div class="main">
+    <div id="word_picker">
+
+      <div class="inputcontainer">
+        <div class="inputheading">find words using spelling pattern or sound
+          <div style="font-size: 10pt;">go to the instructions tab for how to use this</div>
+        </div>
+        <br>
+
+        <form class="input">
+          <div>Type spelling pattern here...</div>
+          <input type="text" id="pattern" name="pattern" class="inputform" placeholder="CVC">
+          <div>Type sound here:</div>
+          <input type="text" id="phone" name="phone" class="inputform" placeholder="AA">
+        </form>
+        <hr>
+        <div>If you enter both the spelling pattern and the sound, Word Picker will find words that have the spelling pattern and the sound. If you only enter one of these, results for the one that you enter will be found.</div>
+        <hr>
+        <button type="button" class="button" onclick="startWords()">find words</button>
+      </div>
+      <br>
+
+      <div class="resultcontainer" id="resultcontainer-1">
+        <div id="matched_words"></div>
+      </div>
+    </div>
+
+    <!----------------------------------------------------->
+
+    <div id="sentence_picker">
+      <form class="input">
+        <textarea type="text" id="reqsentence" name="reqsentence" placeholder="type requirements for sentences here..."></textarea><br>
+
+        <button onclick="startSentences();return false;" class="button">find sentences</button>
+      </form><br>
+
+      <div class="resultcontainer" id=resultcontainer-2>
+        <div id="matched_sentences"></div>
+      </div>
+    </div>
+
+    <!-------------------------------------------------------->
+
+    <div id="instructions">
+      <h3>instructions for word picker</h3>
+
+      <div class="small-heading">Welcome to word picker!</div><br>
+      <div>You can find words by sound or spelling pattern. To do it by sound, find the sound you want that is bolded in the example section of the table. Then find the corresponding phoneme and type it in the type sound here... input field.
+        <hr><img src="arprabet-1.png"><br><img src="arprabet-2.png">
+        <hr><br>If you want to find words using a spelling pattern, type in a spelling pattern. To find words that have a consonant, type in a capital C. For vowels, type a consonant V. If you only type in a capital C, it won't show any results
+        because there are no words that are just a consonant and nothing else. To find words that contain a consonant (there are many), you need to type a dash in the end and the begining of the C. The one at the end means that it should include
+        results that start with a consonant. The one at the start shows that it should also include words that end with a consonant. But if you want to find words that shows a spelling pattern <i>and</i> another spelling pattern, seperate them with a
+        comma. A lowercase letter just means a additional letter that you typed. You can also doubble something, like a consonant. This will make the second one the same letter as the first. To do that, add a number after the thing you want to
+        doubble, so the C for the consonant becomes C2. The number that you type in is the number of times it gets repeated. This is useful when it goes right after a C or V. To connect these, just type the next one after the one before it.
+
+        <br>To find words that contain a spelling pattern and also contains a sound, enter both the sound and spelling pattern.</div><br>
+      <hr>
+
+      <h3>instructions for sentence picker</h3>
+
+      <div>Welcome to sentence picker! Type any word to find examle sentences.</div>
+    </div>
   </div>
 </body>
 
