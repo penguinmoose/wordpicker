@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="Word Picker is a tool for finding words based on a spelling pattern or a sound. There is also a sentence picker, so you can also find sentences that contain a word. There are lots of results so you find just what you need.">
-  <meta name="keywords" content="word finder, sentence finder, word picker, sentence picker, words, sentences, spelling pattern, contains words">
+  <meta name="keywords" content="word finder, sentence finder, word picker, sentence picker, words, sentences, sound, spelling pattern, contains words, contains sounds">
 
   <link rel="stylesheet" href="tabs.css">
   <link rel="stylesheet" href="wordpicker.css">
@@ -60,11 +60,13 @@
     <!----------------------------------------------------->
 
     <div id="sentence_picker">
-      <form class="input">
-        <textarea type="text" id="reqsentence" name="reqsentence" placeholder="type requirements for sentences here..."></textarea><br>
+      <div class="inputcontainer">
+        <form class="input">
+          <textarea type="text" id="reqsentence" name="reqsentence" placeholder="type requirements for sentences here..."></textarea><br>
 
-        <button onclick="startSentences();return false;" class="button">find sentences</button>
-      </form><br>
+          <button onclick="startSentences();return false;" class="button">find sentences</button>
+        </form>
+      </div>
 
       <div class="resultcontainer" id=resultcontainer-2>
         <div id="matched_sentences"></div>
