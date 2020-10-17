@@ -48,7 +48,9 @@ function startWords() {
         appendData(data);
       })
       .catch(function(err) {
-        alert("There was a error: " + err);
+        if (confirm("An error was detected. \n" + err + "\n\n Do you want to retry?") == true) {
+          startWords();
+        }
         console.log('error: ' + err);
       });
 
@@ -83,7 +85,9 @@ function startSentences() {
         appendData(data);
       })
       .catch(function(err) {
-        alert("There was a error: " + err);
+        if (confirm("An error was detected. \n" + err + "\n\n Do you want to retry?") == true) {
+          startSentences();
+        }
         console.log('error: ' + err);
       });
 
