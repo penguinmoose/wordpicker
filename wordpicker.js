@@ -1,7 +1,7 @@
 var host = "wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 
-section_list = ["word_picker", "sentence_picker", "instructions"];
-button_list = ["wd_button", "sn_button", "in_button"];
+var section_list = ["word_picker", "sentence_picker", "instructions"];
+var button_list = ["wd_button", "sn_button", "in_button"];
 
 console.log("welcome to word picker");
 
@@ -36,7 +36,7 @@ function startWords() {
   var pattern = (document.getElementById("pattern").value);
   var phone = (document.getElementById("phone").value);
 
-  if (pattern !== null) {
+  if (pattern != null && phone != null) {
     var url = "http://" + host + "/api/words?pattern=" + pattern + "&phone=" + phone;
     fetch(url)
       .then(function(response) {

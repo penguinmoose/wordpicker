@@ -37,6 +37,11 @@ table, tr, td {
   background-position: 10px 10px;
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
+  transition-duration: 0.5s;
+}
+
+.inputform:hover {
+  background-color: #a1dd85;
 }
 
 .inputcontainer {
