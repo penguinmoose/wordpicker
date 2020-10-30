@@ -48,7 +48,7 @@ function startWords() {
         appendData(data);
       })
       .catch(function(err) {
-        if (confirm("An error was detected. \n" + err + "\n\n Do you want to retry?") == true) {
+        if (confirm("An error was detected. \n" + err + "\n Make sure that some software isn't blocking the url wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com. \n\n Do you want to retry?") == true) {
           startWords();
         }
         console.log('error: ' + err);

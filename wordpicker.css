@@ -27,21 +27,15 @@ table, tr, td {
 }
 
 .inputform {
-  text-align: center;
   width: 350px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 15px;
-  font-size: 16px;
+  border-bottom: 2px solid #05be7b;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  font-size: 14px;
   background-color: white;
   background-position: 10px 10px;
-  background-repeat: no-repeat;
-  padding: 12px 20px 12px 40px;
-  transition-duration: 0.5s;
-}
-
-.inputform:hover {
-  background-color: #a1dd85;
+  padding: 10px 20px 10px 20px;
 }
 
 .inputcontainer {
