@@ -120,6 +120,21 @@ table, tr, td {
   width: 50%;
 }
 
+.homebtn {
+  margin-left: 30px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  font-size: 20pt;
+  border-radius: 10px;
+  background-color: #626262;
+}
+
+.homebtn:hover {
+  background-color: #454444;
+}
+
 @media (min-width: 1150px) {
   .inputcontainer {
     float: left;
