@@ -36,23 +36,27 @@ function startWords() {
   var pattern = (document.getElementById("pattern").value);
   var phone = (document.getElementById("phone").value);
 
-  if (pattern != null && phone != null) {
-    var url = "http://" + host + "/api/words?pattern=" + pattern + "&phone=" + phone;
-    fetch(url)
-      .then(function(response) {
-        console.log(response);
-        return response.json();
-      })
-      .then(function(data) {
-        console.log(data);
-        appendData(data);
-      })
-      .catch(function(err) {
-        if (confirm("An error was detected. \n" + err + "\n Make sure that some software isn't blocking the url wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com. \n\n Do you want to retry?") == true) {
-          startWords();
-        }
-        console.log('error: ' + err);
-      });
+  if (pattern == "" && phone == "") {
+    alert("Please enter something in the input field.");
+    return;
+  }
+
+  var url = "http://" + host + "/api/words?pattern=" + pattern + "&phone=" + phone;
+  fetch(url)
+    .then(function(response) {
+      console.log(response);
+      return response.json();
+    })
+    .then(function(data) {
+      console.log(data);
+      appendData(data);
+    })
+    .catch(function(err) {
+      if (confirm("An error was detected. \n" + err + "\n Make sure that some software isn't blocking the url wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com. \n\n Do you want to retry?") == true) {
+        startWords();
+      }
+      console.log('error: ' + err);
+    });
 
     function appendData(data) {
       var mainContainer = document.getElementById("matched_words");
@@ -64,9 +68,6 @@ function startWords() {
         mainContainer.appendChild(div);
       }
     }
-  } else {
-    alert("please type something in the input field.");
-  }
 }
 
 //////////////////////////////////////////////////

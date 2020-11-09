@@ -10,18 +10,6 @@ body {
   background-color: rgb(130, 130, 130);
 }
 
-textarea {
-  width: 350px;
-  height: 65px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 15px;
-  background-color: #f8f8f8;
-  font-size: 16px;
-  resize: none;
-}
-
 table, tr, td {
   border: 2px solid #4e4e4e;
 }
@@ -48,6 +36,14 @@ table, tr, td {
   border-radius: 15px;
 }
 
+.instructioncontainer {
+  text-align: center;
+  padding: 18px;
+  position: relative;
+  background-color: #b9b9b9;
+  border-radius: 12px;
+}
+
 .inputheading {
   text-align: center;
   background-color: #7c7a7a;
@@ -55,11 +51,10 @@ table, tr, td {
   border-radius: 10px;
 }
 
-.button {
-  width: 350px;
+.gobutton {
+  width: 100%;
   height: auto;
   border-radius: 15px;
-  background-color: #4CAF50;
   border: none;
   color: white;
   padding: 8px 32px;
@@ -71,12 +66,11 @@ table, tr, td {
   cursor: pointer;
   background-color: white;
   color: black;
-  border: 2px solid #4CAF50;
+  background-color: #35c43b;
 }
 
-.button:hover {
-  background-color: #4CAF50;
-  color: white;
+.gobutton:hover {
+  background-color: #49ff52;
 }
 
 .small-heading {
@@ -133,6 +127,20 @@ table, tr, td {
 
 .homebtn:hover {
   background-color: #454444;
+}
+
+.theme-header {
+  background-color: #7a7a7a;
+  color: white;
+  padding: 20px;
+  font-size: 25pt;
+}
+
+.theme-button {
+  width: 50%;
+  padding: 10px;
+  float: left;
+  border: none;
 }
 
 @media (min-width: 1150px) {

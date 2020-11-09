@@ -17,11 +17,13 @@
 .sidebuttons {
   width: 100%;
   padding: 25px 0px;
+  margin-bottom: 10px;
   text-align: center;
   font-size: 18px;
   background-color: #00c2f5;
   transition-duration: 0.5s;
   border: none;
+  border-radius: 8px;
 }
 
 .sidebuttons:hover {

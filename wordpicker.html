@@ -25,9 +25,10 @@
   <!-------->
 
   <div class="sidenav">
-    <button type="button" name="button" onclick="changepage(1)" id="wd_button" class="sidebuttons">Word Picker</button><br>
-    <button type="button" name="button" onclick="changepage(2)" id="sn_button" class="sidebuttons">Sentence Picker</button><br>
-    <button type="button" name="button" onclick="changepage(3)" id="in_button" class="sidebuttons">instructions</button><br><br>
+    <button type="button" name="button" onclick="changepage(1)" id="wd_button" class="sidebuttons">Word Picker</button>
+    <button type="button" name="button" onclick="changepage(2)" id="sn_button" class="sidebuttons">Sentence Picker</button>
+    <button type="button" name="button" onclick="changepage(3)" id="in_button" class="sidebuttons" style="margin-bottom: 25px;">instructions</button>
+
     <a href="http://www.johanneschan.com/" class="homebtn">Go home</a>
   </div>
 
@@ -54,7 +55,7 @@
         <div style="text-align: center; font-size: 10pt; background-color: #575757; color: white; border-radius: 5px;">Only the first 80 results will be displayed.</div>
         <hr>
 
-        <button type="button" class="button" onclick="startWords()">find words</button>
+        <button type="button" class="gobutton" onclick="startWords()">find words</button>
       </div>
       <br>
 
@@ -68,9 +69,9 @@
     <div id="sentence_picker">
       <div class="inputcontainer">
         <form class="input">
-          <textarea type="text" id="reqsentence" name="reqsentence" placeholder="type requirements for sentences here..."></textarea><br>
+          <input type="text" id="reqsentence" name="reqsentence" placeholder="Type keywords for sentences here..." class="inputform"><br>
 
-          <button onclick="startSentences();return false;" class="button">find sentences</button>
+          <button onclick="startSentences(); return false;" class="gobutton">find sentences</button>
         </form>
       </div>
 
@@ -82,23 +83,27 @@
     <!-------------------------------------------------------->
 
     <div id="instructions">
-      <h3>instructions for word picker</h3>
+      <div class="instructioncontainer">
+        <h3>instructions for word picker</h3>
 
-      <div class="small-heading">Welcome to word picker!</div><br>
-      <div>You can find words by sound or spelling pattern. To do it by sound, find the sound you want that is bolded in the example section of the table. Then find the corresponding phoneme and type it in the type sound here... input field.
-        <hr><img src="arprabet-1.png"><br><img src="arprabet-2.png">
-        <hr><br>If you want to find words using a spelling pattern, type in a spelling pattern. To find words that have a consonant, type in a capital C. For vowels, type a consonant V. If you only type in a capital C, it won't show any results
-        because there are no words that are just a consonant and nothing else. To find words that contain a consonant (there are many), you need to type a dash in the end and the begining of the C. The one at the end means that it should include
-        results that start with a consonant. The one at the start shows that it should also include words that end with a consonant. But if you want to find words that shows a spelling pattern <i>and</i> another spelling pattern, seperate them with a
-        comma. A lowercase letter just means a additional letter that you typed. You can also doubble something, like a consonant. This will make the second one the same letter as the first. To do that, add a number after the thing you want to
-        doubble, so the C for the consonant becomes C2. The number that you type in is the number of times it gets repeated. This is useful when it goes right after a C or V. To connect these, just type the next one after the one before it.
+        <div class="small-heading">Welcome to word picker!</div><br>
+        <div>You can find words by sound or spelling pattern. To do it by sound, find the sound you want that is bolded in the example section of the table. Then find the corresponding phoneme and type it in the type sound here... input field.
+          <hr><img src="arprabet-1.png"><br><img src="arprabet-2.png">
+          <hr><br>If you want to find words using a spelling pattern, type in a spelling pattern. To find words that have a consonant, type in a capital C. For vowels, type a consonant V. If you only type in a capital C, it won't show any results
+          because there are no words that are just a consonant and nothing else. To find words that contain a consonant (there are many), you need to type a dash in the end and the begining of the C. The one at the end means that it should include
+          results that start with a consonant. The one at the start shows that it should also include words that end with a consonant. But if you want to find words that shows a spelling pattern <i>and</i> another spelling pattern, seperate them with
+          a
+          comma. A lowercase letter just means a additional letter that you typed. You can also doubble something, like a consonant. This will make the second one the same letter as the first. To do that, add a number after the thing you want to
+          doubble, so the C for the consonant becomes C2. The number that you type in is the number of times it gets repeated. This is useful when it goes right after a C or V. To connect these, just type the next one after the one before it.
 
-        <br>To find words that contain a spelling pattern and also contains a sound, enter both the sound and spelling pattern.</div><br>
-      <hr>
+          <br>To find words that contain a spelling pattern and also contains a sound, enter both the sound and spelling pattern.</div>
+        <br>
+        <hr>
 
-      <h3>instructions for sentence picker</h3>
+        <h3>instructions for sentence picker</h3>
 
-      <div>Welcome to sentence picker! Type any word to find examle sentences.</div>
+        <div>Welcome to sentence picker! Type any word to find examle sentences.</div>
+      </div>
     </div>
   </div>
 </body>
