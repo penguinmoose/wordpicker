@@ -79,7 +79,6 @@ table, tr, td {
 }
 
 #heading {
-  margin-left: 220px;
   border-radius: 10px;
   font-family: sans-serif;
   font-size: 30px;
@@ -109,7 +108,17 @@ table, tr, td {
   width: 300px;
 }
 
-.resultcontainer div {
+#resultcontainer-2 {
+  width: 600px;
+  padding: 30px;
+  text-align: left;
+  margin-left: 0px;
+  margin-top: 20px;
+}
+
+#resultcontainer-2 div {}
+
+#resultcontainer-1 div {
   float: left;
   width: 50%;
 }
@@ -127,20 +136,6 @@ table, tr, td {
 
 .homebtn:hover {
   background-color: #454444;
-}
-
-.theme-header {
-  background-color: #7a7a7a;
-  color: white;
-  padding: 20px;
-  font-size: 25pt;
-}
-
-.theme-button {
-  width: 50%;
-  padding: 10px;
-  float: left;
-  border: none;
 }
 
 @media (min-width: 1150px) {
