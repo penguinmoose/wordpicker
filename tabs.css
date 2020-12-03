@@ -24,6 +24,7 @@
   transition-duration: 0.5s;
   border: none;
   border-radius: 8px;
+  font-family: 'Nova Mono', monospace;
 }
 
 .sidebuttons:hover {
