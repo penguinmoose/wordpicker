@@ -14,13 +14,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="tabs.css">
-  <link rel="stylesheet" href="wordpicker.css">
+  <link href="tabs.css" rel="stylesheet">
+  <link href="wordpicker.css" rel="stylesheet">
 </head>
 
 
 <body onload="init();">
-  <title>word picker - johanneschan</title>
+  <title>Word Picker - johanneschan</title>a
 
   <div id="heading">Word Picker</div><br>
 
@@ -71,8 +71,9 @@
     <div id="sentence_picker">
       <div class="inputcontainer">
         <form class="input">
+          <div>Type in what word you want the sentences to have. For example, if you type in hello, a sentence like 'Hello, can I help you with something?' will show up.</div>
           <input type="text" id="reqsentence" name="reqsentence" placeholder="Type keywords for sentences here..." class="inputform"><br>
-
+          <hr>
           <button onclick="startSentences(); return false;" class="gobutton">find sentences</button>
         </form>
       </div>

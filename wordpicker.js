@@ -1,11 +1,9 @@
-console.log("script");
-
 var host = "wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 
 var section_list = ["word_picker", "sentence_picker", "instructions"];
 var button_list = ["wd_button", "sn_button", "in_button"];
 
-console.log("welcome to word picker");
+console.log("Welcome to Word Picker! ");
 
 function init() {
   if (window.location.protocol == "https:") {
@@ -18,10 +16,6 @@ function init() {
   changepage(1);
   startWords("prev");
   startSentences("prev");
-}
-
-function changeUrl(site) {
-  document.getElementsByName('resultpage')[0].src = site;
 }
 
 function changepage(pg) {
@@ -46,8 +40,8 @@ function startWords(type) {
   } else if (pattern == "" && phone == "" && type == "prev") { // Time to load results from previous session!
     pattern = localStorage.getItem("wdpk_pattern");
     phone = localStorage.getItem("wdpk_phone");
-    document.getElementById("pattern").value = localStorage.getItem("wdpk_pattern");
-    document.getElementById("phone").value = localStorage.getItem("wdpk_phone");
+    document.getElementById("pattern").value = pattern;
+    document.getElementById("phone").value = phone;
   } else if (pattern != "" && phone != "") { // Time to save!
     localStorage.setItem("wdpk_pattern", document.getElementById("pattern").value);
     localStorage.setItem("wdpk_phone", document.getElementById("phone").value);
@@ -91,8 +85,12 @@ function startSentences(type) {
     alert("Please enter something in the input field. Refer to the instructions (go to the instructions tab in the sidebar) for what to type there.");
     return;
   } else if (req == "" && type == "prev") { // Time to load results from previous session!
-    req = localStorage.getItem("snpk_req");
-    document.getElementById("reqsentence").value = localStorage.getItem("snpk_req");
+    var stored_req = localStorage.getItem("snpk_req");
+
+    if (stored_req != null) { // Again, check if nothing is stored.
+      req = stored_req;
+      document.getElementById("reqsentence").value = localStorage.getItem("snpk_req");
+    }
   } else if (req != "") { // Time to save!
     localStorage.setItem("snpk_req", document.getElementById("reqsentence").value);
   }
