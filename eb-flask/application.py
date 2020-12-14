@@ -10,13 +10,20 @@ application = flask.Flask(__name__)
 cors = CORS(application, resources={r"/api/*": {"origins": "*"}})
 application.config["DEBUG"] = True
 
-def load_word_list():
+def load_word_list(filter):
     dict = {}
     with open("word_phoneme.txt", 'r') as f:
         lines = f.readlines()
         for line in lines:
-            [word, phone] = line.rstrip().split(":")
-            dict[word] = ' ' + phone + ' '
+            r = line.rstrip().split(":")
+            word = r[0]
+            phone = r[1]
+            if len(r) == 3:
+                type = r[2]
+            else:
+                type = None
+            if (filter is None) or (filter == type):
+                dict[word] = ' ' + phone + ' '
     return dict
 
 @application.route('/', methods=['GET'])
@@ -28,8 +35,8 @@ def api_words_all():
     word_list = load_word_list()
     return jsonify(list(word_list.keys()))
 
-def word_match(word_pattern, phone_pattern):
-    word_list = load_word_list()
+def word_match(word_pattern, phone_pattern, filter):
+    word_list = load_word_list(filter)
     re_list = []
     if word_pattern:
         for pattern in word_pattern.split(','): # build reglex string
@@ -79,7 +86,7 @@ def api_words_pattern():
     #if 'pattern' not in request.args:
     #    return "pattern missing", 400
 
-    matches = word_match(request.args.get('pattern'), request.args.get('phone'))
+    matches = word_match(request.args.get('pattern'), request.args.get('phone'), request.args.get('filter'))
 
     matches = matches[:70] # max 70 results
 
