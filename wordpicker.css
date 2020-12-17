@@ -85,6 +85,7 @@ table, tr, td {
   text-align: center;
   background-color: rgb(220, 220, 220);
   padding: 15px;
+  margin-top: 10px;
   animation: animateheading 3s 1;
 }
 

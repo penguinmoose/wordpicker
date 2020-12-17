@@ -1,9 +1,10 @@
+//var host = "127.0.0.1:5000";
 var host = "wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 
 var section_list = ["word_picker", "sentence_picker", "instructions"];
 var button_list = ["wd_button", "sn_button", "in_button"];
 
-console.log("Welcome to Word Picker! ");
+console.log("Welcome to Word Picker!");
 
 function init() {
   if (window.location.protocol == "https:") {
@@ -33,6 +34,14 @@ function changepage(pg) {
 function startWords(type) {
   var pattern = (document.getElementById("pattern").value);
   var phone = (document.getElementById("phone").value);
+  var selectbuttons = document.getElementsByName("filter-button");
+
+  for (var i = 0, length = selectbuttons.length; i < length; i++) {
+    if (selectbuttons[i].checked) {
+      var filter = selectbuttons[i].value;
+      break;
+    }
+  }
 
   if (pattern == "" && phone == "" && type == "") { // Oh, the user didn't enter anything. Alert them.
     alert("Please enter something in the input field. Refer to the instructions (go to the instructions tab in the sidebar) for what to type there.");
@@ -40,6 +49,7 @@ function startWords(type) {
   } else if (pattern == "" && phone == "" && type == "prev") { // Time to load results from previous session!
     pattern = localStorage.getItem("wdpk_pattern");
     phone = localStorage.getItem("wdpk_phone");
+    filter = localStorage.getItem("wdpk_filter");
     document.getElementById("pattern").value = pattern;
     document.getElementById("phone").value = phone;
   } else if (pattern != "" && phone != "") { // Time to save!
@@ -47,7 +57,7 @@ function startWords(type) {
     localStorage.setItem("wdpk_phone", document.getElementById("phone").value);
   }
 
-  var url = "http://" + host + "/api/words?pattern=" + pattern + "&phone=" + phone;
+  var url = "http://" + host + "/api/words?pattern=" + pattern + "&phone=" + phone + filter;
   fetch(url)
     .then(function(response) {
       console.log(response);
@@ -58,10 +68,11 @@ function startWords(type) {
       appendData(data);
     })
     .catch(function(err) {
-      if (confirm("An error was detected. \n" + err + "\n Make sure that some software isn't blocking the url wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com. \n\n Do you want to retry?") == true) {
-        startWords();
-      }
-      console.log('error: ' + err);
+      setTimeout(function() {
+        alert("A error occured while finding sentences." + err);
+      }, 1);
+
+      console.log("error:" + err);
     });
 
   function appendData(data) {
@@ -106,9 +117,10 @@ function startSentences(type) {
       appendData(data);
     })
     .catch(function(err) {
-      if (confirm("An error was detected. \n" + err + "\n\n Do you want to retry?") == true) {
-        startSentences();
-      }
+      setTimeout(function() {
+        alert("A error occured while finding sentences." + err);
+      }, 1);
+
       console.log('error: ' + err);
     });
 

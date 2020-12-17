@@ -20,7 +20,13 @@
 
 
 <body onload="init();">
-  <title>Word Picker - johanneschan</title>a
+  <title>Word Picker - johanneschan</title>
+
+  <div class="error" id="error">
+    <button onclick="closeErrorAlert();" id="closeErrorButton">x</button>
+    <div id="error-heading" class="error-text" style="margin-right: 250px;"></div>
+    <div id="error-content" class="error-text" style="font-size: 12pt;"></div>
+  </div>
 
   <div id="heading">Word Picker</div><br>
 
@@ -37,18 +43,23 @@
 
   <div class="main">
     <div id="word_picker">
-
       <div class="inputcontainer">
-        <div class="inputheading">find words using spelling pattern or sound
-          <div style="font-size: 10pt;">go to the instructions tab for how to use this</div>
+        <div class="inputheading">Find words using spelling pattern or sound
+          <div style="font-size: 10pt;">Go to the instructions tab for how to use this</div>
         </div>
         <br>
 
         <form class="input">
-          <div>Type spelling pattern here...</div>
+          <div>Type spelling pattern here:</div>
           <input type="text" id="pattern" name="pattern" class="inputform" placeholder="CVC">
           <div>Type sound here:</div>
           <input type="text" id="phone" name="phone" class="inputform" placeholder="AA">
+
+          <div>Select a parts of speech result filter:</div>
+          <input type="radio" id="prepesition-filter" name="filter-button" value="&filter=preposition">
+          <label for="prepesition-filter">Show prepesitions only</label><br>
+          <input type="radio" id="all-filter" name="filter-button" value="" checked>
+          <label for="all-filter">Show all results</label><br>
         </form>
 
         <hr>
