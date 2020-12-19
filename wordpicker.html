@@ -12,23 +12,17 @@
   <meta name="keywords" content="word finder, sentence finder, word picker, sentence picker, words, sentences, sound, spelling pattern, contains words, contains sounds">
 
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap" rel="stylesheet">
-  <link href="tabs.css" rel="stylesheet">
-  <link href="wordpicker.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap">
+  <link rel="stylesheet" href="tabs.css">
+  <link rel="stylesheet" href="wordpicker.css">
 </head>
 
 
 <body onload="init();">
   <title>Word Picker - johanneschan</title>
 
-  <div class="error" id="error">
-    <button onclick="closeErrorAlert();" id="closeErrorButton">x</button>
-    <div id="error-heading" class="error-text" style="margin-right: 250px;"></div>
-    <div id="error-content" class="error-text" style="font-size: 12pt;"></div>
-  </div>
-
-  <div id="heading">Word Picker</div><br>
+  <div id="heading"><img src="https://www.johanneschan.com/icon-1.ico" class="heading-icon"></img>Word Picker</div><br>
 
   <!-------->
 
@@ -56,15 +50,16 @@
           <input type="text" id="phone" name="phone" class="inputform" placeholder="AA">
 
           <div>Select a parts of speech result filter:</div>
-          <input type="radio" id="prepesition-filter" name="filter-button" value="&filter=preposition">
-          <label for="prepesition-filter">Show prepesitions only</label><br>
-          <input type="radio" id="all-filter" name="filter-button" value="" checked>
-          <label for="all-filter">Show all results</label><br>
+          <div style="background-color: #5b9cdf;">
+            <input type="radio" id="prepesition-filter" name="filter-button" value="&filter=preposition">
+            <label for="prepesition-filter">Show prepesitions only</label><br>
+            <input type="radio" id="all-filter" name="filter-button" value="" checked>
+            <label for="all-filter">Show all results</label><br>
+          </div>
         </form>
 
         <hr>
         <div>If you enter both the spelling pattern and the sound, Word Picker will find words that have the spelling pattern and the sound. If you only enter one of these, results for the one that you enter will be found.</div>
-        <hr style="width: 30%; margin-left: 30%;">
         <div style="text-align: center; font-size: 10pt; background-color: #575757; color: white; border-radius: 5px;">Only the first 80 results will be displayed.</div>
         <hr>
 
@@ -98,7 +93,7 @@
 
     <div id="instructions">
       <div class="instructioncontainer">
-        <h3>instructions for word picker</h3>
+        <h3>Instructions for word picker</h3>
 
         <div class="small-heading">Welcome to word picker!</div><br>
         <div>You can find words by sound or spelling pattern. To do it by sound, find the sound you want that is bolded in the example section of the table. Then find the corresponding phoneme and type it in the type sound here... input field.
@@ -106,17 +101,20 @@
           <hr><br>If you want to find words using a spelling pattern, type in a spelling pattern. To find words that have a consonant, type in a capital C. For vowels, type a consonant V. If you only type in a capital C, it won't show any results
           because there are no words that are just a consonant and nothing else. To find words that contain a consonant (there are many), you need to type a dash in the end and the begining of the C. The one at the end means that it should include
           results that start with a consonant. The one at the start shows that it should also include words that end with a consonant. But if you want to find words that shows a spelling pattern <i>and</i> another spelling pattern, seperate them with
-          a
-          comma. A lowercase letter just means a additional letter that you typed. You can also doubble something, like a consonant. This will make the second one the same letter as the first. To do that, add a number after the thing you want to
+          a comma. A lowercase letter just means a additional letter that you typed. You can also doubble something, like a consonant. This will make the second one the same letter as the first. To do that, add a number after the thing you want to
           doubble, so the C for the consonant becomes C2. The number that you type in is the number of times it gets repeated. This is useful when it goes right after a C or V. To connect these, just type the next one after the one before it.
 
           <br>To find words that contain a spelling pattern and also contains a sound, enter both the sound and spelling pattern.</div>
         <br>
         <hr>
 
-        <h3>instructions for sentence picker</h3>
-
+        <h3>Instructions for sentence picker</h3>
         <div>Welcome to sentence picker! Type any word to find examle sentences.</div>
+        <br>
+        <hr>
+        <h3>Word Picker API</h3>
+        <div>If you want to request words or sentences with some criteria without needing to use the webpage, you can use our API. Send a get request to wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk then add /api/words to the url for finding
+          words and /api/sentences for finding sentences. For words, you can add &pattern= then the spelling pattern for the spelling pattern, &phone= then the sound for the sound, and &filter= then the filter for the filter.</div>
       </div>
     </div>
   </div>

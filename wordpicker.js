@@ -69,7 +69,7 @@ function startWords(type) {
     })
     .catch(function(err) {
       setTimeout(function() {
-        alert("A error occured while finding sentences." + err);
+        alert("A error occured while finding words." + err);
       }, 1);
 
       console.log("error:" + err);

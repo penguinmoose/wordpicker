@@ -10,8 +10,34 @@ body {
   background-color: rgb(130, 130, 130);
 }
 
-table, tr, td {
-  border: 2px solid #4e4e4e;
+.heading-icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  margin-left: 250px;
+  float: left;
+}
+
+#heading {
+  height: 30px;
+  border-radius: 10px;
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
+  text-align: center;
+  background-color: rgb(220, 220, 220);
+  padding: 15px;
+  margin-top: 10px;
+  animation: animateheading 3s 1;
+}
+
+@keyframes animateheading {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 100%;
+  }
 }
 
 .inputform {
@@ -76,27 +102,6 @@ table, tr, td {
 .small-heading {
   font-family: sans-serif;
   font-size: 18px;
-}
-
-#heading {
-  border-radius: 10px;
-  font-family: 'Pacifico', cursive;
-  font-size: 30px;
-  text-align: center;
-  background-color: rgb(220, 220, 220);
-  padding: 15px;
-  margin-top: 10px;
-  animation: animateheading 3s 1;
-}
-
-@keyframes animateheading {
-  from {
-    width: 50px;
-  }
-
-  to {
-    width: 100%;
-  }
 }
 
 .resultcontainer {
