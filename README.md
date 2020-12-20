@@ -1,2 +1,1 @@
-# wordpicker
- 
+# Welcome to word picker!
