@@ -32,6 +32,21 @@
   background-color: #01de38;
 }
 
+.sideoptionbtn {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px;
+  font-size: 20pt;
+  border-radius: 10px;
+  background-color: #626262;
+}
+
+.sideoptionbtn:hover {
+  background-color: #454444;
+}
+
 .main {
   margin-left: 230px;
   padding: 0px 10px;
