@@ -27,11 +27,11 @@
   <!-------->
 
   <div class="sidenav">
-    <button type="button" name="button" onclick="changepage(1)" id="wd_button" class="sidebuttons">Word Picker</button>
-    <button type="button" name="button" onclick="changepage(2)" id="sn_button" class="sidebuttons">Sentence Picker</button>
-    <button type="button" name="button" onclick="changepage(3)" id="in_button" class="sidebuttons" style="margin-bottom: 25px;">instructions</button>
+    <button type="button" name="button" onclick="changepage(1)" id="wd_button" class="sidebuttons" title="Go to the word picker tab">Word Picker</button>
+    <button type="button" name="button" onclick="changepage(2)" id="sn_button" class="sidebuttons" title="Go to the sentence picker tab">Sentence Picker</button>
+    <button type="button" name="button" onclick="changepage(3)" id="in_button" class="sidebuttons" style="margin-bottom: 25px;" title="View instructions">instructions</button>
 
-    <a href="http://www.johanneschan.com/" class="homebtn">Go home</a>
+    <a href="http://www.johanneschan.com/" class="homebtn" title="Go back to the homepage">Go home</a>
   </div>
 
 
@@ -45,9 +45,9 @@
 
         <form class="input">
           <div>Type spelling pattern here:</div>
-          <input type="text" id="pattern" name="pattern" class="inputform" placeholder="CVC">
+          <input type="text" id="pattern" name="pattern" class="inputform" placeholder="CVC" title="Type spelling pattern in this input field">
           <div>Type sound here:</div>
-          <input type="text" id="phone" name="phone" class="inputform" placeholder="AA">
+          <input type="text" id="phone" name="phone" class="inputform" placeholder="AA" title="Type sound in this input field">
 
           <div>Select a parts of speech result filter:</div>
           <div style="background-color: #5b9cdf;">
@@ -63,7 +63,7 @@
         <div style="text-align: center; font-size: 10pt; background-color: #575757; color: white; border-radius: 5px;">Only the first 80 results will be displayed.</div>
         <hr>
 
-        <button type="button" class="gobutton" onclick="startWords()">find words</button>
+        <button type="button" class="gobutton" onclick="startWords()" title="Find words that follow the specified criteria">find words</button>
       </div>
       <br>
 
@@ -78,9 +78,9 @@
       <div class="inputcontainer">
         <form class="input">
           <div>Type in what word you want the sentences to have. For example, if you type in hello, a sentence like 'Hello, can I help you with something?' will show up.</div>
-          <input type="text" id="reqsentence" name="reqsentence" placeholder="Type keywords for sentences here..." class="inputform"><br>
+          <input type="text" id="reqsentence" name="reqsentence" placeholder="Type keywords for sentences here..." class="inputform" title="Type what word you want the sentences to contain"><br>
           <hr>
-          <button onclick="startSentences(); return false;" class="gobutton">find sentences</button>
+          <button onclick="startSentences(); return false;" class="gobutton" title="Find sentences that contain the specified word">find sentences</button>
         </form>
       </div>
 
