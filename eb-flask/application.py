@@ -62,7 +62,7 @@ def word_match(word_pattern, phone_pattern, filter):
 
     phone_patterns = None
     if phone_pattern:
-        phone_patterns = [ " " + s + " " for s in phone_pattern.upper().split(',') ]
+        phone_patterns = [ " " + s.strip() + " " for s in phone_pattern.upper().split(',') ]
 
     results = []
     for word, phoneme in word_list.items():
