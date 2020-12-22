@@ -60,10 +60,9 @@ def word_match(word_pattern, phone_pattern, filter):
             p = re.compile(query)
             re_list.append(p)
 
+    phone_patterns = None
     if phone_pattern:
-        phone_pattern = " " + phone_pattern.upper() + " "
-    else:
-        phone_pattern = ""
+        phone_patterns = [ " " + s + " " for s in phone_pattern.upper().split(',') ]
 
     results = []
     for word, phoneme in word_list.items():
@@ -75,8 +74,14 @@ def word_match(word_pattern, phone_pattern, filter):
         if not matched:
             continue
 
-        if phone_pattern not in phoneme:
-            continue
+        if phone_pattern is not None:
+            matched = False
+            for p in phone_patterns:
+                if p in phoneme:
+                    matched = True
+                    break
+            if not matched:
+                continue
 
         results.append(word)
     return results
