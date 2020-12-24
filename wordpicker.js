@@ -38,6 +38,13 @@ function addError(error) {
   document.getElementById("errors").appendChild(node);
 }
 
+function dismissErrorAlert() {
+  document.getElementById('error-alert').style.display = 'none';
+  // Remove existing errors from error list
+  const myNode = document.getElementById("errors");
+  myNode.textContent = '';
+}
+
 ////////////////////////////////////////////////////////
 
 function startWords(type) {
