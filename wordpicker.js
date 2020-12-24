@@ -41,8 +41,8 @@ function addError(error) {
 function dismissErrorAlert() {
   document.getElementById('error-alert').style.display = 'none';
   // Remove existing errors from error list
-  const myNode = document.getElementById("errors");
-  myNode.textContent = '';
+  const errorList = document.getElementById("errors");
+  errorList.textContent = '';
 }
 
 ////////////////////////////////////////////////////////
