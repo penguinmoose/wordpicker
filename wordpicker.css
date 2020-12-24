@@ -10,6 +10,30 @@ body {
   background-color: rgb(130, 130, 130);
 }
 
+.error-alert {
+  display: none;
+  padding: 20px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  margin-top: -50px;
+  margin-left: -100px;
+  border-radius: 20px;
+  background-color: #ff2f2f;
+}
+
+.error-dismiss-button {
+  width: 100px;
+  height: 25px;
+  background-color: #4b91b4;
+  border: none;
+}
+
+.error-dismiss-button:hover {
+  background-color: #2a81ad;
+}
+
 .heading-icon {
   width: 35px;
   height: 35px;

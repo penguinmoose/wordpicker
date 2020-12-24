@@ -29,6 +29,15 @@ function changepage(pg) {
   document.getElementById(button_list[pg - 1]).style.border = "20px solid #1752e8";
 }
 
+function addError(error) {
+  document.getElementById("error-alert").style.display = "block";
+
+  var node = document.createElement("LI");
+  var textnode = document.createTextNode(error);
+  node.appendChild(textnode);
+  document.getElementById("errors").appendChild(node);
+}
+
 ////////////////////////////////////////////////////////
 
 function startWords(type) {
@@ -50,6 +59,7 @@ function startWords(type) {
     pattern = localStorage.getItem("wdpk_pattern");
     phone = localStorage.getItem("wdpk_phone");
     filter = localStorage.getItem("wdpk_filter");
+
     document.getElementById("pattern").value = pattern;
     document.getElementById("phone").value = phone;
   } else if (pattern != "" && phone != "") { // Time to save!
@@ -68,10 +78,7 @@ function startWords(type) {
       appendData(data);
     })
     .catch(function(err) {
-      setTimeout(function() {
-        alert("A error occured while finding words." + err);
-      }, 1);
-
+      addError("Error finding words: " + err);
       console.log("error:" + err);
     });
 
@@ -97,7 +104,6 @@ function startSentences(type) {
     return;
   } else if (req == "" && type == "prev") { // Time to load results from previous session!
     var stored_req = localStorage.getItem("snpk_req");
-
     if (stored_req != null) { // Again, check if nothing is stored.
       req = stored_req;
       document.getElementById("reqsentence").value = localStorage.getItem("snpk_req");
@@ -117,10 +123,7 @@ function startSentences(type) {
       appendData(data);
     })
     .catch(function(err) {
-      setTimeout(function() {
-        alert("A error occured while finding sentences." + err);
-      }, 1);
-
+      addError("Error finding sentences: " + err);
       console.log('error: ' + err);
     });
 
