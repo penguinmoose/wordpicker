@@ -46,6 +46,11 @@
       <button onclick="dismissErrorAlert();" class="error-dismiss-button">Dismiss</button>
     </div>
 
+    <div class="error-alert" id="js-disabled-alert" style="display: block; border: 5px solid #800000;"> <!--This alert will be hidden by javascript. If javascript is disabled, then this alert will show. -->
+      <div style="font-size: 20pt; text-align: center;">Can't run javascript.</div>
+      <div style="text-align: center;">Make sure that javascript is enabled on your browser.</div>
+    </div>
+
     <div id="word_picker">
       <div class="inputcontainer">
         <div class="inputheading">Find words using spelling pattern or sound
@@ -57,7 +62,7 @@
           <div>Type spelling pattern here:</div>
           <input type="text" id="pattern" name="pattern" class="inputform" placeholder="CVC" title="Type spelling pattern in this input field">
           <div>Type sound here:</div>
-          <input type="text" id="phone" name="phone" class="inputform" placeholder="AA" title="Type sound in this input field">
+          <input type="text" id="phone" name="phone" class="inputform" placeholder="AA" style="text-transform: uppercase;" title="Type sound in this input field">
 
           <div>Select a parts of speech result filter:</div>
           <div style="background-color: #5b9cdf;">

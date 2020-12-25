@@ -4,10 +4,10 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  opacity: 0.8;
+  opacity: 0.75;
   line-height: 1.618em;
   font-family: sans-serif;
-  background-color: rgb(130, 130, 130);
+  background-color: #717373;
 }
 
 .error-alert {
@@ -26,11 +26,14 @@ body {
 .error-dismiss-button {
   width: 100px;
   height: 25px;
+  border-radius: 8px;
   background-color: #4b91b4;
   border: none;
+  transition-duration: 0.6s;
 }
 
 .error-dismiss-button:hover {
+  border-radius: 0px;
   background-color: #2a81ad;
 }
 
@@ -117,6 +120,7 @@ body {
   background-color: white;
   color: black;
   background-color: #35c43b;
+  transition-duration: 0.8s;
 }
 
 .gobutton:hover {
@@ -129,6 +133,7 @@ body {
 }
 
 .resultcontainer {
+  width: 300px;
   width: auto;
   margin: 0 left;
   text-align: center;
@@ -139,7 +144,7 @@ body {
   padding: 30px 0px 30px 100px;
   background-color: #cfffcf;
   overflow: hidden;
-  width: 300px;
+  display: none;
 }
 
 #resultcontainer-2 {

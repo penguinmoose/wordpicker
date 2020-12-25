@@ -7,12 +7,10 @@ var button_list = ["wd_button", "sn_button", "in_button"];
 console.log("Welcome to Word Picker!");
 
 function init() {
+  document.getElementById("js-disabled-alert").style.display = "none";
   if (window.location.protocol == "https:") {
     window.location.href = window.location.href.replace("https:", "http:");
   }
-
-  document.getElementById("resultcontainer-1").style.display = "none";
-  document.getElementById("resultcontainer-2").style.display = "none";
 
   changepage(1);
   startWords("prev");
