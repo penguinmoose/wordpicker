@@ -72,7 +72,11 @@ function startWords(type) {
     localStorage.setItem("wdpk_phone", document.getElementById("phone").value);
   }
 
-  var url = "http://" + host + "/api/words?pattern=" + pattern + "&phone=" + phone + filter;
+  var patternparam = (pattern == "") ? "" : "pattern=" + pattern;
+  var phoneparam = (phone == "") ? "" : "&phone=" + phone;
+
+  var url = "http://" + host + "/api/words?" + patternparam + phoneparam + filter;
+  console.log(url);
   fetch(url)
     .then(function(response) {
       console.log(response);
