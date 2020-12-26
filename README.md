@@ -1,3 +1,3 @@
-# Word Picker
+# Redirecting...
 
-[Go to Word Picker](http://www.johanneschan.com/wordpicker/wordpicker.html)
+redirect: http://www.johanneschan.com/wordpicker/wordpicker.html
