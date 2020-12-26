@@ -43,6 +43,11 @@ function dismissErrorAlert() {
   errorList.textContent = '';
 }
 
+function clearData() {
+  localStorage.clear();
+  location.reload();
+}
+
 ////////////////////////////////////////////////////////
 
 function startWords(type) {
