@@ -7,7 +7,6 @@ var button_list = ["wd_button", "sn_button", "in_button"];
 console.log("Welcome to Word Picker!");
 
 function init() {
-  document.getElementById("js-disabled-alert").style.display = "none";
   if (window.location.protocol == "https:") {
     window.location.href = window.location.href.replace("https:", "http:");
   }
@@ -15,6 +14,7 @@ function init() {
   changepage(1);
   startWords("prev");
   startSentences("prev");
+  document.getElementById("loading-container").style.display = "none";
 }
 
 function changepage(pg) {

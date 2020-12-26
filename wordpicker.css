@@ -51,7 +51,7 @@ body {
   font-family: 'Pacifico', cursive;
   font-size: 30px;
   text-align: center;
-  background-color: rgb(220, 220, 220);
+  background-color: #dddddd;
   padding: 15px;
   margin-top: 10px;
   animation: animateheading 3s 1;
@@ -130,6 +130,11 @@ body {
 .small-heading {
   font-family: sans-serif;
   font-size: 18px;
+}
+
+.fa {
+  width: 160px;
+  height: 160px;
 }
 
 .resultcontainer {

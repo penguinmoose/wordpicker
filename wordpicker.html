@@ -6,7 +6,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Word Picker is a tool for finding words based on a spelling pattern or a sound. The easy to use interface enables you to find results without any trouble. There is also a sentence picker, so you can also find sentences that contain a
+  <link id="favicon" rel="icon" href="favicon.ico" type="image/ico" sizes="16x16">
+  <meta name="description"
+    content="Word Picker is a tool for finding words based on a spelling pattern or a sound. The easy to use interface enables you to find results without any trouble. There is also a sentence picker, so you can also find sentences that contain a
     word. There are lots of results so you find just what you need. A instructions tab is even avalible so you can know exactly how to use it. There is a Word Picker shortcut you can add on an iPad or an iPhone so you do not need to use Word Picker on the web.">
   <meta name="keywords" content="word finder, sentence finder, word picker, sentence picker, words, sentences, sound, sounds, phone, phoneme, spelling pattern, word pattern, spelling, contains words, contains sounds, prepositions">
   <meta name="subject" content="spelling">
@@ -16,6 +18,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap">
+  <link rel="stylesheet" href="loading.css">
   <link rel="stylesheet" href="tabs.css">
   <link rel="stylesheet" href="wordpicker.css">
 </head>
@@ -24,7 +27,7 @@
 <body onload="init();">
   <title>Word Picker - johanneschan</title>
 
-  <div id="heading"><img src="https://www.johanneschan.com/icon-1.ico" class="heading-icon">Word Picker</div><br>
+  <div id="heading"><img src="favicon.ico" class="heading-icon">Word Picker</div><br>
 
   <!-------->
 
@@ -39,16 +42,21 @@
 
 
   <div class="main">
+    <div class="loading-container" id="loading-container">
+      <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+
     <div class="error-alert" id="error-alert">
       <div style="font-size: 18pt; text-align: center;">Error(s) occured.</div>
       <hr>
-      <div id="errors" style="font-size: 14pt;"></div><br> <!--Errors will be added to this list using javascript.-->
+      <div id="errors" style="font-size: 14pt;"></div><br>
+      <!--Errors will be added to this list using javascript.-->
       <button onclick="dismissErrorAlert();" class="error-dismiss-button">Dismiss</button>
-    </div>
-
-    <div class="error-alert" id="js-disabled-alert" style="display: block; border: 5px solid #800000;"> <!--This alert will be hidden by javascript. If javascript is disabled, then this alert will show. -->
-      <div style="font-size: 20pt; text-align: center;">Can't run javascript.</div>
-      <div style="text-align: center;">Make sure that javascript is enabled on your browser.</div>
     </div>
 
     <div id="word_picker">
@@ -111,7 +119,8 @@
         <h3>Instructions for word picker</h3>
 
         <div class="small-heading">Welcome to word picker!</div><br>
-        <div>You can find words by sound or spelling pattern. To do it by sound, find the sound you want that is bolded in the example section of the table. Then find the corresponding phoneme and type it in the type sound here... input field. If you want to find words that have a sound or a another sound, seperate them with a comma.
+        <div>You can find words by sound or spelling pattern. To do it by sound, find the sound you want that is bolded in the example section of the table. Then find the corresponding phoneme and type it in the type sound here... input field. If you
+          want to find words that have a sound or a another sound, seperate them with a comma.
           <hr><img src="arprabet-1.png"><br><img src="arprabet-2.png">
           <hr><br>If you want to find words using a spelling pattern, type in a spelling pattern. To find words that have a consonant, type in a capital C. For vowels, type a consonant V. If you only type in a capital C, it won't show any results
           because there are no words that are just a consonant and nothing else. To find words that contain a consonant (there are many), you need to type a dash in the end and the begining of the C. The one at the end means that it should include
