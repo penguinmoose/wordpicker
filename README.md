@@ -1,2 +1,3 @@
+# Word Picker
 
-<meta http-equiv="refresh" content="0; URL=http://www.johanneschan.com/wordpicker/wordpicker.html">
+[Go to Word Picker](http://www.johanneschan.com/wordpicker/wordpicker.html)
