@@ -76,7 +76,6 @@ function startWords(type) {
   var phoneparam = (phone == "") ? "" : "&phone=" + phone;
 
   var url = "http://" + host + "/api/words?" + patternparam + phoneparam + filter;
-  console.log(url);
   fetch(url)
     .then(function(response) {
       console.log(response);
