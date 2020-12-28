@@ -33,10 +33,10 @@
 
   <!-------->
 
-  <div class="sidenav">
+  <div class="sidenav" id="sidenav"> <!-- for computer -->
     <button type="button" name="button" onclick="changepage(1)" id="wd_button" class="sidebuttons" title="Go to the word picker tab">Word Picker</button>
     <button type="button" name="button" onclick="changepage(2)" id="sn_button" class="sidebuttons" title="Go to the sentence picker tab">Sentence Picker</button>
-    <button type="button" name="button" onclick="changepage(3)" id="in_button" class="sidebuttons" style="margin-bottom: 25px;" title="View instructions">instructions</button>
+    <button type="button" name="button" onclick="changepage(3)" id="in_button" class="sidebuttons" style="margin-bottom: 25px;" title="View instructions">Instructions</button>
 
     <a href="https://www.johanneschan.com/" class="sideoptionbtn" title="Go back to the homepage" style="margin-left: 50px;">Go home</a><br><br>
     <a href="https://www.icloud.com/shortcuts/ed0b25b744644ea0a3d1790de041ac78" class="sideoptionbtn" title="Install the Word Picker shortcut for iPhones and iPads" style="font-size: 12pt; margin-left: 30px;">Word Picker shortcut</a>
@@ -44,8 +44,17 @@
     <div style="text-align: center; margin-top: 20px;">Version 1.4.9</div>
   </div>
 
+  <div class="bottomnav" id="bottomnav"> <!-- for mobile -->
+    <button onclick="changepage(1)" class="active">Word Picker</button>
+    <button onclick="changepage(2)">Sentence Picker</button>
+    <button onclick="changepage(3)">Instructions</button>
 
-  <div class="main">
+    <button onclick="open('https://www.icloud.com/shortcuts/ed0b25b744644ea0a3d1790de041ac78');" title="Install the Word Picker shortcut for iPhones and iPads">Word Picker shortcut</button>
+    <button onclick="clearData();" title="Clear the data stored in Word Picker">Clear data</button>
+  </div>
+
+
+  <div class="main" id="main">
     <div class="loading-container" id="loading-container">
       <div class="lds-ring">
         <div></div>

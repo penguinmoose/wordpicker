@@ -14,6 +14,13 @@ function init() {
   changepage(1);
   startWords("prev");
   startSentences("prev");
+
+  if (detectMobile() == true) {
+    document.getElementById("main").style.marginLeft = 0;
+    document.getElementById("sidenav").style.display = "none";
+    document.getElementById("bottomnav").style.display = "block";
+  }
+
   document.getElementById("loading-container").style.display = "none";
 }
 
@@ -46,6 +53,22 @@ function dismissErrorAlert() {
 function clearData() {
   localStorage.clear();
   location.reload();
+}
+
+function detectMobile() {
+  const toMatch = [
+      /Android/i,
+      /webOS/i,
+      /iPhone/i,
+      /iPad/i,
+      /iPod/i,
+      /BlackBerry/i,
+      /Windows Phone/i
+  ];
+
+  return toMatch.some((toMatchItem) => {
+    return navigator.userAgent.match(toMatchItem);
+  });
 }
 
 ////////////////////////////////////////////////////////
