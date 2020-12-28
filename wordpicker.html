@@ -14,13 +14,14 @@
   <meta name="subject" content="spelling">
   <meta name="language" content="EN">
   <meta name="revisit-after" content="7 days">
-  <link rel="apple-touch-icon" href="favicon.ico">
 
+  <link rel="apple-touch-icon" href="favicon.ico">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap">
   <link rel="stylesheet" href="loading.css">
   <link rel="stylesheet" href="tabs.css">
+  <link rel="stylesheet" href="toggle.css">
   <link rel="stylesheet" href="wordpicker.css">
 </head>
 
@@ -40,7 +41,7 @@
     <a href="https://www.johanneschan.com/" class="sideoptionbtn" title="Go back to the homepage" style="margin-left: 50px;">Go home</a><br><br>
     <a href="https://www.icloud.com/shortcuts/ed0b25b744644ea0a3d1790de041ac78" class="sideoptionbtn" title="Install the Word Picker shortcut for iPhones and iPads" style="font-size: 12pt; margin-left: 30px;">Word Picker shortcut</a>
     <button onclick="clearData();" class="sideoptionbtn" title="Clear the data stored in Word Picker" style="margin-top: 20px; margin-left: 38px;">Clear data</button>
-    <div style="text-align: center; margin-top: 20px;">Version 1.4.8</div>
+    <div style="text-align: center; margin-top: 20px;">Version 1.4.9</div>
   </div>
 
 
@@ -61,6 +62,8 @@
       <!--Errors will be added to this list using javascript.-->
       <button onclick="dismissErrorAlert();" class="error-dismiss-button">Dismiss</button>
     </div>
+
+    <!-------------------------------------------------------->
 
     <div id="word_picker">
       <div class="inputcontainer">
@@ -84,10 +87,54 @@
           </div>
         </form>
 
-        <hr>
-        <div>If you enter both the spelling pattern and the sound, Word Picker will find words that have the spelling pattern and the sound. If you only enter one of these, results for the one that you enter will be found.</div>
-        <div style="text-align: center; font-size: 10pt; background-color: #575757; color: white; border-radius: 5px;">Only the first 80 results will be displayed.</div>
-        <hr>
+        <div style="background-color: #5b9cdf; padding: 5px; margin-top: 5px;">
+          <label>Show</label>
+          <select name="limitresult-options" id="limitresult-options">
+            <option value="10">10 results</option>
+            <option value="20">20 results</option>
+            <option value="40">40 results</option>
+            <option value="60">60 results</option>
+            <option value="80" selected="selected">80 results</option>
+            <option value="100">100 results</option>
+            <option value="150">150 results</option>
+            <option value="200">200 results</option>
+          </select>
+
+          <label class="switch">
+            <input type="checkbox" id="limitresult-toggle" checked>
+            <span class="slider round"></span>
+          </label><br>
+
+          <div style="margin-top: 5px;">
+            <label>Only show words smaller than or equal to</label>
+            <select name="result-maxlengh" id="resultmaxlengh">
+              <option value="2">2 characters</option>
+              <option value="3">3 characters</option>
+              <option value="4">4 characters</option>
+              <option value="5">5 characters</option>
+              <option value="6" selected="selected">6 characters</option>
+              <option value="7">7 characters</option>
+              <option value="8">8 characters</option>
+              <option value="9">9 characters</option>
+              <option value="10">10 characters</option>
+              <option value="11">11 characters</option>
+              <option value="12">12 characters</option>
+              <option value="13">13 characters</option>
+              <option value="14">14 characters</option>
+              <option value="15">15 characters</option>
+            </select>
+
+            <label class="switch">
+              <input type="checkbox" id="resultmaxlen-toggle">
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+
+
+        <div style="background-color: #8a8a8a; margin-top: 10px; padding: 5px;">
+          <div>If you enter both the spelling pattern and the sound, Word Picker will find words that have the spelling pattern and the sound. If you only enter one of these, results for the one that you enter will be found.</div>
+        </div>
 
         <button type="button" class="gobutton" onclick="startWords();" title="Find words that follow the specified criteria">find words</button>
       </div>

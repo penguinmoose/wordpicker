@@ -35,7 +35,7 @@ def api_words_all():
     word_list = load_word_list()
     return jsonify(list(word_list.keys()))
 
-def word_match(word_pattern, phone_pattern, filter):
+def word_match(word_pattern, phone_pattern, filter, maxwordlen):
     word_list = load_word_list(filter)
     re_list = []
     if word_pattern:
@@ -83,17 +83,20 @@ def word_match(word_pattern, phone_pattern, filter):
             if not matched:
                 continue
 
+        if maxwordlen:
+            if len(word) > int(maxwordlen):
+                continue
+
         results.append(word)
     return results
 
 @application.route('/api/words', methods=['GET'])
 def api_words_pattern():
-    #if 'pattern' not in request.args:
-    #    return "pattern missing", 400
+    matches = word_match(request.args.get('pattern'), request.args.get('phone'), request.args.get('filter'), request.args.get('wordmaxlen'))
 
-    matches = word_match(request.args.get('pattern'), request.args.get('phone'), request.args.get('filter'))
-
-    matches = matches[:70] # max 70 results
+    resmaxlen = request.args.get('resmaxlen')
+    if resmaxlen:
+        matches = matches[:int(resmaxlen)]
 
     return jsonify(matches) # return json format
 

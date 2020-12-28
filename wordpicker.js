@@ -1,5 +1,5 @@
-//var host = "127.0.0.1:5000";
-var host = "wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
+var host = "127.0.0.1:5000";
+//var host = "wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 
 var section_list = ["word_picker", "sentence_picker", "instructions"];
 var button_list = ["wd_button", "sn_button", "in_button"];
@@ -54,6 +54,8 @@ function startWords(type) {
   var pattern = (document.getElementById("pattern").value);
   var phone = (document.getElementById("phone").value);
   var selectbuttons = document.getElementsByName("filter-button");
+  var maxresultselect = document.getElementById("limitresult-options");
+  var resultmaxlengh = document.getElementById("resultmaxlengh");
 
   for (var i = 0, length = selectbuttons.length; i < length; i++) {
     if (selectbuttons[i].checked) {
@@ -79,8 +81,10 @@ function startWords(type) {
 
   var patternparam = (pattern == "") ? "" : "pattern=" + pattern;
   var phoneparam = (phone == "") ? "" : "&phone=" + phone;
+  var resultmaxlenparam = (document.getElementById("limitresult-toggle").checked == false) ? "" : "&resmaxlen=" + maxresultselect.value;
+  var wordmaxlenparam = (document.getElementById("resultmaxlen-toggle").checked == false) ? "" : "&wordmaxlen=" + resultmaxlengh.value;
 
-  var url = "http://" + host + "/api/words?" + patternparam + phoneparam + filter;
+  var url = "http://" + host + "/api/words?" + patternparam + phoneparam + filter + resultmaxlenparam + wordmaxlenparam;
   fetch(url)
     .then(function(response) {
       console.log(response);

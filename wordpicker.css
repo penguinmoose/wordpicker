@@ -10,6 +10,11 @@ body {
   background-color: #717373;
 }
 
+select {
+  border: none;
+  background-color: #4768dd;
+}
+
 .error-alert {
   display: none;
   padding: 20px;
@@ -81,7 +86,7 @@ body {
 
 .inputcontainer {
   margin: 0 left;
-  width: 400px;
+  width: 500px;
   height: auto;
   padding: 25px;
   position: relative;
