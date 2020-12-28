@@ -1,5 +1,5 @@
-var host = "127.0.0.1:5000";
-//var host = "wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
+//var host = "127.0.0.1:5000";
+var host = "wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 
 var section_list = ["word_picker", "sentence_picker", "instructions"];
 var button_list = ["wd_button", "sn_button", "in_button"];
