@@ -3,9 +3,9 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  opacity: 0.75;
+  opacity: 0.8;
   line-height: 1.618em;
-  font-family: sans-serif;
+  font-family: arial, sans-serif;
   background-color: #717373;
 }
 
