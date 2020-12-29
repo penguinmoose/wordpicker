@@ -26,6 +26,8 @@ function init() {
 }
 
 function changepage(pg) {
+  event.preventDefault();
+  
   for (var i = 0; i < 3; i++) {
     document.getElementById(section_list[i]).style.display = "none";
     document.getElementById(button_list[i]).style.border = "none";
