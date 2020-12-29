@@ -11,15 +11,16 @@ function init() {
     window.location.href = window.location.href.replace("https:", "http:");
   }
 
-  changepage(1);
-  startWords("prev");
-  startSentences("prev");
-
   if (detectMobile() == true) {
     document.getElementById("main").style.marginLeft = 0;
     document.getElementById("sidenav").style.display = "none";
     document.getElementById("bottomnav").style.display = "block";
   }
+
+  changepage(1);
+  startWords("prev");
+  startSentences("prev");
+  setBackground();
 
   document.getElementById("loading-container").style.display = "none";
 }
@@ -69,6 +70,11 @@ function detectMobile() {
   return toMatch.some((toMatchItem) => {
     return navigator.userAgent.match(toMatchItem);
   });
+}
+
+function setBackground() {
+  var backgroundImg = "url('background-" + parseInt(Math.floor(Math.random() * 4) + 1) + ".jpg') no-repeat center center fixed";
+  document.body.style.background = backgroundImg;
 }
 
 ////////////////////////////////////////////////////////
