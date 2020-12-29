@@ -78,6 +78,35 @@ function setBackground() {
 }
 
 ////////////////////////////////////////////////////////
+function toggleSoundDropdown() {
+  event.preventDefault();
+  document.getElementById("soundDropdown").classList.toggle("show");
+}
+
+function soundFilterFunction() {
+  var input, filter, ul, li, button, i;
+  input = document.getElementById("soundSearch");
+  filter = input.value.toUpperCase();
+  div = document.getElementById("soundDropdown");
+  button = div.getElementsByTagName("button");
+
+  for (i = 0; i < button.length; i++) {
+    txtValue = button[i].textContent || button[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      button[i].style.display = "";
+    } else {
+      button[i].style.display = "none";
+    }
+  }
+}
+
+function addSound(sound) {
+  event.preventDefault();
+  var oldsound = document.getElementById("phone").value;
+  document.getElementById("phone").value = oldsound + " " + sound;
+}
+
+////////////////////////////////////////////////////////
 
 function startWords(type) {
   var pattern = (document.getElementById("pattern").value);

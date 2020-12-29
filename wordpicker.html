@@ -6,14 +6,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Word Picker is a tool for finding words based on a spelling pattern or a sound. The easy to use interface enables you to find results without any trouble. There is also a sentence picker, so you can also find sentences that contain a
+  <meta name="description" content="Word Picker is a tool for finding words based on a spelling pattern or a sound. The easy to use interface enables you to find results without any trouble. There is also a sentence picker, so you can also find sentences that contain a
     word.">
   <meta name="keywords" content="word finder, sentence finder, word picker, sentence picker, words, sentences, sound, sounds, phone, phoneme, spelling pattern, word pattern, spelling, contains words, contains sounds, prepositions">
   <meta name="subject" content="spelling">
   <meta name="language" content="en-us">
   <meta name="revisit-after" content="7 days">
-  <meta name="robots" content= "index, follow">
+  <meta name="robots" content="index, follow">
 
   <meta name="og:title" content="Word Picker">
   <meta name="og:type" content="tool">
@@ -42,7 +41,8 @@
 
   <!-------->
 
-  <div class="sidenav" id="sidenav"> <!-- for computer -->
+  <div class="sidenav" id="sidenav">
+    <!-- for computer -->
     <button type="button" name="button" onclick="changepage(1)" id="wd_button" class="sidebuttons" title="Go to the word picker tab">Word Picker</button>
     <button type="button" name="button" onclick="changepage(2)" id="sn_button" class="sidebuttons" title="Go to the sentence picker tab">Sentence Picker</button>
     <button type="button" name="button" onclick="changepage(3)" id="in_button" class="sidebuttons" style="margin-bottom: 25px;" title="View instructions">Instructions</button>
@@ -50,10 +50,11 @@
     <a href="https://www.johanneschan.com/" class="sideoptionbtn" title="Go back to the homepage" style="margin-left: 50px;">Go home</a><br><br>
     <a href="https://www.icloud.com/shortcuts/ed0b25b744644ea0a3d1790de041ac78" class="sideoptionbtn" title="Install the Word Picker shortcut for iPhones and iPads" style="font-size: 12pt; margin-left: 30px;">Word Picker shortcut</a>
     <button onclick="clearData();" class="sideoptionbtn" title="Clear the data stored in Word Picker" style="margin-top: 20px; margin-left: 38px;">Clear data</button>
-    <div style="text-align: center; margin-top: 20px;">Version 1.4.9</div>
+    <div style="text-align: center; margin-top: 20px;">Version 1.4.10</div>
   </div>
 
-  <div class="bottomnav" id="bottomnav"> <!-- for mobile -->
+  <div class="bottomnav" id="bottomnav">
+    <!-- for mobile -->
     <button onclick="changepage(1)" class="active">Word Picker</button>
     <button onclick="changepage(2)">Sentence Picker</button>
     <button onclick="changepage(3)">Instructions</button>
@@ -95,6 +96,52 @@
           <input type="text" id="pattern" name="pattern" class="inputform" placeholder="CVC" title="Type spelling pattern in this input field">
           <div>Type sound here:</div>
           <input type="text" id="phone" name="phone" class="inputform" placeholder="AA" style="text-transform: uppercase;" title="Type sound in this input field">
+
+          <div class="dropdown">
+            <button onclick="toggleSoundDropdown()" class="dropbtn">Choose</button>
+            <div id="soundDropdown" class="dropdown-content">
+              <input type="text" placeholder="Search..." id="soundSearch" onkeyup="soundFilterFunction();">
+              <button onclick="changepage(3);">Go to instructions</button>
+              <button onclick="addSound('AA');">AA</button>
+              <button onclick="addSound('AE');">AE</button>
+              <button onclick="addSound('AH');">AH</button>
+              <button onclick="addSound('AO');">AO</button>
+              <button onclick="addSound('AW');">AW</button>
+              <button onclick="addSound('AY');">AY</button>
+              <button onclick="addSound('B');">B</button>
+              <button onclick="addSound('CH');">CH</button>
+              <button onclick="addSound('D');">D</button>
+              <button onclick="addSound('EH');">DH</button>
+              <button onclick="addSound('ER');">ER</button>
+              <button onclick="addSound('EY');">EY</button>
+              <button onclick="addSound('F');">F</button>
+              <button onclick="addSound('G');">G</button>
+              <button onclick="addSound('HH');">HH</button>
+              <button onclick="addSound('IH');">IH</button>
+              <button onclick="addSound('IY');">IY</button>
+              <button onclick="addSound('JH');">JH</button>
+              <button onclick="addSound('K');">K</button>
+              <button onclick="addSound('L');">L</button>
+              <button onclick="addSound('M');">M</button>
+              <button onclick="addSound('N');">N</button>
+              <button onclick="addSound('NG');">NG</button>
+              <button onclick="addSound('OW');">OW</button>
+              <button onclick="addSound('OY');">OY</button>
+              <button onclick="addSound('P');">P</button>
+              <button onclick="addSound('R');">R</button>
+              <button onclick="addSound('S');">S</button>
+              <button onclick="addSound('SH');">SH</button>
+              <button onclick="addSound('T');">T</button>
+              <button onclick="addSound('TH');">TH</button>
+              <button onclick="addSound('UH');">UH</button>
+              <button onclick="addSound('UW');">UW</button>
+              <button onclick="addSound('V');">V</button>
+              <button onclick="addSound('W');">W</button>
+              <button onclick="addSound('Y');">Y</button>
+              <button onclick="addSound('Z');">Z</button>
+              <button onclick="addSound('ZH');">ZH</button>
+            </div>
+          </div>
 
           <div>Select a parts of speech result filter:</div>
           <div style="background-color: #5b9cdf;">
