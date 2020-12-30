@@ -22,12 +22,14 @@ function init() {
   startSentences("prev");
   setBackground();
 
-  document.getElementById("loading-container").style.display = "none";
+  setTimeout(() => {
+    document.getElementById("loading-container").style.display = "none";
+  }, 500);
 }
 
 function changepage(pg) {
   event.preventDefault();
-  
+
   for (var i = 0; i < 3; i++) {
     document.getElementById(section_list[i]).style.display = "none";
     document.getElementById(button_list[i]).style.border = "none";
@@ -60,13 +62,13 @@ function clearData() {
 
 function detectMobile() {
   const toMatch = [
-      /Android/i,
-      /webOS/i,
-      /iPhone/i,
-      /iPad/i,
-      /iPod/i,
-      /BlackBerry/i,
-      /Windows Phone/i
+    /Android/i,
+    /webOS/i,
+    /iPhone/i,
+    /iPad/i,
+    /iPod/i,
+    /BlackBerry/i,
+    /Windows Phone/i
   ];
 
   return toMatch.some((toMatchItem) => {
