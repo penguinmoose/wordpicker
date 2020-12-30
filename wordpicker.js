@@ -33,10 +33,12 @@ function changepage(pg) {
   for (var i = 0; i < 3; i++) {
     document.getElementById(section_list[i]).style.display = "none";
     document.getElementById(button_list[i]).style.border = "none";
+    document.getElementById(button_list[i] + "_mobile").className = "";
   }
 
   document.getElementById(section_list[pg - 1]).style.display = "block";
   document.getElementById(button_list[pg - 1]).style.border = "20px solid #1752e8";
+  document.getElementById(button_list[pg - 1] + "_mobile").className = "active";
 }
 
 function addError(error) {
