@@ -27,7 +27,6 @@
 }
 
 .sidebuttons:hover {
-  transition-duration: 0.5s;
   background-color: #01de38;
 }
 

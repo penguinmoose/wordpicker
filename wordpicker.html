@@ -6,8 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Word Picker is a tool for finding words based on a spelling pattern or a sound. The easy to use interface enables you to find results without any trouble. There is also a sentence picker, so you can also find sentences that contain a
-    word.">
+  <meta name="description" content="Word Picker is a tool for finding words based on a spelling pattern or a sound. There is also a sentence finder to find sentences containing a word.">
   <meta name="keywords" content="word finder, sentence finder, word picker, sentence picker, words, sentences, sound, sounds, phone, phoneme, spelling pattern, word pattern, spelling, contains words, contains sounds, prepositions">
   <meta name="subject" content="spelling">
   <meta name="language" content="en-us">
@@ -19,8 +18,7 @@
   <meta name="og:url" content="https://www.johanneschan.com/wordpicker/wordpicker.html">
   <meta name="og:image" content="https://www.johanneschan.com/wordpicker/favicon.ico">
   <meta name="og:site_name" content="Johanneschan">
-  <meta name="og:description" content="Word Picker is a tool for finding words based on a spelling pattern or a sound. The easy to use interface enables you to find results without any trouble. There is also a sentence picker, so you can also find sentences that contain a
-  word.">
+  <meta name="og:description" content="Word Picker is a tool for finding words based on a spelling pattern or a sound. There is also a sentence finder to find sentences containing a word.">
 
   <link id="favicon" rel="icon" href="favicon.ico" type="image/ico" sizes="16x16">
   <link rel="apple-touch-icon" href="favicon.ico">
@@ -37,7 +35,18 @@
 <body onload="init();">
   <title>Word Picker - johanneschan</title>
 
-  <div id="heading"><img src="favicon.ico" class="heading-icon">Word Picker</div><br>
+  <div id="heading">
+    <img src="favicon.ico" class="heading-icon">
+    <span>Word Picker</span>
+
+    <div class="dropdown">
+      <span onclick="toggleMoreDropdown()" class="more-dropbtn">•••</span>
+      <div id="moreDropdown" class="more-dropdown-content">
+        <button type="button" onclick="window.location.reload(true)">Reload</button>
+        <button type="button" onclick="open('http://www.johanneschan.com/wordpicker/eb-flask/10000words.txt')">See word list</button>
+      </div>
+    </div>
+  </div><br>
 
   <!-------->
 
@@ -232,7 +241,7 @@
         <div class="small-heading">Welcome to word picker!</div><br>
         <p>You can find words by sound or spelling pattern. To do it by sound, find the sound you want that is bolded in the example section of the table. Then find the corresponding phoneme and type it in the type sound here... input field. If you
           want to find words that have a sound or a another sound, seperate them with a comma.
-          <hr><img src="arprabet-1.png"><br><img src="arprabet-2.png">
+          <hr><img src="arprabet-1.png" alt="Unable to load image."><br><img src="arprabet-2.png" alt="Unable to load image.">
           <hr><br>If you want to find words using a spelling pattern, type in a spelling pattern. To find words that have a consonant, type in a capital C. For vowels, type a consonant V. If you only type in a capital C, it won't show any results
           because there are no words that are just a consonant and nothing else. To find words that contain a consonant (there are many), you need to type a dash in the end and the begining of the C. The one at the end means that it should include
           results that start with a consonant. The one at the start shows that it should also include words that end with a consonant. But if you want to find words that shows a spelling pattern <i>and</i> another spelling pattern, seperate them with
@@ -248,7 +257,8 @@
         <br>
         <hr>
         <h3>Word Picker API</h3>
-        <div>If you want to request words or sentences with some criteria without needing to use the webpage, you can use our API. Send a get request to wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com then add /api/words to the url for finding
+        <div>If you want to request words or sentences with some criteria without needing to use the webpage, you can use our API. Send a get request to wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com then add /api/words to the url for
+          finding
           words and /api/sentences for finding sentences. For words, you can add &pattern= then the spelling pattern for the spelling pattern, &phone= then the sound for the sound, and &filter= then the filter for the filter.</div>
       </div>
 

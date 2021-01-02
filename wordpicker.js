@@ -1,8 +1,6 @@
 //var host = "127.0.0.1:5000";
-var host = "wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
+var host = "www.wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 
-var section_list = ["word_picker", "sentence_picker", "instructions"];
-var button_list = ["wd_button", "sn_button", "in_button"];
 
 console.log("Welcome to Word Picker!");
 
@@ -20,6 +18,7 @@ function init() {
   changepage(1);
   startWords("prev");
   startSentences("prev");
+  startPhrases("prev");
   setBackground();
 
   setTimeout(() => {
@@ -30,10 +29,10 @@ function init() {
 function changepage(pg) {
   event.preventDefault();
 
-  for (var i = 0; i < 3; i++) {
+  for (var i = 0; i < 4; i++) {
     document.getElementById(section_list[i]).style.display = "none";
-    document.getElementById(button_list[i]).style.border = "none";
     document.getElementById(button_list[i] + "_mobile").className = "";
+    document.getElementById(button_list[i]).style.border = "none";
   }
 
   document.getElementById(section_list[pg - 1]).style.display = "block";
@@ -81,6 +80,27 @@ function detectMobile() {
 function setBackground() {
   var backgroundImg = "url('background-" + parseInt(Math.floor(Math.random() * 4) + 1) + ".jpg') no-repeat center center fixed";
   document.body.style.background = backgroundImg;
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("more-dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
+function toggleMoreDropdown() {
+  if (document.getElementById('moreDropdown').style.display == "none") {
+    document.getElementById('moreDropdown').style.display = "block";
+  } else {
+    document.getElementById('moreDropdown').style.display = "none";
+  }
 }
 
 ////////////////////////////////////////////////////////
