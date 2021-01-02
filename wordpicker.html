@@ -54,17 +54,18 @@
     <!-- for computer -->
     <button type="button" name="button" onclick="changepage(1)" id="wd_button" class="sidebuttons" title="Go to the word picker tab">Word Picker</button>
     <button type="button" name="button" onclick="changepage(2)" id="sn_button" class="sidebuttons" title="Go to the sentence picker tab">Sentence Picker</button>
-    <button type="button" name="button" onclick="changepage(3)" id="in_button" class="sidebuttons" style="margin-bottom: 25px;" title="View instructions">Instructions</button>
+    <!--<button type="button" name="button" onclick="changepage(3)" id="ph_button" class="sidebuttons" title="Go to the phrase picker tab">Phrase Picker</button>-->
+    <button type="button" name="button" onclick="changepage(3)" id="in_button" class="sidebuttons" style="margin-bottom: 25px;" title="View instructions">Instructions</button> <!-- change onclick to changepage(4) when making phrase picker -->
 
-
-    <div style="text-align: center; margin-top: 20px;">Version 1.4.11</div>
+    <div class="version">Version 1.4.11</div>
   </div>
 
   <div class="bottomnav" id="bottomnav">
     <!-- for mobile -->
     <button onclick="changepage(1)" id="wd_button_mobile" class="active">Word Picker</button>
     <button onclick="changepage(2)" id="sn_button_mobile">Sentence Picker</button>
-    <button onclick="changepage(3)" id="in_button_mobile">Instructions</button>
+    <!--<button onclick="changepage(3)" id="ph_button_mobile">Phrase Picker</button>-->
+    <button onclick="changepage(3)" id="in_button_mobile">Instructions</button> <!-- change onclick to changepage(4) when making phrase picker -->
   </div>
 
 
@@ -231,6 +232,76 @@
         <div id="matched_sentences"></div>
       </div>
     </div>
+
+    <!-------------------------------------------------------->
+    <!--
+    <div id="phrase_picker">
+      <div class="inputcontainer" style="width: 550px;">
+        <div>Choose filters for the phrases:</div>
+
+        <div style="background-color: #5b9cdf; padding: 5px; margin-top: 5px;">
+          <div style="margin-bottom: 10px;">
+            <span>The phrase starts with </span>
+            <input type="text" id="phrase_startswith" name="phrase_startswith" class="inputform" placeholder="Spelling pattern or word" style="width: 150px; padding: 6px 14px 6px 14px;"
+              title="Type what you want the phrases to start with. It can be a spelling pattern or word.">
+            <label class="switch">
+              <input type="checkbox" id="phrase-startswith-toggle">
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <div style="margin-bottom: 10px;">
+            <span>The phrase ends with </span>
+            <input type="text" id="phrase_endswith" name="phrase_endswith" class="inputform" placeholder="Spelling pattern or word" style="width: 150px; padding: 6px 14px 6px 14px;"
+              title="Type what you want the phrases to end with. It can be a spelling pattern or word.">
+            <label class="switch">
+              <input type="checkbox" id="phrase-endswith-toggle">
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <div style="margin-bottom: 10px;">
+            <span>Each phrase needs to contain </span>
+            <input type="text" id="phrase_contains" name="phrase_contains" class="inputform" placeholder="Spelling pattern or word" style="width: 150px; padding: 6px 14px 6px 14px;"
+              title="Type what you want the phrases to contain. It can be a spelling pattern or word.">
+            <label class="switch">
+              <input type="checkbox" id="phrase-contains-toggle" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <div style="margin-bottom: 10px;">
+            <span>The words in each phrase is</span>
+            <select id="phrase-wordlengh-comparison-select">
+              <option value="less">less than</option>
+              <option value="equal">equal to</option>
+              <option value="greater">greater than</option>
+            </select>
+            <input type="text" id="phrase_wordlengh" name="phrase_wordlengh" class="inputform" placeholder="A number" style="width: 60px; padding: 6px 14px 6px 14px;" title="Type how long the words in the phrase need to be in characters.">
+            <span>characters</span>
+            <label class="switch">
+              <input type="checkbox" id="phrase-wordlengh-toggle">
+              <span class="slider round"></span>
+            </label>
+          </div>
+
+          <div style="margin-bottom: 10px;">
+            <span>The phrase is</span>
+            <input type="text" id="phrase_lengh" name="phrase_lengh" class="inputform" placeholder="A number" style="width: 60px; padding: 6px 14px 6px 14px;" title="Type how long the phrase needs to be.">
+            <select id="phrase-lengh-format-select">
+              <option value="char">characters</option>
+              <option value="word" selected="selected">words</option>
+            </select>
+            <label class="switch">
+              <input type="checkbox" id="phrase-lengh-toggle" checked>
+              <span class="slider round"></span>
+            </label>
+          </div>
+        </div>
+
+        <button onclick="startPhrases();" class="gobutton" title="Find phrases that follow the filters">Find phrases</button>
+      </div>
+    </div>-->
 
     <!-------------------------------------------------------->
 
