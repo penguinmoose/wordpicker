@@ -1,8 +1,9 @@
+// TODO: make phrase picker
 //var host = "127.0.0.1:5000";
 var host = "www.wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 
-var section_list = ["word_picker", "sentence_picker",/* "phrase_picker",*/ "instructions"];
-var button_list = ["wd_button", "sn_button",/* "ph_button",*/ "in_button"];
+var section_list = ["word_picker", "sentence_picker", "instructions"]; // add phrase_picker when phrase picker is avalible
+var button_list = ["wd_button", "sn_button", "in_button"]; // add ph_button when phrase picker is avalible
 
 console.log("Welcome to Word Picker!");
 
@@ -103,6 +104,10 @@ function toggleMoreDropdown() {
   } else {
     document.getElementById('moreDropdown').style.display = "none";
   }
+}
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
 }
 
 ////////////////////////////////////////////////////////
