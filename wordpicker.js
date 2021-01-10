@@ -22,15 +22,23 @@ function init() {
     document.getElementById("sidenav").style.display = "none";
     document.getElementById("bottomnav").style.display = "block";
   }
+  document.getElementById("progress").style.width = "16%";
 
   applySettings();
+  document.getElementById("progress").style.width = "32%";
   changepage(1);
+  document.getElementById("progress").style.width = "48%";
   startWords("prev");
+  document.getElementById("progress").style.width = "64%";
   startSentences("prev");
+  document.getElementById("progress").style.width = "80%";
   //startPhrases("prev");
   setBackground();
 
   setTimeout(() => {
+    setTimeout(() => {
+      document.getElementById("progress").style.width = "100%";
+    }, 200)
     document.getElementById("loading-container").style.display = "none";
   }, 500);
 }

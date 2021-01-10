@@ -55,3 +55,9 @@
     transform: rotate(360deg);
   }
 }
+
+.loading-progress {
+  height: 10px;
+  background-color: #5fe84e;
+  transition-duration: 0.2s;
+}
