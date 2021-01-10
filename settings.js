@@ -20,9 +20,11 @@ function applySettings() {
   }
   document.getElementById("settings-italicresult").checked = (localStorage.getItem("settings-italicres") == "true");
 
-  document.getElementsByClassName("resultcontainer")[0].style.width = localStorage.getItem("settings-reswidth").toString() + "px";
-  document.getElementsByClassName("resultcontainer")[1].style.width = localStorage.getItem("settings-reswidth").toString() + "px";
-  document.getElementById("resultcontainer-width-slider").value = localStorage.getItem("settings-reswidth");
+  if (localStorage.getItem("settings-reswidth") != null) {
+    document.getElementsByClassName("resultcontainer")[0].style.width = localStorage.getItem("settings-reswidth").toString() + "px";
+    document.getElementsByClassName("resultcontainer")[1].style.width = localStorage.getItem("settings-reswidth").toString() + "px";
+    document.getElementById("resultcontainer-width-slider").value = localStorage.getItem("settings-reswidth");
+  }
 
   document.getElementById("settings").style.display = "none";
 }
