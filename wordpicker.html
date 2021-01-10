@@ -5,19 +5,6 @@
 <script src="settings.js"></script>
 <script src="wordpicker.js"></script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag('js', new Date());
-  gtag('config', 'GA_MEASUREMENT_ID', {
-    'page_title': 'wordpicker',
-    'page_path': '/wordpicker/wordpicker.html'
-  });
-</script>
 
 <head>
   <meta charset="utf-8">
@@ -75,7 +62,7 @@
     <button type="button" name="button" onclick="changepage(2)" id="sn_button" class="sidebuttons" title="Go to the sentence picker tab">Sentence Picker</button>
     <button type="button" name="button" onclick="changepage(3)" id="in_button" class="sidebuttons" style="margin-bottom: 25px;" title="View instructions">Instructions</button> <!-- change onclick to changepage(4) when making phrase picker -->
 
-    <div class="version">Version 1.5.1</div>
+    <div class="version">Version 1.5.2</div>
     <a href="?view=mobile" class="mobilelink">Switch to mobile view</a>
   </div>
 
@@ -127,12 +114,13 @@
       <div style="margin-bottom: 10px;">
         <span>Result container width</span>
         <span style="margin-left: 15px;">200px</span><input type="range" min="200" max="600" value="300" class="slider" id="resultcontainer-width-slider" onclick="showReswidthSliderValue();"><span>600px</span>
-        <span id="reswidth-value-text">400 pixels</span>
+        <span id="reswidth-value-text"></span>
       </div>
 
       <div style="margin-top: 30px">
         <button class="settings-cancelbtn" onclick="document.getElementById('settings').style.display = 'none';">Cancel</button>
         <button class="settings-savebtn" onclick="saveSettings();">Save</button>
+        <div class="settings-nostorage-alert">Settings can't be saved because your browser does not support Local Storage.</div>
       </div>
     </div>
 

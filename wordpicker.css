@@ -178,6 +178,12 @@ footer {
 }
 
 /* For settings */
+.settings-nostorage-alert {
+  margin-left: 20px;
+  color: red;
+  display: none;
+}
+
 .settings {
   display: none;
   width: 450px;

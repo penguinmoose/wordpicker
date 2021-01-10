@@ -73,11 +73,6 @@ function dismissErrorAlert() {
   errorList.textContent = '';
 }
 
-function clearData() {
-  localStorage.clear();
-  location.reload();
-}
-
 function detectMobile() {
   const toMatch = [
     /Android/i,
