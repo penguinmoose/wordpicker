@@ -5,19 +5,25 @@ var host = "www.wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 var section_list = ["word_picker", "sentence_picker", "instructions"]; // add phrase_picker when phrase picker is avalible
 var button_list = ["wd_button", "sn_button", "in_button"]; // add ph_button when phrase picker is avalible
 
+const queryString = window.location.search;
+var urlParams = new URLSearchParams(queryString);
+
 console.log("Welcome to Word Picker!");
 
 function init() {
+  var view = urlParams.get('view');
+
   if (window.location.protocol == "https:") {
     window.location.href = window.location.href.replace("https:", "http:");
   }
 
-  if (detectMobile() == true) {
+  if ((detectMobile() == true) || (view == "mobile")) {
     document.getElementById("main").style.marginLeft = 0;
     document.getElementById("sidenav").style.display = "none";
     document.getElementById("bottomnav").style.display = "block";
   }
 
+  applySettings();
   changepage(1);
   startWords("prev");
   startSentences("prev");
@@ -81,14 +87,17 @@ function detectMobile() {
 }
 
 function setBackground() {
-  var stored_background = getCookie("background");
-
-  if (stored_background != "") {
-    document.body.style.background = stored_background;
+  var backgroundImg = "url('background-" + parseInt(Math.floor(Math.random() * 4) + 1) + ".jpg') no-repeat center center fixed";
+  if (randBackground = false) {
+    var stored_background = getCookie("background");
+    if (stored_background != "") {
+      document.body.style.background = stored_background;
+    } else {
+      document.body.style.background = backgroundImg;
+      setCookie("background", backgroundImg, 1);
+    }
   } else {
-    var backgroundImg = "url('background-" + parseInt(Math.floor(Math.random() * 4) + 1) + ".jpg') no-repeat center center fixed";
     document.body.style.background = backgroundImg;
-    setCookie("background", backgroundImg, 1);
   }
 }
 
@@ -117,29 +126,6 @@ function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'en'
   }, 'google_translate_element');
-}
-
-function setCookie(cname, cvalue, exdays) {
-  var d = new Date();
-  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-  var expires = "expires=" + d.toGMTString();
-  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-}
-
-function getCookie(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for (var i = 0; i < ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
 }
 
 ////////////////////////////////////////////////////////

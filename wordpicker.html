@@ -1,6 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="en" dir="ltr">
 
+<script src="cookies.js"></script>
+<script src="settings.js"></script>
 <script src="wordpicker.js"></script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -59,6 +61,7 @@
       <div id="moreDropdown" class="more-dropdown-content">
         <button type="button" onclick="window.location.reload(true)">Reload</button>
         <button type="button" onclick="open('http://www.johanneschan.com/wordpicker/eb-flask/10000words.txt')">See word list</button>
+        <button onclick="openSettings();">Settings</button>
         <div id="google_translate_element"></div>
       </div>
     </div>
@@ -72,7 +75,8 @@
     <button type="button" name="button" onclick="changepage(2)" id="sn_button" class="sidebuttons" title="Go to the sentence picker tab">Sentence Picker</button>
     <button type="button" name="button" onclick="changepage(3)" id="in_button" class="sidebuttons" style="margin-bottom: 25px;" title="View instructions">Instructions</button> <!-- change onclick to changepage(4) when making phrase picker -->
 
-    <div class="version">Version 1.4.12</div>
+    <div class="version">Version 1.5.0</div>
+    <a href="?view=mobile" class="mobilelink">Switch to mobile view</a>
   </div>
 
   <div class="bottomnav" id="bottomnav">
@@ -99,6 +103,35 @@
       <div id="errors" style="font-size: 14pt;"></div><br>
       <!--Errors will be added to this list using javascript.-->
       <button onclick="dismissErrorAlert();" class="error-dismiss-button">Dismiss</button>
+    </div>
+
+    <div class="settings" id="settings">
+      <div style="margin-bottom: 10px;">
+        <span>Random background every day instead of every time</span>
+        <label class="switch">
+          <input type="checkbox" id="settings-randbackground" checked>
+          <span class="toggle-ball round"></span>
+        </label>
+      </div>
+
+      <div style="margin-bottom: 10px;">
+        <span>Make result text italic</span>
+        <label class="switch">
+          <input type="checkbox" id="settings-italicresult">
+          <span class="toggle-ball round"></span>
+        </label>
+      </div>
+
+      <div style="margin-bottom: 10px;">
+        <span>Result container width</span>
+        <span style="margin-left: 15px;">200px</span><input type="range" min="200" max="600" value="300" class="slider" id="resultcontainer-width-slider" onclick="showReswidthSliderValue();"><span>600px</span>
+        <span id="reswidth-value-text">400 pixels</span>
+      </div>
+
+      <div style="margin-top: 30px">
+        <button class="settings-cancelbtn" onclick="document.getElementById('settings').style.display = 'none';">Cancel</button>
+        <button class="settings-savebtn" onclick="saveSettings();">Save</button>
+      </div>
     </div>
 
     <!-------------------------------------------------------->
@@ -187,7 +220,7 @@
 
           <label class="switch">
             <input type="checkbox" id="limitresult-toggle" checked>
-            <span class="slider round"></span>
+            <span class="toggle-ball round"></span>
           </label><br>
 
           <div style="margin-top: 5px;">
@@ -211,7 +244,7 @@
 
             <label class="switch">
               <input type="checkbox" id="resultmaxlen-toggle">
-              <span class="slider round"></span>
+              <span class="toggle-ball round"></span>
             </label>
           </div>
         </div>
@@ -260,7 +293,7 @@
               title="Type what you want the phrases to start with. It can be a spelling pattern or word.">
             <label class="switch">
               <input type="checkbox" id="phrase-startswith-toggle">
-              <span class="slider round"></span>
+              <span class="toggle-ball round"></span>
             </label>
           </div>
 
@@ -270,7 +303,7 @@
               title="Type what you want the phrases to end with. It can be a spelling pattern or word.">
             <label class="switch">
               <input type="checkbox" id="phrase-endswith-toggle">
-              <span class="slider round"></span>
+              <span class="toggle-ball round"></span>
             </label>
           </div>
 
@@ -280,7 +313,7 @@
               title="Type what you want the phrases to contain. It can be a spelling pattern or word.">
             <label class="switch">
               <input type="checkbox" id="phrase-contains-toggle" checked>
-              <span class="slider round"></span>
+              <span class="toggle-ball round"></span>
             </label>
           </div>
 
@@ -295,7 +328,7 @@
             <span>characters</span>
             <label class="switch">
               <input type="checkbox" id="phrase-wordlengh-toggle">
-              <span class="slider round"></span>
+              <span class="toggle-ball round"></span>
             </label>
           </div>
 
@@ -308,7 +341,7 @@
             </select>
             <label class="switch">
               <input type="checkbox" id="phrase-lengh-toggle" checked>
-              <span class="slider round"></span>
+              <span class="toggle-ball round"></span>
             </label>
           </div>
         </div>

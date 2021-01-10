@@ -11,6 +11,15 @@
   text-decoration: none;
   color: #818181;
   display: block;
+  text-align: center;
+}
+
+.mobilelink:visited, .mobilelink:link {
+  color: #6c6c6c;
+}
+
+.mobilelink:hover {
+  color: #919191;
 }
 
 .sidebuttons {
