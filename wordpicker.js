@@ -10,8 +10,9 @@ var urlParams = new URLSearchParams(queryString);
 
 console.log("Welcome to Word Picker!");
 
-function init() {
+window.onload = function() {
   var view = urlParams.get('view');
+  var progressElement = document.getElementById("progress");
 
   if (window.location.protocol == "https:") {
     window.location.href = window.location.href.replace("https:", "http:");
@@ -25,13 +26,13 @@ function init() {
   document.getElementById("progress").style.width = "16%";
 
   applySettings();
-  document.getElementById("progress").style.width = "32%";
+  progressElement.style.width = "32%";
   changepage(1);
-  document.getElementById("progress").style.width = "48%";
+  progressElement.style.width = "48%";
   startWords("prev");
-  document.getElementById("progress").style.width = "64%";
+  progressElement.style.width = "64%";
   startSentences("prev");
-  document.getElementById("progress").style.width = "80%";
+  progressElement.style.width = "80%";
   //startPhrases("prev");
   setBackground();
 
