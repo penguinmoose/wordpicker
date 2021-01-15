@@ -8,7 +8,7 @@ def load_phone_dict():
             if line.startswith(';;;'):
                 continue
             [word, phone] = line.split("  ", 1)
-            phone = phone.rstrip().translate(translation) # don't care about the digits, which represents stress
+            phone = phone.rstrip().translate(translation) # Don't care about the digits, which represents stress. Stress means the pitch of the sound.
             dict[word.lower()] = phone
     return dict
 

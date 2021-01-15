@@ -292,7 +292,7 @@ section:S EH K SH AH N
 own:OW N
 found:F AW N D
 sports:S P AO R T S
-house:HH AW S
+house:HH AW S:noun-thing
 related:R IH L EY T IH D
 security:S IH K Y UH R AH T IY
 both:B OW TH
@@ -1009,7 +1009,7 @@ cash:K AE SH
 employment:EH M P L OY M AH N T
 overall:OW V ER AO L
 bay:B EY
-river:R IH V ER
+river:R IH V ER:noun-thing
 commission:K AH M IH SH AH N
 ad:AE D
 package:P AE K AH JH
@@ -1096,7 +1096,7 @@ fine:F AY N
 names:N EY M Z
 robert:R AA B ER T
 hour:AW ER
-gas:G AE S
+gas:G AE S:noun-thing
 skills:S K IH L Z
 six:S IH K S
 bush:B UH SH
@@ -1233,7 +1233,7 @@ documents:D AA K Y AH M AH N T S
 communication:K AH M Y UW N AH K EY SH AH N
 purpose:P ER P AH S
 feature:F IY CH ER
-bed:B EH D
+bed:B EH D:noun-thing
 comes:K AH M Z
 police:P AH L IY S
 everyone:EH V R IY W AH N
@@ -1337,7 +1337,7 @@ william:W IH L Y AH M
 express:IH K S P R EH S
 award:AH W AO R D
 distance:D IH S T AH N S
-tree:T R IY
+tree:T R IY:noun-thing
 peter:P IY T ER
 assessment:AH S EH S M AH N T
 ensure:EH N SH UH R
@@ -1520,7 +1520,7 @@ authors:AO TH ER Z
 boards:B AO R D Z
 faculty:F AE K AH L T IY
 parties:P AA R T IY Z
-fish:F IH SH
+fish:F IH SH:noun-thing
 membership:M EH M B ER SH IH P
 mission:M IH SH AH N
 eye:AY
@@ -2123,7 +2123,7 @@ goals:G OW L Z
 hire:HH AY ER
 election:IH L EH K SH AH N
 suggest:S AH JH EH S T
-branch:B R AE N CH
+branch:B R AE N CH:noun-thing
 charges:CH AA R JH IH Z
 serve:S ER V
 affiliates:AH F IH L IY AH T S
@@ -2375,7 +2375,7 @@ clearly:K L IH R L IY
 fix:F IH K S
 handle:HH AE N D AH L
 sweet:S W IY T
-desk:D EH S K
+desk:D EH S K:noun-thing
 criteria:K R AY T IH R IY AH
 dave:D EY V
 massachusetts:M AE S AH CH UW S AH T S
@@ -2603,7 +2603,7 @@ accuracy:AE K Y ER AH S IY
 dual:D UW AH L
 rise:R AY Z
 sleep:S L IY P
-bird:B ER D
+bird:B ER D:noun-thing
 pharmacy:F AA R M AH S IY
 brazil:B R AH Z IH L
 creation:K R IY EY SH AH N
@@ -2830,9 +2830,9 @@ broadband:B R AO D B AE N D
 influence:IH N F L UW AH N S
 ratio:R EY SH IY OW
 importance:IH M P AO R T AH N S
-rain:R EY N
+rain:R EY N:noun-thing
 onto:AA N T UW:preposition
-planet:P L AE N AH T
+planet:P L AE N AH T:noun-thing
 webmaster:W EH B M AE S T ER
 copies:K AA P IY Z
 recipe:R EH S AH P IY
@@ -3305,7 +3305,7 @@ territory:T EH R IH T AO R IY
 transaction:T R AE N Z AE K SH AH N
 manchester:M AE N CH EH S T ER
 weapons:W EH P AH N Z
-paint:P EY N T
+paint:P EY N T:noun-thing
 delay:D IH L EY
 pilot:P AY L AH T
 outlet:AW T L EH T
@@ -3434,7 +3434,7 @@ boot:B UW T
 suitable:S UW T AH B AH L
 absolutely:AE B S AH L UW T L IY
 millions:M IH L Y AH N Z
-lunch:L AH N CH
+lunch:L AH N CH:noun-thing
 audit:AO D IH T
 push:P UH SH
 chamber:CH EY M B ER
@@ -4125,7 +4125,7 @@ interpretation:IH N T ER P R IH T EY SH AH N
 horses:HH AO R S AH Z
 lol:L AO L
 dirty:D ER T IY
-deck:D EH K
+deck:D EH K:noun-thing
 wayne:W EY N
 donate:D OW N EY T
 taught:T AO T
@@ -4853,7 +4853,7 @@ quarterly:K W AO R T ER L IY
 rpm:AA R P IY EH M
 profits:P R AA F IH T S
 devil:D EH V AH L
-grass:G R AE S
+grass:G R AE S:noun-thing
 comply:K AH M P L AY
 marie:M ER IY
 florist:F L AA R IH S T
@@ -6295,7 +6295,7 @@ compressed:K AH M P R EH S T
 bahamas:B AH HH AA M AH Z
 powell:P AA W EH L
 mixture:M IH K S CH ER
-bench:B EH N CH
+bench:B EH N CH:noun-thing
 tub:T AH B
 rider:R AY D ER
 scheduling:S K EH JH UH L IH NG
@@ -6929,7 +6929,7 @@ scotia:S K OW SH AH
 farming:F AA R M IH NG
 gibson:G IH B S AH N
 pharmacies:F AA R M AH S IY Z
-fork:F AO R K
+fork:F AO R K:noun-thing
 troy:T R OY
 ln:L EY N
 roller:R OW L ER
@@ -7169,7 +7169,7 @@ britannica:B R IH T AE N IH K AH
 comm:K AA M
 ellen:EH L AH N
 competitors:K AH M P EH T AH T ER Z
-rocket:R AA K AH T
+rocket:R AA K AH T:noun-thing
 aye:AY
 bullet:B UH L AH T
 towers:T AW ER Z
@@ -7822,7 +7822,7 @@ thoroughly:TH ER OW L IY
 antigua:AE N T IY G W AH
 nottingham:N AA T IH NG HH AE M
 thunder:TH AH N D ER
-tent:T EH N T
+tent:T EH N T:noun-thing
 caution:K AA SH AH N
 identifies:AY D EH N T AH F AY Z
 questionnaire:K W EH S CH AH N EH R
@@ -9237,3 +9237,12 @@ varieties:V ER AY AH T IY Z
 arbor:AA R B ER
 configurations:K AH N F IH G Y ER EY SH AH N Z
 poison:P OY Z AH N
+dentist:D EH N T AH S T
+firefighter:F AY R F AY T ER
+backyard:B AE K Y AA R D
+bakery:B EY K ER IY
+campground:K AE M P G R AW N D
+playground:P L EY G R AW N D
+napkin:N AE P K IH N:noun-thing
+spoon:S P UW N:noun-thing
+tornado:T AO R N EY D OW:noun-thing

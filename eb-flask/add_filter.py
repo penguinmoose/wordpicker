@@ -7,9 +7,9 @@ def update_word_list(filter_file, filter_name):
     with open(filter_file, 'r') as f:
         filter_words = f.read().splitlines()
 
-    with open("word_phoneme-new.txt", 'w') as f:
+    with open("word_phoneme-" + filter_name + ".txt", 'w') as f:
         for l in lines:
-            [word, phone] = l.rstrip().split(":")
+            word = l.rstrip().split(":")[0]
             if word in filter_words:
                 f.write(l.rstrip() + ':' + filter_name + '\n')
             else:
