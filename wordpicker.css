@@ -359,3 +359,33 @@ footer {
     float: left;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: white;
+  }
+
+  .sidebuttons {
+    background-color: #213c8c;
+  }
+
+  .sidebuttons:hover {
+    background-color: #36ad54;
+  }
+
+  #heading {
+    background-color: #858585;
+  }
+
+  .inputcontainer {
+    background-color: #666666;
+  }
+
+  .instructioncontainer {
+    background-color: #505050;
+  }
+
+  .settings {
+    background-color: #1c539c;
+  }
+}
