@@ -20,6 +20,7 @@ window.onload = function() {
 
   if ((detectMobile() == true) || (view == "mobile")) {
     document.getElementById("main").style.marginLeft = 0;
+    document.getElementsByClassName("heading-icon")[0].style.marginLeft = "30px";
     document.getElementById("sidenav").style.display = "none";
     document.getElementById("bottomnav").style.display = "block";
   }
