@@ -388,4 +388,8 @@ footer {
   .settings {
     background-color: #1c539c;
   }
+
+  .resultcontainer {
+    color: black;
+  }
 }
