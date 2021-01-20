@@ -32,6 +32,7 @@
   <link rel="stylesheet" href="loading.css">
   <link rel="stylesheet" href="tabs.css">
   <link rel="stylesheet" href="toggle.css">
+  <link rel="stylesheet" href="fancybtn.css">
   <link rel="stylesheet" href="wordpicker.css">
 </head>
 
@@ -39,20 +40,56 @@
 <body>
   <title>Word Picker - johanneschan</title>
 
-  <div id="heading">
+  <h1 class="heading-1">
     <img src="favicon.ico" class="heading-icon">
     <span style="text-shadow: 4px 3px #737373;">Word Picker</span>
 
     <div class="dropdown">
       <span onclick="toggleMoreDropdown()" class="more-dropbtn">•••</span>
       <div id="moreDropdown" class="more-dropdown-content">
-        <button type="button" onclick="window.location.reload(true)">Reload</button>
-        <button type="button" onclick="open('http://www.johanneschan.com/wordpicker/eb-flask/10000words.txt')">See word list</button>
-        <button onclick="openSettings();">Settings</button>
+        <table style="font-family: 'Nunito', sans-serif; font-size: 12pt; font-weight: normal;">
+          <tr>
+            <td>
+              <button type="button" onclick="window.location.reload(true)" class="more-dropdown-content-button">Reload</button>
+            </td>
+            <td>
+              <img src="icons/reload-icon.png" class="more-dropdown-item-icons" alt="reload icon">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <button type="button" onclick="open('eb-flask/10000words.txt')" class="more-dropdown-content-button">See word list</button>
+            </td>
+            <td>
+              <img src="icons/document-icon.png" class="more-dropdown-item-icons" alt="document icon">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <button onclick="openSettings();" class="more-dropdown-content-button">Settings</button>
+            </td>
+            <td>
+              <img src="icons/settings-icon.png" class="more-dropdown-item-icons" alt="settings icon">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <button onclick="changeTheme('d')" id="theme-change-button" class="more-dropdown-content-button">Dark Mode</button>
+            </td>
+            <td>
+              <img src="icons/dark-mode-icon.png" class="more-dropdown-item-icons" alt="dark mode icon" id="theme-icon">
+            </td>
+          </tr>
+        </table>
+        <hr>
+
         <div id="google_translate_element"></div>
       </div>
     </div>
-  </div><br>
+  </h1><br>
 
   <!-------->
 
@@ -128,9 +165,9 @@
 
     <div id="word_picker">
       <div class="inputcontainer">
-        <div class="inputheading">Find words using spelling pattern or sound
+        <h2 class="inputheading">Find words using spelling pattern or sound
           <div style="font-size: 10pt;">Go to the instructions tab for how to use this</div>
-        </div>
+        </h2>
         <br>
 
         <form class="input">
@@ -187,7 +224,7 @@
           </div>
 
           <div>Select a parts of speech result filter:</div>
-          <div style="background-color: #5b9cdf;">
+          <div class="bluebox">
             <input type="radio" id="prepesition-filter" name="filter-button" value="&filter=noun">
             <label for="prepesition-filter">Show nouns</label><br>
             <input type="radio" id="prepesition-filter" name="filter-button" value="&filter=noun-person">
@@ -203,7 +240,7 @@
           </div>
         </form>
 
-        <div style="background-color: #5b9cdf; padding: 5px; margin-top: 5px;">
+        <div class="bluebox" style="padding: 5px; margin-top: 5px;">
           <label>Show</label>
           <select name="limitresult-options" id="limitresult-options">
             <option value="10">10 results</option>
@@ -265,6 +302,10 @@
 
     <div id="sentence_picker">
       <div class="inputcontainer">
+        <h2 class="inputheading">Find sentences containing a word
+          <div style="font-size: 10pt;">Go to the instructions tab for how to use this</div>
+        </h2>
+
         <form class="input">
           <div>Type in what word you want the sentences to have. For example, if you type in hello, a sentence like 'Hello, can I help you with something?' will show up.</div>
           <input type="text" id="reqsentence" name="reqsentence" placeholder="Type keywords for sentences here..." class="inputform" title="Type what word you want the sentences to contain"><br>
@@ -280,79 +321,10 @@
 
     <!-------------------------------------------------------->
 
-    <!--<div id="phrase_picker">
-      <div class="inputcontainer" style="width: 550px;">
-        <div>Choose filters for the phrases:</div>
-
-        <div style="background-color: #5b9cdf; padding: 5px; margin-top: 5px;">
-          <div style="margin-bottom: 10px;">
-            <span>The phrase starts with </span>
-            <input type="text" id="phrase_startswith" name="phrase_startswith" class="inputform" placeholder="Spelling pattern or word" style="width: 150px; padding: 6px 14px 6px 14px;"
-              title="Type what you want the phrases to start with. It can be a spelling pattern or word.">
-            <label class="switch">
-              <input type="checkbox" id="phrase-startswith-toggle">
-              <span class="toggle-ball round"></span>
-            </label>
-          </div>
-
-          <div style="margin-bottom: 10px;">
-            <span>The phrase ends with </span>
-            <input type="text" id="phrase_endswith" name="phrase_endswith" class="inputform" placeholder="Spelling pattern or word" style="width: 150px; padding: 6px 14px 6px 14px;"
-              title="Type what you want the phrases to end with. It can be a spelling pattern or word.">
-            <label class="switch">
-              <input type="checkbox" id="phrase-endswith-toggle">
-              <span class="toggle-ball round"></span>
-            </label>
-          </div>
-
-          <div style="margin-bottom: 10px;">
-            <span>Each phrase needs to contain </span>
-            <input type="text" id="phrase_contains" name="phrase_contains" class="inputform" placeholder="Spelling pattern or word" style="width: 150px; padding: 6px 14px 6px 14px;"
-              title="Type what you want the phrases to contain. It can be a spelling pattern or word.">
-            <label class="switch">
-              <input type="checkbox" id="phrase-contains-toggle" checked>
-              <span class="toggle-ball round"></span>
-            </label>
-          </div>
-
-          <div style="margin-bottom: 10px;">
-            <span>The words in each phrase is</span>
-            <select id="phrase-wordlengh-comparison-select">
-              <option value="less">less than</option>
-              <option value="equal">equal to</option>
-              <option value="greater">greater than</option>
-            </select>
-            <input type="text" id="phrase_wordlengh" name="phrase_wordlengh" class="inputform" placeholder="A number" style="width: 60px; padding: 6px 14px 6px 14px;" title="Type how long the words in the phrase need to be in characters.">
-            <span>characters</span>
-            <label class="switch">
-              <input type="checkbox" id="phrase-wordlengh-toggle">
-              <span class="toggle-ball round"></span>
-            </label>
-          </div>
-
-          <div style="margin-bottom: 10px;">
-            <span>The phrase is</span>
-            <input type="text" id="phrase_lengh" name="phrase_lengh" class="inputform" placeholder="A number" style="width: 60px; padding: 6px 14px 6px 14px;" title="Type how long the phrase needs to be.">
-            <select id="phrase-lengh-format-select">
-              <option value="char">characters</option>
-              <option value="word" selected="selected">words</option>
-            </select>
-            <label class="switch">
-              <input type="checkbox" id="phrase-lengh-toggle" checked>
-              <span class="toggle-ball round"></span>
-            </label>
-          </div>
-        </div>
-
-        <button onclick="startPhrases();" class="gobutton" title="Find phrases that follow the filters">Find phrases</button>
-      </div>
-    </div>-->
-
-    <!-------------------------------------------------------->
-
     <div id="instructions">
       <div class="instructioncontainer">
-        <h3>Instructions for word picker</h3>
+        <h2 style="font-family: cursive; font-size: 24pt;">Instructions</h2>
+        <h3>Instructions for Word Picker</h3>
 
         <div class="small-heading">Welcome to word picker!</div><br>
         <p>You can find words by sound or spelling pattern. To do it by sound, find the sound you want that is bolded in the example section of the table. Then find the corresponding phoneme and type it in the type sound here... input field. If you
@@ -376,6 +348,27 @@
         <div>If you want to request words or sentences with some criteria without needing to use the webpage, you can use our API. Send a get request to wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com then add /api/words to the url for
           finding
           words and /api/sentences for finding sentences. For words, you can add &pattern= then the spelling pattern for the spelling pattern, &phone= then the sound for the sound, and &filter= then the filter for the filter.</div>
+        <hr>
+
+        <h3>User Interface (UI) instructions<h3>
+            <h4>The loading wheel</h4>
+            <p>The loading wheel shows you that Word Picker is loading. It has a green background and has rounded corners. If the loading wheel doesn't hide for more than 10 seconds, it might happen because of these reasons:
+            <ul style="text-align: left;">
+              <li>Your browser is just slow. Try updating your browser to the latest version.</li>
+              <li>Your browser doesn't support something that is used by Word Picker. Make sure Javascript is enabled on your browser. It provides functionality to Word Picker.</li>
+              <li>There is a problem in Word Picker. If it causes the loading wheel to spin continuously, the problem should be solved in a day or in less time than that.</li>
+            </ul>
+            </p>
+            <h4>How to navigate</h4>
+            <p>Use the tabs at the left bar to navigate. If you are on a mobile device, the tabs are in the bottom. Because things might look weird on a mobile device, using Word Picker on a computer or desktop is recommended.</p>
+            <h4>The three dots in the heading</h4>
+            <p>The three dots in the heading shows a menu for more actions like opening settings, viewing the word list, translating the page and more. Keep in mind that the translation uses Google Translate, which might not translate all of the
+              content perfectly.</p>
+            <h4>Settings</h4>
+            <p>You can change Word Picker's behavior using Settings. To acsess it, press the three dots at the top and select settings. You can use it to control whether there is a random background every day instead of every time the page loads. You
+              can also use it to make the result text italic and control the result container width. Change the result container width when the words bump into each other. To save and apply the settings, press save. If you want to just close the
+              settings without saving, press cancel. The settings should be able to save on browsers that support <a href="https://en.wikipedia.org/wiki/Web_storage">Local Storage</a>. If your browser does not support local storage, then a red text
+              saying that your browser does not support it will show. If it shows, update your browser or switch to another one.</p>
       </div>
 
       <img src="https://www.johanneschan.com/icon-strip.png" style="height: 50px; width: 250px; margin-top: 15px; border-radius: 10px;">

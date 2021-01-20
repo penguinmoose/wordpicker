@@ -59,6 +59,47 @@ function changepage(pg) {
   document.getElementById(button_list[pg - 1] + "_mobile").className = "active";
 }
 
+function changeBackgroundOfElements(elementClass, color) {
+  var elements = document.getElementsByClassName(elementClass); // Paramiter is not called class because that is reserved
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].style.backgroundColor = color;
+  }
+}
+
+function changeTheme(theme) {
+  if (theme == "d") {
+    document.body.color = "white";
+    changeBackgroundOfElements("sidebuttons", "#213c8c");
+    changeBackgroundOfElements("heading-1", "#858585");
+    changeBackgroundOfElements("inputcontainer", "#666666");
+    changeBackgroundOfElements("instructioncontainer", "#505050");
+    changeBackgroundOfElements("settings", "#1c539c");
+    changeBackgroundOfElements("more-dropdown-content-button", "#888");
+    changeBackgroundOfElements("error-alert", "#bd2e2e");
+    document.getElementsByClassName("resultcontainer")[0].style.color = "black";
+    document.getElementsByClassName("resultcontainer")[1].style.color = "black";
+    changeBackgroundOfElements("bluebox", "#3171b4");
+
+    document.getElementById("theme-icon").src = "icons/light-mode-icon.png";
+    document.getElementById("theme-change-button").innerHTML = "Light Mode";
+    document.getElementById("theme-change-button").setAttribute("onclick", "changeTheme('l')");
+  } else {
+    document.body.color = "black";
+    changeBackgroundOfElements("sidebuttons", "#00c2f5");
+    changeBackgroundOfElements("heading-1", "#dddddd");
+    changeBackgroundOfElements("inputcontainer", "#9c9c9c");
+    changeBackgroundOfElements("instructioncontainer", "#b9b9b9");
+    changeBackgroundOfElements("settings", "#2f89ff");
+    changeBackgroundOfElements("more-dropdown-content-button", "#eeeeee");
+    changeBackgroundOfElements("error-alert", "#ff2f2f");
+    changeBackgroundOfElements("bluebox", "#5b9cdf");
+
+    document.getElementById("theme-icon").src = "icons/dark-mode-icon.png";
+    document.getElementById("theme-change-button").innerHTML = "Dark Mode";
+    document.getElementById("theme-change-button").setAttribute("onclick", "changeTheme('d')");
+  }
+}
+
 function addError(error) {
   document.getElementById("error-alert").style.display = "block";
 
