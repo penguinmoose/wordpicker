@@ -159,8 +159,8 @@ h2 {
   position: absolute;
   background-color: #f6f6f6;
   width: 180px;
-  max-height: 280px;
-  overflow: auto;
+  max-height: 200px;
+  overflow-x: scroll;
   z-index: 1;
 }
 
