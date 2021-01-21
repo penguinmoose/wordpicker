@@ -59,6 +59,11 @@ function changepage(pg) {
   document.getElementById(button_list[pg - 1] + "_mobile").className = "active";
 }
 
+function openWordList() {
+  window.open('http://www.johanneschan.com/wordpicker/eb-flask/word-list/10000words.txt', 'popUpWindow',
+    'height=500, width=400, left=300, top=200, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');
+}
+
 function changeBackgroundOfElements(elementClass, color) {
   var elements = document.getElementsByClassName(elementClass); // Paramiter is not called class because that is reserved
   for (var i = 0; i < elements.length; i++) {
