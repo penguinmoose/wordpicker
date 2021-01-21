@@ -84,6 +84,7 @@ function changeTheme(theme) {
     document.getElementsByClassName("resultcontainer")[0].style.color = "black";
     document.getElementsByClassName("resultcontainer")[1].style.color = "black";
     changeBackgroundOfElements("bluebox", "#3171b4");
+    changeBackgroundOfElements("sidebuttons", "white");
 
     document.getElementById("theme-icon").src = "icons/light-mode-icon.png";
     document.getElementById("theme-change-button").innerHTML = "Light Mode";
@@ -98,6 +99,7 @@ function changeTheme(theme) {
     changeBackgroundOfElements("more-dropdown-content-button", "#eeeeee");
     changeBackgroundOfElements("error-alert", "#ff2f2f");
     changeBackgroundOfElements("bluebox", "#5b9cdf");
+    changeBackgroundOfElements("sidebuttons", "black");
 
     document.getElementById("theme-icon").src = "icons/dark-mode-icon.png";
     document.getElementById("theme-change-button").innerHTML = "Dark Mode";

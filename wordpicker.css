@@ -424,4 +424,8 @@ h2 {
   .bluebox {
     background-color: #3171b4;
   }
+
+  .sidebuttons {
+    color: white;
+  }
 }
