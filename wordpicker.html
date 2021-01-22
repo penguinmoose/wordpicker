@@ -109,7 +109,7 @@
     <button type="button" name="button" onclick="changepage(2)" id="sn_button" class="sidebuttons" title="Go to the sentence picker tab">Sentence Picker</button>
     <button type="button" name="button" onclick="changepage(3)" id="in_button" class="sidebuttons" style="margin-bottom: 25px;" title="View instructions">Instructions</button> <!-- change onclick to changepage(4) when making phrase picker -->
 
-    <div class="version">Version 1.5.7</div>
+    <div class="version">Version 1.5.8</div>
     <a href="?view=mobile" class="mobilelink">Switch to mobile view</a>
   </div>
 
@@ -235,16 +235,27 @@
 
           <div>Select a parts of speech result filter:</div>
           <div class="bluebox">
-            <input type="radio" id="prepesition-filter" name="filter-button" value="&filter=noun">
-            <label for="prepesition-filter">Show nouns</label><br>
-            <input type="radio" id="prepesition-filter" name="filter-button" value="&filter=noun-person">
-            <label for="prepesition-filter">Show nouns - person</label><br>
-            <input type="radio" id="prepesition-filter" name="filter-button" value="&filter=noun-place">
-            <label for="prepesition-filter">Show nouns - place</label><br>
-            <input type="radio" id="prepesition-filter" name="filter-button" value="&filter=noun-thing">
-            <label for="prepesition-filter">Show nouns - thing</label><br>
+            <input type="radio" id="noun-filter" name="filter-button" value="&filter=noun">
+            <label for="noun-filter">Show nouns</label><br>
+
+            <input type="radio" id="noun-person-filter" name="filter-button" value="&filter=noun-person">
+            <label for="noun-person-filter">Show nouns - person</label><br>
+
+            <input type="radio" id="noun-place-filter" name="filter-button" value="&filter=noun-place">
+            <label for="noun-place-filter">Show nouns - place</label><br>
+
+            <input type="radio" id="noun-thing-filter" name="filter-button" value="&filter=noun-thing">
+            <label for="noun-thing-filter">Show nouns - thing</label><br>
+
             <input type="radio" id="prepesition-filter" name="filter-button" value="&filter=preposition">
             <label for="prepesition-filter">Show prepesitions</label><br>
+
+            <input type="radio" id="adjective-filter" name="filter-button" value="&filter=adjective">
+            <label for="adjective-filter">Show adjectives</label><br>
+
+            <input type="radio" id="verb-filter" name="filter-button" value="&filter=verb">
+            <label for="verb-filter">Show verbs</label><br>
+
             <input type="radio" id="all-filter" name="filter-button" value="" checked>
             <label for="all-filter">Show all results</label><br>
           </div>

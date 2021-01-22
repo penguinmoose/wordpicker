@@ -23,7 +23,7 @@ at:AE T:preposition
 as:AE Z:preposition
 your:Y AO R
 all:AO L
-have:HH AE V
+have:HH AE V:verb
 new:N UW
 more:M AO R
 an:AE N
@@ -44,7 +44,7 @@ but:B AH T
 our:AW ER
 one:W AH N
 other:AH DH ER
-do:D UW
+do:D UW:verb
 no:N OW
 information:IH N F AO R M EY SH AH N
 time:T AY M
@@ -58,10 +58,10 @@ which:W IH CH
 their:DH EH R
 news:N UW Z
 out:AW T
-use:Y UW S
+use:Y UW S:verb
 any:EH N IY
 there:DH EH R
-see:S IY
+see:S IY:verb
 only:OW N L IY
 so:S OW
 his:HH IH Z
@@ -73,8 +73,8 @@ who:HH UW
 web:W EH B
 also:AO L S OW
 now:N AW
-help:HH EH L P
-get:G EH T
+help:HH EH L P:verb
+get:G EH T:verb
 pm:P IY EH M
 view:V Y UW
 online:AO N L AY N
@@ -93,11 +93,11 @@ some:S AH M
 these:DH IY Z
 click:K L IH K
 its:IH T S
-like:L AY K:preposition
+like:L AY K:preposition:verb
 service:S ER V AH S
 x:EH K S
 than:DH AE N
-find:F AY N D
+find:F AY N D:verb
 price:P R AY S
 date:D EY T
 back:B AE K
@@ -108,7 +108,7 @@ list:L IH S T
 name:N EY M
 just:JH AH S T
 over:OW V ER
-state:S T EY T
+state:S T EY T:verb
 year:Y IH R
 day:D EY
 into:IH N T UW:preposition
@@ -120,16 +120,16 @@ world:W ER L D
 re:R EY
 next:N EH K S T
 used:Y UW Z D
-go:G OW
+go:G OW:verb
 b:B IY
 work:W ER K
-last:L AE S T
+last:L AE S T:verb
 most:M OW S T
 products:P R AA D AH K T S
 music:M Y UW Z IH K
-buy:B AY
+buy:B AY:verb
 data:D EY T AH
-make:M EY K
+make:M EY K:verb
 them:DH EH M
 should:SH UH D
 product:P R AA D AH K T
@@ -161,7 +161,7 @@ info:IH N F OW
 rights:R AY T S
 public:P AH B L IH K
 books:B UH K S
-high:HH AY
+high:HH AY:adjective
 school:S K UW L
 through:TH R UW
 m:EH M
@@ -170,22 +170,22 @@ links:L IH NG K S
 she:SH IY
 review:R IY V Y UW
 years:Y IH R Z
-order:AO R D ER
+order:AO R D ER:verb
 very:V EH R IY
 privacy:P R AY V AH S IY
 book:B UH K
 items:AY T AH M Z
 company:K AH M P AH N IY
 r:AA R
-read:R EH D
+read:R EH D:verb
 group:G R UW P
-need:N IY D
+need:N IY D:verb
 many:M EH N IY
 user:Y UW Z ER
 said:S EH D
 de:D IY
 does:D AH Z
-set:S EH T
+set:S EH T:verb
 under:AH N D ER:preposition
 general:JH EH N ER AH L
 research:R IY S ER CH
@@ -197,14 +197,14 @@ map:M AE P
 reviews:R IY V Y UW Z
 program:P R OW G R AE M
 life:L AY F
-know:N OW
+know:N OW:verb
 games:G EY M Z
 way:W EY
 days:D EY Z
 management:M AE N AH JH M AH N T
 p:P IY
 part:P AA R T
-could:K UH D
+could:K UH D:verb
 great:G R EY T
 united:Y UW N AY T AH D
 hotel:HH OW T EH L
@@ -214,13 +214,13 @@ item:AY T AH M
 international:IH N T ER N AE SH AH N AA L
 center:S EH N T ER
 ebay:IY B EY
-must:M AH S T
+must:M AH S T:verb
 store:S T AO R
-travel:T R AE V AH L
+travel:T R AE V AH L:verb
 comments:K AA M EH N T S
 made:M EY D
 development:D IH V EH L AH P M AH N T
-report:R IY P AO R T
+report:R IY P AO R T:verb
 off:AO F:preposition
 member:M EH M B ER
 details:D IH T EY L Z
@@ -229,7 +229,7 @@ terms:T ER M Z
 before:B IH F AO R:preposition
 hotels:HH OW T EH L Z
 did:D IH D
-send:S EH N D
+send:S EH N D:verb
 right:R AY T
 type:T AY P
 because:B IH K AO Z
@@ -242,7 +242,7 @@ education:EH JH AH K EY SH AH N
 national:N AE SH AH N AH L
 car:K AA R
 design:D IH Z AY N
-take:T EY K
+take:T EY K:verb
 posted:P OW S T IH D
 internet:IH N T ER N EH T
 address:AE D R EH S
@@ -250,7 +250,7 @@ community:K AH M Y UW N AH T IY
 within:W IH DH IH N
 states:S T EY T S
 area:EH R IY AH
-want:W AA N T
+want:W AA N T:verb
 phone:F OW N
 dvd:D IY V IY D IY
 shipping:SH IH P IH NG
@@ -264,11 +264,11 @@ long:L AO NG
 based:B EY S T
 w:D AH B AH L Y UW
 code:K OW D
-show:SH OW
+show:SH OW:verb
 o:OW
 even:IY V IH N
 black:B L AE K
-check:CH EH K
+check:CH EH K:verb
 special:S P EH SH AH L
 prices:P R AY S AH Z
 website:W EH B S AY T
@@ -279,7 +279,7 @@ much:M AH CH
 sign:S AY N
 file:F AY L
 link:L IH NG K
-open:OW P AH N
+open:OW P AH N:verb
 today:T AH D EY
 technology:T EH K N AA L AH JH IY
 south:S AW TH
@@ -289,7 +289,7 @@ same:S EY M
 pages:P EY JH AH Z
 version:V ER ZH AH N
 section:S EH K SH AH N
-own:OW N
+own:OW N:verb
 found:F AW N D
 sports:S P AO R T S
 house:HH AW S:noun-thing
@@ -304,7 +304,7 @@ game:G EY M
 members:M EH M B ER Z
 power:P AW ER
 while:W AY L
-care:K EH R
+care:K EH R:verb
 network:N EH T W ER K
 down:D AW N
 computer:K AH M P Y UW T ER
@@ -320,7 +320,7 @@ him:HH IH M
 without:W IH TH AW T
 per:P ER
 access:AE K S EH S
-think:TH IH NG K
+think:TH IH NG K:verb
 north:N AO R TH
 resources:R IY S AO R S IH Z
 current:K ER AH N T
@@ -328,7 +328,7 @@ posts:P OW S T S
 big:B IH G
 media:M IY D IY AH
 law:L AO
-control:K AH N T R OW L
+control:K AH N T R OW L:verb
 water:W AO T ER
 history:HH IH S T ER IY
 pictures:P IH K CH ER Z
@@ -342,7 +342,7 @@ shop:SH AA P
 directory:D ER EH K T ER IY
 board:B AO R D
 location:L OW K EY SH AH N
-change:CH EY N JH
+change:CH EY N JH:verb
 white:W AY T
 text:T EH K S T
 small:S M AO L
@@ -352,7 +352,7 @@ government:G AH V ER N M AH N T
 children:CH IH L D R AH N
 during:D UH R IH NG:preposition
 usa:Y UW EH S EY
-return:R IH T ER N
+return:R IH T ER N:verb
 students:S T UW D AH N T S
 v:V IY
 shopping:SH AA P IH NG
@@ -363,13 +363,13 @@ level:L EH V AH L
 digital:D IH JH AH T AH L
 profile:P R OW F AY L
 previous:P R IY V IY AH S
-form:F AO R M
+form:F AO R M:verb
 events:IH V EH N T S
-love:L AH V
+love:L AH V:verb
 old:OW L D
 john:JH AA N
 main:M EY N
-call:K AO L
+call:K AO L:verb
 hours:AW ER Z
 image:IH M AH JH
 department:D IH P AA R T M AH N T
@@ -394,11 +394,11 @@ content:K AA N T EH N T
 country:K AH N T R IY
 private:P R AY V AH T
 little:L IH T AH L
-visit:V IH Z IH T
-save:S EY V
+visit:V IH Z IH T:verb
+save:S EY V:verb
 tools:T UW L Z
 low:L OW
-reply:R IH P L AY
+reply:R IH P L AY:verb
 customer:K AH S T AH M ER
 december:D IH S EH M B ER
 compare:K AH M P EH R
@@ -411,15 +411,15 @@ york:Y AO R K
 man:M AE N
 card:K AA R D
 jobs:JH AA B Z
-provide:P R AH V AY D
+provide:P R AH V AY D:verb
 j:JH EY
 food:F UW D
 source:S AO R S
 author:AO TH ER
 different:D IH F ER AH N T
-press:P R EH S
+press:P R EH S:verb
 u:Y UW
-learn:L ER N
+learn:L ER N:verb
 sale:S EY L
 around:ER AW N D
 print:P R IH N T
@@ -433,15 +433,15 @@ stock:S T AA K
 training:T R EY N IH NG
 too:T UW
 credit:K R EH D AH T
-point:P OY N T
-join:JH OY N
+point:P OY N T:verb
+join:JH OY N:verb
 science:S AY AH N S
 men:M EH N
 categories:K AE T AH G AO R IY Z
 advanced:AH D V AE N S T
 west:W EH S T
 sales:S EY L Z
-look:L UH K
+look:L UH K:verb
 english:IH NG G L IH SH
 left:L EH F T
 team:T IY M
@@ -456,8 +456,8 @@ thread:TH R EH D
 week:W IY K
 category:K AE T AH G AO R IY
 note:N OW T
-live:L AY V
-large:L AA R JH
+live:L AY V:verb
+large:L AA R JH:adjective
 gallery:G AE L ER IY
 table:T EY B AH L
 register:R EH JH IH S T ER
@@ -469,7 +469,7 @@ market:M AA R K AH T
 library:L AY B R EH R IY
 really:R IH L IY
 action:AE K SH AH N
-start:S T AA R T
+start:S T AA R T:verb
 series:S IH R IY Z
 model:M AA D AH L
 features:F IY CH ER Z
@@ -484,14 +484,14 @@ required:R IY K W AY ER D
 second:S EH K AH N D
 hot:HH AA T
 accessories:AE K S EH S ER IY Z
-cost:K AA S T
+cost:K AA S T:verb
 movie:M UW V IY
 forums:F AO R AH M Z
 march:M AA R CH
 la:L AA
 september:S EH P T EH M B ER
 better:B EH T ER
-say:S EY
+say:S EY:verb
 questions:K W EH S CH AH N Z
 july:JH UW L AY
 yahoo:Y AA HH UW
@@ -499,11 +499,11 @@ going:G OW IH NG
 medical:M EH D AH K AH L
 test:T EH S T
 friend:F R EH N D
-come:K AH M
+come:K AH M:verb
 dec:D EH K
 server:S ER V ER
 pc:P IY S IY
-study:S T AH D IY
+study:S T AH D IY:verb
 application:AE P L AH K EY SH AH N
 cart:K AA R T
 staff:S T AE F
@@ -511,13 +511,13 @@ articles:AA R T AH K AH L Z
 san:S AE N
 feedback:F IY D B AE K
 again:AH G EH N
-play:P L EY
+play:P L EY:verb
 looking:L UH K IH NG
 issues:IH SH UW Z
 april:EY P R AH L
 never:N EH V ER
 users:Y UW Z ER Z
-complete:K AH M P L IY T
+complete:K AH M P L IY T:verb
 street:S T R IY T
 topic:T AA P IH K
 comment:K AA M EH N T
@@ -549,7 +549,7 @@ side:S AY D
 act:AE K T
 problem:P R AA B L AH M
 red:R EH D
-give:G IH V
+give:G IH V:verb
 memory:M EH M ER IY
 performance:P ER F AO R M AH N S
 social:S OW SH AH L
@@ -558,11 +558,11 @@ august:AA G AH S T
 quote:K W OW T
 language:L AE NG G W AH JH
 story:S T AO R IY
-sell:S EH L
+sell:S EH L:verb
 options:AA P SH AH N Z
-experience:IH K S P IH R IY AH N S
+experience:IH K S P IH R IY AH N S:verb
 rates:R EY T S
-create:K R IY EY T
+create:K R IY EY T:verb
 key:K IY
 body:B AA D IY
 young:Y AH NG
@@ -592,7 +592,7 @@ ca:K AH
 hard:HH AA R D
 texas:T EH K S AH S
 oct:AO K T
-pay:P EY
+pay:P EY:verb
 four:F AO R
 poker:P OW K ER
 status:S T AE T AH S
@@ -604,13 +604,13 @@ seller:S EH L ER
 court:K AO R T
 february:F EH B Y AH W EH R IY
 always:AO L W EY Z
-result:R IH Z AH L T
+result:R IH Z AH L T:verb
 audio:AA D IY OW
 light:L AY T
-write:R AY T
+write:R AY T:verb
 war:W AO R
 nov:N OW V
-offer:AO F ER
+offer:AO F ER:verb
 blue:B L UW
 groups:G R UW P S
 al:AE L
@@ -618,7 +618,7 @@ easy:IY Z IY
 given:G IH V AH N
 files:F AY L Z
 event:IH V EH N T
-release:R IY L IY S
+release:R IY L IY S:verb
 analysis:AE N AE L IH S IH S
 request:R IH K W EH S T
 fax:F AE K S
@@ -644,14 +644,14 @@ problems:P R AA B L AH M Z
 london:L AH N D AH N
 washington:W AA SH IH NG T AH N
 meeting:M IY T IH NG
-become:B IH K AH M
+become:B IH K AH M:verb
 interest:IH N T AH R EH S T
 id:IH D
 child:CH AY L D
-keep:K IY P
+keep:K IY P:verb
 enter:EH N T ER
 california:K AE L AH F AO R N Y AH
-share:SH EH R
+share:SH EH R:verb
 similar:S IH M AH L ER
 garden:G AA R D AH N
 schools:S K UW L Z
@@ -663,7 +663,7 @@ listed:L IH S T AH D
 baby:B EY B IY
 learning:L ER N IH NG
 energy:EH N ER JH IY
-run:R AH N
+run:R AH N:verb
 delivery:D IH L IH V ER IY
 net:N EH T
 popular:P AA P Y AH L ER
@@ -675,7 +675,7 @@ computers:K AH M P Y UW T ER Z
 journal:JH ER N AH L
 reports:R IH P AO R T S
 co:K OW
-try:T R AY
+try:T R AY:verb
 welcome:W EH L K AH M
 central:S EH N T R AH L
 images:IH M AH JH AH Z
@@ -712,7 +712,7 @@ edition:AH D IH SH AH N
 cars:K AA R Z
 messages:M EH S AH JH AH Z
 marketing:M AA R K AH T IH NG
-tell:T EH L
+tell:T EH L:verb
 further:F ER DH ER
 updated:AH P D EY T AH D
 association:AH S OW S IY EY SH AH N
@@ -726,7 +726,7 @@ green:G R IY N
 studies:S T AH D IY Z
 close:K L OW S
 common:K AA M AH N
-drive:D R AY V
+drive:D R AY V:verb
 specific:S P AH S IH F IH K
 several:S EH V ER AH L
 gold:G OW L D
@@ -738,7 +738,7 @@ called:K AO L D
 short:SH AO R T
 arts:AA R T S
 lot:L AA T
-ask:AE S K
+ask:AE S K:verb
 display:D IH S P L EY
 limited:L IH M AH T AH D
 powered:P AW ER D
@@ -771,7 +771,7 @@ france:F R AE N S
 pro:P R OW
 region:R IY JH AH N
 island:AY L AH N D
-record:R AH K AO R D
+record:R AH K AO R D:verb
 direct:D ER EH K T
 microsoft:M AY K R OW S AO F T
 conference:K AA N F ER AH N S
@@ -790,7 +790,7 @@ ever:EH V ER
 downloads:D AW N L OW D Z
 early:ER L IY
 miles:M AY L Z
-sound:S AW N D
+sound:S AW N D:verb
 resource:R IY S AO R S
 present:P R EH Z AH N T
 applications:AE P L AH K EY SH AH N Z
@@ -802,7 +802,7 @@ works:W ER K S
 material:M AH T IH R IY AH L
 bill:B IH L
 written:R IH T AH N
-talk:T AO K
+talk:T AO K:verb
 federal:F EH D ER AH L
 hosting:HH OW S T IH NG
 rules:R UW L Z
@@ -844,7 +844,7 @@ unit:Y UW N AH T
 getting:G EH T IH NG
 global:G L OW B AH L
 tech:T EH K
-meet:M IY T
+meet:M IY T:verb
 far:F AA R
 economic:EH K AH N AA M IH K
 en:EH N
@@ -856,9 +856,9 @@ subscribe:S AH B S K R AY B
 submit:S AH B M IH T
 germany:JH ER M AH N IY
 amount:AH M AW N T
-watch:W AA CH
+watch:W AA CH:verb
 included:IH N K L UW D AH D
-feel:F IY L
+feel:F IY L:verb
 though:DH OW
 bank:B AE NG K
 risk:R IH S K
@@ -876,7 +876,7 @@ town:T AW N
 heart:HH AA R T
 advertising:AE D V ER T AY Z IH NG
 received:R AH S IY V D
-choose:CH UW Z
+choose:CH UW Z:verb
 treatment:T R IY T M AH N T
 newsletter:N UW Z L EH T ER
 archives:AA R K AY V Z
@@ -891,9 +891,9 @@ currently:K ER AH N T L IY
 construction:K AH N S T R AH K SH AH N
 toys:T OY Z
 registered:R EH JH IH S T ER D
-clear:K L IH R
+clear:K L IH R:verb
 golf:G AA L F
-receive:R AH S IY V
+receive:R AH S IY V:verb
 domain:D OW M EY N
 methods:M EH TH AH D Z
 chapter:CH AE P T ER
@@ -956,19 +956,19 @@ writing:R AY T IH NG
 speed:S P IY D
 countries:K AH N T R IY Z
 loss:L AO S
-face:F EY S
+face:F EY S:verb
 brand:B R AE N D
 discount:D IH S K AW N T
 higher:HH AY ER
 effects:IH F EH K T S
 created:K R IY EY T AH D
-remember:R IH M EH M B ER
+remember:R IH M EH M B ER:verb
 standards:S T AE N D ER D Z
 oil:OY L
 bit:B IH T
 yellow:Y EH L OW
 political:P AH L IH T AH K AH L
-increase:IH N K R IY S
+increase:IH N K R IY S:verb
 advertise:AE D V ER T AY Z
 kingdom:K IH NG D AH M
 base:B EY S
@@ -990,8 +990,8 @@ orders:AO R D ER Z
 availability:AH V EY L AH B IH L AH T IY
 africa:AE F R IH K AA
 summary:S AH M ER IY
-turn:T ER N
-mean:M IY N
+turn:T ER N:verb
+mean:M IY N:verb
 growth:G R OW TH
 notes:N OW T S
 agency:EY JH AH N S IY
@@ -1030,7 +1030,7 @@ views:V Y UW Z
 plans:P L AE N Z
 double:D AH B AH L
 dog:D AO G
-build:B IH L D
+build:B IH L D:verb
 screen:S K R IY N
 exchange:IH K S CH EY N JH
 types:T AY P S
@@ -1038,23 +1038,23 @@ soon:S UW N
 sponsored:S P AA N S ER D
 lines:L AY N Z
 electronic:IH L EH K T R AA N IH K
-continue:K AH N T IH N Y UW
+continue:K AH N T IH N Y UW:verb
 across:AH K R AO S:preposition
 benefits:B EH N AH F IH T S
 needed:N IY D AH D
 season:S IY Z AH N
-apply:AH P L AY
+apply:AH P L AY:verb
 someone:S AH M W AH N
 held:HH EH L D
 anything:EH N IY TH IH NG
 printer:P R IH N T ER
 condition:K AH N D IH SH AH N
 effective:IH F EH K T IH V
-believe:B IH L IY V
+believe:B IH L IY V:verb
 organization:AO R G AH N AH Z EY SH AH N
 effect:IH F EH K T
 asked:AE S K T
-mind:M AY N D
+mind:M AY N D:verb
 sunday:S AH N D EY
 selection:S AH L EH K SH AH N
 casino:K AH S IY N OW
@@ -1062,10 +1062,10 @@ lost:L AO S T
 tour:T UH R
 menu:M EH N Y UW
 volume:V AA L Y UW M
-cross:K R AO S
+cross:K R AO S:verb
 anyone:EH N IY W AH N
 mortgage:M AO R G AH JH
-hope:HH OW P
+hope:HH OW P:verb
 silver:S IH L V ER
 corporation:K AO R P ER EY SH AH N
 wish:W IH SH
@@ -1077,7 +1077,7 @@ rather:R AE DH ER
 weeks:W IY K S
 addition:AH D IH SH AH N
 came:K EY M
-supply:S AH P L AY
+supply:S AH P L AY:verb
 nothing:N AH TH IH NG
 certain:S ER T AH N
 executive:IH G Z EH K Y AH T IH V
@@ -1106,7 +1106,7 @@ career:K ER IH R
 military:M IH L AH T EH R IY
 rental:R EH N T AH L
 decision:D IH S IH ZH AH N
-leave:L IY V
+leave:L IY V:verb
 british:B R IH T IH SH
 teens:T IY N Z
 pre:P R IY
@@ -1119,7 +1119,7 @@ bid:B IH D
 kind:K AY N D
 sellers:S EH L ER Z
 middle:M IH D AH L
-move:M UW V
+move:M UW V:verb
 cable:K EY B AH L
 opportunities:AA P ER T UW N AH T IY Z
 taking:T EY K IH NG
@@ -1141,7 +1141,7 @@ client:K L AY AH N T
 ok:OW K EY
 returns:R IH T ER N Z
 capital:K AE P IH T AH L
-follow:F AA L OW
+follow:F AA L OW:verb
 sample:S AE M P AH L
 investment:IH N V EH S T M AH N T
 sent:S EH N T
@@ -1178,7 +1178,7 @@ wednesday:W EH N Z D IY
 structure:S T R AH K CH ER
 fund:F AH N D
 summer:S AH M ER
-allow:AH L AW
+allow:AH L AW:verb
 degree:D IH G R IY
 contract:K AA N T R AE K T
 button:B AH T AH N
@@ -1187,7 +1187,7 @@ wed:W EH D
 homes:HH OW M Z
 super:S UW P ER
 male:M EY L
-matter:M AE T ER
+matter:M AE T ER:verb
 custom:K AH S T AH M
 virginia:V ER JH IH N Y AH
 almost:AO L M OW S T
@@ -1199,14 +1199,14 @@ distribution:D IH S T R AH B Y UW SH AH N
 editor:EH D AH T ER
 inn:IH N
 industrial:IH N D AH S T R IY AH L
-cause:K AA Z
+cause:K AA Z:verb
 potential:P AH T EH N SH AH L
 song:S AO NG
 ltd:L IH M IH T IH D
 los:L OW S
 focus:F OW K AH S
 late:L EY T
-fall:F AO L
+fall:F AO L:verb
 featured:F IY CH ER D
 idea:AY D IY AH
 rooms:R UW M Z
@@ -1214,7 +1214,7 @@ female:F IY M EY L
 responsible:R IY S P AA N S AH B AH L
 inc:IH NG K
 communications:K AH M Y UW N AH K EY SH AH N Z
-win:W IH N
+win:W IH N:verb
 associated:AH S OW S IY EY T AH D
 thomas:T AA M AH S
 primary:P R AY M EH R IY
@@ -1225,7 +1225,7 @@ tool:T UW L
 browser:B R AW Z ER
 spring:S P R IH NG
 foundation:F AW N D EY SH AH N
-answer:AE N S ER
+answer:AE N S ER:verb
 voice:V OY S
 friendly:F R EH N D L IY
 schedule:S K EH JH UH L
@@ -1247,13 +1247,13 @@ operating:AA P ER EY T IH NG
 hill:HH IH L
 maps:M AE P S
 medicine:M EH D AH S AH N
-deal:D IY L
-hold:HH OW L D
+deal:D IY L:verb
+hold:HH OW L D:verb
 ratings:R EY T IH NG Z
 chicago:SH AH K AA G OW
 forms:F AO R M Z
 glass:G L AE S
-happy:HH AE P IY
+happy:HH AE P IY:adjective
 tue:T UW
 smith:S M IH TH
 wanted:W AO N T IH D
@@ -1283,7 +1283,7 @@ station:S T EY SH AH N
 christian:K R IH S CH AH N
 round:R AW N D
 favorite:F EY V ER IH T
-understand:AH N D ER S T AE N D
+understand:AH N D ER S T AE N D:verb
 option:AA P SH AH N
 master:M AE S T ER
 valley:V AE L IY
@@ -1294,9 +1294,9 @@ sea:S IY
 built:B IH L T
 publications:P AH B L IH K EY SH AH N Z
 blood:B L AH D
-cut:K AH T
+cut:K AH T:verb
 worldwide:W ER L D W AY D
-improve:IH M P R UW V
+improve:IH M P R UW V:verb
 connection:K AH N EH K SH AH N
 publisher:P AH B L IH SH ER
 hall:HH AO L
@@ -1325,7 +1325,7 @@ disease:D IH Z IY Z
 excellent:EH K S AH L AH N T
 paid:P EY D
 italy:IH T AH L IY
-perfect:P ER F EH K T
+perfect:P ER F EH K T:adjective
 hair:HH EH R
 opportunity:AA P ER T UW N AH T IY
 kit:K IH T
@@ -1334,7 +1334,7 @@ basis:B EY S AH S
 command:K AH M AE N D
 cities:S IH T IY Z
 william:W IH L Y AH M
-express:IH K S P R EH S
+express:IH K S P R EH S:verb
 award:AH W AO R D
 distance:D IH S T AH N S
 tree:T R IY:noun-thing
@@ -1442,7 +1442,7 @@ funds:F AH N D Z
 mr:M IH S T ER
 greater:G R EY T ER
 likely:L AY K L IY
-develop:D IH V EH L AH P
+develop:D IH V EH L AH P:verb
 employees:EH M P L OY IY Z
 artists:AA R T IH S T S
 alternative:AO L T ER N AH T IH V
@@ -1601,8 +1601,8 @@ instructions:IH N S T R AH K SH AH N Z
 min:M IH N
 offered:AO F ER D
 theory:TH IH R IY
-enjoy:EH N JH OY
-remove:R IY M UW V
+enjoy:EH N JH OY:verb
+remove:R IY M UW V:verb
 aid:EY D
 surface:S ER F AH S
 minimum:M IH N AH M AH M
@@ -1680,9 +1680,9 @@ devices:D IH V AY S AH Z
 lord:L AO R D
 grant:G R AE N T
 sub:S AH B
-agree:AH G R IY
+agree:AH G R IY:verb
 fiction:F IH K SH AH N
-hear:HH IY R
+hear:HH IY R:verb
 sometimes:S AH M T AY M Z
 watches:W AA CH AH Z
 careers:K ER IH R Z
@@ -1724,10 +1724,10 @@ columbia:K AH L AH M B IY AH
 setting:S EH T IH NG
 dr:D R AY V
 scale:S K EY L
-stand:S T AE N D
+stand:S T AE N D:verb
 economy:IH K AA N AH M IY
 highest:HH AY AH S T
-helpful:HH EH L P F AH L
+helpful:HH EH L P F AH L:adjective
 monthly:M AH N TH L IY
 critical:K R IH T IH K AH L
 frame:F R EY M
@@ -1750,11 +1750,11 @@ laws:L AO Z
 changed:CH EY N JH D
 pet:P EH T
 heard:HH ER D
-begin:B IH G IH N
+begin:B IH G IH N:verb
 individuals:IH N D AH V IH JH AH W AH L Z
 colorado:K AA L ER AA D OW
 royal:R OY AH L
-clean:K L IY N
+clean:K L IY N:verb
 switch:S W IH CH
 russian:R AH SH AH N
 largest:L AA R JH AH S T
@@ -1790,7 +1790,7 @@ lee:L IY
 os:AA S
 difference:D IH F ER AH N S
 allowed:AH L AW D
-correct:K ER EH K T
+correct:K ER EH K T:verb
 charles:CH AA R L Z
 nation:N EY SH AH N
 selling:S EH L IH NG
@@ -1834,9 +1834,9 @@ ball:B AO L
 ending:EH N D IH NG
 clients:K L AY AH N T S
 actions:AE K SH AH N Z
-listen:L IH S AH N
+listen:L IH S AH N:verb
 discuss:D IH S K AH S
-accept:AE K S EH P T
+accept:AE K S EH P T:verb
 automotive:AO T AH M OW T IH V
 naked:N EY K AH D
 goal:G OW L
@@ -1967,7 +1967,7 @@ miss:M IH S
 chemical:K EH M IH K AH L
 doctor:D AA K T ER
 task:T AE S K
-reduce:R IH D UW S
+reduce:R IH D UW S:verb
 brought:B R AO T
 himself:HH IH M S EH L F
 nor:N AO R
@@ -1995,11 +1995,11 @@ interests:IH N T R AH S T S
 flight:F L AY T
 congress:K AA NG G R AH S
 fuel:F Y UW AH L
-walk:W AO K
+walk:W AO K:verb
 produced:P R AH D UW S T
 italian:IH T AE L Y AH N
 paperback:P EY P ER B AE K
-wait:W EY T
+wait:W EY T:verb
 supported:S AH P AO R T AH D
 pocket:P AA K AH T
 saint:S EY N T
@@ -2037,7 +2037,7 @@ administrative:AH D M IH N IH S T R EY T IH V
 serious:S IH R IY AH S
 prime:P R AY M
 samsung:S AE M S AH NG
-limit:L IH M AH T
+limit:L IH M AH T:verb
 began:B IH G AE N
 louis:L UW IH S
 steps:S T EH P S
@@ -2081,7 +2081,7 @@ merchant:M ER CH AH N T
 comprehensive:K AA M P R IY HH EH N S IH V
 expert:EH K S P ER T
 universal:Y UW N AH V ER S AH L
-protect:P R AH T EH K T
+protect:P R AH T EH K T:verb
 drop:D R AA P
 solid:S AA L AH D
 cds:S IY D IY Z
@@ -2091,7 +2091,7 @@ became:B IH K EY M
 orange:AO R AH N JH
 compliance:K AH M P L AY AH N S
 vehicles:V IY HH IH K AH L Z
-prevent:P R IH V EH N T
+prevent:P R IH V EH N T:verb
 theme:TH IY M
 rich:R IH CH
 im:IH M
@@ -2115,14 +2115,14 @@ strategies:S T R AE T AH JH IY Z
 mo:M OW
 seem:S IY M
 affairs:AH F EH R Z
-touch:T AH CH
+touch:T AH CH:verb
 intended:IH N T EH N D IH D
 towards:T AH W AO R D Z
 sa:S AA
 goals:G OW L Z
 hire:HH AY ER
 election:IH L EH K SH AH N
-suggest:S AH JH EH S T
+suggest:S AH JH EH S T:verb
 branch:B R AE N CH:noun-thing
 charges:CH AA R JH IH Z
 serve:S ER V
@@ -2136,7 +2136,7 @@ gave:G EY V
 ones:W AH N Z
 latin:L AE T AH N
 multimedia:M AH L T IY M IY D IY AH
-avoid:AH V OY D
+avoid:AH V OY D:verb
 certified:S ER T AH F AY D
 manage:M AE N AH JH
 corner:K AO R N ER
@@ -2165,7 +2165,7 @@ plants:P L AE N T S
 faith:F EY TH
 chain:CH EY N
 developer:D IH V EH L AH P ER
-identify:AY D EH N T AH F AY
+identify:AY D EH N T AH F AY:verb
 avenue:AE V AH N UW
 missing:M IH S IH NG
 died:D AY D
@@ -2174,7 +2174,7 @@ domestic:D AH M EH S T IH K
 recommendations:R EH K AH M AH N D EY SH AH N Z
 moved:M UW V D
 houston:HH Y UW S T AH N
-reach:R IY CH
+reach:R IY CH:verb
 comparison:K AH M P EH R AH S AH N
 mental:M EH N T AH L
 viewed:V Y UW D
@@ -2186,13 +2186,13 @@ attack:AH T AE K
 sorry:S AA R IY
 centers:S EH N T ER Z
 opening:OW P AH N IH NG
-damage:D AE M AH JH
+damage:D AE M AH JH:verb
 lab:L AE B
 reserve:R IH Z ER V
 recipes:R EH S AH P IY Z
 gamma:G AE M AH
 plastic:P L AE S T IH K
-produce:P R AH D UW S
+produce:P R AH D UW S:verb
 snow:S N OW
 placed:P L EY S T
 truth:T R UW TH
@@ -2239,12 +2239,12 @@ assistant:AH S IH S T AH N T
 variable:V EH R IY AH B AH L
 ave:AA V EY
 advertisement:AE D V ER T AH Z M AH N T
-expect:IH K S P EH K T
+expect:IH K S P EH K T:verb
 parking:P AA R K IH NG
 headlines:HH EH D L AY N Z
 yesterday:Y EH S T ER D EY
 compared:K AH M P EH R D
-determined:D IH T ER M AH N D
+determined:D IH T ER M AH N D:adjective
 wholesale:HH OW L S EY L
 workshop:W ER K SH AA P
 russia:R AH SH AH
@@ -2261,7 +2261,7 @@ fort:F AO R T
 lighting:L AY T IH NG
 senate:S EH N AH T
 forces:F AO R S IH Z
-funny:F AH N IY
+funny:F AH N IY:adjective
 brother:B R AH DH ER
 gene:JH IY N
 turned:T ER N D
@@ -2325,7 +2325,7 @@ stats:S T AE T S
 hawaii:HH AH W AY IY
 professionals:P R AH F EH SH AH N AH L Z
 appears:AH P IH R Z
-carry:K AE R IY
+carry:K AE R IY:verb
 flag:F L AE G
 decided:D IH S AY D IH D
 covers:K AH V ER Z
@@ -2359,7 +2359,7 @@ miscellaneous:M IH S AH L EY N IY AH S
 prepared:P R IY P EH R D
 void:V OY D
 dining:D AY N IH NG
-alert:AH L ER T
+alert:AH L ER T:adjective
 integration:IH N T AH G R EY SH AH N
 atlanta:AE T L AE N T AH
 dakota:D AH K OW T AH
@@ -2390,7 +2390,7 @@ enlarge:EH N L AA R JH
 ray:R EY
 frequently:F R IY K W AH N T L IY
 revenue:R EH V AH N UW
-measure:M EH ZH ER
+measure:M EH ZH ER:verb
 changing:CH EY N JH IH NG
 votes:V OW T S
 du:D UW
@@ -2412,7 +2412,7 @@ whatever:W AH T EH V ER
 logged:L AO G D
 laptop:L AE P T AA P
 vintage:V IH N T IH JH
-train:T R EY N
+train:T R EY N:verb
 exactly:IH G Z AE K T L IY
 dry:D R AY
 explore:IH K S P L AO R
@@ -2449,7 +2449,7 @@ zoom:Z UW M
 blow:B L OW
 battle:B AE T AH L
 residential:R EH Z IH D EH N SH AH L
-speak:S P IY K
+speak:S P IY K:verb
 decisions:D IH S IH ZH AH N Z
 industries:IH N D AH S T R IY Z
 protocol:P R OW T AH K AA L
@@ -2513,7 +2513,7 @@ theater:TH IY EY T ER
 springs:S P R IH NG Z
 missouri:M AH Z UH R IY
 andrew:AE N D R UW
-perform:P ER F AO R M
+perform:P ER F AO R M:verb
 healthy:HH EH L TH IY
 translation:T R AE N Z L EY SH AH N
 estimates:EH S T AH M AH T S
@@ -2572,7 +2572,7 @@ representative:R EH P R AH Z EH N T AH T IH V
 frequency:F R IY K W AH N S IY
 introduced:IH N T R AH D UW S T
 minor:M AY N ER
-finish:F IH N IH SH
+finish:F IH N IH SH:verb
 departments:D IH P AA R T M AH N T S
 residents:R EH Z IH D AH N T S
 noted:N OW T AH D
@@ -2598,11 +2598,11 @@ singles:S IH NG G AH L Z
 administrator:AH D M IH N IH S T R EY T ER
 cycle:S AY K AH L
 amounts:AH M AW N T S
-contain:K AH N T EY N
+contain:K AH N T EY N:verb
 accuracy:AE K Y ER AH S IY
 dual:D UW AH L
-rise:R AY Z
-sleep:S L IY P
+rise:R AY Z:verb
+sleep:S L IY P:verb
 bird:B ER D:noun-thing
 pharmacy:F AA R M AH S IY
 brazil:B R AH Z IH L
@@ -2620,11 +2620,11 @@ violence:V AY AH L AH N S
 fans:F AE N Z
 oklahoma:OW K L AH HH OW M AH
 speakers:S P IY K ER Z
-drink:D R IH NG K
+drink:D R IH NG K:verb
 academy:AH K AE D AH M IY
 dynamic:D AY N AE M IH K
 gender:JH EH N D ER
-eat:IY T
+eat:IY T:verb
 permanent:P ER M AA N EH N T
 agriculture:AE G R IH K AH L CH ER
 dell:D EH L
@@ -2700,7 +2700,7 @@ participation:P AA R T IH S AH P EY SH AH N
 scheme:S K IY M
 utility:Y UW T IH L AH T IY
 preview:P R IY V Y UW
-fly:F L AY
+fly:F L AY:verb
 manner:M AE N ER
 matrix:M EY T R IH K S
 containing:K AH N T EY N IH NG
@@ -2756,9 +2756,9 @@ alabama:AE L AH B AE M AH
 tea:T IY
 improved:IH M P R UW V D
 trees:T R IY Z
-achieve:AH CH IY V
+achieve:AH CH IY V:verb
 positions:P AH Z IH SH AH N Z
-dress:D R EH S
+dress:D R EH S:verb
 subscription:S AH B S K R IH P SH AH N
 dealer:D IY L ER
 contemporary:K AH N T EH M P ER EH R IY
@@ -2767,10 +2767,10 @@ utah:Y UW T AO
 nearby:N IH R B AY
 rom:R AA M
 carried:K AE R IY D
-happen:HH AE P AH N
+happen:HH AE P AH N:verb
 exposure:IH K S P OW ZH ER
 panasonic:P AE N AH S AA N IH K
-hide:HH AY D
+hide:HH AY D:verb
 signature:S IH G N AH CH ER
 gambling:G AE M B AH L IH NG
 refer:R AH F ER
@@ -2808,7 +2808,7 @@ spend:S P EH N D
 factory:F AE K T ER IY
 interior:IH N T IH R IY ER
 revised:R IH V AY Z D
-grow:G R OW
+grow:G R OW:verb
 americans:AH M EH R IH K AH N Z
 optical:AA P T IH K AH L
 promotion:P R AH M OW SH AH N
@@ -2827,7 +2827,7 @@ serial:S IH R IY AH L
 relief:R IH L IY F
 revision:R IY V IH ZH AH N
 broadband:B R AO D B AE N D
-influence:IH N F L UW AH N S
+influence:IH N F L UW AH N S:verb
 ratio:R EY SH IY OW
 importance:IH M P AO R T AH N S
 rain:R EY N:noun-thing
@@ -2859,7 +2859,7 @@ maine:M EY N
 represent:R EH P R AH Z EH N T
 conservation:K AA N S ER V EY SH AH N
 pair:P EH R
-ideal:AY D IY L
+ideal:AY D IY L:adjective
 specs:S P EH K S
 recorded:R AH K AO R D AH D
 don:D AA N
@@ -2874,7 +2874,7 @@ cream:K R IY M
 runs:R AH N Z
 trends:T R EH N D Z
 yeah:Y AE
-discover:D IH S K AH V ER
+discover:D IH S K AH V ER:verb
 ap:EY P IY
 patterns:P AE T ER N Z
 boxes:B AA K S AH Z
@@ -2915,7 +2915,7 @@ census:S EH N S AH S
 interracial:IH N T ER R EY SH AH L
 peak:P IY K
 competitive:K AH M P EH T AH T IH V
-exist:IH G Z IH S T
+exist:IH G Z IH S T:verb
 wheel:W IY L
 transit:T R AE N Z IH T
 suppliers:S AH P L AY ER Z
@@ -2935,7 +2935,7 @@ accordance:AH K AO R D AH N S
 width:W IH D TH
 noise:N OY Z
 engines:EH N JH AH N Z
-forget:F ER G EH T
+forget:F ER G EH T:verb
 array:ER EY
 discussed:D IH S K AH S T
 accurate:AE K Y ER AH T
@@ -2954,7 +2954,7 @@ sister:S IH S T ER
 raw:R AA
 differences:D IH F ER AH N S IH Z
 walking:W AO K IH NG
-explain:IH K S P L EY N
+explain:IH K S P L EY N:verb
 smaller:S M AO L ER
 newest:N UW AH S T
 establish:IH S T AE B L IH SH
@@ -2985,7 +2985,7 @@ occur:AH K ER
 percentage:P ER S EH N T AH JH
 knows:N OW Z
 mississippi:M IH S IH S IH P IY
-describe:D IH S K R AY B
+describe:D IH S K R AY B:verb
 concern:K AH N S ER N
 backup:B AE K AH P
 requested:R IH K W EH S T IH D
@@ -3011,7 +3011,7 @@ participate:P AA R T IH S AH P EY T
 plug:P L AH G
 specialist:S P EH SH AH L IH S T
 cook:K UH K
-affect:AH F EH K T
+affect:AH F EH K T:verb
 virgin:V ER JH IH N
 experienced:IH K S P IH R IY AH N S T
 investigation:IH N V EH S T AH G EY SH AH N
@@ -3203,8 +3203,8 @@ concepts:K AA N S EH P T S
 gun:G AH N
 reflect:R AH F L EH K T
 pure:P Y UH R
-deliver:D IH L IH V ER
-wonder:W AH N D ER
+deliver:D IH L IH V ER:verb
+wonder:W AH N D ER:verb
 lessons:L EH S AH N Z
 fruit:F R UW T
 begins:B IH G IH N Z
@@ -3231,7 +3231,7 @@ leaves:L IY V Z
 engineer:EH N JH AH N IH R
 lifestyle:L AY F S T AY L
 consistent:K AH N S IH S T AH N T
-replace:R IY P L EY S
+replace:R IY P L EY S:verb
 clearance:K L IH R AH N S
 connections:K AH N EH K SH AH N Z
 inventory:IH N V AH N T AO R IY
@@ -3270,7 +3270,7 @@ processor:P R AA S EH S ER
 node:N OW D
 formal:F AO R M AH L
 dimensions:D IH M EH N SH AH N Z
-contribute:K AH N T R IH B Y UW T
+contribute:K AH N T R IH B Y UW T:verb
 lock:L AA K
 hockey:HH AA K IY
 storm:S T AO R M
@@ -3293,7 +3293,7 @@ tank:T AE NG K
 submission:S AH B M IH SH AH N
 dolls:D AA L Z
 estimate:EH S T AH M AH T
-encourage:EH N K ER IH JH
+encourage:EH N K ER IH JH:verb
 navy:N EY V IY
 kid:K IH D
 regulatory:R EH G Y AH L AH T AO R IY
@@ -3339,7 +3339,7 @@ adam:AE D AH M
 truly:T R UW L IY
 painting:P EY N T IH NG
 committed:K AH M IH T IH D
-extensive:IH K S T EH N S IH V
+extensive:IH K S T EH N S IH V:adjective
 affordable:AH F AO R D AH B AH L
 universe:Y UW N AH V ER S
 candidate:K AE N D AH D EY T
@@ -3404,7 +3404,7 @@ resume:R IH Z UW M
 twenty:T W EH N T IY
 newly:N UW L IY
 raise:R EY Z
-prepare:P R IY P EH R
+prepare:P R IY P EH R:verb
 avatar:AE V AH T AA R
 gary:G EH R IY
 depending:D IH P EH N D IH NG
@@ -3436,7 +3436,7 @@ absolutely:AE B S AH L UW T L IY
 millions:M IH L Y AH N Z
 lunch:L AH N CH:noun-thing
 audit:AO D IH T
-push:P UH SH
+push:P UH SH:verb
 chamber:CH EY M B ER
 guinea:G IH N IY
 findings:F AY N D IH NG Z
@@ -3481,7 +3481,7 @@ constitution:K AA N S T AH T UW SH AH N
 packaging:P AE K IH JH IH NG
 solar:S OW L ER
 jose:HH OW Z EY
-catch:K AE CH
+catch:K AE CH:verb
 jane:JH EY N
 pakistan:P AE K IH S T AE N
 reliable:R IH L AY AH B AH L
@@ -3554,7 +3554,7 @@ suit:S UW T
 shift:SH IH F T
 chip:CH IH P
 res:R EY Z
-sit:S IH T
+sit:S IH T:verb
 bodies:B AA D IY Z
 photographs:F OW T AH G R AE F S
 cutting:K AH T IH NG
@@ -3596,8 +3596,8 @@ outlook:AW T L UH K
 massive:M AE S IH V
 denmark:D EH N M AA R K
 employed:EH M P L OY D
-bright:B R AY T
-treat:T R IY T
+bright:B R AY T:adjective
+treat:T R IY T:verb
 header:HH EH D ER
 poverty:P AA V ER T IY
 formed:F AO R M D
@@ -3704,7 +3704,7 @@ possibly:P AA S AH B L IY
 airline:EH R L AY N
 typically:T IH P IH K L IY
 representation:R EH P R AH Z EH N T EY SH AH N
-regard:R AH G AA R D
+regard:R AH G AA R D:verb
 pump:P AH M P
 exists:IH G Z IH S T S
 arrangements:ER EY N JH M AH N T S
@@ -3715,7 +3715,7 @@ consumption:K AH N S AH M P SH AH N
 birmingham:B ER M IH NG HH AE M
 flashing:F L AE SH IH NG
 lp:EH L P IY
-narrow:N EH R OW
+narrow:N EH R OW:adjective
 afternoon:AE F T ER N UW N
 threat:TH R EH T
 surveys:S ER V EY Z
@@ -3757,7 +3757,7 @@ sustainable:S AH S T EY N AH B AH L
 philippines:F IH L AH P IY N Z
 statistical:S T AH T IH S T IH K AH L
 beds:B EH D Z
-mention:M EH N SH AH N
+mention:M EH N SH AH N:verb
 innovation:IH N AH V EY SH AH N
 pcs:P IY S IY Z
 employers:EH M P L OY ER Z
@@ -3899,7 +3899,7 @@ dragon:D R AE G AH N
 busy:B IH Z IY
 captain:K AE P T AH N
 fantastic:F AE N T AE S T IH K
-imagine:IH M AE JH AH N
+imagine:IH M AE JH AH N:verb
 brings:B R IH NG Z
 heating:HH IY T IH NG
 leg:L EH G
@@ -4146,7 +4146,7 @@ waters:W AO T ER Z
 promise:P R AA M AH S
 thin:TH IH N
 exhibition:EH K S AH B IH SH AH N
-prefer:P R AH F ER
+prefer:P R AH F ER:verb
 ridge:R IH JH
 cabinet:K AE B AH N AH T
 modem:M OW D AH M
@@ -4158,7 +4158,7 @@ dose:D OW S
 evaluate:IH V AE L Y UW EY T
 tiffany:T IH F AH N IY
 tropical:T R AA P IH K AH L
-collect:K AH L EH K T
+collect:K AH L EH K T:verb
 bet:B EH T
 composition:K AA M P AH Z IH SH AH N
 toyota:T OW Y OW T AH
@@ -4197,7 +4197,7 @@ inquiry:IH N K W AY R IY
 ethernet:IY TH ER N EH T
 checked:CH EH K T
 exhibit:IH G Z IH B IH T
-throw:TH R OW
+throw:TH R OW:verb
 trend:T R EH N D
 sierra:S IY EH R AH
 visible:V IH Z AH B AH L
@@ -4564,7 +4564,7 @@ latter:L AE T ER
 merchants:M ER CH AH N T S
 thick:TH IH K
 trailers:T R EY L ER Z
-repeat:R IH P IY T
+repeat:R IH P IY T:verb
 syndrome:S IH N D R OW M
 philips:F IH L AH P S
 attendance:AH T EH N D AH N S
@@ -4600,7 +4600,7 @@ extras:EH K S T R AH Z
 centres:S EH N T ER Z
 jerry:JH EH R IY
 clause:K L AO Z
-smile:S M AY L
+smile:S M AY L:verb
 lands:L AE N D Z
 troops:T R UW P S
 indoor:IH N D AO R
@@ -4612,7 +4612,7 @@ regularly:R EH G Y AH L ER L IY
 believed:B IH L IY V D
 pine:P AY N
 cooling:K UW L IH NG
-tend:T EH N D
+tend:T EH N D:verb
 gulf:G AH L F
 rick:R IH K
 trucks:T R AH K S
@@ -4829,7 +4829,7 @@ kick:K IH K
 regards:R IH G AA R D Z
 meal:M IY L
 ta:T AA
-hurt:HH ER T
+hurt:HH ER T:adjective
 machinery:M AH SH IY N ER IY
 bandwidth:B AE N D W IH D TH
 unlike:AH N L AY K
@@ -4906,7 +4906,7 @@ dated:D EY T IH D
 flexibility:F L EH K S AH B IH L AH T IY
 seeker:S IY K ER
 wisdom:W IH Z D AH M
-shoot:SH UW T
+shoot:SH UW T:verb
 boundary:B AW N D ER IY
 mint:M IH N T
 packard:P AE K ER D
@@ -4956,7 +4956,7 @@ loves:L AH V Z
 induced:IH N D UW S T
 knight:N AY T
 preparing:P R IY P EH R IH NG
-loose:L UW S
+loose:L UW S:adjective
 aims:EY M Z
 recipient:R AH S IH P IY AH N T
 linking:L IH NG K IH NG
@@ -5126,13 +5126,13 @@ intervention:IH N T ER V EH N SH AH N
 fed:F EH D
 attraction:AH T R AE K SH AH N
 diving:D AY V IH NG
-invite:IH N V AY T
+invite:IH N V AY T:verb
 modification:M AA D AH F AH K EY SH AH N
 alice:AE L IH S
-suppose:S AH P OW Z
+suppose:S AH P OW Z:verb
 customized:K AH S T AH M AY Z D
 reed:R IY D
-involve:IH N V AA L V
+involve:IH N V AA L V:verb
 moderate:M AA D ER AH T
 terror:T EH R ER
 younger:Y AH NG G ER
@@ -5179,7 +5179,7 @@ careful:K EH R F AH L
 beam:B IY M
 gardening:G AA R D AH N IH NG
 obligations:AA B L AH G EY SH AH N Z
-arrive:ER AY V
+arrive:ER AY V:verb
 orchestra:AO R K AH S T R AH
 sunset:S AH N S EH T
 tracked:T R AE K T
@@ -5228,7 +5228,7 @@ midnight:M IH D N AY T
 ng:EH NG
 commonly:K AA M AH N L IY
 photographer:F AH T AA G R AH F ER
-inform:IH N F AO R M
+inform:IH N F AO R M:verb
 turkish:T ER K IH SH
 coal:K OW L
 cry:K R AY
@@ -5277,7 +5277,7 @@ stretch:S T R EH CH
 durham:D ER AH M
 furthermore:F ER DH ER M AO R
 permits:P ER M IH T S
-cooperative:K OW AA P ER EY T IH V
+cooperative:K OW AA P ER EY T IH V:adjective
 muslim:M AH Z L AH M
 neil:N IY L
 sleeve:S L IY V
@@ -5383,7 +5383,7 @@ acute:AH K Y UW T
 halloween:HH AE L AH W IY N
 climbing:K L AY M IH NG
 stood:S T UH D
-sing:S IH NG
+sing:S IH NG:verb
 tons:T AH N Z
 perfume:P ER F Y UW M
 carol:K AE R AH L
@@ -5677,7 +5677,7 @@ totals:T OW T AH L Z
 marriott:M EH R IY AH T
 singing:S IH NG IH NG
 theoretical:TH IY ER EH T IH K AH L
-afford:AH F AO R D
+afford:AH F AO R D:verb
 exercises:EH K S ER S AY Z IH Z
 starring:S T AA R IH NG
 referral:R IH F ER AH L
@@ -5726,7 +5726,7 @@ bull:B UH L
 montgomery:M AA N T G AH M R IY
 architectural:AA R K AH T EH K CH ER AH L
 louisville:L UW IY V IH L
-depend:D IH P EH N D
+depend:D IH P EH N D:verb
 differ:D IH F ER
 macintosh:M AE K AH N T AO SH
 movements:M UW V M AH N T S
@@ -5895,10 +5895,10 @@ puzzles:P AH Z AH L Z
 reaching:R IY CH IH NG
 damaged:D AE M AH JH D
 receptor:R IY S EH P T ER
-laugh:L AE F
+laugh:L AE F:verb
 joel:JH OW AH L
 surgical:S ER JH IH K AH L
-destroy:D IH S T R OY
+destroy:D IH S T R OY:verb
 citation:S AY T EY SH AH N
 pitch:P IH CH
 autos:AO T OW Z
@@ -5980,7 +5980,7 @@ ranked:R AE NG K T
 jackets:JH AE K IH T S
 routes:R UW T S
 packed:P AE K T
-excited:IH K S AY T AH D
+excited:IH K S AY T AH D:adjective
 outreach:AW T R IY CH
 helen:HH EH L AH N
 mounting:M AW N T IH NG
@@ -6333,7 +6333,7 @@ salvador:S AE L V AH D AO R
 ali:AA L IY
 salad:S AE L AH D
 monroe:M AH N R OW
-tender:T EH N D ER
+tender:T EH N D ER:adjective
 violations:V AY AH L EY SH AH N Z
 foam:F OW M
 temperatures:T EH M P R AH CH ER Z
@@ -6407,7 +6407,7 @@ viruses:V AY R AH S AH Z
 cheaper:CH IY P ER
 admitted:AH D M IH T AH D
 dairy:D EH R IY
-admit:AH D M IH T
+admit:AH D M IH T:verb
 fancy:F AE N S IY
 equality:IH K W AA L AH T IY
 samoa:S AH M OW AH
@@ -6426,7 +6426,7 @@ squad:S K W AA D
 analyze:AE N AH L AY Z
 ashley:AE SH L IY
 scroll:S K R OW L
-relate:R IH L EY T
+relate:R IH L EY T:verb
 divisions:D IH V IH ZH AH N Z
 swim:S W IH M
 wages:W EY JH AH Z
@@ -6458,7 +6458,7 @@ updating:AH P D EY T IH NG
 distribute:D IH S T R IH B Y UW T
 readings:R IY D IH NG Z
 decorative:D EH K R AH T IH V
-confused:K AH N F Y UW Z D
+confused:K AH N F Y UW Z D:adjective
 compiler:K AH M P AY L ER
 enlargement:EH N L AA R JH M AH N T
 eagles:IY G AH L Z
@@ -6496,7 +6496,7 @@ beaches:B IY CH AH Z
 folders:F OW L D ER Z
 dramatic:D R AH M AE T IH K
 surfaces:S ER F AH S AH Z
-terrible:T EH R AH B AH L
+terrible:T EH R AH B AH L:adjective
 routers:R UW T ER Z
 cruz:K R UW Z
 pendant:P EH N D AH N T
@@ -6638,7 +6638,7 @@ offerings:AO F ER IH NG Z
 martha:M AA R TH AH
 genesis:JH EH N AH S AH S
 barrier:B AE R IY ER
-argue:AA R G Y UW
+argue:AA R G Y UW:verb
 incorrect:IH N K ER EH K T
 trains:T R EY N Z
 metals:M EH T AH L Z
@@ -6672,14 +6672,14 @@ chess:CH EH S
 operates:AA P ER EY T S
 brisbane:B R IH Z B EY N
 configured:K AH N F IH G Y ER D
-survive:S ER V AY V
+survive:S ER V AY V:verb
 oscar:AO S K ER
 festivals:F EH S T AH V AH L Z
 menus:M EH N Y UW Z
 joan:JH OW N
 possibilities:P AA S AH B IH L AH T IY Z
 duck:D AH K
-reveal:R IH V IY L
+reveal:R IH V IY L:verb
 canal:K AH N AE L
 amino:AH M IY N OW
 phi:F AY
@@ -6993,7 +6993,7 @@ sage:S EY JH
 knives:N AY V Z
 eco:IY K OW
 vulnerable:V AH L N ER AH B AH L
-arrange:ER EY N JH
+arrange:ER EY N JH:verb
 artistic:AA R T IH S T IH K
 bat:B AE T
 honors:AA N ER Z
@@ -7070,7 +7070,7 @@ bookmarks:B UH K M AA R K S
 ellis:EH L IH S
 disable:D IH S EY B AH L
 snake:S N EY K
-succeed:S AH K S IY D
+succeed:S AH K S IY D:verb
 leonard:L EH N ER D
 lending:L EH N D IH NG
 oops:UW P S
@@ -7089,7 +7089,7 @@ sullivan:S AH L AH V AH N
 midwest:M IH D W EH S T
 karaoke:K EH R IY OW K IY
 trap:T R AE P
-lonely:L OW N L IY
+lonely:L OW N L IY:adjective
 fool:F UW L
 ve:V IY
 nonprofit:N AA N P R AA F AH T
@@ -7231,7 +7231,7 @@ seventh:S EH V AH N TH
 gods:G AA D Z
 welsh:W EH L CH
 belly:B EH L IY
-aggressive:AH G R EH S IH V
+aggressive:AH G R EH S IH V:adjective
 tex:T EH K S
 advertisements:AE D V ER T AY Z M AH N T S
 quarters:K W AO R T ER Z
@@ -7239,7 +7239,7 @@ stolen:S T OW L AH N
 cia:S IY AY EY
 soonest:S UW N AH S T
 haiti:HH EY T IY
-disturbed:D IH S T ER B D
+disturbed:D IH S T ER B D:adjective
 determines:D AH T ER M AH N Z
 sculpture:S K AH L P CH ER
 poly:P AA L IY
@@ -7320,7 +7320,7 @@ debut:D EY B Y UW
 generations:JH EH N ER EY SH AH N Z
 tournaments:T ER N AH M AH N T S
 bradley:B R AE D L IY
-deny:D IH N AY
+deny:D IH N AY:verb
 anatomy:AH N AE T AH M IY
 bali:B AA L IY
 judy:JH UW D IY
@@ -7569,7 +7569,7 @@ narrative:N AE R AH T IH V
 bahrain:B AA R EY N
 enormous:IH N AO R M AH S
 karma:K AA R M AH
-consist:K AH N S IH S T
+consist:K AH N S IH S T:verb
 betty:B EH T IY
 queens:K W IY N Z
 academics:AE K AH D EH M IH K S
@@ -7869,7 +7869,7 @@ albania:AE L B EY N IY AH
 geological:JH IY AH L AA JH IH K AH L
 assessing:AH S EH S IH NG
 lasting:L AE S T IH NG
-wicked:W IH K AH D
+wicked:W IH K AH D:adjective
 introduces:IH N T R AH D UW S IH Z
 kills:K IH L Z
 roommate:R UW M EY T
@@ -8096,7 +8096,7 @@ alike:AH L AY K
 walt:W AO L T
 homeless:HH OW M L AH S
 horrible:HH AO R AH B AH L
-hungry:HH AH NG G R IY
+hungry:HH AH NG G R IY:adjective
 metallic:M AH T AE L IH K
 acne:AE K N IY
 blocked:B L AA K T
@@ -8456,7 +8456,7 @@ hash:HH AE SH
 omissions:OW M IH SH AH N Z
 writings:R AY T IH NG Z
 hamburg:HH AE M B ER G
-lazy:L EY Z IY
+lazy:L EY Z IY:adjective
 mpg:EH M P IY JH IY
 retrieval:R IH T R IY V AH L
 qualities:K W AA L AH T IY Z
@@ -8723,7 +8723,7 @@ disclose:D IH S K L OW Z
 affair:AH F EH R
 drove:D R OW V
 washer:W AA SH ER
-upset:AH P S EH T
+upset:AH P S EH T:adjective
 restrict:R IY S T R IH K T
 springer:S P R IH NG ER
 beside:B IH S AY D
@@ -8851,7 +8851,7 @@ practitioner:P R AE K T IH SH AH N ER
 motivated:M OW T AH V EY T AH D
 dumb:D AH M
 smithsonian:S M IH TH S OW N IY AH N
-hollow:HH AA L OW
+hollow:HH AA L OW:adjective
 vault:V AO L T
 securely:S IH K Y UH R L IY
 examining:IH G Z AE M IH N IH NG
@@ -8999,7 +8999,7 @@ presently:P R EH Z AH N T L IY
 seas:S IY Z
 carlo:K AA R L OW
 workflow:W ER K F L OW
-mysterious:M IH S T IH R IY AH S
+mysterious:M IH S T IH R IY AH S:adjective
 novelty:N AA V AH L T IY
 bryant:B R AY AH N T
 tiles:T AY L Z
@@ -9031,7 +9031,7 @@ sail:S EY L
 forge:F AO R JH
 commissioners:K AH M IH SH AH N ER Z
 dense:D EH N S
-brave:B R EY V
+brave:B R EY V:adjective
 forwarding:F AO R W ER D IH NG
 awful:AO F AH L
 nightmare:N AY T M EH R
@@ -9172,7 +9172,7 @@ sufficiently:S AH F IH SH AH N T L IY
 examines:IH G Z AE M AH N Z
 viking:V AY K IH NG
 myrtle:M ER T AH L
-bored:B AO R D
+bored:B AO R D:adjective
 cleanup:K L IY N AH P
 yarn:Y AA R N
 knit:N IH T
@@ -9246,3 +9246,51 @@ playground:P L EY G R AW N D
 napkin:N AE P K IH N:noun-thing
 spoon:S P UW N:noun-thing
 tornado:T AO R N EY D OW:noun-thing
+abrupt:AH B R AH P T:adjective
+acidic:AH S IH D IH K:adjective
+adorable:AH D AO R AH B AH L:adjective
+adventurous:AE D V EH N CH ER AH S:adjective
+agitated:AE JH AH T EY T AH D:adjective
+aloof:AH L UW F:adjective
+colossal:K AH L AA S AH L:adjective
+condescending:K AA N D IH S EH N D IH NG:adjective
+corny:K AO R N IY:adjective
+costly:K AA S T L IY:adjective
+courageous:K ER EY JH AH S:adjective
+cruel:K R UW AH L:adjective
+despicable:D IH S P IH K AH B AH L:adjective
+dilapidated:D IH L AE P AH D EY T IH D:adjective
+diminutive:D IH M IH N Y AH T IH V:adjective
+distressed:D IH S T R EH S T:adjective
+dizzy:D IH Z IY:adjective
+exasperated:IH G Z AE S P ER EY T IH D:adjective
+exhilarated:IH G Z IH L ER EY T IH D:adjective
+exuberant:IH G Z UW B ER AH N T:adjective
+frothy:F R AO TH IY:adjective
+frustrating:F R AH S T R EY T IH NG:adjective
+gaudy:G AO D IY:adjective
+graceful:G R EY S F AH L:adjective
+greasy:G R IY S IY:adjective
+grieving:G R IY V IH NG:adjective
+gritty:G R IH T IY:adjective
+grotesque:G R OW T EH S K:adjective
+grubby:G R AH B IY:adjective
+grumpy:G R AH M P IY:adjective
+handsome:HH AE N S AH M:adjective
+helpless:HH EH L P L AH S:adjective
+hollow:HH AA L OW:adjective
+homely:HH OW M L IY:adjective
+icy:AY S IY:adjective
+livid:L IH V IH D:adjective
+outrageous:AW T R EY JH AH S:adjective
+panicky:P AE N IH K IY:adjective
+teeny:T IY N IY:adjective
+tense:T EH N S:adjective
+tricky:T R IH K IY:adjective
+troubled:T R AH B AH L D:adjective
+yummy:Y AH M IY:adjective
+zealous:Z EH L AH S:adjective
+complain:K AH M P L EY N:verb
+disappear:D IH S AH P IH R:verb
+forgive:F ER G IH V:verb
+lend:L EH N D:verb
