@@ -25,7 +25,6 @@ footer {
   margin-left: 220px;
 }
 
-
 @keyframes animateheading {
   from {
     width: 0px;
@@ -51,6 +50,32 @@ h1 {
 h2 {
   font-size: 14pt;
   font-weight: normal;
+}
+
+.johannes-text {
+  animation: johannesanimation 3s infinite;
+}
+
+@keyframes johannesanimation {
+  0% {
+    color: #f78686;
+  }
+
+  25% {
+    color: #00fec1;
+  }
+
+  50% {
+    color: #6b38fe;
+  }
+
+  75% {
+    color: #ad0068;
+  }
+
+  100% {
+    color: #f78686;
+  }
 }
 
 .version {

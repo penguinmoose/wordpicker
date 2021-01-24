@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" dir="ltr">
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Word Picker scripts down at the bottom! -->
 
 <head>
@@ -90,7 +91,18 @@
                 Pop Up</button>
             </td>
             <td>
-              <img src="icons/popup-icon.png" class="more-dropdown-item-icons" alt="popup icon" id="theme-icon">
+              <img src="icons/popup-icon.png" class="more-dropdown-item-icons" alt="popup icon">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <form method="get" action="Word-Picker-download.zip">
+                <button type="submit" class="more-dropdown-content-button">Download</button>
+              </form>
+            </td>
+            <td>
+              <img src="icons/download-icon.png" class="more-dropdown-item-icons" alt="download icon">
             </td>
           </tr>
         </table>
@@ -106,8 +118,9 @@
   <div class="sidenav" id="sidenav">
     <!-- for computer -->
     <button type="button" name="button" onclick="changepage(1)" id="wd_button" class="sidebuttons" title="Go to the word picker tab">Word Picker</button>
-    <button type="button" name="button" onclick="changepage(2)" id="sn_button" class="sidebuttons" title="Go to the sentence picker tab">Sentence Picker</button>
-    <button type="button" name="button" onclick="changepage(3)" id="in_button" class="sidebuttons" style="margin-bottom: 25px;" title="View instructions">Instructions</button> <!-- change onclick to changepage(4) when making phrase picker -->
+    <button type="button" name="button" onclick="changepage(2)" id="el_button" class="sidebuttons" title="Go to the early reading tab">Early Reading</button>
+    <button type="button" name="button" onclick="changepage(3)" id="sn_button" class="sidebuttons" title="Go to the sentence picker tab">Sentence Picker</button>
+    <button type="button" name="button" onclick="changepage(4)" id="in_button" class="sidebuttons" style="margin-bottom: 25px;" title="View instructions">Instructions</button> <!-- change onclick to changepage(4) when making phrase picker -->
 
     <div class="version">Version 1.5.8</div>
     <a href="?view=mobile" class="mobilelink">Switch to mobile view</a>
@@ -116,8 +129,9 @@
   <div class="bottomnav" id="bottomnav">
     <!-- for mobile -->
     <button onclick="changepage(1)" id="wd_button_mobile" class="active">Word Picker</button>
-    <button onclick="changepage(2)" id="sn_button_mobile">Sentence Picker</button>
-    <button onclick="changepage(3)" id="in_button_mobile">Instructions</button>
+    <button onclick="changepage(2)" id="el_button_mobile">Early Reading</button>
+    <button onclick="changepage(3)" id="sn_button_mobile">Sentence Picker</button>
+    <button onclick="changepage(4)" id="in_button_mobile">Instructions</button>
   </div>
 
 
@@ -321,6 +335,18 @@
 
     <!----------------------------------------------------->
 
+    <div id="early_reading">
+      <div class="inputcontainer">
+        <h2 class="inputheading">Find words for early reading
+          <div style="font-size: 10pt;">Go to the instructions tab for how to use this</div>
+        </h2>
+
+        <div>Early Reading will be comming soon!</div>
+      </div>
+    </div>
+
+    <!----------------------------------------------------->
+
     <div id="sentence_picker">
       <div class="inputcontainer">
         <h2 class="inputheading">Find sentences containing a word
@@ -381,7 +407,7 @@
             </ul>
             </p>
             <h4>How to navigate</h4>
-            <p>Use the tabs at the left bar to navigate. If you are on a mobile device, the tabs are in the bottom. Because things might look weird on a mobile device, using Word Picker on a computer or desktop is recommended.</p>
+            <p>Use the tabs at the left bar to navigate. If you are on a mobile device, the tabs are in the bottom. Because things might look weird on a mobile device, using Word Picker on a computer or desktop is recommended. You can also go switch tabs by pressing the up and down arrow keys.</p>
             <h4>The three dots in the heading</h4>
             <p>The three dots in the heading shows a menu for more actions like opening settings, viewing the word list, translating the page and more. Keep in mind that the translation uses Google Translate, which might not translate all of the
               content perfectly.</p>

@@ -2,8 +2,9 @@
 //var host = "127.0.0.1:5000";
 var host = "www.wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 
-var section_list = ["word_picker", "sentence_picker", "instructions"]; // add phrase_picker when phrase picker is avalible
-var button_list = ["wd_button", "sn_button", "in_button"]; // add ph_button when phrase picker is avalible
+var section_list = ["word_picker", "early_reading", "sentence_picker", "instructions"];
+var button_list = ["wd_button", "el_button", "sn_button", "in_button"];
+var currentPage = 1;
 
 const queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
@@ -48,7 +49,7 @@ window.onload = function() {
 function changepage(pg) {
   event.preventDefault();
 
-  for (var i = 0; i < 3; i++) {
+  for (var i = 0; i < 4; i++) {
     document.getElementById(section_list[i]).style.display = "none";
     document.getElementById(button_list[i] + "_mobile").className = "";
     document.getElementById(button_list[i]).style.border = "none";
@@ -57,7 +58,18 @@ function changepage(pg) {
   document.getElementById(section_list[pg - 1]).style.display = "block";
   document.getElementById(button_list[pg - 1]).style.border = "20px solid #1752e8";
   document.getElementById(button_list[pg - 1] + "_mobile").className = "active";
+  currentPage = pg;
 }
+
+$(document).keydown(function(event) {
+  var key = (event.keyCode ? event.keyCode : event.which);
+
+  if (key == 40 && currentPage != 4) {
+    changepage(currentPage + 1);
+  } else if (key == 38 & currentPage != 1) {
+    changepage(currentPage - 1);
+  }
+});
 
 function openWordList() {
   window.open('http://www.johanneschan.com/wordpicker/eb-flask/word-list/10000words.txt', 'popUpWindow',
@@ -317,39 +329,3 @@ function startSentences(type) {
     }
   }
 }
-
-//////////////////////////////////////////////////
-/*
-
-function startPhrases(type) {
-  var startswith = document.getElementById("phrase_startswith").value;
-  var endswith = document.getElementById("phrase_endswith").value;
-  var contains = document.getElementById("phrase_contains").value;
-  var wordlengh = document.getElementById("phrase_wordlengh").value;
-  var wordlengh_comparison_select = document.getElementById("phrase-wordlengh-comparison-select");
-  var phraselengh = document.getElementById("phrase_lengh");
-  var phraselengh_format_select = document.getElementById("phrase-lengh-format-select");
-
-  if (startswith == "" && endswith == "" && contains == "" && wordlengh == "" && phraselengh == "" && type == "") { // Oh, the user didn't enter anything. Alert them.
-    alert("Please enter something in the input field. Refer to the instructions (go to the instructions tab in the sidebar) for what to type there.");
-    return;
-  } else if (startswith == "" && endswith == "" && contains == "" && wordlengh == "" && phraselengh == "" && type == "prev") { // Time to load results from previous session!
-    startswith = localStorage.getItem("phpk_startswith");
-    endswith = localStorage.getItem("phpk_endswith");
-    contains = localStorage.getItem("phpk_contains");
-    wordlengh = localStorage.getItem("phpk_wordlengh");
-    phraselengh = localStorage.getItem("phpk_phraselengh");
-
-    document.getElementById("phrase_startswith").value = localStorage.getItem("phpk_startswith");
-    document.getElementById("phrase_endswith").value = localStorage.getItem("phpk_endswith");
-    document.getElementById("phrase_contains").value = localStorage.getItem("phpk_contains");
-    document.getElementById("phrase_wordlengh").value = localStorage.setItem("phpk_wordlengh");
-    document.getElementById("phrase_lengh").value = localStorage.setItem("phpk_phraselengh");
-  } else if (startswith != "" && endswith != "" && contains != "" && wordlengh != "" && phraselengh != "") { // Time to save!
-    localStorage.setItem("phpk_startswith", startswith);
-    localStorage.setItem("phpk_endswith", endswith);
-    localStorage.setItem("phpk_contains", contains);
-    localStorage.setItem("phpk_wordlengh", wordlengh);
-    localStorage.setItem("phpk_phraselengh", phraselengh);
-  }
-}*/
