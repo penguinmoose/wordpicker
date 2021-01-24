@@ -1,10 +1,13 @@
 <!DOCTYPE HTML>
 <html lang="en" dir="ltr">
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Word Picker scripts down at the bottom! -->
 
 <head>
+  <title>Word Picker - johanneschan</title>
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Word Picker is a tool for finding words based on a spelling pattern or a sound. There is also a sentence finder to find sentences containing a word.">
@@ -38,15 +41,13 @@
 
 
 <body>
-  <title>Word Picker - johanneschan</title>
-
   <h1 class="heading-1">
     <img src="favicon.ico" class="heading-icon">
     <span style="text-shadow: 4px 3px #737373;">Word Picker</span>
 
     <div class="dropdown">
       <span onclick="toggleMoreDropdown()" class="more-dropbtn">•••</span>
-      <div id="moreDropdown" class="more-dropdown-content">
+      <div id="moreDropdown" class="more-dropdown-content" style="font-family: sans-serif; font-size: 12pt;">
         <table style="font-family: 'Nunito', sans-serif; font-size: 12pt; font-weight: normal;">
           <tr>
             <td>
@@ -109,6 +110,12 @@
         <hr>
 
         <div id="google_translate_element"></div>
+        <hr>
+        <div>
+          <div class="font-family: sans-serif;">Save instructions to google drive</div>
+          <div class="g-savetodrive" data-src="http://www.johanneschan.com/wordpicker/instructions.pdf" data-filename="Instructions.pdf" data-sitename="johanneschan.com">
+          </div>
+        </div>
       </div>
     </div>
   </h1><br>
@@ -375,7 +382,7 @@
 
         <div class="small-heading">Welcome to word picker!</div><br>
         <p>You can find words by sound or spelling pattern. To do it by sound, find the sound you want that is bolded in the example section of the table. Then find the corresponding phoneme and type it in the type sound here... input field. If you
-          want to find words that have a sound or a another sound, seperate them with a comma.
+          want to find words that have a sound or another sound, separate them with a comma.
           <hr><img src="arprabet-1.png" alt="Arprabet table image 1"><br><img src="arprabet-2.png" alt="Arprabet table image 1">
           <hr><br>If you want to find words using a spelling pattern, type in a spelling pattern. To find words that have a consonant, type in a capital C. For vowels, type a consonant V. If you only type in a capital C, it won't show any results
           because there are no words that are just a consonant and nothing else. To find words that contain a consonant (there are many), you need to type a dash in the end and the begining of the C. The one at the end means that it should include
@@ -407,7 +414,8 @@
             </ul>
             </p>
             <h4>How to navigate</h4>
-            <p>Use the tabs at the left bar to navigate. If you are on a mobile device, the tabs are in the bottom. Because things might look weird on a mobile device, using Word Picker on a computer or desktop is recommended. You can also go switch tabs by pressing the up and down arrow keys.</p>
+            <p>Use the tabs at the left bar to navigate. If you are on a mobile device, the tabs are in the bottom. Because things might look weird on a mobile device, using Word Picker on a computer or desktop is recommended. You can also go switch
+              tabs by pressing the up and down arrow keys.</p>
             <h4>The three dots in the heading</h4>
             <p>The three dots in the heading shows a menu for more actions like opening settings, viewing the word list, translating the page and more. Keep in mind that the translation uses Google Translate, which might not translate all of the
               content perfectly.</p>
