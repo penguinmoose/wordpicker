@@ -27,7 +27,9 @@ window.onload = function() {
   document.getElementById("progress").style.width = "16%";
 
   applySettings();
-  toggleTooltip();
+  if (getCookie("prevuser") == "") {
+    toggleTooltip();
+  }
   progressElement.style.width = "32%";
   changepage(1);
   progressElement.style.width = "48%";
@@ -71,12 +73,8 @@ $(document).keydown(function(event) {
 });
 
 function toggleTooltip() {
-  if (getCookie("prevuser") == "") {
-    document.getElementById("newuser-tooltip").classList.add("show-tooltip");
-  } else {
-    document.getElementById("newuser-tooltip").classList.remove("show-tooltip");
-    setCookie("prevuser", "true", 100);
-  }
+  document.getElementById("newuser-tooltip").classList.toggle("show-tooltip");
+  setCookie("prevuser", "true", 100);
 }
 
 function openWordList() {
