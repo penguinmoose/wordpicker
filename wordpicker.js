@@ -1,4 +1,3 @@
-// TODO: make phrase picker
 //var host = "127.0.0.1:5000";
 var host = "www.wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 
@@ -28,6 +27,7 @@ window.onload = function() {
   document.getElementById("progress").style.width = "16%";
 
   applySettings();
+  toggleTooltip();
   progressElement.style.width = "32%";
   changepage(1);
   progressElement.style.width = "48%";
@@ -35,7 +35,6 @@ window.onload = function() {
   progressElement.style.width = "64%";
   startSentences("prev");
   progressElement.style.width = "80%";
-  //startPhrases("prev");
   setBackground();
 
   setTimeout(() => {
@@ -70,6 +69,15 @@ $(document).keydown(function(event) {
     changepage(currentPage - 1);
   }
 });
+
+function toggleTooltip() {
+  if (getCookie("prevuser") == "") {
+    document.getElementById("newuser-tooltip").classList.add("show-tooltip");
+  } else {
+    document.getElementById("newuser-tooltip").classList.remove("show-tooltip");
+    setCookie("prevuser", "true", 100);
+  }
+}
 
 function openWordList() {
   window.open('http://www.johanneschan.com/wordpicker/eb-flask/word-list/10000words.txt', 'popUpWindow',
