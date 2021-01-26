@@ -72,9 +72,14 @@ $(document).keydown(function(event) {
   }
 });
 
-function toggleTooltip() {
-  document.getElementById("newuser-tooltip").classList.toggle("show-tooltip");
-  setCookie("prevuser", "true", 100);
+function toggleTooltip(off) {
+  if (off == 'off') {
+    document.getElementById("newuser-tooltip").classList.remove("show-tooltip");
+    return;
+  } else {
+    document.getElementById("newuser-tooltip").classList.toggle("show-tooltip");
+    setCookie("prevuser", "true", 100);
+  }
 }
 
 function openWordList() {
