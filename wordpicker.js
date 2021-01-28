@@ -11,6 +11,9 @@ var urlParams = new URLSearchParams(queryString);
 console.log("Welcome to Word Picker!");
 
 window.onload = function() {
+  var toggler = document.getElementsByClassName("caret");
+  var i;
+
   var view = urlParams.get('view');
   var progressElement = document.getElementById("progress");
 
@@ -45,6 +48,13 @@ window.onload = function() {
     }, 200)
     document.getElementById("loading-container").style.display = "none";
   }, 500);
+
+  for (i = 0; i < toggler.length; i++) {
+    toggler[i].addEventListener("click", function() {
+      this.parentElement.querySelector(".nested").classList.toggle("active");
+      this.classList.toggle("caret-down");
+    });
+  }
 }
 
 function changepage(pg) {
@@ -60,6 +70,10 @@ function changepage(pg) {
   document.getElementById(button_list[pg - 1]).style.border = "20px solid #1752e8";
   document.getElementById(button_list[pg - 1] + "_mobile").className = "active";
   currentPage = pg;
+}
+
+function closeMobileSidebar() {
+  document.getElementsByClassName('mobilesidebar')[0].style.width = '0px';
 }
 
 $(document).keydown(function(event) {
@@ -107,11 +121,12 @@ function changeTheme(theme) {
     document.getElementsByClassName("resultcontainer")[0].style.color = "black";
     document.getElementsByClassName("resultcontainer")[1].style.color = "black";
     changeBackgroundOfElements("bluebox", "#3171b4");
-    changeBackgroundOfElements("sidebuttons", "white");
 
     document.getElementById("theme-icon").src = "icons/light-mode-icon.png";
     document.getElementById("theme-change-button").innerHTML = "Light Mode";
     document.getElementById("theme-change-button").setAttribute("onclick", "changeTheme('l')");
+    document.getElementById("mobile-theme-change-button").innerHTML = "Light Mode";
+    document.getElementById("mobile-theme-change-button").setAttribute("onclick", "changeTheme('l')");
   } else {
     document.body.color = "black";
     changeBackgroundOfElements("sidebuttons", "#00c2f5");
@@ -122,11 +137,12 @@ function changeTheme(theme) {
     changeBackgroundOfElements("more-dropdown-content-button", "#eeeeee");
     changeBackgroundOfElements("error-alert", "#ff2f2f");
     changeBackgroundOfElements("bluebox", "#5b9cdf");
-    changeBackgroundOfElements("sidebuttons", "black");
 
     document.getElementById("theme-icon").src = "icons/dark-mode-icon.png";
     document.getElementById("theme-change-button").innerHTML = "Dark Mode";
     document.getElementById("theme-change-button").setAttribute("onclick", "changeTheme('d')");
+    document.getElementById("mobile-theme-change-button").innerHTML = "Dark Mode";
+    document.getElementById("mobile-theme-change-button").setAttribute("onclick", "changeTheme('d')");
   }
 }
 
@@ -326,7 +342,7 @@ function startSentences(type) {
     })
     .catch(function(err) {
       addError("Error finding sentences: " + err);
-      console.log('error: ' + err);
+      console.error("There was an error.\n" + err);
     });
 
   function appendData(data) {

@@ -32,15 +32,50 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
   <link rel="stylesheet" href="loading.css">
   <link rel="stylesheet" href="tabs.css">
+  <link rel="stylesheet" href="mobileheading.css">
+  <link rel="stylesheet" href="wordpicker.css">
   <link rel="stylesheet" href="toggle.css">
   <link rel="stylesheet" href="tooltip.css">
-  <link rel="stylesheet" href="wordpicker.css">
+  <link rel="stylesheet" href="treeview.css">
 
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 
 
 <body>
+  <div class="mobilesidebar">
+    <button class="msb-closebtn" onclick="closeMobileSidebar();">&times;</button>
+    <button onclick="openSettings();">Settings</button>
+    <button onclick="openWordList();">See word list</button>
+    <ul id="mobile-moreactions">
+      <li><span class="caret">More actions</span>
+        <ul class="nested">
+          <li onclick="window.location.reload(true)">Reload</li>
+          <li onclick="changeTheme('d')" id="mobile-theme-change-button">Dark Mode</li>
+          <li onclick="window.open('http://www.johanneschan.com/wordpicker/wordpicker.html', 'popUpWindow',
+            'height=720, width=1180, left=100, top=150, resizable=yes, scrollbars=yes, toolbar=no, menubar=yes, location=no, directories=no, status=yes');">Pop Up</li>
+          <li>
+            <form method="get" action="Word-Picker-download.zip">
+              <button type="submit" class="more-dropdown-content-button">Download this page</button>
+            </form>
+          </li>
+          <li><span class="caret">Google actions</span>
+            <ul class="nested">
+              <li>
+                <div id="google_translate_element"></div>
+              </li>
+              <div>
+                <div class="font-family: sans-serif;">Save instructions to google drive</div>
+                <script src="https://apis.google.com/js/platform.js" async defer></script>
+                <div class="g-savetodrive" data-src="http://www.johanneschan.com/wordpicker/instructions.pdf" data-filename="Instructions.pdf" data-sitename="johanneschan.com"></div>
+              </div>
+            </ul>
+          </li>
+      </li>
+    </ul>
+    </ul>
+  </div>
+
   <h1 class="heading-1">
     <img src="favicon.ico" class="heading-icon">
     <span style="text-shadow: 4px 3px #737373;">Word Picker</span>
@@ -88,7 +123,7 @@
           <tr>
             <td>
               <button onclick="window.open('http://www.johanneschan.com/wordpicker/wordpicker.html', 'popUpWindow',
-                'height=720, width=1180, left=100, top=150, resizable=yes, scrollbars=yes, toolbar=no, menubar=yes, location=no, directories=no, status=yes');" id="theme-change-button" class="more-dropdown-content-button">
+                'height=720, width=1180, left=100, top=150, resizable=yes, scrollbars=yes, toolbar=no, menubar=yes, location=no, directories=no, status=yes');" class="more-dropdown-content-button">
                 Pop Up</button>
             </td>
             <td>
@@ -99,7 +134,7 @@
           <tr>
             <td>
               <form method="get" action="Word-Picker-download.zip">
-                <button type="submit" class="more-dropdown-content-button">Download</button>
+                <button type="submit" class="more-dropdown-content-button">Download this page</button>
               </form>
             </td>
             <td>
@@ -113,12 +148,16 @@
         <hr>
         <div>
           <div class="font-family: sans-serif;">Save instructions to google drive</div>
-          <script src="https://apis.google.com/js/platform.js" async defer></script>
           <div class="g-savetodrive" data-src="http://www.johanneschan.com/wordpicker/instructions.pdf" data-filename="Instructions.pdf" data-sitename="johanneschan.com">
           </div>
         </div>
       </div>
     </div>
+  </h1><br>
+
+
+  <h1 class="mobile-heading">
+    <span style="text-shadow: 4px 3px #737373;">Word Picker</span>
   </h1><br>
 
   <!-------->
@@ -132,7 +171,7 @@
       <span class="tooltiptext" id="newuser-tooltip">Click this button to see instructions for how to use Word Picker.</span>
     </button>
 
-    <div class="version">Version 1.5.9</div>
+    <div class="version">Version 1.5.10</div>
     <a href="?view=mobile" class="mobilelink">Switch to mobile view</a>
   </div>
 
@@ -142,6 +181,7 @@
     <button onclick="changepage(2)" id="el_button_mobile">Early Reading</button>
     <button onclick="changepage(3)" id="sn_button_mobile">Sentence Picker</button>
     <button onclick="changepage(4)" id="in_button_mobile">Instructions</button>
+    <button style="font-size: 30px; cursor: pointer;" onclick="document.getElementsByClassName('mobilesidebar')[0].style.width = 'calc(100% - 180px)';">&#9776;</button>
   </div>
 
 

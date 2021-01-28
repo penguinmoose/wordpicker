@@ -33,9 +33,10 @@ function openSettings() {
   if (typeof(Storage) === "undefined") {
     document.getElementsByClassName("settings-nostorage-alert")[0].style.display = "block";
   }
-  
+
   document.getElementById("settings").style.display = "block";
   document.getElementById("moreDropdown").style.display = "none";
+  closeMobileSidebar();
 }
 
 function showReswidthSliderValue() {
