@@ -26,7 +26,11 @@ window.onload = function() {
     document.getElementsByClassName("heading-icon")[0].style.marginLeft = "30px";
     document.getElementById("sidenav").style.display = "none";
     document.getElementById("bottomnav").style.display = "block";
+    document.getElementsByClassName("mobile-heading")[0].style.display = "block";
+  } else {
+    document.getElementsByClassName("heading-1")[0].style.display = "block";
   }
+  
   document.getElementById("progress").style.width = "16%";
 
   applySettings();

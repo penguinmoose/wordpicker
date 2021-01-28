@@ -36,12 +36,13 @@ footer {
 }
 
 .heading-1 {
+  display: none;
   height: 30px;
   border-radius: 10px;
   font-family: 'Pacifico', cursive;
   font-size: 30px;
   text-align: center;
-  background-color: #dddddd;
+  background-color: #9d9d9d;
   padding: 15px;
   margin-top: 10px;
   animation: animateheading 2s 1;

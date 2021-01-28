@@ -1,4 +1,5 @@
 .mobile-heading {
+  display: none;
   width: 100%;
   height: 30px;
   font-family: 'Pacifico', cursive;
