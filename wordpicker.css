@@ -142,6 +142,9 @@ h2 {
   border: none;
   cursor: pointer;
   font-size: 17pt;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .dropbtn:hover, .dropbtn:focus {
@@ -261,6 +264,56 @@ h2 {
   margin-left: -225px;
   border-radius: 10px;
   background-color: #2f89ff;
+}
+
+.colorselect:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid white;
+}
+
+.colorselect:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  top: -2px;
+  left: -1px;
+  position: relative;
+  content: '';
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid #16e99d;
+}
+
+.colorselect.greenselect:after {
+  background-color: #45d938;
+}
+
+.colorselect.blueselect:after {
+  background-color: #3895d9;
+}
+
+.colorselect.purpleselect:after {
+  background-color: #6c38d9;
+}
+
+.colorselect.redselect:after {
+  background-color: #d93855;
+}
+
+.colorselect.orangeselect:after {
+  background-color: #d99438;
+}
+
+.colorselect.yellowselect:after {
+  background-color: #d9c938;
 }
 
 .settings-savebtn {

@@ -30,8 +30,8 @@ window.onload = function() {
   } else {
     document.getElementsByClassName("heading-1")[0].style.display = "block";
   }
-  
-  document.getElementById("progress").style.width = "16%";
+
+  progressElement.style.width = "16%";
 
   applySettings();
   if (getCookie("prevuser") == "") {

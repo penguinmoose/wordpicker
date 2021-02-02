@@ -43,6 +43,27 @@
 
 
 <body>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyBNj7M8vL3Cp4uk7ygvu2UITI7daY7N0_4",
+      authDomain: "word-picker.firebaseapp.com",
+      projectId: "word-picker",
+      storageBucket: "word-picker.appspot.com",
+      messagingSenderId: "1071738882868",
+      appId: "1:1071738882868:web:c139b405dfa61e713ff361"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+
   <div class="mobilesidebar">
     <button class="msb-closebtn" onclick="closeMobileSidebar();">&times;</button>
     <button onclick="openSettings();">Settings</button>
@@ -209,6 +230,7 @@
           <span class="toggle-ball round"></span>
         </label>
       </div>
+      <hr>
 
       <div style="margin-bottom: 10px;">
         <span>Make result text italic</span>
@@ -217,11 +239,25 @@
           <span class="toggle-ball round"></span>
         </label>
       </div>
+      <hr>
 
       <div style="margin-bottom: 10px;">
         <span>Result container width</span>
         <span style="margin-left: 15px;">200px</span><input type="range" min="200" max="600" value="300" class="slider" id="resultcontainer-width-slider" onclick="showReswidthSliderValue();"><span>600px</span>
         <span id="reswidth-value-text"></span>
+      </div>
+      <hr>
+
+      <div style="margin-bottom: 10px;">
+        <span>Theme color</span>
+        <div style="background-color: #505050; width: 155px; padding: 10px; float: right; border-radius: 10px;">
+          <input type='radio' class="colorselect greenselect" name="colorselect" value="#45d938">
+          <input type='radio' class="colorselect blueselect" name="colorselect" value="#3895d9" checked>
+          <input type='radio' class="colorselect purpleselect" name="colorselect" value="#6c38d9">
+          <input type='radio' class="colorselect redselect" name="colorselect" value="#d93855">
+          <input type='radio' class="colorselect orangeselect" name="colorselect" value="#d99438">
+          <input type='radio' class="colorselect yellowselect" name="colorselect" value="#d9c938">
+        </div>
       </div>
 
       <div style="margin-top: 30px">
@@ -429,7 +465,8 @@
           a comma. A lowercase letter just means a additional letter that you typed. You can also doubble something, like a consonant. This will make the second one the same letter as the first. To do that, add a number after the thing you want to
           doubble, so the C for the consonant becomes C2. The number that you type in is the number of times it gets repeated. This is useful when it goes right after a C or V. To connect these, just type the next one after the one before it.
 
-          <br>To find words that contain a spelling pattern and also contains a sound, enter both the sound and spelling pattern.</p>
+          <br>To find words that con
+          tain a spelling pattern and also contains a sound, enter both the sound and spelling pattern.</p>
         <br>
         <hr>
 
