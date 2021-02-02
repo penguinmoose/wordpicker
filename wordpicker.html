@@ -43,27 +43,6 @@
 
 
 <body>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyBNj7M8vL3Cp4uk7ygvu2UITI7daY7N0_4",
-      authDomain: "word-picker.firebaseapp.com",
-      projectId: "word-picker",
-      storageBucket: "word-picker.appspot.com",
-      messagingSenderId: "1071738882868",
-      appId: "1:1071738882868:web:c139b405dfa61e713ff361"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  </script>
-
-
   <div class="mobilesidebar">
     <button class="msb-closebtn" onclick="closeMobileSidebar();">&times;</button>
     <button onclick="openSettings();">Settings</button>
@@ -523,6 +502,30 @@
   <script src="cookies.js"></script>
   <script src="settings.js"></script>
   <script src="wordpicker.js"></script>
+
+  <!---->
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyBNj7M8vL3Cp4uk7ygvu2UITI7daY7N0_4",
+      authDomain: "word-picker.firebaseapp.com",
+      projectId: "word-picker",
+      storageBucket: "word-picker.appspot.com",
+      messagingSenderId: "1071738882868",
+      appId: "1:1071738882868:web:c139b405dfa61e713ff361"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.5/firebase-firestore.js"></script>
 </body>
 
 </html>
