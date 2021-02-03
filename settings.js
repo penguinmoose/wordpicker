@@ -1,4 +1,29 @@
 var randBackground = true;
+var hexdict = {
+  "#45d938": "greenselect",
+  "#3895d9": "blueselect",
+  "#6c38d9": "purpleselect",
+  "#d93855": "redselect",
+  "#d99438": "orangeselect",
+  "#d9c938": "yellowselect"
+}
+
+function changeBackgroundOfElements(elementClass, color) {
+  var elements = document.getElementsByClassName(elementClass); // Paramiter is not called class because that is reserved
+  for (var i = 0; i < elements.length; i++) {
+    elements[i].style.backgroundColor = color;
+  }
+}
+
+function addHexColor(color, howmuch) {
+  var hexValue = color.substring(1);
+  hexValue = "0x" + hexValue;
+  hexValue = parseInt(hexValue, 16);
+  hexValue = hexValue + parseInt(howmuch, 16);
+  hexValue = hexValue.toString(16);
+  hexValue = "#" + hexValue;
+  return hexValue;
+}
 
 function saveSettings() {
   var selectbuttons = document.getElementsByClassName("colorselect");
@@ -16,14 +41,6 @@ function saveSettings() {
 }
 
 function applySettings() {
-  var hexdict = {
-    "#45d938": "greenselect",
-    "#3895d9": "blueselect",
-    "#6c38d9": "purpleselect",
-    "#d93855": "redselect",
-    "#d99438": "orangeselect",
-    "#d9c938": "yellowselect"
-  }
   randBackground = getCookie("settings-randbackground");
   document.getElementById("settings-randbackground").checked = (randBackground == "true");
 
@@ -43,7 +60,10 @@ function applySettings() {
   }
 
   if (localStorage.getItem("settings-themecolor") != null) {
-    document.getElementsByClassName("heading-1")[0].style.backgroundColor = localStorage.getItem("settings-themecolor");
+    var themeColor = localStorage.getItem("settings-themecolor");
+    document.getElementsByClassName("heading-1")[0].style.backgroundColor = themeColor;
+    changeBackgroundOfElements("inputcontainer", addHexColor(themeColor, 2000)); // change inputcontainer background color to a lighter version of the theme color via addHexColor()
+    document.getElementsByClassName(hexdict[themeColor]).checked = true;
   }
 
   document.getElementById("settings").style.display = "none";

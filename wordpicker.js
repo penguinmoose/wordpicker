@@ -105,13 +105,6 @@ function openWordList() {
     'height=500, width=400, left=300, top=200, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');
 }
 
-function changeBackgroundOfElements(elementClass, color) {
-  var elements = document.getElementsByClassName(elementClass); // Paramiter is not called class because that is reserved
-  for (var i = 0; i < elements.length; i++) {
-    elements[i].style.backgroundColor = color;
-  }
-}
-
 function changeTheme(theme) {
   if (theme == "d") {
     document.body.color = "white";
