@@ -13,9 +13,7 @@ console.log("Welcome to Word Picker!");
 window.onload = function() {
   var toggler = document.getElementsByClassName("caret");
   var i;
-
   var view = urlParams.get('view');
-  var progressElement = document.getElementById("progress");
 
   if (window.location.protocol == "https:") {
     window.location.href = window.location.href.replace("https:", "http:");
@@ -31,27 +29,14 @@ window.onload = function() {
     document.getElementsByClassName("heading-1")[0].style.display = "block";
   }
 
-  progressElement.style.width = "16%";
-
   applySettings();
   if (getCookie("prevuser") == "") {
     toggleTooltip();
   }
-  progressElement.style.width = "32%";
   changepage(1);
-  progressElement.style.width = "48%";
   startWords("prev");
-  progressElement.style.width = "64%";
   startSentences("prev");
-  progressElement.style.width = "80%";
   setBackground();
-
-  setTimeout(() => {
-    setTimeout(() => {
-      document.getElementById("progress").style.width = "100%";
-    }, 200)
-    document.getElementById("loading-container").style.display = "none";
-  }, 500);
 
   for (i = 0; i < toggler.length; i++) {
     toggler[i].addEventListener("click", function() {
@@ -59,6 +44,10 @@ window.onload = function() {
       this.classList.toggle("caret-down");
     });
   }
+
+  setTimeout(() => {
+    document.getElementById("loading-container").style.display = "none";
+  }, 500);
 }
 
 function changepage(pg) {

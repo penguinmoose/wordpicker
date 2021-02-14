@@ -25,6 +25,14 @@ footer {
   margin-left: 220px;
 }
 
+.jc-btn {
+  text-decoration: none;
+  color: white;
+  background-color: #7193b6;
+  padding: 5px;
+  border-radius: 15px;
+}
+
 @keyframes animateheading {
   from {
     width: 0px;
