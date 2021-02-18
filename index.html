@@ -39,10 +39,33 @@
   <link rel="stylesheet" href="styles/treeview.css">
 
   <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-M5SCVCN');
+  </script>
+  <!-- End Google Tag Manager -->
 </head>
 
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5SCVCN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <div class="mobilesidebar">
     <button class="msb-closebtn" onclick="closeMobileSidebar();">&times;</button>
     <button onclick="openSettings();">Settings</button>
@@ -301,29 +324,26 @@
 
           <div>Select a parts of speech result filter:</div>
           <div class="bluebox">
-            <input type="radio" id="noun-filter" name="filter-button" value="&filter=noun">
-            <label for="noun-filter">Show nouns</label><br>
-
             <input type="radio" id="noun-person-filter" name="filter-button" value="&filter=noun-person">
-            <label for="noun-person-filter">Show nouns - person</label><br>
+            <label for="noun-person-filter" title="Only show person nouns in the results">Show nouns - person</label><br>
 
             <input type="radio" id="noun-place-filter" name="filter-button" value="&filter=noun-place">
-            <label for="noun-place-filter">Show nouns - place</label><br>
+            <label for="noun-place-filter" title="Only show place nouns in the results">Show nouns - place</label><br>
 
             <input type="radio" id="noun-thing-filter" name="filter-button" value="&filter=noun-thing">
-            <label for="noun-thing-filter">Show nouns - thing</label><br>
+            <label for="noun-thing-filter" title="Only show thing nouns in the results">Show nouns - thing</label><br>
 
             <input type="radio" id="prepesition-filter" name="filter-button" value="&filter=preposition">
-            <label for="prepesition-filter">Show prepesitions</label><br>
+            <label for="prepesition-filter" title="Only show prepositions in the results">Show prepesitions</label><br>
 
             <input type="radio" id="adjective-filter" name="filter-button" value="&filter=adjective">
-            <label for="adjective-filter">Show adjectives</label><br>
+            <label for="adjective-filter" title="Only show adjectives in the results">Show adjectives</label><br>
 
             <input type="radio" id="verb-filter" name="filter-button" value="&filter=verb">
-            <label for="verb-filter">Show verbs</label><br>
+            <label for="verb-filter" title="Only show verbs in the results">Show verbs</label><br>
 
             <input type="radio" id="all-filter" name="filter-button" value="" checked>
-            <label for="all-filter">Show all results</label><br>
+            <label for="all-filter" title="Show all parts of speech in the results">Show all results</label><br>
           </div>
         </form>
 
