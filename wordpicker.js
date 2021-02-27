@@ -8,7 +8,12 @@ var currentPage = 1;
 const queryString = window.location.search;
 var urlParams = new URLSearchParams(queryString);
 
-console.log("Welcome to Word Picker!");
+console.log(`
+_   _  __   _    __    _       __   _____    ___   _ __   ___   ___
+\\ \\/ \\/  / / \\  |   \\ | \\     |  \\ |_   _|  /  _| | / /  | __| |   \\
+ \\  /\\  / |   | |   / |  |    |  /  _| |_   | |_  |  |   | __| |   /
+  \\/  \\/  \\__/  |_|\\_\\|_/     |_|  |_____|  \\___| |_\\_\\  |___| |_|\\_\\
+`);
 
 window.onload = function() {
   var toggler = document.getElementsByClassName("caret");
@@ -77,6 +82,15 @@ $(document).keydown(function(event) {
   } else if (key == 38 & currentPage != 1) {
     changepage(currentPage - 1);
   }
+});
+
+$(function() {
+  $('#phone').keypress(function(e) {
+    let disallowed_char = [192, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 186, 190, 191, 186, 222, 187, 219, 221, 220];
+    if (disallowed_char.indexOf(e.which) !== -1) {
+      return false;
+    }
+  });
 });
 
 function toggleTooltip(off) {
