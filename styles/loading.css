@@ -11,6 +11,21 @@
   opacity: 1;
   border-radius: 15px;
   background-color: #1ca83f;
+  animation: lc-border-ani 1s infinite;
+}
+
+@keyframes lc-border-ani {
+  0% {
+    border: 5px solid rgb(55, 123, 203);
+  }
+
+  50% {
+    border: 5px solid rgba(35, 76, 224, 0.8);
+  }
+
+  100% {
+    border: 5px solid rgb(55, 123, 203);
+  }
 }
 
 .container {

@@ -28,15 +28,22 @@ def load_word_list(filter):
 
 @application.route('/', methods=['GET'])
 def home():
-    return "<h1>Word sentence API</h1> <p>API for finding words or sentences with matching criteria.</p>"
+    return "<h1 style='color: #39568f'>Word Picker API</h1> <p>API for finding words or sentences with matching criteria.</p>"
 
 @application.route('/api/words/all', methods=['GET'])
 def api_words_all():
     word_list = load_word_list()
     return jsonify(list(word_list.keys()))
 
-def word_match(word_pattern, phone_pattern, filter, maxwordlen):
-    word_list = load_word_list(filter)
+def spelling_match(word_pattern, filter, maxwordlen):
+    with open("word-list/" + filter + ".txt", 'r') as f:
+        word_list = f.read().splitlines()
+
+    wordlen = 60
+    if maxwordlen is not None:
+        wordlen = int(maxwordlen)
+    word_list = [v for v in word_list if (len(v) > 1) and (len(v) <= wordlen)]
+
     re_list = []
     if word_pattern:
         for pattern in word_pattern.split(','): # build reglex string
@@ -60,12 +67,8 @@ def word_match(word_pattern, phone_pattern, filter, maxwordlen):
             p = re.compile(query)
             re_list.append(p)
 
-    phone_patterns = None
-    if phone_pattern:
-        phone_patterns = [ " " + s.strip() + " " for s in phone_pattern.upper().split(',') ]
-
     results = []
-    for word, phoneme in word_list.items():
+    for word in word_list:
         matched = True
         for p in re_list:
             if not p.match(word):
@@ -74,25 +77,89 @@ def word_match(word_pattern, phone_pattern, filter, maxwordlen):
         if not matched:
             continue
 
-        if phone_pattern is not None:
-            matched = False
-            for p in phone_patterns:
-                if p in phoneme:
-                    matched = True
-                    break
-            if not matched:
-                continue
-
-        if maxwordlen:
-            if len(word) > int(maxwordlen):
-                continue
-
         results.append(word)
     return results
 
+def phone_match(phone_pattern):
+    with open("word-list/phone-dict.txt", 'r') as f:
+        word_list = f.read().splitlines()
+
+    if phone_pattern is None:
+        return None
+
+    phone_patterns = None
+    if phone_pattern:
+        phone_patterns = [" " + s.strip() + " " for s in phone_pattern.upper().split(',')]
+
+    results = []
+    for line in word_list:
+        word, phoneme = line.split(':')
+        matched = False
+        for p in phone_patterns:
+            if p in " " + phoneme + " ":
+                matched = True
+                break
+        if matched:
+            results.append(word)
+
+    return results
+
+def st_match(st):
+    with open("word-list/syllable-dict.txt", 'r') as f:
+        word_list = f.read().splitlines()
+
+    if st is None:
+        return None
+
+    re_list = []
+    for pattern in st.split(','): # build reglex string
+        query = ''
+        for c in pattern.strip():
+            if c=='-':
+                query = query + '.*';
+            elif c=='?':
+                query = query + '.'
+            else:
+                query = query + c
+
+        query = '^' + query + '$'
+        #print(query)
+        p = re.compile(query)
+        re_list.append(p)
+
+    results = []
+    for line in word_list:
+        word, syllable = line.split(':')
+        matched = False
+        for p in re_list:
+            if p.match(syllable):
+                matched = True
+                break
+        if matched:
+            results.append(word)
+
+    return results
+
+def word_match(word_pattern, phone_pattern, filter, maxwordlen, st):
+    result = spelling_match(word_pattern, filter, maxwordlen)
+
+    phone_result = phone_match(phone_pattern)
+    if phone_result is not None:
+        result = [value for value in result if value in phone_result]
+
+    st_result = st_match(st)
+    if st_result is not None:
+        result = [value for value in result if value in st_result]
+
+    return result
+
 @application.route('/api/words', methods=['GET'])
 def api_words_pattern():
-    matches = word_match(request.args.get('pattern'), request.args.get('phone'), request.args.get('filter'), request.args.get('wordmaxlen'))
+    matches = word_match(request.args.get('pattern'),
+                        request.args.get('phone'),
+                        request.args.get('filter'),
+                        request.args.get('maxwordlen'),
+                        request.args.get('st'))
 
     resmaxlen = request.args.get('resmaxlen')
     if resmaxlen:

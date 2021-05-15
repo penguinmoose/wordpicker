@@ -11,7 +11,12 @@ body {
 
 select {
   border: none;
+  outline: none;
   background-color: #4768dd;
+}
+
+select:hover {
+  background-color: #3f6ee7;
 }
 
 footer {
@@ -23,6 +28,19 @@ footer {
   color: white;
   text-align: center;
   margin-left: 220px;
+  z-index: 0;
+  margin-top: 20px;
+}
+
+a:visited, a:link {
+  color: #1b1e24;
+  padding: 3px 12px;
+  transition-duration: 250ms;
+}
+
+a:hover {
+  background-color: rgba(65, 96, 138, 0.4);
+  border-radius: 4px;
 }
 
 .jc-btn {
@@ -361,7 +379,7 @@ h2 {
 
 .inputform {
   width: 350px;
-  border-bottom: 2px solid #05be7b;
+  border-bottom: 2px solid #4acb7a;
   border-left: none;
   border-right: none;
   border-top: none;
@@ -369,6 +387,12 @@ h2 {
   background-color: white;
   background-position: 10px 10px;
   padding: 10px 20px 10px 20px;
+}
+
+.inputform:focus {
+  border-bottom: 2px solid #3f84e0;
+  outline: none;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.22), 0 8px 22px 0 rgba(0, 0, 0, 0.2);
 }
 
 .inputcontainer {

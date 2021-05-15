@@ -66,6 +66,7 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5SCVCN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
+
   <div class="mobilesidebar">
     <button class="msb-closebtn" onclick="closeMobileSidebar();">&times;</button>
     <button onclick="openSettings();">Settings</button>
@@ -176,7 +177,7 @@
       <span class="tooltiptext" id="newuser-tooltip">Click this button to see instructions for how to use Word Picker.</span>
     </button>
 
-    <div class="version">Version 1.5.11</div>
+    <div class="version">Version 1.6.0</div>
     <a href="?view=mobile" class="mobilelink">Switch to mobile view</a><br>
   </div>
 
@@ -270,9 +271,11 @@
         <br>
 
         <form class="input">
-          <div>Type spelling pattern here:</div>
+          <div>Enter spelling pattern here:</div>
           <input type="text" id="pattern" name="pattern" class="inputform" placeholder="CVC" title="Type spelling pattern in this input field">
-          <div>Type sound here:</div>
+          <div>Enter the syllable type here:</div>
+          <input type="text" id="syllabletype" name="syllable-type" class="inputform" style="text-transform: uppercase;" title="Type the syllable type in the input field. Seperate syllable types by a space. Use '-' for a wildcard.">
+          <div>Enter sound here:</div>
           <input type="text" id="phone" name="phone" class="inputform" placeholder="AA" style="text-transform: uppercase;" title="Type sound in this input field">
 
           <div class="dropdown">
@@ -322,7 +325,7 @@
             </div>
           </div>
 
-          <div>Select a parts of speech result filter:</div>
+          <div>Select result filter:</div>
           <div class="bluebox">
             <input type="radio" id="noun-person-filter" name="filter-button" value="&filter=noun-person">
             <label for="noun-person-filter" title="Only show person nouns in the results">Show nouns - person</label><br>
@@ -344,11 +347,18 @@
 
             <input type="radio" id="all-filter" name="filter-button" value="" checked>
             <label for="all-filter" title="Show all parts of speech in the results">Show all results</label><br>
+            <hr>
+
+            <input type="radio" id="10000words-filter" name="filter-button" value="&filter=10000words" checked>
+            <label for="10000words-filter" title="Use the 10000 most common words as word list input">Use the 10000 most common words as the word list</label><br>
+
+            <input type="radio" id="allwords-filter" name="filter-button" value="&filter=allwords">
+            <label for="allwords-filter" title="Use all words as word list input">Use all words in english as the word list</label><br>
           </div>
         </form>
 
         <div class="bluebox" style="padding: 5px; margin-top: 5px;">
-          <label>Show</label>
+          <label>Show up to</label>
           <select name="limitresult-options" id="limitresult-options">
             <option value="10">10 results</option>
             <option value="20">20 results</option>
@@ -455,8 +465,18 @@
           a comma. A lowercase letter just means a additional letter that you typed. You can also doubble something, like a consonant. This will make the second one the same letter as the first. To do that, add a number after the thing you want to
           doubble, so the C for the consonant becomes C2. The number that you type in is the number of times it gets repeated. This is useful when it goes right after a C or V. To connect these, just type the next one after the one before it.
 
-          <br>To find words that con
-          tain a spelling pattern and also contains a sound, enter both the sound and spelling pattern.</p>
+          <br>To find words that contain a spelling pattern and also contains a sound, enter both the sound and spelling pattern.</p>
+
+          <h4>Syllable type specification</h4>
+          <p>To specify the sylllable type, type the syllable type in the syllable type input. Each character is one character, so use this mapping for the syllable type:<br>
+          <pre style="background-color: white;">
+            Closed: C
+            Open: O
+            Vowel team: T
+            Vowel R: R
+            Silent E: E
+          </pre>
+          You can also use ? for any syllable type and - for any amount of any syllable type.</p>
         <br>
         <hr>
 

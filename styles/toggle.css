@@ -51,7 +51,7 @@ input:checked + .round:before {
   transform: translateX(26px);
 }
 
-/* Rounded sliders */
+/* Rounded toggles */
 .toggle-ball.round {
   border-radius: 34px;
 }

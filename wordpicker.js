@@ -52,7 +52,7 @@ window.onload = function() {
 
   setTimeout(() => {
     document.getElementById("loading-container").style.display = "none";
-  }, 500);
+  }, 800);
 }
 
 function changepage(pg) {
@@ -110,7 +110,7 @@ function openWordList() {
 
 function changeTheme(theme) {
   if (theme == "d") {
-    document.body.color = "white";
+    document.body.style.color = "white";
     changeBackgroundOfElements("sidebuttons", "#213c8c");
     changeBackgroundOfElements("heading-1", "#858585");
     changeBackgroundOfElements("inputcontainer", "#666666");
@@ -118,8 +118,6 @@ function changeTheme(theme) {
     changeBackgroundOfElements("settings", "#1c539c");
     changeBackgroundOfElements("more-dropdown-content-button", "#888");
     changeBackgroundOfElements("error-alert", "#bd2e2e");
-    document.getElementsByClassName("resultcontainer")[0].style.color = "black";
-    document.getElementsByClassName("resultcontainer")[1].style.color = "black";
     changeBackgroundOfElements("bluebox", "#3171b4");
 
     document.getElementById("theme-icon").src = "icons/light-mode-icon.png";
@@ -128,7 +126,7 @@ function changeTheme(theme) {
     document.getElementById("mobile-theme-change-button").innerHTML = "Light Mode";
     document.getElementById("mobile-theme-change-button").setAttribute("onclick", "changeTheme('l')");
   } else {
-    document.body.color = "black";
+    document.body.style.color = "black";
     changeBackgroundOfElements("sidebuttons", "#00c2f5");
     changeBackgroundOfElements("heading-1", "#dddddd");
     changeBackgroundOfElements("inputcontainer", "#9c9c9c");
@@ -254,6 +252,7 @@ function addSound(sound) {
 function startWords(type) {
   var pattern = (document.getElementById("pattern").value);
   var phone = (document.getElementById("phone").value);
+  var syllabletype = (document.getElementById("syllabletype").value);
   var selectbuttons = document.getElementsByName("filter-button");
   var maxresultselect = document.getElementById("limitresult-options");
   var resultmaxlengh = document.getElementById("resultmaxlengh");
@@ -282,10 +281,11 @@ function startWords(type) {
 
   var patternparam = (pattern == "") ? "" : "pattern=" + pattern;
   var phoneparam = (phone == "") ? "" : "&phone=" + phone;
+  var syllabletypeparam = (syllabletype == "") ? "" : "&st=" + syllabletype;
   var resultmaxlenparam = (document.getElementById("limitresult-toggle").checked == false) ? "" : "&resmaxlen=" + maxresultselect.value;
   var wordmaxlenparam = (document.getElementById("resultmaxlen-toggle").checked == false) ? "" : "&wordmaxlen=" + resultmaxlengh.value;
 
-  var url = "http://" + host + "/api/words?" + patternparam + phoneparam + filter + resultmaxlenparam + wordmaxlenparam;
+  var url = "http://" + host + "/api/words?" + patternparam + phoneparam + filter + resultmaxlenparam + wordmaxlenparam + syllabletypeparam;
   fetch(url)
     .then(function(response) {
       console.log(response);
