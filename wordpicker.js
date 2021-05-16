@@ -1,5 +1,6 @@
 //var host = "127.0.0.1:5000";
 var host = "www.wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
+var findingWords = false;
 
 var section_list = ["word_picker", "early_reading", "sentence_picker", "instructions"];
 var button_list = ["wd_button", "el_button", "sn_button", "in_button"];
@@ -165,7 +166,6 @@ function detectMobile() {
     /Android/i,
     /webOS/i,
     /iPhone/i,
-    /iPad/i,
     /iPod/i,
     /BlackBerry/i,
     /Windows Phone/i
@@ -250,64 +250,81 @@ function addSound(sound) {
 ////////////////////////////////////////////////////////
 
 function startWords(type) {
-  var pattern = (document.getElementById("pattern").value);
-  var phone = (document.getElementById("phone").value);
-  var syllabletype = (document.getElementById("syllabletype").value);
-  var selectbuttons = document.getElementsByName("filter-button");
-  var maxresultselect = document.getElementById("limitresult-options");
-  var resultmaxlengh = document.getElementById("resultmaxlengh");
+  if (!findingWords) {
+    document.getElementById("findwords-btn").innerHTML = "Finding words...";
+    document.getElementById("findwords-btn").style.backgroundColor = "#86f48b";
+    document.getElementById("findwords-btn-loadicon").style.display = "block";
+    findingWords = true;
 
-  for (var i = 0, length = selectbuttons.length; i < length; i++) {
-    if (selectbuttons[i].checked) {
-      var filter = selectbuttons[i].value;
-      break;
+    var pattern = (document.getElementById("pattern").value);
+    var phone = (document.getElementById("phone").value);
+    var syllabletype = (document.getElementById("syllabletype").value);
+    var selectbuttons = document.getElementsByName("filter-button");
+    var maxresultselect = document.getElementById("limitresult-options");
+    var resultmaxlengh = document.getElementById("resultmaxlengh");
+
+    for (var i = 0, length = selectbuttons.length; i < length; i++) {
+      if (selectbuttons[i].checked) {
+        var filter = selectbuttons[i].value;
+        break;
+      }
     }
-  }
 
-  if (pattern == "" && phone == "" && type == "") { // Oh, the user didn't enter anything. Alert them.
-    alert("Please enter something in the input field. Refer to the instructions (go to the instructions tab in the sidebar) for what to type there.");
-    return;
-  } else if (pattern == "" && phone == "" && type == "prev") { // Time to load results from previous session!
-    pattern = localStorage.getItem("wdpk_pattern");
-    phone = localStorage.getItem("wdpk_phone");
-    filter = localStorage.getItem("wdpk_filter");
+    if (pattern == "" && phone == "" && type == "") { // Oh, the user didn't enter anything. Alert them.
+      alert("Please enter something in the input field. Refer to the instructions (go to the instructions tab in the sidebar) for what to type there.");
+      return;
+    } else if (pattern == "" && phone == "" && type == "prev") { // Time to load results from previous session!
+      pattern = localStorage.getItem("wdpk_pattern");
+      phone = localStorage.getItem("wdpk_phone");
+      filter = localStorage.getItem("wdpk_filter");
 
-    document.getElementById("pattern").value = pattern;
-    document.getElementById("phone").value = phone;
-  } else if (pattern != "" && phone != "") { // Time to save!
-    localStorage.setItem("wdpk_pattern", document.getElementById("pattern").value);
-    localStorage.setItem("wdpk_phone", document.getElementById("phone").value);
-  }
+      document.getElementById("pattern").value = pattern;
+      document.getElementById("phone").value = phone;
+    } else if (pattern != "" && phone != "") { // Time to save!
+      localStorage.setItem("wdpk_pattern", document.getElementById("pattern").value);
+      localStorage.setItem("wdpk_phone", document.getElementById("phone").value);
+    }
 
-  var patternparam = (pattern == "") ? "" : "pattern=" + pattern;
-  var phoneparam = (phone == "") ? "" : "&phone=" + phone;
-  var syllabletypeparam = (syllabletype == "") ? "" : "&st=" + syllabletype;
-  var resultmaxlenparam = (document.getElementById("limitresult-toggle").checked == false) ? "" : "&resmaxlen=" + maxresultselect.value;
-  var wordmaxlenparam = (document.getElementById("resultmaxlen-toggle").checked == false) ? "" : "&wordmaxlen=" + resultmaxlengh.value;
+    var patternparam = (pattern == "") ? "" : "pattern=" + pattern;
+    var phoneparam = (phone == "") ? "" : "&phone=" + phone;
+    var syllabletypeparam = (syllabletype == "") ? "" : "&st=" + syllabletype;
+    var resultmaxlenparam = (document.getElementById("limitresult-toggle").checked == false) ? "" : "&resmaxlen=" + maxresultselect.value;
+    var wordmaxlenparam = (document.getElementById("resultmaxlen-toggle").checked == false) ? "" : "&wordmaxlen=" + resultmaxlengh.value;
 
-  var url = "http://" + host + "/api/words?" + patternparam + phoneparam + filter + resultmaxlenparam + wordmaxlenparam + syllabletypeparam;
-  fetch(url)
-    .then(function(response) {
-      console.log(response);
-      return response.json();
-    })
-    .then(function(data) {
-      console.log(data);
-      appendData(data);
-    })
-    .catch(function(err) {
-      addError("Error finding words: " + err);
-      console.log("error:" + err);
-    });
+    var url = "http://" + host + "/api/words?" + patternparam + phoneparam + filter + resultmaxlenparam + wordmaxlenparam + syllabletypeparam;
+    fetch(url)
+      .then(function(response) {
+        console.log(response);
+        return response.json();
+      })
+      .then(function(data) {
+        console.log(data);
+        appendData(data);
+      })
+      .catch(function(err) {
+        addError("Error finding words: " + err);
+        console.log("error:" + err);
 
-  function appendData(data) {
-    var mainContainer = document.getElementById("matched_words");
-    mainContainer.innerHTML = "";
-    for (var i = 0; i < data.length; i++) {
-      var div = document.createElement("div");
-      div.innerHTML = data[i];
-      document.getElementById("resultcontainer-1").style.display = "block";
-      mainContainer.appendChild(div);
+        findingWords = false
+        document.getElementById("findwords-btn").innerHTML = "find words";
+        document.getElementById("findwords-btn").style.backgroundColor = "#35c43b";
+        document.getElementById("findwords-btn-loadicon").style.display = "none";
+      });
+
+    function appendData(data) {
+      var mainContainer = document.getElementById("matched_words");
+      mainContainer.innerHTML = "";
+      for (var i = 0; i < data.length; i++) {
+        var div = document.createElement("div");
+        div.innerHTML = data[i];
+        document.getElementById("resultcontainer-1").style.display = "block";
+        mainContainer.appendChild(div);
+
+        findingWords = false
+        document.getElementById("findwords-btn").innerHTML = "find words";
+        document.getElementById("findwords-btn").style.backgroundColor = "#35c43b";
+        document.getElementById("findwords-btn-loadicon").style.display = "none";
+      }
     }
   }
 }

@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="styles/loading.css">
   <link rel="stylesheet" href="styles/tabs.css">
   <link rel="stylesheet" href="styles/mobileheading.css">
@@ -177,7 +178,7 @@
       <span class="tooltiptext" id="newuser-tooltip">Click this button to see instructions for how to use Word Picker.</span>
     </button>
 
-    <div class="version">Version 1.6.0</div>
+    <div class="version">Version 1.6.1</div>
     <a href="?view=mobile" class="mobilelink">Switch to mobile view</a><br>
   </div>
 
@@ -406,7 +407,10 @@
           <div>If you enter both the spelling pattern and the sound, Word Picker will find words that have the spelling pattern and the sound. If you only enter one of these, results for the one that you enter will be found.</div>
         </div>
 
-        <button type="button" class="gobutton" onclick="startWords();" title="Find words that follow the specified criteria">find words</button>
+        <button type="button" class="gobutton" onclick="startWords();" title="Find words that follow the specified criteria">
+          <span id="findwords-btn">find words</span>
+          <i class="fa fa-spinner fa-spin" id="findwords-btn-loadicon"></i>
+        </button>
       </div>
       <br>
 
