@@ -316,7 +316,7 @@ function startWords(type) {
     var phoneparam = (phone == "") ? "" : "&phone=" + phone;
     var syllabletypeparam = (syllabletype == "") ? "" : "&st=" + syllabletype;
     var resultmaxlenparam = (document.getElementById("limitresult-toggle").checked == false) ? "" : "&resmaxlen=" + maxresultselect.value;
-    var wordmaxlenparam = (document.getElementById("resultmaxlen-toggle").checked == false) ? "" : "&wordmaxlen=" + resultmaxlengh.value;
+    var wordmaxlenparam = (document.getElementById("resultmaxlen-toggle").checked == false) ? "" : "&maxwordlen=" + resultmaxlengh.value;
 
     var url = "http://" + host + "/api/words?" + patternparam + phoneparam + filter + resultmaxlenparam + wordmaxlenparam + syllabletypeparam;
     fetch(url)
