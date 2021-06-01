@@ -347,11 +347,11 @@ function startWords(type) {
         document.getElementById("resultcontainer-1").style.display = "block";
         mainContainer.appendChild(div);
 
-        findingWords = false
         document.getElementById("findwords-btn").innerHTML = "find words";
         document.getElementById("findwords-btn").style.backgroundColor = "#35c43b";
         document.getElementById("findwords-btn-loadicon").style.display = "none";
       }
+      findingWords = false
     }
   }
 }
