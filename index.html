@@ -272,59 +272,78 @@
         <br>
 
         <form class="input">
-          <div>Enter spelling pattern here:</div>
-          <input type="text" id="pattern" name="pattern" class="inputform" placeholder="CVC" title="Type spelling pattern in this input field">
-          <div>Enter the syllable type here:</div>
-          <input type="text" id="syllabletype" name="syllable-type" class="inputform" style="text-transform: uppercase;" title="Type the syllable type in the input field. Seperate syllable types by a space. Use '-' for a wildcard.">
-          <div>Enter sound here:</div>
-          <input type="text" id="phone" name="phone" class="inputform" placeholder="AA" style="text-transform: uppercase;" title="Type sound in this input field">
+          <div class="borderedbox">
+            <div>Enter spelling pattern here:</div>
+            <input type="text" id="pattern" name="pattern" class="inputform" placeholder="CVC" title="Type spelling pattern in this input field">
+          </div>
 
-          <div class="dropdown">
-            <button onclick="toggleSoundDropdown()" class="dropbtn">Choose</button>
-            <div id="soundDropdown" class="dropdown-content">
-              <input type="text" placeholder="Search..." id="soundSearch" onkeyup="soundFilterFunction();">
-              <button onclick="changepage(3);">Go to instructions</button>
-              <button onclick="addSound('AA');">AA</button>
-              <button onclick="addSound('AE');">AE</button>
-              <button onclick="addSound('AH');">AH</button>
-              <button onclick="addSound('AO');">AO</button>
-              <button onclick="addSound('AW');">AW</button>
-              <button onclick="addSound('AY');">AY</button>
-              <button onclick="addSound('B');">B</button>
-              <button onclick="addSound('CH');">CH</button>
-              <button onclick="addSound('D');">D</button>
-              <button onclick="addSound('DH');">DH</button>
-              <button onclick="addSound('EH');">EH</button>
-              <button onclick="addSound('ER');">ER</button>
-              <button onclick="addSound('EY');">EY</button>
-              <button onclick="addSound('F');">F</button>
-              <button onclick="addSound('G');">G</button>
-              <button onclick="addSound('HH');">HH</button>
-              <button onclick="addSound('IH');">IH</button>
-              <button onclick="addSound('IY');">IY</button>
-              <button onclick="addSound('JH');">JH</button>
-              <button onclick="addSound('K');">K</button>
-              <button onclick="addSound('L');">L</button>
-              <button onclick="addSound('M');">M</button>
-              <button onclick="addSound('N');">N</button>
-              <button onclick="addSound('NG');">NG</button>
-              <button onclick="addSound('OW');">OW</button>
-              <button onclick="addSound('OY');">OY</button>
-              <button onclick="addSound('P');">P</button>
-              <button onclick="addSound('R');">R</button>
-              <button onclick="addSound('S');">S</button>
-              <button onclick="addSound('SH');">SH</button>
-              <button onclick="addSound('T');">T</button>
-              <button onclick="addSound('TH');">TH</button>
-              <button onclick="addSound('UH');">UH</button>
-              <button onclick="addSound('UW');">UW</button>
-              <button onclick="addSound('V');">V</button>
-              <button onclick="addSound('W');">W</button>
-              <button onclick="addSound('Y');">Y</button>
-              <button onclick="addSound('Z');">Z</button>
-              <button onclick="addSound('ZH');">ZH</button>
+          <div class="borderedbox">
+            <div>Enter the syllable type here:</div>
+            <input type="text" id="syllabletype" name="syllable-type" class="inputform" style="text-transform: uppercase;" title="Type the syllable type in the input field. Seperate syllable types by a space. Use '-' for a wildcard."
+              ondragover="allowDrop(event)" ondrop="processSyllableDrop(event)">
+            <br>
+
+            <div class="borderedbox">
+              <img src="icons/st-c.png" width="50" height="45" alt="Closed" draggable="true" ondragstart="stDrag(event)" id="st-c-img" onclick="addSyllableType('C')">
+              <img src="icons/st-o.png" width="50" height="45" alt="Open" draggable="true" ondragstart="stDrag(event)" id="st-o-img" onclick="addSyllableType('O')">
+              <img src="icons/st-vt.png" width="60" height="45" alt="Vowel Team" draggable="true" ondragstart="stDrag(event)" id="st-vt-img" onclick="addSyllableType('T')">
+              <img src="icons/st-vr.png" width="50" height="45" alt="Vowel R" draggable="true" ondragstart="stDrag(event)" id="st-vr-img" onclick="addSyllableType('R')">
+              <img src="icons/st-se.png" width="60" height="45" alt="Silent E" draggable="true" ondragstart="stDrag(event)" id="st-se-img" onclick="addSyllableType('E')">
             </div>
           </div>
+
+          <div class="borderedbox">
+            <div>Enter sound here:</div>
+            <input type="text" id="phone" name="phone" class="inputform" placeholder="AA" style="text-transform: uppercase;" title="Type sound in this input field">
+
+            <div class="dropdown">
+              <button onclick="toggleSoundDropdown()" class="dropbtn">Choose</button>
+              <div id="soundDropdown" class="dropdown-content">
+                <input type="text" placeholder="Search..." id="soundSearch" onkeyup="soundFilterFunction();">
+                <button onclick="changepage(3);">Go to instructions</button>
+                <button onclick="addSound('AA');">AA</button>
+                <button onclick="addSound('AE');">AE</button>
+                <button onclick="addSound('AH');">AH</button>
+                <button onclick="addSound('AO');">AO</button>
+                <button onclick="addSound('AW');">AW</button>
+                <button onclick="addSound('AY');">AY</button>
+                <button onclick="addSound('B');">B</button>
+                <button onclick="addSound('CH');">CH</button>
+                <button onclick="addSound('D');">D</button>
+                <button onclick="addSound('DH');">DH</button>
+                <button onclick="addSound('EH');">EH</button>
+                <button onclick="addSound('ER');">ER</button>
+                <button onclick="addSound('EY');">EY</button>
+                <button onclick="addSound('F');">F</button>
+                <button onclick="addSound('G');">G</button>
+                <button onclick="addSound('HH');">HH</button>
+                <button onclick="addSound('IH');">IH</button>
+                <button onclick="addSound('IY');">IY</button>
+                <button onclick="addSound('JH');">JH</button>
+                <button onclick="addSound('K');">K</button>
+                <button onclick="addSound('L');">L</button>
+                <button onclick="addSound('M');">M</button>
+                <button onclick="addSound('N');">N</button>
+                <button onclick="addSound('NG');">NG</button>
+                <button onclick="addSound('OW');">OW</button>
+                <button onclick="addSound('OY');">OY</button>
+                <button onclick="addSound('P');">P</button>
+                <button onclick="addSound('R');">R</button>
+                <button onclick="addSound('S');">S</button>
+                <button onclick="addSound('SH');">SH</button>
+                <button onclick="addSound('T');">T</button>
+                <button onclick="addSound('TH');">TH</button>
+                <button onclick="addSound('UH');">UH</button>
+                <button onclick="addSound('UW');">UW</button>
+                <button onclick="addSound('V');">V</button>
+                <button onclick="addSound('W');">W</button>
+                <button onclick="addSound('Y');">Y</button>
+                <button onclick="addSound('Z');">Z</button>
+                <button onclick="addSound('ZH');">ZH</button>
+              </div>
+            </div>
+          </div>
+          <br>
 
           <div>Select result filter:</div>
           <div class="bluebox">
@@ -348,7 +367,7 @@
 
             <input type="radio" id="all-filter" name="filter-button" value="" checked>
             <label for="all-filter" title="Show all parts of speech in the results">Show all results</label><br>
-            <hr>
+            <br>
 
             <input type="radio" id="10000words-filter" name="filter-button" value="&filter=10000words" checked>
             <label for="10000words-filter" title="Use the 10000 most common words as word list input">Use the 10000 most common words as the word list</label><br>
@@ -471,16 +490,16 @@
 
           <br>To find words that contain a spelling pattern and also contains a sound, enter both the sound and spelling pattern.</p>
 
-          <h4>Syllable type specification</h4>
-          <p>To specify the sylllable type, type the syllable type in the syllable type input. Each character is one character, so use this mapping for the syllable type:<br>
-          <pre style="background-color: white;">
+        <h4>Syllable type specification</h4>
+        <p>To specify the sylllable type, type the syllable type in the syllable type input. Each character is one character, so use this mapping for the syllable type:<br>
+        <pre style="background-color: white;">
             Closed: C
             Open: O
             Vowel team: T
             Vowel R: R
             Silent E: E
           </pre>
-          You can also use ? for any syllable type and - for any amount of any syllable type.</p>
+        You can also use ? for any syllable type and - for any amount of any syllable type.</p>
         <br>
         <hr>
 

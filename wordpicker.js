@@ -56,6 +56,33 @@ window.onload = function() {
   }, 800);
 }
 
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function stDrag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function processSyllableDrop(ev) {
+  ev.preventDefault();
+
+  var st = {
+    "st-c-img": "C",
+    "st-o-img": "O",
+    "st-vt-img": "T",
+    "st-vr-img": "R",
+    "st-se-img": "E"
+  }
+
+  var data = ev.dataTransfer.getData("text");
+  addSyllableType(st[data]);
+}
+
+function addSyllableType(st) {
+  document.getElementById("syllabletype").value += st;
+}
+
 function changepage(pg) {
   event.preventDefault();
 
