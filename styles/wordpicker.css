@@ -413,6 +413,25 @@ h2 {
   border-radius: 12px;
 }
 
+.elchoose-table, .elchoose-table th, .elchoose-table td {
+  border: 2px solid #444;
+  border-radius: 2px;
+  background-color: rgba(110, 110, 110, 0.6);
+  color: white;
+}
+
+.elchoose-table th, .elchoose-table td {
+  padding: 6px 12px;
+}
+
+.elchoose-table th {
+  min-width: 100px;
+}
+
+.elchoose-table td:hover {
+  background-color: rgba(110, 110, 110, 0.4);
+}
+
 .inputheading {
   text-align: center;
   background-color: #7c7a7a;

@@ -1,4 +1,8 @@
 <!DOCTYPE HTML>
+
+<!-- TODO: add onclick for ERT cells -->
+<!-- TODO: Make early reading table smaller -->
+
 <html lang="en" dir="ltr">
 
 <head>
@@ -178,7 +182,7 @@
       <span class="tooltiptext" id="newuser-tooltip">Click this button to see instructions for how to use Word Picker.</span>
     </button>
 
-    <div class="version">Version 1.6.2</div>
+    <div class="version">Version 2.0.0</div>
     <a href="?view=mobile" class="mobilelink">Switch to mobile view</a><br>
   </div>
 
@@ -345,35 +349,35 @@
           </div>
           <br>
 
-          <div>Select result filter:</div>
+          <div>Search within word list:</div>
           <div class="bluebox">
             <input type="radio" id="noun-person-filter" name="filter-button" value="&filter=noun-person">
-            <label for="noun-person-filter" title="Only show person nouns in the results">Show nouns - person</label><br>
+            <label for="noun-person-filter" title="Only show person nouns in the results">Use person noun word list</label><br>
 
             <input type="radio" id="noun-place-filter" name="filter-button" value="&filter=noun-place">
-            <label for="noun-place-filter" title="Only show place nouns in the results">Show nouns - place</label><br>
+            <label for="noun-place-filter" title="Only show place nouns in the results">Use place noun word list</label><br>
 
             <input type="radio" id="noun-thing-filter" name="filter-button" value="&filter=noun-thing">
-            <label for="noun-thing-filter" title="Only show thing nouns in the results">Show nouns - thing</label><br>
+            <label for="noun-thing-filter" title="Only show thing nouns in the results">Use thing noun word list</label><br>
 
             <input type="radio" id="prepesition-filter" name="filter-button" value="&filter=preposition">
-            <label for="prepesition-filter" title="Only show prepositions in the results">Show prepesitions</label><br>
+            <label for="prepesition-filter" title="Only show prepositions in the results">Use preposition word list</label><br>
 
             <input type="radio" id="adjective-filter" name="filter-button" value="&filter=adjective">
-            <label for="adjective-filter" title="Only show adjectives in the results">Show adjectives</label><br>
+            <label for="adjective-filter" title="Only show adjectives in the results">Use adjective word list</label><br>
 
             <input type="radio" id="verb-filter" name="filter-button" value="&filter=verb">
-            <label for="verb-filter" title="Only show verbs in the results">Show verbs</label><br>
-
-            <input type="radio" id="all-filter" name="filter-button" value="" checked>
-            <label for="all-filter" title="Show all parts of speech in the results">Show all results</label><br>
+            <label for="verb-filter" title="Only show verbs in the results">Use verb word list</label><br>
             <br>
 
+            <input type="radio" id="earlyreading-filter" name="filter-button" value="&filter=earlyreading" checked>
+            <label for="10000words-filter" title="Use a word list for early readers">Use a word list for early readers (less than 500 entries)</label><br>
+
             <input type="radio" id="10000words-filter" name="filter-button" value="&filter=10000words" checked>
-            <label for="10000words-filter" title="Use the 10000 most common words as word list input">Use the 10000 most common words as the word list</label><br>
+            <label for="10000words-filter" title="Use the 10000 most common words as the word list">Use the 10000 most common words (about 10000 entries)</label><br>
 
             <input type="radio" id="allwords-filter" name="filter-button" value="&filter=allwords">
-            <label for="allwords-filter" title="Use all words as word list input">Use all words in english as the word list</label><br>
+            <label for="allwords-filter" title="Use all words as the word list">Use all words in english as the word list (more than 116,500 entries)</label><br>
           </div>
         </form>
 
@@ -441,12 +445,135 @@
     <!----------------------------------------------------->
 
     <div id="early_reading">
-      <div class="inputcontainer">
+      <div class="inputcontainer" style="overflow-x: scroll; max-width: 550px;">
         <h2 class="inputheading">Find words for early reading
           <div style="font-size: 10pt;">Go to the instructions tab for how to use this</div>
         </h2>
 
-        <div>Early Reading will be comming soon!</div>
+        <div>Chooose a spelling pattern in the table below.<div>
+        <br>
+
+        <table class="elchoose-table">
+          <tr>
+            <th>Closed</th>
+            <th>Open</th>
+            <th>Vowel R</th>
+            <th>Vowel Team</th>
+            <th>Silent E</th>
+          </tr>
+
+          <tr>
+            <td onclick="elSerch('VC')">
+              <img src="icons/el/c/el-vc.png" alt="VC" title="VC">
+            </td>
+            <td onclick="elSerch('CVO')">
+              <img src="icons/el/o/el-cvo.png" alt="CVO" title="CVO">
+            </td>
+            <td onclick="elSerch('R')">
+              <img src="icons/el/r/el-r.png" alt="R" title="R">
+            </td>
+            <td onclick="elSerch('CT')">
+              <img src="icons/el/t/el-ct.png" alt="CT" title="CT">
+            </td>
+            <td onclick="elSerch('VCE')">
+              <img src="icons/el/e/el-vce.png" alt="VCE" title="VCE">
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="elSerch('CVC')">
+              <img src="icons/el/c/el-cvc.png" alt="CVC" title="CVC">
+            </td>
+            <td onclick="elSerch('CCVO')">
+              <img src="icons/el/o/el-ccvo.png" alt="CCVO" title="CCVO">
+            </td>
+            <td onclick="elSerch('RC')">
+              <img src="icons/el/r/el-rc.png" alt="RC" title="RC">
+            </td>
+            <td onclick="elSerch('TC')">
+              <img src="icons/el/t/el-tc.png" alt="TC" title="TC">
+            </td>
+            <td onclick="elSerch('CVCE')">
+              <img src="icons/el/e/el-cvce.png" alt="CVCE" title="CVCE">
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="elSerch('CVCC')">
+              <img src="icons/el/c/el-cvcc.png" alt="CVCC" title="CVCC">
+            </td>
+            <td>
+              <div style="text-align: center; font-size: 20pt;">-</div>
+            </td>
+            <td onclick="elSerch('CRC')">
+              <img src="icons/el/r/el-crc.png" alt="CRC" title="CRC">
+            </td>
+            <td onclick="elSerch('CTC')">
+              <img src="icons/el/t/el-ctc.png" alt="CTC" title="CTC">
+            </td>
+            <td onclick="elSerch('CCVCE')">
+              <img src="icons/el/e/el-ccvce.png" alt="CCVCE" title="CCVCE">
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="elSerch('CCVC')">
+              <img src="icons/el/c/el-ccvc.png" alt="CCVC" title="CCVC">
+            </td>
+            <td>
+              <div style="text-align: center; font-size: 20pt;">-</div>
+            </td>
+            <td>
+              <div style="text-align: center; font-size: 20pt;">-</div>
+            </td>
+            <td>
+              <div style="text-align: center; font-size: 20pt;">-</div>
+            </td>
+            <td>
+              <div style="text-align: center; font-size: 20pt;">-</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="elSerch('CCVCC')">
+              <img src="icons/el/c/el-ccvcc.png" alt="CCVCC" title="CCVCC">
+            </td>
+            <td>
+              <div style="text-align: center; font-size: 20pt;">-</div>
+            </td>
+            <td>
+              <div style="text-align: center; font-size: 20pt;">-</div>
+            </td>
+            <td>
+              <div style="text-align: center; font-size: 20pt;">-</div>
+            </td>
+            <td>
+              <div style="text-align: center; font-size: 20pt;">-</div>
+            </td>
+          </tr>
+
+          <tr>
+            <td onclick="elSerch('CCCVCC')">
+              <img src="icons/el/c/el-cccvcc.png" alt="CCCVCC" title="CCCVCC">
+            </td>
+            <td>
+              <div style="text-align: center; font-size: 20pt;">-</div>
+            </td>
+            <td>
+              <div style="text-align: center; font-size: 20pt;">-</div>
+            </td>
+            <td>
+              <div style="text-align: center; font-size: 20pt;">-</div>
+            </td>
+            <td>
+              <div style="text-align: center; font-size: 20pt;">-</div>
+            </td>
+          </tr>
+        </table>
+
+        <div class="resultcontainer" id="resultcontainer-3">
+          <div id="matched_elwords"></div>
+        </div>
       </div>
     </div>
 
@@ -466,7 +593,7 @@
         </form>
       </div>
 
-      <div class="resultcontainer" id=resultcontainer-2>
+      <div class="resultcontainer" id="resultcontainer-2">
         <div id="matched_sentences"></div>
       </div>
     </div>

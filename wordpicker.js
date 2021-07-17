@@ -1,5 +1,5 @@
-//var host = "127.0.0.1:5000";
-var host = "www.wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
+var host = "127.0.0.1:5000";
+//var host = "www.wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com";
 var findingWords = false;
 
 var section_list = ["word_picker", "early_reading", "sentence_picker", "instructions"];
@@ -14,6 +14,8 @@ _   _  __   _    __    _       __   _____    ___   _ __   ___   ___
 \\ \\/ \\/  / / \\  |   \\ | \\     |  \\ |_   _|  /  _| | / /  | __| |   \\
  \\  /\\  / |   | |   / |  |    |  /  _| |_   | |_  |  |   | __| |   /
   \\/  \\/  \\__/  |_|\\_\\|_/     |_|  |_____|  \\___| |_\\_\\  |___| |_|\\_\\
+
+  Version 2.0.0
 `);
 
 window.onload = function() {
@@ -84,8 +86,6 @@ function addSyllableType(st) {
 }
 
 function changepage(pg) {
-  event.preventDefault();
-
   for (var i = 0; i < 4; i++) {
     document.getElementById(section_list[i]).style.display = "none";
     document.getElementById(button_list[i] + "_mobile").className = "";
@@ -398,4 +398,8 @@ function startSentences(type) {
       mainContainer.appendChild(div);
     }
   }
+}
+
+function elSearch(imgquery) {
+  ///
 }
