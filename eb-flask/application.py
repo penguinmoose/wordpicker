@@ -119,6 +119,8 @@ def st_match(st):
                 query = query + '.*';
             elif c=='?':
                 query = query + '.'
+            elif c=='v': # vowels
+                query = query + '[COTR]'
             else:
                 query = query + c
 
