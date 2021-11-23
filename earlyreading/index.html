@@ -51,15 +51,14 @@
       <img src="http://www.thewordpicker.com/icons/el/c/el-cvcc.png" alt="CVCC" title="CVCC" id="button-CVCC" onclick="findwords('cCcc')"><br>
       <img src="http://www.thewordpicker.com/icons/el/c/el-ccvc.png" alt="CCVC" title="CCVC" id="button-CCVC" onclick="findwords('ccCc')"><br>
       <img src="http://www.thewordpicker.com/icons/el/c/el-ccvcc.png" alt="CCVCC" title="CCVCC" id="button-CCVCC" onclick="findwords('ccCcc')"><br>
-      <img src="http://www.thewordpicker.com/icons/el/c/el-cccvcc.png" alt="CCCVCC" title="CCCVCC" id="button-CCCVCC" onclick="findwords('cccCcc')">
     </div>
 
     <input type="radio" name="tabs" id="tab2">
     <label for="tab2">Open</label>
     <div class="tab">
       <h1>Open</h1>
-      <img src="http://www.thewordpicker.com/icons/el/o/el-cvo.png" alt="CVO" title="CVO" id="button-CVO" onclick="findwords('cCO')"><br>
-      <img src="http://www.thewordpicker.com/icons/el/o/el-ccvo.png" alt="CCVO" title="CCVO" id="button-CCVO" onclick="findwords('ccCO')">
+      <img src="http://www.thewordpicker.com/icons/el/o/el-cvo.png" alt="cO" title="CO" id="button-CVO" onclick="findwords('cO')"><br>
+      <img src="http://www.thewordpicker.com/icons/el/o/el-ccvo.png" alt="ccO" title="CCO" id="button-CCVO" onclick="findwords('ccO')">
     </div>
 
     <input type="radio" name="tabs" id="tab3">
@@ -97,19 +96,24 @@
       </div>
 
       <div style="font-family: 'Noto Sans Display', sans-serif; margin-top: 15px;">
-        <div class="custombutton" title="Closed" id="custom-closed-box" onclick="addcustomitem('closed')">
-          <img src="icons/closed-breve.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-closed">
-          <div class="custombutton-text">Closed</div>
-        </div>
-
         <div class="custombutton" title="(Consonant)" style="width: 80px;" id="custom-closed-box" onclick="addcustomitem('consonant')">
           <img src="icons/consonant.svg" width="30" height="30" style="margin-left: 25px;" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-consonant">
           <div class="custombutton-text">(Consonant)</div>
         </div>
 
         <div class="custombutton" title="Open" id="custom-open-box" onclick="addcustomitem('open')">
-          <img src="icons/open.svg" width="30" height="12" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-open">
+          <img src="icons/closed-macron.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-open">
           <div class="custombutton-text">Open</div>
+        </div>
+
+        <div class="custombutton" title="Closed" id="custom-closed-box" onclick="addcustomitem('closed')">
+          <img src="icons/closed-breve.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-closed">
+          <div class="custombutton-text">Closed</div>
+        </div>
+
+        <div class="custombutton" title="(End): It doesn't change anything in the search paramiter; it's just there so you can enter all patterns." id="custom-open-box" onclick="addcustomitem('end')">
+          <img src="icons/end.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-end">
+          <div class="custombutton-text">(End)</div>
         </div>
 
         <div class="custombutton" title="Vowel R" id="custom-vowelr-box" onclick="addcustomitem('vowelr')">

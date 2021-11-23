@@ -6,7 +6,6 @@ var buttons = [
   "CVCC",
   "CCVC",
   "CCVCC",
-  "CCCVCC",
   "CVO",
   "CCVO",
   "R",
@@ -32,6 +31,7 @@ var iconids = {
   'custom-closed': 'C',
   'custom-consonant': 'c',
   'custom-open': 'O',
+  'custom-end': '',
   'custom-vowelteam': 'T',
   'custom-vowelr': 'R',
   'custom-silente': 'E'
