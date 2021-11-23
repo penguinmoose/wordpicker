@@ -43,7 +43,7 @@ def arprabet_to_syllable(arprabet):
                 result.append("O") # open
         elif v in ["AA_R", "AO_R", "ER", "UH_R"]:
             result.append("R") # vowel R
-        elif v in ["AE", "EH", "IH", "AA", "AH"]:
+        elif v in ["AE", "EH", "IH", "AA", "AH", "AO"]:
             result.append("C") # closed
         else:
             result.append("U") # unknown
