@@ -34,7 +34,8 @@ var iconids = {
   'custom-end': '',
   'custom-vowelteam': 'T',
   'custom-vowelr': 'R',
-  'custom-silente': 'E'
+  'custom-silente': 'E',
+  'custom-wildcard': '-'
 }
 
 var pattern = '';

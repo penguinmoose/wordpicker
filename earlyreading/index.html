@@ -111,7 +111,7 @@
           <div class="custombutton-text">Closed</div>
         </div>
 
-        <div class="custombutton" title="(End): It doesn't change anything in the search paramiter; it's just there so you can enter all patterns." id="custom-open-box" onclick="addcustomitem('end')">
+        <div class="custombutton" title="(End): It doesn't change anything in the search paramiter; it's just there so you can enter all patterns." id="custom-end-box" onclick="addcustomitem('end')">
           <img src="icons/end.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-end">
           <div class="custombutton-text">(End)</div>
         </div>
@@ -125,11 +125,16 @@
           <img src="icons/vowel-team.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" style="margin: 0px 20px;" id="custom-vowelteam">
           <div class="custombutton-text">Vowel Team</div>
         </div>
-      </div>
 
-      <div class="custombutton" title="Silent E" id="custom-silente-box" onclick="addcustomitem('silente')">
-        <img src="icons/silent-e.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-silente">
-        <div class="custombutton-text">Silent E</div>
+        <div class="custombutton" title="Silent E" id="custom-silente-box" onclick="addcustomitem('silente')">
+          <img src="icons/silent-e.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-silente">
+          <div class="custombutton-text">Silent E</div>
+        </div>
+
+        <div class="custombutton" title="Anything (wildcard)" style="width: 65px;" id="custom-wildcard-box" onclick="addcustomitem('wildcard')">
+          <img src="icons/wildcard.svg" width="32" height="8.875" class="custombutton-image" draggable="true" ondragstart="drag(event)" style="margin: 0px 16px;" id="custom-wildcard">
+          <div class="custombutton-text">(Anything)</div>
+        </div>
       </div>
 
       <div class="custombutton" style="float: right; width: 200px; display: flex; justify-content: center; align-items: center;" title="Find words matching the specified pattern" onclick="findwords(pattern);">
