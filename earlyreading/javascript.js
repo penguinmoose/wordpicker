@@ -20,11 +20,13 @@ var buttons = [
 ]
 
 var patternkeycodes = {
+  32: 'consonant',
   67: 'closed',
   79: 'open',
   82: 'vowelr',
   84: 'vowelteam',
-  69: 'silente'
+  69: 'silente',
+  189: 'wildcard'
 }
 
 var iconids = {
@@ -68,10 +70,22 @@ function searchbuttons() {
   }
 }
 
+function processcustomkeypress(ev) {
+  var keycode = (event.which || event.keyCode);
+
+  if (keycode in patternkeycodes) {
+    addcustomitem(patternkeycodes[keycode]);
+  }
+}
+
 function addcustomitem(name) {
-  document.getElementById('custompatternbox').appendChild(document.getElementById('custom-' + name));
+  //document.getElementById('custompatternbox').appendChild(document.getElementById('custom-' + name));
+  var id = 'custom-' + name;
+  var clone = document.getElementById('custom-' + name).cloneNode(true);
+  document.getElementById('custompatternbox').appendChild(clone);
   document.getElementById('custombox-text').style.display = 'none';
-  document.getElementById(data).onclick = () => {document.getElementById(data + '-box').prepend(document.getElementById(data))};
+  document.getElementById(id).onclick = () => {document.getElementById(data + '-box').prepend(document.getElementById(data))};
+  pattern = pattern + iconids[id];
 }
 
 function searchlist(query, list) {
