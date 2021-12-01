@@ -75,6 +75,9 @@ function processcustomkeypress(ev) {
 
   if (keycode in patternkeycodes) {
     addcustomitem(patternkeycodes[keycode]);
+  } else if (keycode = 8) {
+    var box = document.getElementById('custompatternbox');
+    box.removeChild(box.lastChild)
   }
 }
 

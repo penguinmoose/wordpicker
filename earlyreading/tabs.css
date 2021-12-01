@@ -8,13 +8,14 @@
 .tabs label {
   order: 1;
   display: block;
-  padding: 1rem 2rem;
+  padding: 0.6rem 1.2rem;
   margin-right: 0.2rem;
   cursor: pointer;
   background: #90caf9;
   font-weight: bold;
   transition: background ease 0.3s;
   font-family: 'Fredoka One', sans-serif;
+  font-size: 20px;
 }
 
 .tabs .tab {
@@ -50,7 +51,6 @@
   }
 }
 
-/*Generic Styling */
 body {
   background: #eee;
   min-height: 100vh;
@@ -61,5 +61,4 @@ body {
   line-height: 1.5;
   max-width: 60rem;
   margin: 0 auto;
-  font-size: 112%;
 }
