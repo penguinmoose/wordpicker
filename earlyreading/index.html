@@ -21,7 +21,7 @@
   <link rel="stylesheet" href="earlyreading.css">
 </head>
 
-<body>
+<body ondrop='dragdelete(event)' ondragover='event.preventDefault()'>
   <!-- search box -->
   <div class="searchbox">
     <form action="" class="search-bar">
@@ -92,11 +92,11 @@
       <input type="radio" name="tabs" id="tab6">
       <label for="tab6">Custom</label>
       <div class="tab">
-        <div class="custombox" id="custompatternbox" onkeydown="processcustomkeypress(event);" onclick="this.focus();" tabindex=0 ondrop="drop(event)" ondragover="event.preventDefault();">
-          <span id="custombox-text">Type custom pattern, click pattern icons, or drag & drop</span>
+        <div class="custombox nodelete" id="custompatternbox" onkeydown="processcustomkeypress(event);" onclick="this.focus();" tabindex=0 ondrop="drop(event)" ondragover="event.preventDefault();">
+          <span id="custombox-text" class="nodelete">Type custom pattern, click pattern icons, or drag & drop</span>
         </div>
 
-        <div style="font-family: 'Noto Sans Display', sans-serif; margin-top: 15px;">
+        <div style="font-family: 'Noto Sans Display', sans-serif; margin-top: 15px;" id='dragoptioncontainer'>
           <div class="custombutton" title="Open" id="custom-open-box" onclick="addcustomitem('open')">
             <img src="icons/closed-macron.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-open">
             <div class="custombutton-text">Open</div>

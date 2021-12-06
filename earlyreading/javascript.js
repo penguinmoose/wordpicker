@@ -1,4 +1,5 @@
 var sdtab = document.getElementById('sdtab');
+const randomString = (length = 6) => Math.random().toString(20).substr(2, length);
 
 var buttons = [
   "VC",
@@ -87,7 +88,9 @@ function addcustomitem(name) {
   var clone = document.getElementById('custom-' + name).cloneNode(true);
   document.getElementById('custompatternbox').appendChild(clone);
   document.getElementById('custombox-text').style.display = 'none';
-  document.getElementById(id).onclick = () => {document.getElementById(data + '-box').prepend(document.getElementById(data))};
+  document.getElementById(id).onclick = () => {
+    document.getElementById(data + '-box').prepend(document.getElementById(data))
+  };
   pattern = pattern + iconids[id];
 }
 
@@ -115,12 +118,23 @@ function drag(ev) {
 
 function drop(ev) {
   ev.preventDefault();
+  document.getElementById('custombox-text').style.display = 'none';
   var data = ev.dataTransfer.getData('text');
   var clone = document.getElementById(data).cloneNode(true);
-  ev.target.appendChild(clone);
-  document.getElementById('custombox-text').style.display = 'none';
-  document.getElementById(data).onclick = () => {document.getElementById(data + '-box').prepend(document.getElementById(data))};
+  clone.id = clone.id + '-' + randomString(5);
+  document.getElementById('custompatternbox').appendChild(clone);
+  document.getElementById(data).onclick = () => {
+    document.getElementById(data + '-box').prepend(document.getElementById(data))
+  };
   pattern = pattern + iconids[data];
+}
+
+function dragdelete(ev) {
+  var object = document.getElementById(ev.dataTransfer.getData('text'));
+  if (!(ev.target.classList.contains('nodelete') || document.getElementById('dragoptioncontainer').contains(object))) {
+    ev.preventDefault();
+    object.remove();
+  }
 }
 
 function findwords(input) {
@@ -155,3 +169,5 @@ setInterval(function() {
     hideSS();
   }
 }, 500);
+
+document.getElementById('custompatternbox').setAttribute('ondrop', 'drop(event)');
