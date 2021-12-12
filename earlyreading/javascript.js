@@ -41,7 +41,7 @@ var iconids = {
   'custom-wildcard': '-'
 }
 
-var pattern = '';
+var camerawords = ['goes','does','what','were','was','their','there','could','should','would','you','been','to','do','are','of','said','from','they','your','some','front','who','one','done','put','both','walk','pull','come','push','full','busy','people','through','listen','hour','eye','month','laugh','son','door','shoe','whose','talk','chalk','own','build','buy','length','half','lose','move','clothes','really','now','know','once','two','none','very','about','friend','won','thought','year','wash','because']
 
 function showSS() {
   sdtab.style.display = 'block';
@@ -83,15 +83,14 @@ function processcustomkeypress(ev) {
 }
 
 function addcustomitem(name) {
-  //document.getElementById('custompatternbox').appendChild(document.getElementById('custom-' + name));
   var id = 'custom-' + name;
   var clone = document.getElementById('custom-' + name).cloneNode(true);
+  clone.id = clone.id + '-' + randomString(5);
   document.getElementById('custompatternbox').appendChild(clone);
-  document.getElementById('custombox-text').style.display = 'none';
   document.getElementById(id).onclick = () => {
     document.getElementById(data + '-box').prepend(document.getElementById(data))
   };
-  pattern = pattern + iconids[id];
+  document.getElementById('custombox-text').remove();
 }
 
 function searchlist(query, list) {
@@ -118,7 +117,6 @@ function drag(ev) {
 
 function drop(ev) {
   ev.preventDefault();
-  document.getElementById('custombox-text').style.display = 'none';
   var data = ev.dataTransfer.getData('text');
   var clone = document.getElementById(data).cloneNode(true);
   clone.id = clone.id + '-' + randomString(5);
@@ -126,7 +124,7 @@ function drop(ev) {
   document.getElementById(data).onclick = () => {
     document.getElementById(data + '-box').prepend(document.getElementById(data))
   };
-  pattern = pattern + iconids[data];
+  document.getElementById('custombox-text').remove();
 }
 
 function dragdelete(ev) {
@@ -137,11 +135,26 @@ function dragdelete(ev) {
   }
 }
 
+function getpattern() {
+  var result = '';
+  var icons = document.getElementById('custompatternbox').children;
+  for (i = 0; i < icons.length; i++) {
+    result = result + iconids[icons[i].id.substring(0, icons[i].id.length - 6)];
+  }
+  return result;
+}
+
 function findwords(input) {
   document.getElementById('searchresults').style.display = 'block';
   console.log("Finding results for pattern: " + input);
   document.getElementById('searchresults').innerHTML = 'Finding words...';
   request(input, 'http://www.wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com');
+}
+
+function showcamerawords() {
+  document.getElementById('searchresults').style.display = 'block';
+  document.getElementById('searchresults').innerHTML = camerawords.join("<br>");
+  console.log('Displayed camera words.');
 }
 
 function request(pattern, url) {
