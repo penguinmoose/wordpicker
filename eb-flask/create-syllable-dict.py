@@ -21,12 +21,17 @@ def arprabet_to_syllable(arprabet):
         return
     pron = ''.join([i for i in pron if not i.isdigit()])
     pron = pron.replace('AA R', 'AA_R').replace('AO R', 'AO_R').replace('UH R', 'UH_R')
+    silent_e = re.compile(".*[AEIOU][B-DF-HJ-NP-TV-XZ]E$")
+    if (silent_e.match(spelling) is not None): # if vowel R followed by silent E then ignore VR
+        if pron.endswith('_R'):
+            pron = pron[:-2] + ' R'
+        if pron.endswith('ER'):
+            pron = pron[:-2] + 'R'
     sy = pron.split(' ') # full syllable list
     vs = [i for i in pron.split(' ') if i in VOWELS] # vowel sound
     vb = re.split('[B-DF-HJ-NP-TVXZ]', spelling)
     vb = [value for value in vb if (value != "") and (not value.startswith("W"))] # remove all empty elements. W is a special case for vowel teams.
 
-    silent_e = re.compile(".*[AEIOU][B-DF-HJ-NP-TV-XZ]E$")
     result = []
     j = 0
     for i, v in enumerate(sy):
@@ -43,15 +48,13 @@ def arprabet_to_syllable(arprabet):
                 result.append("O") # open
         elif v in ["AA_R", "AO_R", "ER", "UH_R"]:
             result.append("R") # vowel R
-        elif v in ["AE", "EH", "IH", "AA", "AH", "AO"]:
+        elif v in ["AE", "EH", "IH", "AA", "AH", "AO", "UH"]:
             result.append("C") # closed
         else:
             result.append("U") # unknown
         j = j + 1
 
     if silent_e.match(spelling) is not None:
-        if result[-1] == 'R': # if vowel R followed by silent E then ignore VR
-            result = result[:-1]
         result.append("E") # silent E
 
     return spelling.lower() + ":" + "".join(result)
