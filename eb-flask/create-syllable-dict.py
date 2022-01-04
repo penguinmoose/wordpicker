@@ -41,14 +41,14 @@ def arprabet_to_syllable(arprabet):
             result.append("c")
             continue
 
-        if v in ["EY", "IY", "AY", "OW", "UW", "AW", "AO"]:
+        if v in ["EY", "IY", "AY", "OW", "UW", "AW", "AO", "UH"]:
             if (j < len(vb)) and (len(vb[j]) == 2):
                 result.append("T") # vowel team
             else:
                 result.append("O") # open
         elif v in ["AA_R", "AO_R", "ER", "UH_R"]:
             result.append("R") # vowel R
-        elif v in ["AE", "EH", "IH", "AA", "AH", "AO", "UH"]:
+        elif v in ["AE", "EH", "IH", "AA", "AH", "AO"]:
             result.append("C") # closed
         else:
             result.append("U") # unknown
