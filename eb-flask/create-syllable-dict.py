@@ -36,7 +36,7 @@ def arprabet_to_syllable(arprabet):
             result.append("c")
             continue
 
-        if v in ["EY", "IY", "AY", "OW", "UW", "AW"]:
+        if v in ["EY", "IY", "AY", "OW", "UW", "AW", "AO"]:
             if (j < len(vb)) and (len(vb[j]) == 2):
                 result.append("T") # vowel team
             else:
@@ -50,6 +50,8 @@ def arprabet_to_syllable(arprabet):
         j = j + 1
 
     if silent_e.match(spelling) is not None:
+        if result[-1] == 'R': # if vowel R followed by silent E then ignore VR
+            result = result[:-1]
         result.append("E") # silent E
 
     return spelling.lower() + ":" + "".join(result)
