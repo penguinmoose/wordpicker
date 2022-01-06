@@ -32,118 +32,151 @@
     </form>
   </div>
 
-  <div class='main'> <!-- for Flexbox -->
-    <div> <!-- extra parent element prevents Flexbox from changing the dimensions of the tab box -->
-    <div class="tabs">
-      <input type="radio" name="tabs" id="searchtab">
-      <label for="searchtab" style="padding: 1rem 3rem; display: none;" id="sdtab">Search Results</label>
-      <div class="tab">
-        <h1>Search results</h1>
-
-        <div id="searchresult-buttons"></div>
+  <div id="tempclip">
+    <div id="tempclipheader" style="font-size: 16px;">Temporary Clipboard
+      <div>
+        <span class="material-icons tempclipicons" onclick="copytempclip();">content_copy</span>
+        <span class="material-icons tempclipicons" onclick="removeAllChildNodes(document.getElementById('tempclipcontent'))">delete</span>
       </div>
+    </div>
 
-      <input type="radio" name="tabs" id="tab1" checked="checked">
-      <label for="tab1">Closed</label>
-      <div class="tab">
-        <h1>Closed</h1>
-        <img src="http://www.thewordpicker.com/icons/el/c/el-vc.png" alt="VC" title="VC" id="button-VC" onclick="findwords('Cc')"><br>
-        <img src="http://www.thewordpicker.com/icons/el/c/el-cvc.png" alt="CVC" title="CVC" id="button-CVC" onclick="findwords('cCc')"><br>
-        <img src="http://www.thewordpicker.com/icons/el/c/el-cvcc.png" alt="CVCC" title="CVCC" id="button-CVCC" onclick="findwords('cCcc')"><br>
-        <img src="http://www.thewordpicker.com/icons/el/c/el-ccvc.png" alt="CCVC" title="CCVC" id="button-CCVC" onclick="findwords('ccCc')"><br>
-        <img src="http://www.thewordpicker.com/icons/el/c/el-ccvcc.png" alt="CCVCC" title="CCVCC" id="button-CCVCC" onclick="findwords('ccCcc')"><br>
-      </div>
+    <div id="tempclipcontent" style="font-size: 12px;"></div>
+  </div>
 
-      <input type="radio" name="tabs" id="tab2">
-      <label for="tab2">Open</label>
-      <div class="tab">
-        <h1>Open</h1>
-        <img src="http://www.thewordpicker.com/icons/el/o/el-cvo.png" alt="cO" title="CO" id="button-CVO" onclick="findwords('cO')"><br>
-        <img src="http://www.thewordpicker.com/icons/el/o/el-ccvo.png" alt="ccO" title="CCO" id="button-CCVO" onclick="findwords('ccO')">
-      </div>
+  <div class='main'>
+    <!-- for Flexbox -->
+    <div>
+      <!-- extra parent element prevents Flexbox from changing the dimensions of the tab box -->
+      <div class="tabs">
+        <input type="radio" name="tabs" id="searchtab">
+        <label for="searchtab" style="padding: 1rem 3rem; display: none;" id="sdtab">Search Results</label>
+        <div class="tab">
+          <h1>Search results</h1>
 
-      <input type="radio" name="tabs" id="tab3">
-      <label for="tab3">Vowel R</label>
-      <div class="tab">
-        <h1>Vowel R</h1>
-        <img src="http://www.thewordpicker.com/icons/el/r/el-r.png" alt="R" title="R" id="button-R" onclick="findwords('R')"><br>
-        <img src="http://www.thewordpicker.com/icons/el/r/el-rc.png" alt="RC" title="RC" id="button-RC" onclick="findwords('Rc')"><br>
-        <img src="http://www.thewordpicker.com/icons/el/r/el-crc.png" alt="CRC" title="CRC" id="button-CRC" onclick="findwords('cRc')">
-      </div>
-
-      <input type="radio" name="tabs" id="tab4">
-      <label for="tab4">Vowel Team</label>
-      <div class="tab">
-        <h1>Vowel Team</h1>
-        <img src="http://www.thewordpicker.com/icons/el/t/el-ct.png" alt="CT" title="CT" id="button-CT" onclick="findwords('cT')"><br>
-        <img src="http://www.thewordpicker.com/icons/el/t/el-tc.png" alt="TC" title="TC" id="button-TC" onclick="findwords('Tc')"><br>
-        <img src="http://www.thewordpicker.com/icons/el/t/el-ctc.png" alt="CTC" title="CTC" id="button-CTC" onclick="findwords('cTc')">
-      </div>
-
-      <input type="radio" name="tabs" id="tab5">
-      <label for="tab5">Silent E</label>
-      <div class="tab">
-        <h1>Silent E</h1>
-        <img src="http://www.thewordpicker.com/icons/el/e/el-vce.png" alt="VCE" title="VCE" id="button-VCE" onclick="findwords('OcE')"><br>
-        <img src="http://www.thewordpicker.com/icons/el/e/el-cvce.png" alt="CVCE" title="CVCE" id="button-CVCE" onclick="findwords('cOcE')"><br>
-        <img src="http://www.thewordpicker.com/icons/el/e/el-ccvce.png" alt="CCVCE" title="CCVCE" id="button-CCVCE" onclick="findwords('ccOcE')">
-      </div>
-
-      <input type="radio" name="tabs" id="tab6">
-      <label for="tab6">Custom</label>
-      <div class="tab">
-        <div class="custombox nodelete" id="custompatternbox" onkeydown="processcustomkeypress(event);" onclick="this.focus();" tabindex=0 ondrop="drop(event)" ondragover="event.preventDefault();">
-          <span id="custombox-text" class="nodelete">Type custom pattern, click pattern icons, or drag & drop</span>
+          <div id="searchresult-buttons"></div>
         </div>
 
-        <div style="font-family: 'Noto Sans Display', sans-serif; margin-top: 15px;" id='dragoptioncontainer'>
-          <div class="custombutton" title="Open" id="custom-open-box" onclick="addcustomitem('open')">
-            <img src="icons/closed-macron.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-open">
-            <div class="custombutton-text">Open</div>
+        <input type="radio" name="tabs" id="tab1" checked="checked">
+        <label for="tab1">Closed</label>
+        <div class="tab">
+          <h1>Closed</h1>
+          <img src="http://www.thewordpicker.com/icons/el/c/el-vc.png" alt="VC" title="VC" id="button-VC" onclick="findwords('Cc')"><br>
+          <img src="http://www.thewordpicker.com/icons/el/c/el-cvc.png" alt="CVC" title="CVC" id="button-CVC" onclick="findwords('cCc')"><br>
+          <img src="http://www.thewordpicker.com/icons/el/c/el-cvcc.png" alt="CVCC" title="CVCC" id="button-CVCC" onclick="findwords('cCcc')"><br>
+          <img src="http://www.thewordpicker.com/icons/el/c/el-ccvc.png" alt="CCVC" title="CCVC" id="button-CCVC" onclick="findwords('ccCc')"><br>
+          <img src="http://www.thewordpicker.com/icons/el/c/el-ccvcc.png" alt="CCVCC" title="CCVCC" id="button-CCVCC" onclick="findwords('ccCcc')"><br>
+          <img src="http://www.thewordpicker.com/icons/el/c/el-cccvcc.png" alt="CCVCC" title="CCVCC" id="button-CCCVCC" onclick="findwords('cccCcc')"><br>
+        </div>
+
+        <input type="radio" name="tabs" id="tab2">
+        <label for="tab2">Open</label>
+        <div class="tab">
+          <h1>Open</h1>
+          <img src="http://www.thewordpicker.com/icons/el/o/el-cvo.png" alt="cO" title="CO" id="button-CVO" onclick="findwords('cO')"><br>
+          <img src="http://www.thewordpicker.com/icons/el/o/el-ccvo.png" alt="ccO" title="CCO" id="button-CCVO" onclick="findwords('ccO')">
+        </div>
+
+        <input type="radio" name="tabs" id="tab3">
+        <label for="tab3">Vowel R</label>
+        <div class="tab">
+          <h1>Vowel R</h1>
+          <img src="http://www.thewordpicker.com/icons/el/r/el-r.png" alt="R" title="R" id="button-R" onclick="findwords('R')"><br>
+          <img src="http://www.thewordpicker.com/icons/el/r/el-rc.png" alt="RC" title="RC" id="button-RC" onclick="findwords('Rc')"><br>
+          <img src="http://www.thewordpicker.com/icons/el/r/el-crc.png" alt="CRC" title="CRC" id="button-CRC" onclick="findwords('cRc')">
+        </div>
+
+        <input type="radio" name="tabs" id="tab4">
+        <label for="tab4">Vowel Team</label>
+        <div class="tab">
+          <h1>Vowel Team</h1>
+          <img src="http://www.thewordpicker.com/icons/el/t/el-ct.png" alt="CT" title="CT" id="button-CT" onclick="findwords('cT')"><br>
+          <img src="http://www.thewordpicker.com/icons/el/t/el-tc.png" alt="TC" title="TC" id="button-TC" onclick="findwords('Tc')"><br>
+          <img src="http://www.thewordpicker.com/icons/el/t/el-ctc.png" alt="CTC" title="CTC" id="button-CTC" onclick="findwords('cTc')">
+        </div>
+
+        <input type="radio" name="tabs" id="tab5">
+        <label for="tab5">Silent E</label>
+        <div class="tab">
+          <h1>Silent E</h1>
+          <img src="http://www.thewordpicker.com/icons/el/e/el-vce.png" alt="VCE" title="VCE" id="button-VCE" onclick="findwords('OcE')"><br>
+          <img src="http://www.thewordpicker.com/icons/el/e/el-cvce.png" alt="CVCE" title="CVCE" id="button-CVCE" onclick="findwords('cOcE')"><br>
+          <img src="http://www.thewordpicker.com/icons/el/e/el-ccvce.png" alt="CCVCE" title="CCVCE" id="button-CCVCE" onclick="findwords('ccOcE')">
+        </div>
+
+        <input type="radio" name="tabs" id="tab6">
+        <label for="tab6">Custom</label>
+        <div class="tab">
+          <div class="custombox nodelete" id="custompatternbox" onkeydown="processcustomkeypress(event);" onclick="this.focus();" tabindex=0 ondrop="drop(event)" ondragover="event.preventDefault();">
+            <span id="custombox-text" class="nodelete">Type custom pattern, click pattern icons, or drag & drop</span>
           </div>
 
-          <div class="custombutton" title="Closed" id="custom-closed-box" onclick="addcustomitem('closed')">
-            <img src="icons/closed-breve.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-closed">
-            <div class="custombutton-text">Closed</div>
+          <div style="font-family: 'Noto Sans Display', sans-serif; margin-top: 15px;" id='dragoptioncontainer'>
+            <div class="custombutton" title="Open" id="custom-open-box" onclick="addcustomitem('open')">
+              <img src="icons/closed-macron.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-open">
+              <div class="custombutton-text">Open</div>
+            </div>
+
+            <div class="custombutton" title="Closed" id="custom-closed-box" onclick="addcustomitem('closed')">
+              <img src="icons/closed-breve.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-closed">
+              <div class="custombutton-text">Closed</div>
+            </div>
+
+            <div class="custombutton" title="Vowel R" id="custom-vowelr-box" onclick="addcustomitem('vowelr')">
+              <img src="icons/vowel-r.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-vowelr">
+              <div class="custombutton-text">Vowel R</div>
+            </div>
+
+            <div class="custombutton" title="Vowel Team" style="width: 80px;" id="custom-vowelteam-box" onclick="addcustomitem('vowelteam')">
+              <img src="icons/vowel-team.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" style="margin: 0px 20px;" id="custom-vowelteam">
+              <div class="custombutton-text">Vowel Team</div>
+            </div>
+
+            <div class="custombutton" title="Silent E" id="custom-silente-box" onclick="addcustomitem('silente')">
+              <img src="icons/silent-e.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-silente">
+              <div class="custombutton-text">Silent E</div>
+            </div>
+
+            <div class="custombutton" title="(Consonant)" style="width: 80px;" id="custom-closed-box" onclick="addcustomitem('consonant')">
+              <img src="icons/consonant.svg" width="30" height="30" style="margin-left: 25px;" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-consonant">
+              <div class="custombutton-text">(Consonant)</div>
+            </div>
+
+            <div class="custombutton" title="Anything (wildcard)" style="width: 65px;" id="custom-wildcard-box" onclick="addcustomitem('wildcard')">
+              <img src="icons/wildcard.svg" width="32" height="8.875" class="custombutton-image" draggable="true" ondragstart="drag(event)" style="margin: 0px 16px;" id="custom-wildcard">
+              <div class="custombutton-text">(Anything)</div>
+            </div>
           </div>
 
-          <div class="custombutton" title="Vowel R" id="custom-vowelr-box" onclick="addcustomitem('vowelr')">
-            <img src="icons/vowel-r.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-vowelr">
-            <div class="custombutton-text">Vowel R</div>
+          <div class="custombutton customaction" style="float: right; width: 200px; display: flex; justify-content: center; align-items: center;" title="Find words matching the specified pattern" onclick="findwords(getpattern());">
+            <div class="custombutton-text" style="font-size: 20px; margin-bottom: 12px;">Find words</div>
+            <span class="material-icons" style="color: white; margin-left: 4px;">keyboard_double_arrow_right</span>
           </div>
 
-          <div class="custombutton" title="Vowel Team" style="width: 80px;" id="custom-vowelteam-box" onclick="addcustomitem('vowelteam')">
-            <img src="icons/vowel-team.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" style="margin: 0px 20px;" id="custom-vowelteam">
-            <div class="custombutton-text">Vowel Team</div>
-          </div>
-
-          <div class="custombutton" title="Silent E" id="custom-silente-box" onclick="addcustomitem('silente')">
-            <img src="icons/silent-e.svg" width="30" height="30" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-silente">
-            <div class="custombutton-text">Silent E</div>
-          </div>
-
-          <div class="custombutton" title="(Consonant)" style="width: 80px;" id="custom-closed-box" onclick="addcustomitem('consonant')">
-            <img src="icons/consonant.svg" width="30" height="30" style="margin-left: 25px;" class="custombutton-image" draggable="true" ondragstart="drag(event)" id="custom-consonant">
-            <div class="custombutton-text">(Consonant)</div>
-          </div>
-
-          <div class="custombutton" title="Anything (wildcard)" style="width: 65px;" id="custom-wildcard-box" onclick="addcustomitem('wildcard')">
-            <img src="icons/wildcard.svg" width="32" height="8.875" class="custombutton-image" draggable="true" ondragstart="drag(event)" style="margin: 0px 16px;" id="custom-wildcard">
-            <div class="custombutton-text">(Anything)</div>
+          <div class="custombutton customaction" style="float: right; width: 100px; display: flex; justify-content: center; align-items: center;" title="Delete all pattern icons"
+            onclick="removeChildElements(document.getElementById('custompatternbox'))">
+            <span class="material-icons" style="color: white; font-size: 30px;">delete</span>
           </div>
         </div>
 
-        <div class="custombutton" style="float: right; width: 200px; display: flex; justify-content: center; align-items: center;" title="Find words matching the specified pattern" onclick="findwords(getpattern());">
-          <div class="custombutton-text" style="font-size: 20px; margin-bottom: 12px;">Find words</div>
-          <span class="material-icons" style="color: white; margin-left: 4px;">keyboard_double_arrow_right</span>
+        <input type="radio" name="tabs" id="tab7" onclick="showcamerawords();">
+        <label for="tab7">Camera Words</label>
+      </div>
+    </div>
+
+    <div class="results" id="searchresultsbox">
+      <div id="selectcountbox">
+        <div>
+          <span id="selectcount" style="margin-right: 5px;">0</span>
+          <span>selected</span>
+        </div>
+
+        <div style="cursor: pointer;">
+          <span class="material-icons select-option clear-btn" title="Clear selected" onclick="clearselected();">clear</span>
+          <span class="material-icons select-option add-btn" style="font-size: 16px; margin: 2px;" title="Add to temporary clipboard" onclick="addselected()">add_circle</span>
         </div>
       </div>
-
-      <input type="radio" name="tabs" id="tab7" onclick="showcamerawords();">
-      <label for="tab7">Camera Words</label>
-    </div></div>
-
-    <div class="results" id="searchresults"></div>
+      <div id="searchresults"></div>
+    </div>
   </div>
 
   <script src="javascript.js" charset="utf-8"></script>

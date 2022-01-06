@@ -35,6 +35,15 @@
   border: 5px solid #1c324f;
 }
 
+.customaction {
+  background-color: #3ba4e7;
+  border: 5px solid #0074b5;
+}
+
+.customaction:hover {
+  background-color: #0f81b9;
+}
+
 .custombutton-text {
   color: white;
   text-align: center;
@@ -48,13 +57,96 @@
 
 .results {
   width: 200px;
-  background-color: #78a5f2;
+  background-color: #9abfff;
   border: 5px solid #6cccaf;
   padding: 10px 20px;
   margin: 22px 2px;
   border-radius: 5px;
   font-size: 14px;
   display: none;
+}
+
+.resultitem {
+  margin-bottom: -20px; /* to remove the extra line break */
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.resultitem:hover {
+  background-color: #70a5ff;
+}
+
+#selectcountbox {
+  background-color: #284373;
+  color: white;
+  border-radius: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+.select-option {
+  font-size: 16px;
+  margin: 2px 3px;
+  transition-duration: 0.5s;
+}
+
+.clear-btn:hover {
+  color: red;
+}
+
+.add-btn:hover {
+  color: #adf;
+}
+
+.tempclipremove-btn {
+  color: #444;
+  margin-top: 5px;
+  font-size: 16px;
+  float: right;
+  cursor: pointer;
+}
+
+.tempclipremove-btn:hover {
+  color: #555;
+}
+
+#tempclip {
+  position: absolute;
+  width: 300px;
+  max-height: 315px;
+  overflow-y: auto;
+  z-index: 99;
+  background-color: #f1f1f1;
+  border: 2px solid #176eb3;
+}
+
+#tempclipheader {
+  padding: 10px;
+  width: 280px;
+  cursor: move;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  background-color: #176eb3;
+  color: #fff;
+}
+
+.tempclipitem {
+  margin: 0px 10px 5px 10px;
+  font-size: 14px;
+}
+
+.tempclipicons {
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.tempclipicons:hover {
+  color: #eee;
 }
 
 @media (min-width: 1150px) {
