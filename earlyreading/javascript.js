@@ -46,34 +46,6 @@ var camerawords = ['goes','does','what','were','was','their','there','could','sh
 selected = [];
 results = [];
 
-function showSS() {
-  sdtab.style.display = 'block';
-  document.getElementById('searchtab').checked = true;
-  searchbuttons();
-}
-
-function hideSS() {
-  sdtab.style.display = 'none';
-
-  if (document.getElementById('searchtab').checked == true) {
-    document.getElementById('searchtab').checked = '';
-    document.getElementById('tab1').checked = true;
-  }
-}
-
-function searchbuttons() {
-  var searchresults = searchlist(document.getElementById('searchinput').value, buttons);
-  removeAllChildNodes(document.getElementById('searchresult-buttons'));
-
-  for (i = 0; i < searchresults.length; i++) {
-    var buttonelement = document.getElementById('button-' + searchresults[i]);
-    var clone = buttonelement.cloneNode(true);
-    clone.id = 'searchresult-' + clone.id; // Assign the clone another ID
-    document.getElementById('searchresult-buttons').appendChild(clone);
-    document.getElementById('searchresult-buttons').appendChild(document.createElement("br"));
-  }
-}
-
 function processcustomkeypress(ev) {
   var keycode = (event.which || event.keyCode);
 
@@ -229,8 +201,9 @@ function findwords(input) {
 }
 
 function showcamerawords() {
-  document.getElementById('searchresults').style.display = 'block';
-  document.getElementById('searchresults').innerHTML = camerawords.join("<br>");
+  document.getElementById('searchresultsbox').style.display = 'block';
+  document.getElementById('selectcountbox').style.display = 'block';
+  document.getElementById('searchresults').innerHTML = makeresulthtml(camerawords);
   console.log('Displayed camera words.');
 }
 
@@ -314,12 +287,6 @@ function request(pattern, url) {
       document.getElementById('searchresults').innerHTML = 'Sorry, there was an error while finding the words.<br><br>Error message: ' + err
     });
 }
-
-setInterval(function() {
-  if (document.getElementById('searchinput').offsetWidth < 100) {
-    hideSS();
-  }
-}, 500);
 
 document.getElementById('custompatternbox').setAttribute('ondrop', 'drop(event)');
 moveElement(document.getElementById("tempclip"));
