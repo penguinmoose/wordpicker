@@ -29,8 +29,8 @@ def arprabet_to_syllable(arprabet):
             pron = pron[:-2] + 'R'
     sy = pron.split(' ') # full syllable list
     vs = [i for i in pron.split(' ') if i in VOWELS] # vowel sound
-    vb = re.split('[B-DF-HJ-NP-TVXZ]', spelling)
-    vb = [value for value in vb if (value != "") and (not value.startswith("W"))] # remove all empty elements. W is a special case for vowel teams.
+    vb = re.split('[B-DF-HJ-NP-TVXZ]', spelling) # vowel blocks
+    vb = [value for value in vb if (value != "") and (not (value.startswith("W") and len(value) <= 2))] # remove all empty elements. W is a special case for vowel teams.
 
     result = []
     j = 0
@@ -42,17 +42,17 @@ def arprabet_to_syllable(arprabet):
             continue
 
         if v in ["EY", "IY", "AY", "OW", "UW", "AW", "AO", "UH"]:
-            if (j < len(vb)) and (len(vb[j]) == 2):
+            if (j < len(vb)) and (len(vb[j]) >= 2):
                 result.append("T") # vowel team
             else:
                 result.append("O") # open
+            j = j + 1
         elif v in ["AA_R", "AO_R", "ER", "UH_R"]:
             result.append("R") # vowel R
         elif v in ["AE", "EH", "IH", "AA", "AH", "AO"]:
             result.append("C") # closed
         else:
             result.append("U") # unknown
-        j = j + 1
 
     if silent_e.match(spelling) is not None:
         result.append("E") # silent E
