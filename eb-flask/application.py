@@ -147,11 +147,11 @@ def word_match(word_pattern, phone_pattern, filter, maxwordlen, st):
 
     phone_result = phone_match(phone_pattern)
     if phone_result is not None:
-        result = [value for value in result if value in phone_result]
+        result = [value for value in result if value.lower() in phone_result]
 
     st_result = st_match(st)
     if st_result is not None:
-        result = [value for value in result if value in st_result]
+        result = [value for value in result if value.lower() in st_result]
 
     return result
 
@@ -167,7 +167,13 @@ def api_words_pattern():
     if resmaxlen:
         matches = matches[:int(resmaxlen)]
 
-    return jsonify(matches) # return json format
+    format = request.args.get('format')
+    if format == 'txt':
+        result = '\n'.join(matches)
+    else:
+        result = jsonify(matches)
+
+    return result # return json format
 
 
 @application.route('/api/sentences', methods=['GET'])
