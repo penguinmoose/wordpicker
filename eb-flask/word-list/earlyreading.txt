@@ -114,7 +114,7 @@ deck
 deep
 den
 dew
-dfleet
+fleet
 did
 die
 dig
