@@ -17,7 +17,6 @@
   border-color: #6f87a8;
 }
 
-
 .custombutton {
   width: 50px;
   height: 70px;
@@ -67,7 +66,8 @@
 }
 
 .resultitem {
-  margin-bottom: -20px; /* to remove the extra line break */
+  margin-bottom: -20px;
+  /* to remove the extra line break */
   cursor: pointer;
   transition-duration: 0.5s;
 }
@@ -163,6 +163,24 @@
   font-family: 'Fredoka One', sans-serif;
   font-size: 25px;
   background-color: #365186;
+}
+
+.wordlistselectbox {
+  font-size: 15px;
+  float: left;
+  margin: 10px 20px;
+}
+
+.wordlistselect {
+  border-color: white;
+  border-radius: 3px;
+  background-color: #072e57;
+  color: white;
+  transition-duration: 0.5s;
+}
+
+.wordlistselect:hover {
+  background-color: #0051a7;
 }
 
 @media (min-width: 1150px) {

@@ -20,6 +20,8 @@ var buttons = [
   "CCVCE"
 ]
 
+var movedclones = [];
+
 var patternkeycodes = {
   32: 'consonant',
   67: 'closed',
@@ -41,7 +43,7 @@ var iconids = {
   'custom-wildcard': '-'
 }
 
-var camerawords = ['goes','does','what','were','was','their','there','could','should','would','you','been','to','do','are','of','said','from','they','your','some','front','who','one','done','put','both','walk','pull','come','push','full','busy','people','through','listen','hour','eye','month','laugh','son','door','shoe','whose','talk','chalk','own','build','buy','length','half','lose','move','clothes','really','now','know','once','two','none','very','about','friend','won','thought','year','wash','because']
+var camerawords = ['goes', 'does', 'what', 'were', 'was', 'their', 'there', 'could', 'should', 'would', 'you', 'been', 'to', 'do', 'are', 'of', 'said', 'from', 'they', 'your', 'some', 'front', 'who', 'one', 'done', 'put', 'both', 'walk', 'pull', 'come', 'push', 'full', 'busy', 'people', 'through', 'listen', 'hour', 'eye', 'month', 'laugh', 'son', 'door', 'shoe', 'whose', 'talk', 'chalk', 'own', 'build', 'buy', 'length', 'half', 'lose', 'move', 'clothes', 'really', 'now', 'know', 'once', 'two', 'none', 'very', 'about', 'friend', 'won', 'thought', 'year', 'wash', 'because']
 
 selected = [];
 results = [];
@@ -60,7 +62,7 @@ function processcustomkeypress(ev) {
 function addcustomitem(name) {
   var id = 'custom-' + name;
   var clone = document.getElementById('custom-' + name).cloneNode(true);
-  clone.id = clone.id + '-' + randomString(5);
+  clone.id = clone.id + '-' + randomString(8);
   document.getElementById('custompatternbox').appendChild(clone);
   document.getElementById(id).onclick = () => {
     document.getElementById(data + '-box').prepend(document.getElementById(data))
@@ -94,11 +96,13 @@ function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData('text');
   var clone = document.getElementById(data).cloneNode(true);
-  clone.id = clone.id + '-' + randomString(5);
+  clone.id = clone.id + '-' + randomString(8);
+  clone.style.position = 'absolute';
+  clone.style.left = ev.clientX + 'px';
   document.getElementById('custompatternbox').appendChild(clone);
-  document.getElementById(data).onclick = () => {
-    document.getElementById(data + '-box').prepend(document.getElementById(data))
-  };
+
+  customdrag(clone);
+
   document.getElementById('custombox-text').remove();
 }
 
@@ -110,8 +114,12 @@ function dragdelete(ev) {
   }
 }
 
-function moveElement(elmnt) { // this is for a movable element, not drag and drop api.
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+function moveElement(elmnt, restrictx) { // this is for a movable element, not drag and drop api.
+  console.log("moveElement called");
+  var pos1 = 0,
+    pos2 = 0,
+    pos3 = 0,
+    pos4 = 0;
   if (document.getElementById(elmnt.id + "header")) {
     document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown; // if a header is avalible, use that to drag the entire box
   } else {
@@ -122,18 +130,25 @@ function moveElement(elmnt) { // this is for a movable element, not drag and dro
     e = e || window.event;
     e.preventDefault();
     pos3 = e.clientX;
-    pos4 = e.clientY;
+    if (!restrictx) {
+      pos4 = e.clientY;
+    }
     document.onmouseup = closeDragElement;
     document.onmousemove = elementDrag;
+    console.log("dragMouseDown: " + pos3 + " " + pos4)
   }
 
   function elementDrag(e) {
     e = e || window.event;
     e.preventDefault();
     pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
+    if (!restrictx) {
+      pos2 = pos4 - e.clientY;
+    }
     pos3 = e.clientX;
-    pos4 = e.clientY;
+    if (!restrictx) {
+      pos4 = e.clientY;
+    }
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
   }
@@ -144,14 +159,81 @@ function moveElement(elmnt) { // this is for a movable element, not drag and dro
   }
 }
 
+
+
+
+
+function customdrag(dragItem) {
+  var container = document.getElementById("custompatternbox");
+  var active = false;
+  var currentX, currentY, initialX, initialY;
+  var xOffset = 0;
+  var yOffset = 0;
+
+  container.addEventListener("touchstart", dragStart, false);
+  container.addEventListener("touchend", dragEnd, false);
+  container.addEventListener("touchmove", drag, false);
+  container.addEventListener("mousedown", dragStart, false);
+  container.addEventListener("mouseup", dragEnd, false);
+  container.addEventListener("mousemove", drag, false);
+
+  function dragStart(e) {
+    if (e.type === "touchstart") {
+      initialX = e.touches[0].clientX - xOffset;
+    } else {
+      initialX = e.clientX - xOffset;
+    }
+
+    if (e.target === dragItem) {
+      active = true;
+    }
+  }
+
+  function dragEnd(e) {
+    initialX = currentX;
+    active = false;
+  }
+
+  function drag(e) {
+    if (active) {
+      e.preventDefault();
+      if (e.type === "touchmove") {
+        currentX = e.touches[0].clientX - initialX;
+      } else {
+        currentX = e.clientX - initialX;
+      }
+
+      xOffset = currentX;
+      setTranslate(currentX, 0, dragItem);
+    }
+  }
+
+  function setTranslate(xPos, yPos, el) {
+    el.style.transform = "translate3d(" + xPos + "px, " + yPos + "px, 0)";
+  }
+}
+
+
 function getpattern() {
   var result = '';
+
+  var posmapping = {};
+  var positions = [];
   var icons = document.getElementById('custompatternbox').children;
+
   for (i = 0; i < icons.length; i++) {
-    result = result + iconids[icons[i].id.substring(0, icons[i].id.length - 6)];
+    posmapping[icons[i].getBoundingClientRect().left] = iconids[icons[i].id.substring(0, icons[i].id.length - 9)];
+    positions.push(icons[i].getBoundingClientRect().left);
+  }
+
+  positions.sort();
+
+  for (i = 0; i < icons.length; i++) {
+    result = result + posmapping[positions[i]];
   }
   return result;
 }
+
 
 function removeChildElements(parent) {
   while (parent.firstChild) {
@@ -196,7 +278,7 @@ function copyToClipboard(text) {
 function findwords(input) {
   document.getElementById('searchresultsbox').style.display = 'block';
   console.log("Finding results for pattern: " + input);
-  document.getElementById('searchresults').innerHTML = 'Finding words...';
+  document.getElementById('searchresults').innerHTML = 'Please wait - finding words...';
   request(input, 'http://www.wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com');
 }
 
@@ -210,7 +292,7 @@ function showcamerawords() {
 function makeresulthtml(results) {
   var lines = [];
   for (i = 0; i < results.length; i++) {
-    lines.push(`<div class="resultitem" onclick="selectword('` + results[i] +`', this)">` + results[i] + '</div>');
+    lines.push(`<div class="resultitem" onclick="selectword('` + results[i] + `', this)">` + results[i] + '</div>');
   }
 
   return lines.join('<br>');
@@ -266,7 +348,7 @@ function copytempclip() {
 }
 
 function request(pattern, url) {
-  fetch(url + '/api/words?st=' + pattern + '&filter=earlyreading')
+  fetch(url + '/api/words?st=' + pattern + '&filter=' + document.getElementById('wordlistselect').value)
     .then(function(response) {
       console.log('Server responce:', response);
       return response.json();
@@ -289,4 +371,4 @@ function request(pattern, url) {
 }
 
 document.getElementById('custompatternbox').setAttribute('ondrop', 'drop(event)');
-moveElement(document.getElementById("tempclip"));
+moveElement(document.getElementById("tempclip"), false);
