@@ -9,11 +9,9 @@ The Word Picker provides a way to easily find words that follow a spelling or so
 
 
 # Early Reading
-
 The Early Reading page consists of tabs that have patterns on them, which are labeled by the category of the pattern. One additional tab is the custom tab, in which custom patterns that are not one of the presets can be searched.
 
 ## Custom search and the custom box
-
 In the 'custom' tab, a custom pattern can be built 3 ways:
 
 - Clicking the custom box and typing the pattern
@@ -32,3 +30,14 @@ In the 'custom' tab, a custom pattern can be built 3 ways:
 - Silent E: Silent E - input key is 'e'
 - (Consonant): Consonant element - input key is (space)
 - (Anything): Any quantity of any element between surrounding icons. If the anything icon is put at the beginning of the pattern, the word must end with the rest of the pattern, and vice versa for if the icon is put at the end. If the custom pattern is only an anything icon, all of the word list will be shown. - input key is '-'
+
+
+# Word list select
+To the right of the Word Picker icon in the top bar, there is a select dropdown in which the word list to search from can be chosen from these options:
+
+- Early reading word list (default): Word list for early readers and contains less than 500 entries
+- 10000 words word list: Word list that contains about 10000 of the most commonly used words - note that word list contains individual letters that are not words (such as b, c, z, etc)
+- CMU dict (shown as 'all words'): All words, common or uncommon. Some entries may even not be a proper word, such as 'aaa'. Using this word list is not reccomended unless other word lists do not contain any results or the words you want.
+
+# Camera words tab
+Camera words are words that usually need to be memorized. Clicking this tab shows a list of them in the result box. No actual content is on this tab.
