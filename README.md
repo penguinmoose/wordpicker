@@ -41,3 +41,8 @@ To the right of the Word Picker icon in the top bar, there is a select dropdown 
 
 # Camera words tab
 Camera words are words that usually need to be memorized. Clicking this tab shows a list of them in the result box. No actual content is on this tab.
+
+# Temporary clipboard
+The temporary clipboard is a list in which you can add words to from results. In the result box, words can be selected by clicking them. At the top of the result box, there is a add icon and delete icon. Pressing the add icon adds the selected words into the temporary clipboard list. If no words are selected, pressing the add icon adds all of the words into the temporary clipboard.
+
+The temporary clipboard list is a draggable list with a button to delete all and a button to copy the list onto the clipboard. Pressing any items on the temporary clipboard will delete it.
