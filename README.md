@@ -45,4 +45,4 @@ Camera words are words that usually need to be memorized. Clicking this tab show
 # Temporary clipboard
 The temporary clipboard is a list in which you can add words to from results. In the result box, words can be selected by clicking them. At the top of the result box, there is a add icon and delete icon. Pressing the add icon adds the selected words into the temporary clipboard list. If no words are selected, pressing the add icon adds all of the words into the temporary clipboard.
 
-The temporary clipboard list is a draggable list with a button to delete all and a button to copy the list onto the clipboard. Pressing any items on the temporary clipboard will delete it.
+The temporary clipboard list is a sidebar. Open it by clicking the clipboard icon in the top title bar and close it by clicking the 'x' in the temporary clipboard heading.
