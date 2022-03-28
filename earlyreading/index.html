@@ -26,7 +26,7 @@
     <img src="http://www.thewordpicker.com/favicon.ico" width="35" height="35" style="float: left; margin: 3px 0px -3px 10px; border-radius: 5px;">
     <div class="wordlistselectbox">
       <label for="wordlist">Word list:</label>
-      <select name="wordlist" id="wordlistselect" class="wordlistselect">
+      <select name="wordlist" id="wordlistselect" class="wordlistselect" title="Choose which word list you want to find words from">
         <option value="earlyreading" selected="selected">Early Reading list (&lt500 entries)</option>
         <option value="10000words">10000 words list (~10000 entries)</option>
         <option value="allwords">All words (&gt116,500 entries)</option>
@@ -34,14 +34,18 @@
     </div>
 
     <span style="margin-left: -350px;">Early Reading</span>
+
+    <span style="font-size: 18px; float: right; margin-top: 6px;" id="tempclip-itemcount">0</span>
+    <span class="material-icons" style="float: right; font-size: 35px; margin-top: 2px; cursor: pointer;" onclick="document.getElementById('tempclip').style.display = 'block'">assignment</span>
   </div>
 
   <div class='main'>
     <div id="tempclip">
-      <div id="tempclipheader" style="font-size: 16px;">Temporary Clipboard
+      <div id="tempclipheader" style="font-size: 16px;">Clipboard
         <div>
           <span class="material-icons tempclipicons" onclick="copytempclip();">content_copy</span>
-          <span class="material-icons tempclipicons" onclick="removeAllChildNodes(document.getElementById('tempclipcontent'))">delete</span>
+          <span class="material-icons tempclipicons" onclick="removeAllChildNodes(document.getElementById('tempclipcontent'));">delete</span>
+          <span class="material-icons tempclipicons" onclick="document.getElementById('tempclip').style.display = 'none'; updatetempclipcount();">close</span>
         </div>
       </div>
 
@@ -176,7 +180,7 @@
 
         <div style="cursor: pointer;">
           <span class="material-icons select-option clear-btn" title="Clear selected" onclick="clearselected();">clear</span>
-          <span class="material-icons select-option add-btn" style="font-size: 16px; margin: 2px;" title="Add to temporary clipboard" onclick="addselected()">add_circle</span>
+          <span class="material-icons select-option add-btn" style="font-size: 16px; margin: 2px;" title="Add to temporary clipboard" onclick="addselected()">playlist_add</span>
         </div>
       </div>
       <div id="searchresults"></div>

@@ -114,55 +114,6 @@ function dragdelete(ev) {
   }
 }
 
-function moveElement(elmnt, restrictx) { // this is for a movable element, not drag and drop api.
-  console.log("moveElement called");
-  var pos1 = 0,
-    pos2 = 0,
-    pos3 = 0,
-    pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown; // if a header is avalible, use that to drag the entire box
-  } else {
-    elmnt.onmousedown = dragMouseDown;
-  }
-
-  function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    pos3 = e.clientX;
-    if (!restrictx) {
-      pos4 = e.clientY;
-    }
-    document.onmouseup = closeDragElement;
-    document.onmousemove = elementDrag;
-    console.log("dragMouseDown: " + pos3 + " " + pos4)
-  }
-
-  function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    pos1 = pos3 - e.clientX;
-    if (!restrictx) {
-      pos2 = pos4 - e.clientY;
-    }
-    pos3 = e.clientX;
-    if (!restrictx) {
-      pos4 = e.clientY;
-    }
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-  }
-
-  function closeDragElement() {
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-}
-
-
-
-
-
 function customdrag(dragItem) {
   var container = document.getElementById("custompatternbox");
   var active = false;
@@ -326,6 +277,12 @@ function addselected() {
   }
 
   clearselected();
+  updatetempclipcount();
+}
+
+function updatetempclipcount() {
+  var tempclipcount = document.getElementById('tempclipcontent').children.length;
+  document.getElementById('tempclip-itemcount').innerHTML = tempclipcount.toString();
 }
 
 function tempclipadd(item) {
@@ -370,5 +327,13 @@ function request(pattern, url) {
     });
 }
 
+function toggleTheme() {
+  if (document.body.style.backgroundColor == '#0d316f') {
+    document.body.style.backgroundColor = '#b5d0ff';
+  } else {
+    document.body.style.backgroundColor = '#0d316f';
+  }
+}
+
 document.getElementById('custompatternbox').setAttribute('ondrop', 'drop(event)');
-moveElement(document.getElementById("tempclip"), false);
+//moveElement(document.getElementById("tempclip"), false);
