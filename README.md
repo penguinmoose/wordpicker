@@ -9,6 +9,9 @@ The Word Picker provides a way to easily find words that follow a spelling or so
 
 
 # Early Reading
+
+Early Reading provides an intuitive interface to easily find words.
+
 The Early Reading page consists of tabs that have patterns on them, which are labeled by the category of the pattern. One additional tab is the custom tab, in which custom patterns that are not one of the presets can be searched.
 
 ## Custom search and the custom box
@@ -43,6 +46,16 @@ To the right of the Word Picker icon in the top bar, there is a select dropdown 
 Camera words are words that usually need to be memorized. Clicking this tab shows a list of them in the result box. No actual content is on this tab.
 
 # Temporary clipboard
-The temporary clipboard is a list in which you can add words to from results. In the result box, words can be selected by clicking them. At the top of the result box, there is a add icon and delete icon. Pressing the add icon adds the selected words into the temporary clipboard list. If no words are selected, pressing the add icon adds all of the words into the temporary clipboard.
+The temporary clipboard is a list in which you can add words to from results. In the result box, words can be selected by clicking them. To add results to the temporary clipboard, select words in the result box and press the 'add selected' button to add.
 
 The temporary clipboard list is a sidebar. Open it by clicking the clipboard icon in the top title bar and close it by clicking the 'x' in the temporary clipboard heading.
+
+
+
+# The Word Picker API
+
+The Word Picker API is a web API (hosted by Amazon Web Services) in which the webpage makes HTTP requests to. The source code for this API can be found under 'eb-flask' in the Word Picker directory, which contains both the code that is used to find words and also the word lists.
+
+Request URL: http://www.wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com/api/words
+
+Docs to be continued
