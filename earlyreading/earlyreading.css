@@ -185,9 +185,38 @@
   background-color: #0051a7;
 }
 
+
+
+.clearselectedbtn {
+  background-color: #5895f1;
+  padding: 2px 15px;
+}
+
+.clearselectedbtn:hover {
+  background-color: #6d94cd;
+}
+
+.addtempclipbtn {
+  background-color: #1e71ee;
+  padding: 2px 18px;
+}
+
+.addtempclipbtn:hover {
+  background-color: #1b5cbf;
+}
+
+.resultmenubtn {
+  font-size: 10px;
+  border-radius: 3px;
+}
+
+.resultmenubtn:hover {
+  transition-duration: 0.5s;
+}
+
 @media (min-width: 1150px) {
   .results {
-    margin-left: 30px;
+    width: 260px;
   }
 
   .main {

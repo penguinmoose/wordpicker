@@ -167,23 +167,23 @@
         </div>
 
         <button type="radio" class="camerawordsbutton" name="tabs" id="tab7" onclick="showcamerawords();">
-          <label for="tab7">Camera Words</label>
+          <label for="tab7">Show Camera Words</label>
       </div>
     </div>
 
     <div class="results" id="searchresultsbox">
       <div id="selectcountbox">
-        <div>
+        <span style="margin: 0px 25px 0px 5px;">
           <span id="selectcount" style="margin-right: 5px;">0</span>
           <span>selected</span>
-        </div>
+        </span>
 
-        <div style="cursor: pointer;">
-          <span class="material-icons select-option clear-btn" title="Clear selected" onclick="clearselected();">clear</span>
-          <span class="material-icons select-option add-btn" style="font-size: 16px; margin: 2px;" title="Add to temporary clipboard" onclick="addselected()">playlist_add</span>
-        </div>
+        <span style="cursor: pointer;">
+          <span onclick='clearselected()' class="clearselectedbtn resultmenubtn">Clear selected</span><br>
+          <span onclick='addselected()' class="addtempclipbtn resultmenubtn">Add results to temporary clipboard</span>
+        </span>
       </div>
-      <div id="searchresults"></div>
+      <div id="searchresults" style="margin-bottom: 20px; margin-top: -10px;"></div>
     </div>
   </div>
 

@@ -250,6 +250,8 @@ function makeresulthtml(results) {
 }
 
 function selectword(word, element) {
+  document.getElementsByClassName('addtempclipbtn')[0].innerHTML = 'Add selected to temporary clipboard';
+  document.getElementsByClassName('addtempclipbtn')[0].style.padding = '2px 14px';
   selected.push(word);
   element.style.backgroundColor = '#70a5ff';
   document.getElementById('selectcount').innerHTML = parseInt(document.getElementById('selectcount').innerHTML) + 1;
@@ -263,6 +265,9 @@ function clearselected() {
   for (i = 0; i < resultelement.children.length; i++) {
     resultelement.children[i].style.backgroundColor = '';
   }
+
+  document.getElementsByClassName('addtempclipbtn')[0].innerHTML = 'Add results to temporary clipboard';
+  document.getElementsByClassName('addtempclipbtn')[0].style.padding = '2px 18px';
 }
 
 function addselected() {
