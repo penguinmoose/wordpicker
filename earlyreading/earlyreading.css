@@ -37,6 +37,9 @@
 .customaction {
   background-color: #3ba4e7;
   border: 5px solid #0074b5;
+  border-radius: 10px;
+  margin-right: 10px;
+  height: 50px;
 }
 
 .customaction:hover {
@@ -55,11 +58,12 @@
 }
 
 .results {
-  width: 200px;
+  min-width: 220px;
+  max-width: 220px;
   background-color: #9abfff;
   border: 5px solid #6cccaf;
   padding: 10px 20px;
-  margin: 22px 2px;
+  margin: 22px -20px 22px 0px;
   border-radius: 5px;
   font-size: 14px;
   display: none;
@@ -222,6 +226,18 @@
   .main {
     display: flex;
     flex: 1;
+  }
+}
+
+@media only screen and (max-width: 975px) {
+  .earlyreadingtitle {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .wordlistselectbox {
+    display: none;
   }
 }
 
