@@ -10,12 +10,15 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="apple-touch-icon" href="favicon.ico">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- google fonts -->
+  <!-- google fonts + icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Display:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+  <!-- styles -->
   <link rel="stylesheet" href="tabs.css">
   <link rel="stylesheet" href="searchbox.css">
   <link rel="stylesheet" href="earlyreading.css">
@@ -24,14 +27,6 @@
 <body ondrop='dragdelete(event)' ondragover='event.preventDefault()'>
   <div class="titlebar">
     <img src="jcicon.jpeg" width="40" height="40" style="float: left; margin: 3px 0px -3px 10px; border-radius: 5px;">
-    <div class="wordlistselectbox">
-      <label for="wordlist">Word list:</label>
-      <select name="wordlist" id="wordlistselect" class="wordlistselect" title="Choose which word list you want to find words from">
-        <option value="earlyreading" selected="selected">Early Reading list (&lt500 entries)</option>
-        <option value="10000words">10000 words list (~10000 entries)</option>
-        <option value="allwords">All words (&gt116,500 entries)</option>
-      </select>
-    </div>
 
     <span style="margin-left: -350px;" class="earlyreadingtitle">Early Reading</span>
 
@@ -56,14 +51,6 @@
     <div>
       <!-- extra parent element prevents Flexbox from changing the dimensions of the tab box -->
       <div class="tabs">
-        <input type="radio" name="tabs" id="searchtab">
-        <label for="searchtab" style="padding: 1rem 3rem; display: none;" id="sdtab">Search Results</label>
-        <div class="tab">
-          <h1>Search results</h1>
-
-          <div id="searchresult-buttons"></div>
-        </div>
-
         <input type="radio" name="tabs" id="tab1" checked="checked">
         <label for="tab1">Closed</label>
         <div class="tab">
@@ -160,14 +147,47 @@
             <span class="material-icons" style="color: white; margin-left: 4px;">keyboard_double_arrow_right</span>
           </div>
 
-          <div class="customaction" style="float: right; width: 50px; display: flex; justify-content: center; align-items: center;" title="Delete all pattern icons"
-            onclick="removeChildElements(document.getElementById('custompatternbox'))">
+          <div class="customaction" style="float: right; width: 50px; display: flex; justify-content: center; align-items: center;" title="Delete all pattern icons" onclick="removeChildElements(document.getElementById('custompatternbox'))">
             <span class="material-icons" style="color: white; font-size: 30px;">delete</span>
           </div>
         </div>
 
-        <button type="radio" class="camerawordsbutton" name="tabs" id="tab7" onclick="showcamerawords();">
-          <label for="tab7">Show Camera Words</label>
+        <input type="radio" name="tabs" id="tab7">
+        <label for="tab7">More options</label>
+        <div class="tab">
+          <h1>More options</h1>
+
+          <div class="wordlistselectbox">
+            <span>Word list:</span>
+            <select name="wordlist" id="wordlistselect" class="wordlistselect" title="Choose which word list you want to find words from">
+              <option value="earlyreading" selected="selected">Early Reading list (&lt500 entries)</option>
+              <option value="10000words">10000 words list (~10000 entries)</option>
+              <option value="allwords">All words (&gt116,500 entries)</option>
+            </select>
+          </div>
+
+          <div style="font-size: 18px; margin-top: 8px;">
+            <span>Prefix or suffix:</span>
+            <input type="text" id="spellingpatterninput" name="spellingpatterninput">
+            <div style="font-size: 14px;">Cannot use with early reading word list</div>
+            <div style="height: 25px"></div>
+          </div>
+
+          <div style="font-size: 18px; margin-top: 8px;">
+            <span>Show up to</span>
+            <input type="number" id="resultlimit" name="resultlimit" min="5" max="500">
+            <span>results</span>
+          </div>
+
+          <div style="font-size: 18px; margin-top: 8px;">
+            <span>Limit results to</span>
+            <input type="number" id="resultlengthlimit" name="resultlengthlimit" min="2" max="16">
+            <span>characters long</span>
+          </div><br>
+
+          <button onclick="showcamerawords()" class="optionsbtn">Show camera words</button>
+          <button onclick="findwords('-')" class="optionsbtn">Show all words with applied filters</button>
+        </div>
       </div>
     </div>
 

@@ -172,9 +172,7 @@
 }
 
 .wordlistselectbox {
-  font-size: 15px;
-  float: left;
-  margin: 10px 20px;
+  font-size: 18px;
 }
 
 .wordlistselect {
@@ -183,6 +181,9 @@
   background-color: #072e57;
   color: white;
   transition-duration: 0.5s;
+  font-size: 12px;
+  width: 250px;
+  height: 22px;
 }
 
 .wordlistselect:hover {
@@ -218,6 +219,11 @@
   transition-duration: 0.5s;
 }
 
+#spellingpatterninput {
+  width: 150px;
+  height: 20px;
+}
+
 @media (min-width: 1150px) {
   .results {
     width: 260px;
@@ -231,12 +237,6 @@
 
 @media only screen and (max-width: 975px) {
   .earlyreadingtitle {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .wordlistselectbox {
     display: none;
   }
 }

@@ -309,8 +309,14 @@ function copytempclip() {
   copyToClipboard(tempclip.join('\r\n'));
 }
 
-function request(pattern, url) {
-  fetch(url + '/api/words?st=' + pattern + '&filter=' + document.getElementById('wordlistselect').value)
+function request(pattern, apiurl) {
+  spellingparam = (document.getElementById('spellingpatterninput').value == "") ? "&pattern=-" : "&pattern=" + document.getElementById('spellingpatterninput').value;
+  rlparam = (document.getElementById('resultlimit').value == "") ? "" : "&resmaxlen=" + document.getElementById('resultlimit').value;
+  wlparam = (document.getElementById('resultlengthlimit').value == "") ? "" : "&maxwordlen=" + document.getElementById('resultlengthlimit').value;
+
+  var url = apiurl + '/api/words?st=' + pattern + spellingparam + rlparam + wlparam + '&filter=' + document.getElementById('wordlistselect').value;
+  console.log("Request URL: " + url)
+  fetch(url)
     .then(function(response) {
       console.log('Server responce:', response);
       return response.json();
