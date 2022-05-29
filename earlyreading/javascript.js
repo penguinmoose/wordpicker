@@ -347,4 +347,3 @@ function toggleTheme() {
 }
 
 document.getElementById('custompatternbox').setAttribute('ondrop', 'drop(event)');
-//moveElement(document.getElementById("tempclip"), false);
