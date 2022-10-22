@@ -1,683 +1,109 @@
-<!DOCTYPE HTML>
-
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
-  <title>Word Picker home</title>
-
+  <title>Early Reading</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Word Picker is an easy-to-use tool for finding words based on a spelling pattern or a sound.">
-  <meta name="keywords"
-    content="word finder, sentence finder, word picker, sentence picker, words, sentences, sound, sounds, phone, phoneme, spelling pattern, word pattern, spelling, contains words, contains sounds, prepositions, nouns, tool for finding words, good tool for spelling, tool for finding sentences, finding words that contain sounds, finding words that contain spelling pattern, good word finder, early reading, reading tools, reading">
-  <meta name="subject" content="spelling">
   <meta name="language" content="en-us">
-  <meta name="revisit-after" content="7 days">
-  <meta name="robots" content="index, follow">
-
+  <link id="favicon" rel="icon" href="main/favicon.ico" type="image/ico" sizes="32x32">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <link rel="apple-touch-icon" href="favicon.ico">
-  <meta name="google-site-verification" content="lk8T1O7Iv1Q2NkbmomheE2qlFy6Vzgu4UQ97aDFAf88">
 
-  <meta name="og:title" content="Word Picker">
-  <meta name="og:type" content="tool">
-  <meta name="og:url" content="http://www.johanneschan.com/wordpicker/wordpicker.html">
-  <meta name="og:image" content="http://www.johanneschan.com/wordpicker/favicon.ico">
-  <meta name="og:site_name" content="Johanneschan">
-  <meta name="og:description" content="Word Picker is a tool for finding words based on a spelling pattern or a sound. There is also a sentence finder to find sentences containing a word.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
 
-  <link id="favicon" rel="icon" href="favicon.ico" type="image/ico" sizes="16x16">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nova+Mono&display=swap">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito&display=swap">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="styles/loading.css">
-  <link rel="stylesheet" href="styles/tabs.css">
-  <link rel="stylesheet" href="styles/mobileheading.css">
-  <link rel="stylesheet" href="styles/wordpicker.css">
-  <link rel="stylesheet" href="styles/toggle.css">
-  <link rel="stylesheet" href="styles/tooltip.css">
-  <link rel="stylesheet" href="styles/treeview.css">
+  <title>Word Picker | Welcome</title>
 
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <style>
+    body {
+      background-color: black;
+      color: red;
+      font-family: 'Comfortaa', sans-serif;
+      text-align: center;
+      font-size: 18px;
+    }
 
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w, d, s, l, i) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js'
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src =
-        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-M5SCVCN');
-  </script>
-  <!-- End Google Tag Manager -->
+    .icon {
+      margin: 0px 35%;
+      width: 30%;
+      height: 30%;
+    }
+
+    .wdpk-text {
+      font-family: 'Dosis', sans-serif;
+      font-size: 80px;
+      margin: -50px 0px 20px 0px;
+      color: white;
+    }
+
+    .desc {
+      font-size: 20px;
+      width: 60%;
+      margin: auto;
+      font-family: 'Montserrat Alternates', sans-serif;
+      color: white;
+    }
+
+    @media (max-width: 1000px) {
+      .wdpk-text {
+        font-size: 50px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .icon {
+        margin: 100px 25%;
+        width: 50%;
+        height: 50%;
+      }
+
+      .wdpk-text {
+        margin-top: -100px;
+      }
+
+      .desc {
+        width: 80%;
+      }
+    }
+
+    button {
+      padding: 10px 12px;
+      font-size: 30px;
+      font-family: 'Comfortaa', sans-serif;
+      border: 5px solid #143e91;
+      background-color: #c6d4ff;
+      border-radius: 15px;
+      transition-duration: 0.5s;
+      display: none; /* JS will show this - if the user doesn't have JS, the button won't show */
+    }
+
+    button:hover {
+      border: 5px solid #a6bff2;
+      background-color: #122361;
+      color: white;
+    }
+  </style>
 </head>
 
-
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M5SCVCN" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-
-
-  <div class="mobilesidebar">
-    <button class="msb-closebtn" onclick="closeMobileSidebar();">&times;</button>
-    <button onclick="openSettings();">Settings</button>
-    <button onclick="openWordList();">See word list</button>
-    <ul id="mobile-moreactions">
-      <li><span class="caret">More actions</span>
-        <ul class="nested">
-          <li onclick="window.location.reload(true)">Reload</li>
-          <li onclick="changeTheme('d')" id="mobile-theme-change-button">Dark Mode</li>
-          <li onclick="window.open('http://www.johanneschan.com/wordpicker/wordpicker.html', 'popUpWindow',
-            'height=720, width=1180, left=100, top=150, resizable=yes, scrollbars=yes, toolbar=no, menubar=yes, location=no, directories=no, status=yes');">Pop Up</li>
-          <li>
-            <form method="get" action="Word-Picker-download.zip">
-              <button type="submit" class="more-dropdown-content-button">Download this page</button>
-            </form>
-          </li>
-      </li>
-    </ul>
-    </ul>
-  </div>
-
-  <h1 class="heading-1">
-    <img src="favicon.ico" class="heading-icon">
-    <span style="text-shadow: 4px 3px #737373;">Word Picker - Advanced Search</span>
-
-    <div class="dropdown">
-      <span onclick="toggleMoreDropdown()" class="more-dropbtn">•••</span>
-      <div id="moreDropdown" class="more-dropdown-content" style="font-family: sans-serif; font-size: 12pt;">
-        <table style="font-family: 'Nunito', sans-serif; font-size: 12pt; font-weight: normal;">
-          <tr>
-            <td>
-              <button type="button" onclick="window.location.reload(true)" class="more-dropdown-content-button">Reload</button>
-            </td>
-            <td>
-              <img src="icons/reload-icon.png" class="more-dropdown-item-icons" alt="reload icon">
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <button type="button" onclick="openWordList();" class="more-dropdown-content-button">See word list</button>
-            </td>
-            <td>
-              <img src="icons/document-icon.png" class="more-dropdown-item-icons" alt="document icon">
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <button onclick="openSettings();" class="more-dropdown-content-button">Settings</button>
-            </td>
-            <td>
-              <img src="icons/settings-icon.png" class="more-dropdown-item-icons" alt="settings icon">
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <button onclick="changeTheme('d')" id="theme-change-button" class="more-dropdown-content-button">Dark Mode</button>
-            </td>
-            <td>
-              <img src="icons/dark-mode-icon.png" class="more-dropdown-item-icons" alt="dark mode icon" id="theme-icon">
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <button onclick="window.open('http://www.johanneschan.com/wordpicker/wordpicker.html', 'popUpWindow',
-                'height=720, width=1180, left=100, top=150, resizable=yes, scrollbars=yes, toolbar=no, menubar=yes, location=no, directories=no, status=yes');" class="more-dropdown-content-button">
-                Pop Up</button>
-            </td>
-            <td>
-              <img src="icons/popup-icon.png" class="more-dropdown-item-icons" alt="popup icon">
-            </td>
-          </tr>
-
-          <tr>
-            <td>
-              <form method="get" action="Word-Picker-download.zip">
-                <button type="submit" class="more-dropdown-content-button">Download this page</button>
-              </form>
-            </td>
-            <td>
-              <img src="icons/download-icon.png" class="more-dropdown-item-icons" alt="download icon">
-            </td>
-          </tr>
-        </table>
-        <hr>
-
-        <div id="google_translate_element"></div>
-      </div>
-    </div>
-  </h1><br>
-
-
-  <h1 class="mobile-heading">
-    <span style="text-shadow: 4px 3px #737373;">Word Picker - Advanced Search</span>
-  </h1><br>
-
-  <!-------->
-
-  <div class="sidenav" id="sidenav">
-    <!-- for computer -->
-    <button type="button" name="button" onclick="changepage(1)" id="wd_button" class="sidebuttons" title="Go to the word picker tab">Word Picker</button>
-    <button type="button" name="button" id="el_button" class="sidebuttons" onclick="window.location.href = 'http://www.thewordpicker.com/earlyreading'">Early Reading</button>
-    <button type="button" name="button" onclick="changepage(3)" id="sn_button" class="sidebuttons" title="Go to the sentence picker tab">Sentence Picker</button>
-    <button type="button" name="button" onclick="changepage(4); toggleTooltip('off');" id="in_button" class="sidebuttons tooltip" style="margin-bottom: 25px;" title="View instructions">Instructions
-      <span class="tooltiptext" id="newuser-tooltip">Click this button to see instructions for how to use Word Picker.</span>
-    </button>
-
-    <div class="version">Version 2.1.3</div>
-    <a href="http://www.thewordpicker.com/earlyreading" class="mobilelink">Early reading</a><br>
-  </div>
-
-  <div class="bottomnav" id="bottomnav">
-    <!-- for mobile -->
-    <button onclick="changepage(1)" id="wd_button_mobile" class="active">Word Picker</button>
-    <button onclick="changepage(2)" id="el_button_mobile">Early Reading</button>
-    <button onclick="changepage(3)" id="sn_button_mobile">Sentence Picker</button>
-    <button onclick="changepage(4)" id="in_button_mobile">Instructions</button>
-    <button style="font-size: 30px; cursor: pointer;" onclick="document.getElementsByClassName('mobilesidebar')[0].style.width = 'calc(100% - 50px)';">&#9776;</button>
-  </div>
-
-
-  <div class="main" id="main">
-    <div class="loading-container" id="loading-container">
-      <div class="container">
-        <div class="holder">
-          <div class="box"></div>
-        </div>
-        <div class="holder">
-          <div class="box"></div>
-        </div>
-        <div class="holder">
-          <div class="box"></div>
-        </div>
-      </div>
-
-      <div>Loading...</div>
-    </div>
-
-    <div class="error-alert" id="error-alert">
-      <div style="font-size: 18pt; text-align: center;">Error(s) occured.</div>
-      <hr>
-      <div id="errors" style="font-size: 14pt;"></div><br>
-      <!--Errors will be added to this list using javascript.-->
-      <button onclick="dismissErrorAlert();" class="error-dismiss-button">Dismiss</button>
-    </div>
-
-    <div class="settings" id="settings">
-      <div style="margin-bottom: 10px;">
-        <span>Random background every day instead of every time</span>
-        <label class="switch">
-          <input type="checkbox" id="settings-randbackground" checked>
-          <span class="toggle-ball round"></span>
-        </label>
-      </div>
-      <hr>
-
-      <div style="margin-bottom: 10px;">
-        <span>Make result text italic</span>
-        <label class="switch">
-          <input type="checkbox" id="settings-italicresult">
-          <span class="toggle-ball round"></span>
-        </label>
-      </div>
-      <hr>
-
-      <div style="margin-bottom: 10px;">
-        <span>Result container width</span>
-        <span style="margin-left: 15px;">200px</span><input type="range" min="200" max="600" value="300" class="slider" id="resultcontainer-width-slider" onclick="showReswidthSliderValue();"><span>600px</span>
-        <span id="reswidth-value-text"></span>
-      </div>
-      <hr>
-
-      <div style="margin-bottom: 10px;">
-        <span>Theme color</span>
-        <div style="background-color: #505050; width: 155px; padding: 10px; float: right; border-radius: 10px;">
-          <input type='radio' class="colorselect greenselect" name="colorselect" value="#45d938">
-          <input type='radio' class="colorselect blueselect" name="colorselect" value="#3895d9" checked>
-          <input type='radio' class="colorselect purpleselect" name="colorselect" value="#a371ff">
-          <input type='radio' class="colorselect redselect" name="colorselect" value="#d93855">
-          <input type='radio' class="colorselect orangeselect" name="colorselect" value="#d99438">
-          <input type='radio' class="colorselect yellowselect" name="colorselect" value="#d9c938">
-        </div>
-      </div>
-
-      <div style="margin-top: 30px">
-        <button class="settings-cancelbtn" onclick="document.getElementById('settings').style.display = 'none';">Cancel</button>
-        <button class="settings-savebtn" onclick="saveSettings();">Save</button>
-        <div class="settings-nostorage-alert">Settings can't be saved because your browser does not support Local Storage.</div>
-      </div>
-    </div>
-
-    <!-------------------------------------------------------->
-
-    <div id="word_picker">
-      <div class="inputcontainer">
-        <h2 class="inputheading">Find words using spelling pattern or sound
-          <div style="font-size: 10pt;">Go to the instructions tab for how to use this</div>
-        </h2>
-        <br>
-
-        <form class="input">
-          <div class="borderedbox">
-            <div>Enter spelling pattern here:</div>
-            <input type="text" id="pattern" name="pattern" class="inputform" placeholder="CVC" title="Type spelling pattern in this input field">
-          </div>
-
-          <div class="borderedbox">
-            <div>Enter the syllable type here:</div>
-            <input type="text" id="syllabletype" name="syllable-type" class="inputform" title="Type the syllable type in the input field. Seperate syllable types by a space. Use '-' for a wildcard."
-              ondragover="allowDrop(event)" ondrop="processSyllableDrop(event)">
-            <br>
-
-            <div class="borderedbox">
-              <img src="icons/st-c.png" width="50" height="45" alt="Closed" draggable="true" ondragstart="stDrag(event)" id="st-c-img" onclick="addSyllableType('C')">
-              <img src="icons/st-o.png" width="50" height="45" alt="Open" draggable="true" ondragstart="stDrag(event)" id="st-o-img" onclick="addSyllableType('O')">
-              <img src="icons/st-vt.png" width="60" height="45" alt="Vowel Team" draggable="true" ondragstart="stDrag(event)" id="st-vt-img" onclick="addSyllableType('T')">
-              <img src="icons/st-vr.png" width="50" height="45" alt="Vowel R" draggable="true" ondragstart="stDrag(event)" id="st-vr-img" onclick="addSyllableType('R')">
-              <img src="icons/st-se.png" width="60" height="45" alt="Silent E" draggable="true" ondragstart="stDrag(event)" id="st-se-img" onclick="addSyllableType('E')">
-            </div>
-          </div>
-
-          <div class="borderedbox">
-            <div>Enter sound here:</div>
-            <input type="text" id="phone" name="phone" class="inputform" placeholder="AA" style="text-transform: uppercase;" title="Type sound in this input field">
-
-            <div class="dropdown">
-              <button onclick="toggleSoundDropdown()" class="dropbtn">Choose</button>
-              <div id="soundDropdown" class="dropdown-content">
-                <input type="text" placeholder="Search..." id="soundSearch" onkeyup="soundFilterFunction();">
-                <button onclick="changepage(3);">Go to instructions</button>
-                <button onclick="addSound('AA');">AA</button>
-                <button onclick="addSound('AE');">AE</button>
-                <button onclick="addSound('AH');">AH</button>
-                <button onclick="addSound('AO');">AO</button>
-                <button onclick="addSound('AW');">AW</button>
-                <button onclick="addSound('AY');">AY</button>
-                <button onclick="addSound('B');">B</button>
-                <button onclick="addSound('CH');">CH</button>
-                <button onclick="addSound('D');">D</button>
-                <button onclick="addSound('DH');">DH</button>
-                <button onclick="addSound('EH');">EH</button>
-                <button onclick="addSound('ER');">ER</button>
-                <button onclick="addSound('EY');">EY</button>
-                <button onclick="addSound('F');">F</button>
-                <button onclick="addSound('G');">G</button>
-                <button onclick="addSound('HH');">HH</button>
-                <button onclick="addSound('IH');">IH</button>
-                <button onclick="addSound('IY');">IY</button>
-                <button onclick="addSound('JH');">JH</button>
-                <button onclick="addSound('K');">K</button>
-                <button onclick="addSound('L');">L</button>
-                <button onclick="addSound('M');">M</button>
-                <button onclick="addSound('N');">N</button>
-                <button onclick="addSound('NG');">NG</button>
-                <button onclick="addSound('OW');">OW</button>
-                <button onclick="addSound('OY');">OY</button>
-                <button onclick="addSound('P');">P</button>
-                <button onclick="addSound('R');">R</button>
-                <button onclick="addSound('S');">S</button>
-                <button onclick="addSound('SH');">SH</button>
-                <button onclick="addSound('T');">T</button>
-                <button onclick="addSound('TH');">TH</button>
-                <button onclick="addSound('UH');">UH</button>
-                <button onclick="addSound('UW');">UW</button>
-                <button onclick="addSound('V');">V</button>
-                <button onclick="addSound('W');">W</button>
-                <button onclick="addSound('Y');">Y</button>
-                <button onclick="addSound('Z');">Z</button>
-                <button onclick="addSound('ZH');">ZH</button>
-              </div>
-            </div>
-          </div>
-          <br>
-
-          <div>Search within word list:</div>
-          <div class="bluebox">
-            <input type="radio" id="noun-person-filter" name="filter-button" value="&filter=noun-person">
-            <label for="noun-person-filter" title="Only show person nouns in the results">Use person noun word list</label><br>
-
-            <input type="radio" id="noun-place-filter" name="filter-button" value="&filter=noun-place">
-            <label for="noun-place-filter" title="Only show place nouns in the results">Use place noun word list</label><br>
-
-            <input type="radio" id="noun-thing-filter" name="filter-button" value="&filter=noun-thing">
-            <label for="noun-thing-filter" title="Only show thing nouns in the results">Use thing noun word list</label><br>
-
-            <input type="radio" id="prepesition-filter" name="filter-button" value="&filter=preposition">
-            <label for="prepesition-filter" title="Only show prepositions in the results">Use preposition word list</label><br>
-
-            <input type="radio" id="adjective-filter" name="filter-button" value="&filter=adjective">
-            <label for="adjective-filter" title="Only show adjectives in the results">Use adjective word list</label><br>
-
-            <input type="radio" id="verb-filter" name="filter-button" value="&filter=verb">
-            <label for="verb-filter" title="Only show verbs in the results">Use verb word list</label><br>
-            <br>
-
-            <input type="radio" id="earlyreading-filter" name="filter-button" value="&filter=earlyreading" checked>
-            <label for="10000words-filter" title="Use a word list for early readers">Use a word list for early readers (less than 500 entries)</label><br>
-
-            <input type="radio" id="10000words-filter" name="filter-button" value="&filter=10000words" checked>
-            <label for="10000words-filter" title="Use the 10000 most common words as the word list">Use the 10000 most common words (about 10000 entries)</label><br>
-
-            <input type="radio" id="allwords-filter" name="filter-button" value="&filter=allwords">
-            <label for="allwords-filter" title="Use all words as the word list">Use all words in english as the word list (more than 116,500 entries)</label><br>
-          </div>
-        </form>
-
-        <div class="bluebox" style="padding: 5px; margin-top: 5px;">
-          <label>Show up to</label>
-          <select name="limitresult-options" id="limitresult-options">
-            <option value="10">10 results</option>
-            <option value="20">20 results</option>
-            <option value="40">40 results</option>
-            <option value="60">60 results</option>
-            <option value="80" selected="selected">80 results</option>
-            <option value="100">100 results</option>
-            <option value="150">150 results</option>
-            <option value="200">200 results</option>
-          </select>
-
-          <label class="switch">
-            <input type="checkbox" id="limitresult-toggle" checked>
-            <span class="toggle-ball round"></span>
-          </label><br>
-
-          <div style="margin-top: 5px;">
-            <label>Only show words smaller than or equal to</label>
-            <select name="result-maxlengh" id="resultmaxlengh">
-              <option value="2">2 characters</option>
-              <option value="3">3 characters</option>
-              <option value="4">4 characters</option>
-              <option value="5">5 characters</option>
-              <option value="6" selected="selected">6 characters</option>
-              <option value="7">7 characters</option>
-              <option value="8">8 characters</option>
-              <option value="9">9 characters</option>
-              <option value="10">10 characters</option>
-              <option value="11">11 characters</option>
-              <option value="12">12 characters</option>
-              <option value="13">13 characters</option>
-              <option value="14">14 characters</option>
-              <option value="15">15 characters</option>
-            </select>
-
-            <label class="switch">
-              <input type="checkbox" id="resultmaxlen-toggle">
-              <span class="toggle-ball round"></span>
-            </label>
-          </div>
-        </div>
-
-
-        <div style="background-color: #8a8a8a; margin-top: 10px; padding: 5px;">
-          <div>If you enter both the spelling pattern and the sound, Word Picker will find words that have the spelling pattern and the sound. If you only enter one of these, results for the one that you enter will be found.</div>
-        </div>
-
-        <button type="button" class="gobutton" onclick="startWords();" title="Find words that follow the specified criteria">
-          <span id="findwords-btn">find words</span>
-          <i class="fa fa-spinner fa-spin" id="findwords-btn-loadicon"></i>
-        </button>
-      </div>
-      <br>
-
-      <div class="resultcontainer" id="resultcontainer-1">
-        <div id="matched_words"></div>
-      </div>
-    </div>
-
-    <!----------------------------------------------------->
-
-    <div id="early_reading">
-      <div class="inputcontainer" style="overflow-x: scroll; max-width: 550px;">
-        <h2 class="inputheading">Find words for early reading
-          <div style="font-size: 10pt;">Go to the instructions tab for how to use this</div>
-        </h2>
-
-        <div>Chooose a spelling pattern in the table below.<div>
-        <br>
-
-        <table class="elchoose-table">
-          <tr>
-            <th>Closed</th>
-            <th>Open</th>
-            <th>Vowel R</th>
-            <th>Vowel Team</th>
-            <th>Silent E</th>
-          </tr>
-
-          <tr>
-            <td onclick="elSerch('VC')">
-              <img src="icons/el/c/el-vc.png" alt="VC" title="VC">
-            </td>
-            <td onclick="elSerch('CVO')">
-              <img src="icons/el/o/el-cvo.png" alt="CVO" title="CVO">
-            </td>
-            <td onclick="elSerch('R')">
-              <img src="icons/el/r/el-r.png" alt="R" title="R">
-            </td>
-            <td onclick="elSerch('CT')">
-              <img src="icons/el/t/el-ct.png" alt="CT" title="CT">
-            </td>
-            <td onclick="elSerch('VCE')">
-              <img src="icons/el/e/el-vce.png" alt="VCE" title="VCE">
-            </td>
-          </tr>
-
-          <tr>
-            <td onclick="elSerch('CVC')">
-              <img src="icons/el/c/el-cvc.png" alt="CVC" title="CVC">
-            </td>
-            <td onclick="elSerch('CCVO')">
-              <img src="icons/el/o/el-ccvo.png" alt="CCVO" title="CCVO">
-            </td>
-            <td onclick="elSerch('RC')">
-              <img src="icons/el/r/el-rc.png" alt="RC" title="RC">
-            </td>
-            <td onclick="elSerch('TC')">
-              <img src="icons/el/t/el-tc.png" alt="TC" title="TC">
-            </td>
-            <td onclick="elSerch('CVCE')">
-              <img src="icons/el/e/el-cvce.png" alt="CVCE" title="CVCE">
-            </td>
-          </tr>
-
-          <tr>
-            <td onclick="elSerch('CVCC')">
-              <img src="icons/el/c/el-cvcc.png" alt="CVCC" title="CVCC">
-            </td>
-            <td>
-              <div style="text-align: center; font-size: 20pt;">-</div>
-            </td>
-            <td onclick="elSerch('CRC')">
-              <img src="icons/el/r/el-crc.png" alt="CRC" title="CRC">
-            </td>
-            <td onclick="elSerch('CTC')">
-              <img src="icons/el/t/el-ctc.png" alt="CTC" title="CTC">
-            </td>
-            <td onclick="elSerch('CCVCE')">
-              <img src="icons/el/e/el-ccvce.png" alt="CCVCE" title="CCVCE">
-            </td>
-          </tr>
-
-          <tr>
-            <td onclick="elSerch('CCVC')">
-              <img src="icons/el/c/el-ccvc.png" alt="CCVC" title="CCVC">
-            </td>
-            <td>
-              <div style="text-align: center; font-size: 20pt;">-</div>
-            </td>
-            <td>
-              <div style="text-align: center; font-size: 20pt;">-</div>
-            </td>
-            <td>
-              <div style="text-align: center; font-size: 20pt;">-</div>
-            </td>
-            <td>
-              <div style="text-align: center; font-size: 20pt;">-</div>
-            </td>
-          </tr>
-
-          <tr>
-            <td onclick="elSerch('CCVCC')">
-              <img src="icons/el/c/el-ccvcc.png" alt="CCVCC" title="CCVCC">
-            </td>
-            <td>
-              <div style="text-align: center; font-size: 20pt;">-</div>
-            </td>
-            <td>
-              <div style="text-align: center; font-size: 20pt;">-</div>
-            </td>
-            <td>
-              <div style="text-align: center; font-size: 20pt;">-</div>
-            </td>
-            <td>
-              <div style="text-align: center; font-size: 20pt;">-</div>
-            </td>
-          </tr>
-
-          <tr>
-            <td onclick="elSerch('CCCVCC')">
-              <img src="icons/el/c/el-cccvcc.png" alt="CCCVCC" title="CCCVCC">
-            </td>
-            <td>
-              <div style="text-align: center; font-size: 20pt;">-</div>
-            </td>
-            <td>
-              <div style="text-align: center; font-size: 20pt;">-</div>
-            </td>
-            <td>
-              <div style="text-align: center; font-size: 20pt;">-</div>
-            </td>
-            <td>
-              <div style="text-align: center; font-size: 20pt;">-</div>
-            </td>
-          </tr>
-        </table>
-
-        <div class="resultcontainer" id="resultcontainer-3">
-          <div id="matched_elwords"></div>
-        </div>
-      </div>
-    </div>
-
-    <!----------------------------------------------------->
-
-    <div id="sentence_picker">
-      <div class="inputcontainer">
-        <h2 class="inputheading">Find sentences containing a word
-          <div style="font-size: 10pt;">Go to the instructions tab for how to use this</div>
-        </h2>
-
-        <form class="input">
-          <div>Type in what word you want the sentences to have. For example, if you type in hello, a sentence like 'Hello, can I help you with something?' will show up.</div>
-          <input type="text" id="reqsentence" name="reqsentence" placeholder="Type keywords for sentences here..." class="inputform" title="Type what word you want the sentences to contain"><br>
-          <hr>
-          <button onclick="startSentences(); return false;" class="gobutton" title="Find sentences that contain the specified word">find sentences</button>
-        </form>
-      </div>
-
-      <div class="resultcontainer" id="resultcontainer-2">
-        <div id="matched_sentences"></div>
-      </div>
-    </div>
-
-    <!-------------------------------------------------------->
-
-    <div id="instructions">
-      <div class="instructioncontainer">
-        <h2 style="font-family: 'Nunito', cursive; font-size: 24pt;">Instructions</h2>
-        <h3>Instructions for Word Picker</h3>
-
-        <div class="small-heading">Welcome to word picker!</div><br>
-        <p>You can find words by sound or spelling pattern. To do it by sound, find the sound you want that is bolded in the example section of the table. Then find the corresponding phoneme and type it in the type sound here... input field. If you
-          want to find words that have a sound or another sound, separate them with a comma.
-          <hr><img src="arprabet-1.png" alt="Arprabet table image 1"><br><img src="arprabet-2.png" alt="Arprabet table image 1">
-          <hr><br>If you want to find words using a spelling pattern, type in a spelling pattern. To find words that have a consonant, type in a capital C. For vowels, type a consonant V. If you only type in a capital C, it won't show any results
-          because there are no words that are just a consonant and nothing else. To find words that contain a consonant (there are many), you need to type a dash in the end and the begining of the C. The one at the end means that it should include
-          results that start with a consonant. The one at the start shows that it should also include words that end with a consonant. But if you want to find words that shows a spelling pattern <i>and</i> another spelling pattern, seperate them with
-          a comma. A lowercase letter just means a additional letter that you typed. You can also doubble something, like a consonant. This will make the second one the same letter as the first. To do that, add a number after the thing you want to
-          doubble, so the C for the consonant becomes C2. The number that you type in is the number of times it gets repeated. This is useful when it goes right after a C or V. To connect these, just type the next one after the one before it.
-
-          <br>To find words that contain a spelling pattern and also contains a sound, enter both the sound and spelling pattern.</p>
-
-        <h4>Syllable type specification</h4>
-        <p>To specify the sylllable type, type the syllable type in the syllable type input. Each character is one character, so use this mapping for the syllable type:<br>
-        <pre style="background-color: white;">
-            Closed: C
-            Open: O
-            Vowel team: T
-            Vowel R: R
-            Silent E: E
-          </pre>
-        You can also use ? for any syllable type and - for any amount of any syllable type.</p>
-        <br>
-        <hr>
-
-        <h3>Instructions for sentence picker</h3>
-        <p>Welcome to sentence picker! Type any word to find examle sentences.</p>
-        <br>
-        <hr>
-        <h3>Word Picker API</h3>
-        <div>If you want to request words or sentences with some criteria without needing to use the webpage, you can use our API. Send a get request to wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com then add /api/words to the url for
-          finding
-          words and /api/sentences for finding sentences. For words, you can add &pattern= then the spelling pattern for the spelling pattern, &phone= then the sound for the sound, and &filter= then the filter for the filter.</div>
-        <hr>
-
-        <h3>User Interface (UI) instructions<h3>
-            <h4>The loading wheel</h4>
-            <p>The loading wheel shows you that Word Picker is loading. It has a green background and has rounded corners. If the loading wheel doesn't hide for more than 10 seconds, it might happen because of these reasons:
-            <ul style="text-align: left;">
-              <li>Your browser is just slow. Try updating your browser to the latest version.</li>
-              <li>Your browser doesn't support something that is used by Word Picker. Make sure Javascript is enabled on your browser. It provides functionality to Word Picker.</li>
-              <li>There is a problem in Word Picker. If it causes the loading wheel to spin continuously, the problem should be solved in a day or in less time than that.</li>
-            </ul>
-            </p>
-            <h4>How to navigate</h4>
-            <p>Use the tabs at the left bar to navigate. If you are on a mobile device, the tabs are in the bottom. Because things might look weird on a mobile device, using Word Picker on a computer or desktop is recommended. You can also go switch
-              tabs by pressing the up and down arrow keys.</p>
-            <h4>The three dots in the heading or the hamburger menu</h4>
-            <p>The three dots in the heading shows a menu for more actions like opening settings, viewing the word list, translating the page and more. Keep in mind that the translation uses Google Translate, which might not translate all of the
-              content perfectly. If you are using a mobile device, you will see a hamburger menu instead. It will open a sidebar instead.</p>
-            <h4>Settings</h4>
-            <p>You can change Word Picker's behavior using Settings. To acsess it, press the three dots at the top and select settings. You can use it to control whether there is a random background every day instead of every time the page loads. You
-              can also use it to make the result text italic and control the result container width. Change the result container width when the words bump into each other. To save and apply the settings, press save. If you want to just close the
-              settings without saving, press cancel. The settings should be able to save on browsers that support <a href="https://en.wikipedia.org/wiki/Web_storage">Local Storage</a>. If your browser does not support local storage, then a red text
-              saying that your browser does not support it will show. If it shows, update your browser or switch to another one.</p>
-            <h4>More three dots options</h4>
-            <p>There are more options in the three dots dropdown menu. The first one is the reload option. Unlike the usual reload button in your browser, this reload button should retreive a new copy of the page and load it. The button is useful
-              when you want to make sure that the page is updated. Another button is the see word list button. This button will pop up a list of all the words that are used for finding words. There is also a button that toggles dark mode. Dark mode
-              is a dark theme that makes things darker. By default, Word Picker will make the theme match the configured theme in the system. You can overide this by pressing the dark mode button. It will say light mode if you pressed dark mode.
-              Press the same button to go back to light mode. The button that opens settings is also here. Read the settings section for how to use it and what controls there are. Lastly, you can change the language by selecting a language in the
-              dropdown. You will need to scroll down to see more controls.</p>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <a href="http://www.wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com/" title="Word Picker API" style="margin-right: 30px;">API</a>
-    <a href="https://www.johanneschan.com/" title="Go back to the homepage" style="margin-right: 30px;">Go home</a>
-    <a href="https://www.icloud.com/shortcuts/ed0b25b744644ea0a3d1790de041ac78" title="Install the Word Picker shortcut for iPhones and iPads">Word Picker shortcut</a>
-  </footer>
-
-  <!-- The order here is important. jQuery goes before Word Picker scripts because jQuery is used in the Word Picker scripts. -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="cookies.js"></script>
-  <script src="settings.js"></script>
-  <script src="wordpicker.js"></script>
+  <img src="main/icon-250x250.png" alt="Wordpicker icon" class="icon">
+  <div class="wdpk-text">Wordpicker</div>
+  <div class="desc">The Wordpicker is the fastest, easiest, and most convienient way to construct word lists that contain and combine spelling patterns.</div>
+  <br><br>
+  <button onclick="window.location.replace('http://www.thewordpicker.com/main')" id="linkbutton">Let's start!</button>
+  <p id="noscript">You do not have JavaScript. Wordpicker requires JavaScript to run. Please make sure you have JavaScript enabled (and your browser can run it).<br>Refresh this page to try again.</p>
+
+  <script>
+    var linkbtn = document.getElementById('linkbutton');
+    document.getElementById('noscript').style.display = 'none';
+    linkbtn.style.display = 'block';
+    linkbtn.style.marginLeft = 'auto';
+    linkbtn.style.marginRight = 'auto';
+  </script>
 </body>
 
 </html>
