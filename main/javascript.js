@@ -53,6 +53,7 @@ function processcustomkeypress(ev) {
 
   if (keycode in patternkeycodes) {
     addcustomitem(patternkeycodes[keycode]);
+    document.getElementById('custombox-text').remove();
   } else if (keycode = 8) {
     var box = document.getElementById('custompatternbox');
     box.removeChild(box.lastChild)
@@ -67,7 +68,6 @@ function addcustomitem(name) {
   document.getElementById(id).onclick = () => {
     document.getElementById(data + '-box').prepend(document.getElementById(data))
   };
-  document.getElementById('custombox-text').remove();
 }
 
 function searchlist(query, list) {
