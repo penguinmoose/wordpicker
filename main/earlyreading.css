@@ -1,12 +1,36 @@
 :root {
+  /* General */
   --bodybg: #e6f1ff;
   --titlecolor: #2363bd;
-  --btntduration: 0.25s;
+  --btntduration: 0.3s;
   /* Custom tab */
   --customitembg: #a0beff;
   --customborder: 5px solid #485d7a;
   --customfocusborder: 5px solid #6f87a8;
   --customfocusbg: #78b0ff;
+  /* 'More options' tab */
+  --darkitembg: #0e3569;
+  --darkitemhoverbg: #1955a4;
+
+  font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1920 - 320));
+}
+
+.optionsbtn {
+  background-color: var(--darkitembg);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 10px;
+  margin-top: 15px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  outline: inherit;
+  transition-duration: var(--btntduration);
+}
+
+.optionsbtn:hover {
+  background-color: var(--darkitemhoverbg);
 }
 
 .custombox {
@@ -192,7 +216,7 @@
 .wordlistselect {
   border-color: white;
   border-radius: 3px;
-  background-color: #072e57;
+  background-color: var(--darkitembg);
   color: white;
   transition-duration: 0.5s;
   font-size: 12px;
@@ -201,7 +225,7 @@
 }
 
 .wordlistselect:hover {
-  background-color: #0051a7;
+  background-color: var(--darkitemhoverbg);
 }
 
 
