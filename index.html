@@ -2,6 +2,16 @@
 <html lang="en" dir="ltr">
 
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-H1RDMM7FMC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-H1RDMM7FMC');
+  </script>
+
   <title>Early Reading</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -97,12 +107,25 @@
   <button onclick="window.location.replace('http://www.thewordpicker.com/main')" id="linkbutton">Let's start!</button>
   <p id="noscript">You do not have JavaScript. Wordpicker requires JavaScript to run. Please make sure you have JavaScript enabled (and your browser can run it).<br>Refresh this page to try again.</p>
 
+  <br><br><iframe src="https://ghbtns.com/github-btn.html?user=penguinmoose&repo=wordpicker&type=star&count=true&size=large"
+    frameborder="0" scrolling="0" width="170" height="30" title="GitHub"></iframe>
+
   <script>
     var linkbtn = document.getElementById('linkbutton');
     document.getElementById('noscript').style.display = 'none';
     linkbtn.style.display = 'block';
     linkbtn.style.marginLeft = 'auto';
     linkbtn.style.marginRight = 'auto';
+  </script>
+
+  <script type="text/javascript" defer data-plerdy_code='1'>
+    var _protocol = "https:" == document.location.protocol ? " https://" : " http://";
+    _site_hash_code = "4b2fe71aed46f341bc6d1a3bae322931", _suid = 34450, plerdyScript = document.createElement("script");
+    plerdyScript.setAttribute("defer", ""), plerdyScript.dataset.plerdymainscript = "plerdymainscript",
+      plerdyScript.src = "https://a.plerdy.com/public/js/click/main.js?v=" + Math.random();
+    var plerdymainscript = document.querySelector("[data-plerdymainscript='plerdymainscript']");
+    plerdymainscript && plerdymainscript.parentNode.removeChild(plerdymainscript);
+    try { document.head.appendChild(plerdyScript) } catch (t) { console.log(t, "unable add script tag") }
   </script>
 </body>
 

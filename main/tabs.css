@@ -1,4 +1,5 @@
 /* Tabs */
+
 .tabs {
   display: flex;
   flex-wrap: wrap;
@@ -13,7 +14,7 @@
   cursor: pointer;
   background: #90caf9;
   font-weight: bold;
-  transition: background ease 0.3s;
+  transition: background ease var(--btntduration);
   font-family: 'Fredoka One', sans-serif;
   font-size: 17px;
 }
@@ -49,24 +50,6 @@
     margin-right: 0;
     margin-top: 0.2rem;
   }
-}
-
-.optionsbtn {
-	background-color: #0e3569;
-	color: white;
-	border: none;
-  border-radius: 5px;
-	padding: 3px 10px;
-  margin-top: 15px;
-	font: inherit;
-  font-size: 14px;
-	cursor: pointer;
-	outline: inherit;
-  transition-duration: 0.5s;
-}
-
-.optionsbtn:hover {
-  background-color: #1955a4;
 }
 
 input[type=number] {

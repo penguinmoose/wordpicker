@@ -1,53 +1,91 @@
+:root {
+  /* General */
+  --bodybg: #e6f1ff;
+  --titlecolor: #2363bd;
+  --btntduration: 0.3s;
+  /* Custom tab */
+  --customitembg: #a0beff;
+  --customborder: 5px solid #485d7a;
+  --customfocusborder: 5px solid #6f87a8;
+  --customfocusbg: #78b0ff;
+  /* 'More options' tab */
+  --darkitembg: #0e3569;
+  --darkitemhoverbg: #1955a4;
+
+  font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1920 - 320));
+}
+
+.optionsbtn {
+  background-color: var(--darkitembg);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 10px;
+  margin-top: 15px;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  outline: inherit;
+  transition-duration: var(--btntduration);
+}
+
+.optionsbtn:hover {
+  background-color: var(--darkitemhoverbg);
+}
+
 .custombox {
   width: calc(100% - 50px);
   height: 120px;
   padding: 20px;
-  background-color: #688edf;
-  border: 5px solid #485d7a;
+  background-color: var(--customitembg);
+  border: var(--customborder);
   border-radius: 10px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: var(--btntduration);
+  transition: var(--btntduration);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .custombox:focus {
-  background-color: #76a3e0;
-  border-color: #6f87a8;
+  background-color: var(--customfocusbg);
+  border: var(--customfocusborder)
 }
 
 .custombutton {
   width: 50px;
   height: 70px;
   padding: 5px;
-  background-color: #688edf;
-  border: 5px solid #485d7a;
+  background-color: var(--customitembg);
+  border: var(--customborder);
   border-radius: 5px;
   float: left;
   margin-right: 10px;
-  transition-duration: 0.5s;
+  -webkit-transition: var(--btntduration);
+  transition-duration: var(--btntduration);
 }
 
 .custombutton:hover {
-  background-color: #3c5da3;
-  border: 5px solid #1c324f;
+  background-color: var(--customfocusbg);
+  border: var(--customborder);
 }
 
 .customaction {
-  background-color: #3ba4e7;
-  border: 5px solid #0074b5;
+  background-color: var(--customitembg);
+  border: var(--customborder);
   border-radius: 10px;
   margin-right: 10px;
   height: 50px;
+  -webkit-transition: var(--btntduration);
+  transition-duration: var(--btntduration);
 }
 
 .customaction:hover {
-  background-color: #0f81b9;
+  background-color: var(--customfocusbg);
 }
 
 .custombutton-text {
-  color: white;
+  color: black;
   text-align: center;
   font-size: 10pt;
   padding-top: 10px;
@@ -168,7 +206,7 @@
   text-align: center;
   font-family: 'Fredoka One', sans-serif;
   font-size: 25px;
-  background-color: #3e6bc4;
+  background-color: var(--titlecolor);
 }
 
 .wordlistselectbox {
@@ -178,7 +216,7 @@
 .wordlistselect {
   border-color: white;
   border-radius: 3px;
-  background-color: #072e57;
+  background-color: var(--darkitembg);
   color: white;
   transition-duration: 0.5s;
   font-size: 12px;
@@ -187,7 +225,7 @@
 }
 
 .wordlistselect:hover {
-  background-color: #0051a7;
+  background-color: var(--darkitemhoverbg);
 }
 
 
@@ -242,7 +280,7 @@
 }
 
 body {
-  background-color: #e6f1ff;
+  background-color: var(--bodybg);
   min-height: 100vh;
   box-sizing: border-box;
   padding: 10vh 5vh;
