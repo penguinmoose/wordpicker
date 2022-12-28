@@ -230,7 +230,7 @@ function findwords(input) {
   document.getElementById('searchresultsbox').style.display = 'block';
   console.log("Finding results for pattern: " + input);
   document.getElementById('searchresults').innerHTML = 'Please wait - finding words...';
-  request(input, 'http://www.wordpicker-eb.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com');
+  request(input, 'http://wordpicker-env.eba-zkdtc4h6.us-west-2.elasticbeanstalk.com');
 }
 
 function showcamerawords() {
