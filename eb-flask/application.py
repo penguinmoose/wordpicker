@@ -192,3 +192,4 @@ def api_sentences_pattern():
 
 if __name__ == "__main__":
     application.run(debug=True, use_reloader=False)
+    #application.run(host="localhost", port=8000)
