@@ -53,14 +53,22 @@ function processcustomkeypress(ev) {
 
   if (keycode in patternkeycodes) {
     addcustomitem(patternkeycodes[keycode]);
-    document.getElementById('custombox-text').remove();
+    removecbtext()
   } else if (keycode = 8) {
     var box = document.getElementById('custompatternbox');
     box.removeChild(box.lastChild)
   }
 }
 
+function removecbtext() {
+  element = document.getElementById('custombox-text');
+  if (document.body.contains(element)) {
+    element.remove();
+  }
+}
+
 function addcustomitem(name) {
+  removecbtext();
   var id = 'custom-' + name;
   var clone = document.getElementById('custom-' + name).cloneNode(true);
   clone.id = clone.id + '-' + randomString(8);
@@ -103,7 +111,7 @@ function drop(ev) {
 
   customdrag(clone);
 
-  document.getElementById('custombox-text').remove();
+  removecbtext();
 }
 
 function dragdelete(ev) {
