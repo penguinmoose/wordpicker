@@ -1,4 +1,4 @@
-# The Word Picker is down right now. It should be fixed by Dec 10.
+# The Word Picker is up and running now!
 
 # Word Picker
 
