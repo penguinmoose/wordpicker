@@ -36,6 +36,8 @@ def api_words_all():
     return jsonify(list(word_list.keys()))
 
 def spelling_match(word_pattern, filter, maxwordlen):
+    if not filter.isalnum():
+        return None
     with open("word-list/" + filter + ".txt", 'r') as f:
         word_list = f.read().splitlines()
 
