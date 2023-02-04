@@ -81,5 +81,5 @@ function openSettings() {
 
 function showReswidthSliderValue() {
   var value = document.getElementById("resultcontainer-width-slider").value;
-  document.getElementById("reswidth-value-text").innerHTML = value + " pixels";
+  document.getElementById("reswidth-value-text").innerText = value + " pixels";
 }
