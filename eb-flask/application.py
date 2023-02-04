@@ -191,5 +191,5 @@ def api_sentences_pattern():
     return jsonify(sentences)
 
 if __name__ == "__main__":
-    application.run(debug=True, use_reloader=False)
+    application.run(debug=False, use_reloader=False)
     #application.run(host="localhost", port=8000)
